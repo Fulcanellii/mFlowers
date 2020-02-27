@@ -1,66 +1,116 @@
-<header class="header container-fluid fixed-top">
-    <nav class="container navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand mr-5" {% if this.page.id != 'index' %}href="{{ 'index'|page }}" aria-label="Go to main page"{% endif %}>{{ this.theme.site_name }}</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+[viewBag]
 
-        <div class="row collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav col-12 col-lg-auto mr-auto mb-3 mb-lg-0">
-                {% set arMenuItemList = HeaderStaticMenu.menuItems() %}
-                {% for obMenuItem in arMenuItemList if obMenuItem.viewBag.isHidden == false %}
-                    {% if obMenuItem.items is not empty %}
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle {{ obMenuItem.viewBag.cssClass }} {% if obMenuItem.isActive or obMenuItem.isChildActive %}active{% endif %}" href="{{ obMenuItem.url }}" id="navbarDropdown-{{ loop.index }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{ obMenuItem.title }}
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown-{{ loop.index }}">
-                                {% for obChildMenuItem in obMenuItem.items %}
-                                    {% if obChildMenu.viewBag.isHidden == false %}
-                                        <a class="dropdown-item {{ obChildMenuItem.viewBag.cssClass }} {% if obChildMenuItem.isActive %}active{% endif %}" href="{{ obChildMenuItem.url }}">
-                                            {{ obChildMenuItem.title }}
-                                        </a>
-                                        {% if loop.last == false %}
-                                            <div class="dropdown-divider"></div>
-                                        {% endif %}
-                                    {% endif %}
-                                {% endfor %}
-                            </div>
-                        </li>
-                    {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link {{ obMenuItem.viewBag.cssClass }} {% if obMenuItem.isActive %}active{% endif %}" {% if obMenuItem.isActive == false %}href="{{ obMenuItem.url }}"{% endif %}>{{ obMenuItem.title }}</a>
-                        </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            {# search is hidden for the next release version #}
-            {#<div class="input-group col-lg-3 col-12 order-1 order-lg-0 header__search">
-                <input class="form-control py-2 border-right-0 border" type="search" placeholder="search" id="example-search-input">
-                <span class="input-group-append">
-                    <button class="btn btn-outline-secondary border-left-0 border btn_bg-white" type="button">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </span>
-            </div>#}
-            {% if this.theme.facebook_link is not empty or this.theme.instagram_link is not empty or this.theme.twitter_link is not empty %}
-                <ul class="col-12 col-lg-auto order-1 order-lg-0 social-icon__list">
-                    {% if this.theme.facebook_link is not empty %}
-                        <li class="social-icon__item"><a href="{{ this.theme.facebook_link }}" class="social-icon__link" role="button" aria-label="Go to facebook plugin page"><i class="fa fa-lg fa-facebook fa-fw"></i></a></li>
-                    {% endif %}
-                    {% if this.theme.instagram_link is not empty %}
-                        <li class="social-icon__item"><a href="{{ this.theme.instagram_link }}" class="social-icon__link" role="button" aria-label="Go to instagram plugin page"><i class="fa fa-lg fa-instagram fa-fw"></i></a></li>
-                    {% endif %}
-                    {% if this.theme.twitter_link is not empty %}
-                        <li class="social-icon__item"><a href="{{ this.theme.twitter_link }}" class="social-icon__link" role="button" aria-label="Go to twitter plugin page"><i class="fa fa-lg fa-twitter fa-fw"></i></a></li>
-                    {% endif %}
-                </ul>
-            {% endif %}
-            <div class="_ajax_cart_link_header_wrapper col-12 col-lg-auto mb-4 mb-lg-0">
+[staticMenu]
+code = "top-menyu"
+==
+<header class="header">
+            <div class="container">
+                <div class="header__head">
+<ul class="header__languages">
+    <li>Русский</li>
+</ul>
+<div class="header__number">Контактный номер:<a href="tel:{{ this.theme.contact_phone }}">{{ this.theme.contact_phone }}</a></div>
+
+<div class="header__crumbs">
+{% for item in staticMenu.menuItems %}
+    <a href="{{ item.url }}" >{{ item.title }}</a>
+{% endfor %}
+</div>
+                
+</div>
+                <nav class="header__nav">
+                    <div class="hamburger_trigger">
+                        <span></span>
+                    </div>
+                    <form class="header__search-desctop">
+                    
+                        <input type="search" placeholder="Искать товар" class="header__search-input-desctop">
+                        <button class="header__search-button-desctop"><span class="icon-search"></span></button>
+                    </form>
+
+                    <div class="header__logo">
+                        <img src="{{ 'assets/images/mainPage/header/fullLogo.svg'|theme }}" alt="logo">
+                    </div>
+                    <div class="_ajax_cart_link_header_wrapper col-12 col-lg-auto mb-4 mb-lg-0">
                 {% partial 'product/cart-link-header/cart-link-header' %}
             </div>
-        </div>
-    </nav>
-</header>
+                 
+                </nav>
+                <ul class="header__navigation">
+                    <li>
+                        <a href="/" class="header__home-link"><span class="icon-home"></span></a>
+                    </li>
+                    {% for item in staticMenu.menuItems %}
+                    <li class="header__list-desktop">
+                    {% if item.items %}
+     
+                        <a href="{{ item.url }}" class="header__link-desktop">{{ item.title }}</a>
+            
+                        <ul class="header__drop">
+                        {% for child in item.items %}
+                            <li class="header__sublist-desktop">
+                                <a href="{{ child.url }}">{{ child.title }}</a>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <a href="{{ item.url }}" class="header__link-desktop">{{ item.title }}</a>
+                    {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
 
+            </div>
 
+            <div class="header__underline"></div>
+
+            <ul class="header__menu">
+                <li class="header__list ">
+                    <form class="header__search">
+                        <input type="search" class="header__search-input" placeholder="искать товар">
+                        <button class="header__search-button"><span class="icon-search"></span></button>
+                    </form>
+                </li>
+                <li class="header__list ">
+                    <a href="#" class="header__link header__link-home"><span class="icon-home"></span></a>
+                </li>
+                <li class="header__list">
+                    <div class="header__list-drop">
+                        <a href="#" class="header__link">случай</a>
+                        <div class="icon-download header__buton-drop"></div>
+                    </div>
+                    <ul class="header__submenu">
+                        <li class="header__sublist">
+                            <a href="#">день рождения</a>
+                        </li>
+                        <li class="header__sublist">
+                            <a href="#">8 марта</a>
+                        </li>
+                        <li class="header__sublist">
+                            <a href="#">новый год</a>
+                        </li>
+                        <li class="header__sublist">
+                            <a href="#">первое свидание</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="header__list">
+                    <a href="#" class="header__link">для нее</a>
+                </li>
+                <li class="header__list">
+                    <a href="#" class="header__link">день рождения</a>
+                </li>
+                <li class="header__list">
+                    <a href="#" class="header__link">блог</a>
+                </li>
+                <li class="header__list">
+                    <a href="#" class="header__link">магазин</a>
+                </li>
+                <li class="header__list">
+                    <a href="#" class="header__link">контакты</a>
+                </li>
+                <li class="header__button-close">
+                    X
+                </li>
+            </ul>
+        </header>

@@ -3,6 +3,10 @@ code = "header-menu"
 
 [staticMenu FooterStaticMenu]
 code = "footer-menu"
+
+[staticPage]
+useContent = 1
+default = 0
 ==
 <?php
 function onInit()
@@ -34,7 +38,11 @@ function onInit()
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="{{ path_css }}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ 'assets/css/main.css'|theme }}">
+    <script src="{{ 'assets/js/modernizr.js'|theme }}"></script>
+    
     {% styles %}
     {% if seo_toolbox_is_available %}
         {% placeholder seo_tags default %}
@@ -48,7 +56,15 @@ function onInit()
         {% page %}
     </div>
     {% partial 'footer/footer' %}
-<script src="{{ path_js }}"></script>
+<script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
+        <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
+        <script src="{{ 'assets/node_modules/jquery/dist/jquery.min.js'|theme }}"></script>
+        <script src="{{ 'assets/node_modules/owl.carousel/dist/owl.carousel.min.js'|theme }}"></script>
+        <script src="{{ 'assets/node_modules/easyzoom/dist/easyzoom.js'|theme }}"></script>
+        <script src="{{ 'assets/js/main.js'|theme }}"></script>
+        <script src="{{ 'assets/js/modernizr.js'|theme }}"></script>
+        <script src="{{ 'assets/js/vendor.js'|theme }}"></script>
     {% framework extras %}
     {% scripts %}
 </body>

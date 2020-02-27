@@ -1,0 +1,8 @@
+1582803916a:1:{s:7:"404.htm";a:9:{s:8:"fileName";s:7:"404.htm";s:7:"content";s:166:"title = "Error 404"
+url = "/404"
+layout = "light"
+is_hidden = 0
+==
+
+{% partial 'content/error/error' errorFigures='404' errorText='page not found' errorType='404' %}
+";s:5:"mtime";i:1582799022;s:6:"markup";s:97:"{% partial 'content/error/error' errorFigures='404' errorText='page not found' errorType='404' %}";s:4:"code";N;s:5:"title";s:9:"Error 404";s:3:"url";s:4:"/404";s:6:"layout";s:5:"light";s:9:"is_hidden";s:1:"0";}}

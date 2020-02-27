@@ -1,0 +1,14 @@
+1582803916a:1:{s:25:"content/banner/banner.htm";a:5:{s:8:"fileName";s:25:"content/banner/banner.htm";s:7:"content";s:315:"{% if sImagePath is not empty %}
+<section class="container banner">
+    <a {% if sLink is not empty %}href="{{ sLink }}"{% endif %} target="_blank" aria-label="Banner link" rel="noopener" >
+        <img class="banner__img rounded" src="{{ sImagePath|media }}" alt="" loading="lazy">
+    </a>
+</section>
+{% endif %}
+";s:5:"mtime";i:1582799023;s:6:"markup";s:314:"{% if sImagePath is not empty %}
+<section class="container banner">
+    <a {% if sLink is not empty %}href="{{ sLink }}"{% endif %} target="_blank" aria-label="Banner link" rel="noopener" >
+        <img class="banner__img rounded" src="{{ sImagePath|media }}" alt="" loading="lazy">
+    </a>
+</section>
+{% endif %}";s:4:"code";N;}}

@@ -1,0 +1,81 @@
+1582803916a:1:{s:20:"promo-block-page.htm";a:12:{s:8:"fileName";s:20:"promo-block-page.htm";s:7:"content";s:1746:"title = "Promo block page"
+url = "/promo/:slug"
+layout = "main"
+is_hidden = 0
+
+[PromoBlockPage]
+slug = "{{ :slug }}"
+slug_required = 1
+
+[ProductList]
+sorting = "new"
+
+[Pagination]
+available_count_per_page = 12
+count_per_page = 6
+pagination_limit = 5
+active_class = "_act"
+button_list = "first,prev,main,next,last"
+first_button_name = "First"
+first_button_limit = 3
+first-more_button_name = "..."
+first-more_button_limit = 1
+prev_button_name = "Prev"
+prev_button_limit = 1
+prev-more_button_name = "..."
+prev-more_button_limit = 1
+next-more_button_name = "..."
+next-more_button_limit = 1
+next_button_name = "Next"
+next_button_limit = 1
+last-more_button_name = "..."
+last-more_button_limit = 1
+last_button_name = "Last"
+last_button_limit = 3
+==
+{# @var obPromoBlock \Lovata\Shopaholic\Classes\Item\PromoBlockItem #}
+
+{% set obPromoBlock = PromoBlockPage.get() %}
+
+{% set arBreadcrumbs = [
+    {'name': 'Home', 'url': 'index'|page},
+    {'name': 'Promo', 'url': 'promo-block-list'|page},
+    {'name': obPromoBlock.name, 'url': ''}
+] %}
+{% set arSEOParams = {'promo_block': obPromoBlock} %}
+
+{% if seo_toolbox_is_available %}
+    {% put seo_tags %}
+    {% component 'SeoToolbox' model=obPromoBlock params=arSEOParams %}
+    {% endput %}
+{% endif %}
+
+{% partial 'content/picture-preview-top/picture-preview-top' obImage=obPromoBlock.images.first() %}
+{% partial 'product/catalog-panel/catalog-panel' label='promo-block-product-list' %}
+{% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}
+{% partial 'content/text-preview/text-preview' sPreviewText=obPromoBlock.preview_text %}
+{% partial 'product/promo-block-product-list/promo-block-product-list' %}
+{% partial 'content/wysiwyg/wysiwyg' sContent=obPromoBlock.description %}
+";s:5:"mtime";i:1582799023;s:6:"markup";s:1003:"{# @var obPromoBlock \Lovata\Shopaholic\Classes\Item\PromoBlockItem #}
+
+{% set obPromoBlock = PromoBlockPage.get() %}
+
+{% set arBreadcrumbs = [
+    {'name': 'Home', 'url': 'index'|page},
+    {'name': 'Promo', 'url': 'promo-block-list'|page},
+    {'name': obPromoBlock.name, 'url': ''}
+] %}
+{% set arSEOParams = {'promo_block': obPromoBlock} %}
+
+{% if seo_toolbox_is_available %}
+    {% put seo_tags %}
+    {% component 'SeoToolbox' model=obPromoBlock params=arSEOParams %}
+    {% endput %}
+{% endif %}
+
+{% partial 'content/picture-preview-top/picture-preview-top' obImage=obPromoBlock.images.first() %}
+{% partial 'product/catalog-panel/catalog-panel' label='promo-block-product-list' %}
+{% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}
+{% partial 'content/text-preview/text-preview' sPreviewText=obPromoBlock.preview_text %}
+{% partial 'product/promo-block-product-list/promo-block-product-list' %}
+{% partial 'content/wysiwyg/wysiwyg' sContent=obPromoBlock.description %}";s:4:"code";N;s:5:"title";s:16:"Promo block page";s:3:"url";s:12:"/promo/:slug";s:6:"layout";s:4:"main";s:9:"is_hidden";s:1:"0";s:14:"PromoBlockPage";a:2:{s:4:"slug";s:11:"{{ :slug }}";s:13:"slug_required";s:1:"1";}s:11:"ProductList";a:1:{s:7:"sorting";s:3:"new";}s:10:"Pagination";a:21:{s:24:"available_count_per_page";s:2:"12";s:14:"count_per_page";s:1:"6";s:16:"pagination_limit";s:1:"5";s:12:"active_class";s:4:"_act";s:11:"button_list";s:25:"first,prev,main,next,last";s:17:"first_button_name";s:5:"First";s:18:"first_button_limit";s:1:"3";s:22:"first-more_button_name";s:3:"...";s:23:"first-more_button_limit";s:1:"1";s:16:"prev_button_name";s:4:"Prev";s:17:"prev_button_limit";s:1:"1";s:21:"prev-more_button_name";s:3:"...";s:22:"prev-more_button_limit";s:1:"1";s:21:"next-more_button_name";s:3:"...";s:22:"next-more_button_limit";s:1:"1";s:16:"next_button_name";s:4:"Next";s:17:"next_button_limit";s:1:"1";s:21:"last-more_button_name";s:3:"...";s:22:"last-more_button_limit";s:1:"1";s:16:"last_button_name";s:4:"Last";s:17:"last_button_limit";s:1:"3";}}}

@@ -1,0 +1,57 @@
+items:
+    -
+        title: 'О нас'
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: about-us
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Доставка и оплата'
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: dostavka-i-oplata
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Гарантия
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: garantiya
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Возврат товара'
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: vozvrat-tovara
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Частые вопросы'
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: chastye-voprosy
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: 'Топ меню'
