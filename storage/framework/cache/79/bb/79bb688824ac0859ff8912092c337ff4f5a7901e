@@ -1,0 +1,10 @@
+1582799839a:1:{s:49:"promo-block/promo-block-list/promo-block-list.htm";a:5:{s:8:"fileName";s:49:"promo-block/promo-block-list/promo-block-list.htm";s:7:"content";s:187:"<section class="catalog container mt-4">
+    <div class="_ajax_promo_block_list_wrapper">
+        {% partial 'promo-block/promo-block-list/ajax-promo-block-list' %}
+    </div>
+</section>
+";s:5:"mtime";i:1582799023;s:6:"markup";s:186:"<section class="catalog container mt-4">
+    <div class="_ajax_promo_block_list_wrapper">
+        {% partial 'promo-block/promo-block-list/ajax-promo-block-list' %}
+    </div>
+</section>";s:4:"code";N;}}
