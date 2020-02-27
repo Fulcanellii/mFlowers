@@ -1,0 +1,102 @@
+title = "Blog Category"
+url = "/blog/category/:slug"
+layout = "main"
+is_hidden = 0
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "blog-category"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog-category"
+postPage = "blog-post"
+==
+<div class="wrapper">
+        
+
+        <div class="blogpage">
+      <div class="container">
+        <ul class="crumbs">
+          <li class="crumb">
+            <a href="#" class="crumb-link">Главная</a>
+            <span>/</span>
+          </li>
+          <li class="crumb">
+            Блог
+          </li>
+        </ul>
+        <div class="blogpage__flex">
+          <div class="blogpage__asides">
+            <form action="#" class="blogpage__search">
+              <input type="search" class="blogpage__search-input" placeholder="Поиск...">
+              <input type="submit" value="Искать" class="blogpage__search-btn">
+            </form>
+            <aside class="blogpage__aside">
+              <h3>Архив</h3>
+              <ul>
+                <li>
+                  <a href="#" class="blogpage__link-acide">Июнь <span>2019</span> </a>
+                </li>
+                <li>
+                  <a href="#" class="blogpage__link-acide">Сентябрь <span>2019</span></a>
+                </li>
+                <li>
+                  <a href="#" class="blogpage__link-acide">Январь <span>2020</span></a>
+                </li>
+                <li>
+                  <a href="#" class="blogpage__link-acide">Февраль <span>2020</span></a>
+                </li>
+              </ul>
+            </aside>
+            <aside class="blogpage__aside">
+              <h3>Категории</h3>
+              <ul>
+                <li>
+                  <a href="#" class="blogpage__link-acide">{% component 'blogCategories' %}</a>
+                </li>
+              </ul>
+            </aside>
+          </div>
+
+          <div class="blogpage__blogs">
+          
+          {% set posts = blogPosts.posts %}
+            {% for post in posts %}
+            
+            <div class="blogpage__blog">
+        
+            {% if post.featured_images.count %}
+                {% for image in post.featured_images %}
+                  <a href="{{ post.url }}" class="blogpage__img-wrap">
+                    <img src="{{ image.path }}" alt="{{ image.description }}" class="blogpage__img">
+                    <span class="icon-search blogpage__icon"></span>
+                  </a>
+              {% endfor %}
+            {% endif %}
+              <div class="mainblog__date">
+                <span class="icon-calendar"></span>
+                <span>{{ post.published_at }}</span>
+              </div>
+              <h3 class="blogpage__title-blog">{{ post.title }}</h3>
+              <p class="blogpage__subtitle-blog">{{ post.content }}</p>
+              <a href="{{ post.url }}" class="blogpage__link">читать далее</a>
+              
+             
+            </div>
+{% endfor %} 
+          </div>
+            
+        </div>
+
+
+      </div>
+    </div>
+
+        
+        </div>

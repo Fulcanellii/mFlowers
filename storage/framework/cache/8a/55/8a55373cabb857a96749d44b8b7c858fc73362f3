@@ -1,7 +1,10 @@
-1582804083a:1:{s:17:"header/header.htm";a:7:{s:8:"fileName";s:17:"header/header.htm";s:7:"content";s:5032:"[viewBag]
+1582806155a:1:{s:17:"header/header.htm";a:8:{s:8:"fileName";s:17:"header/header.htm";s:7:"content";s:5083:"[viewBag]
 
 [staticMenu]
 code = "top-menyu"
+
+[staticMenu staticMenu2]
+code = "header-menu"
 ==
 <header class="header">
             <div class="container">
@@ -40,7 +43,7 @@ code = "top-menyu"
                     <li>
                         <a href="/" class="header__home-link"><span class="icon-home"></span></a>
                     </li>
-                    {% for item in staticMenu.menuItems %}
+                    {% for item in staticMenu2.menuItems %}
                     <li class="header__list-desktop">
                     {% if item.items %}
      
@@ -113,7 +116,7 @@ code = "top-menyu"
                     X
                 </li>
             </ul>
-        </header>";s:5:"mtime";i:1582803481;s:6:"markup";s:4981:"<header class="header">
+        </header>";s:5:"mtime";i:1582804300;s:6:"markup";s:4982:"<header class="header">
             <div class="container">
                 <div class="header__head">
 <ul class="header__languages">
@@ -150,7 +153,7 @@ code = "top-menyu"
                     <li>
                         <a href="/" class="header__home-link"><span class="icon-home"></span></a>
                     </li>
-                    {% for item in staticMenu.menuItems %}
+                    {% for item in staticMenu2.menuItems %}
                     <li class="header__list-desktop">
                     {% if item.items %}
      
@@ -223,4 +226,4 @@ code = "top-menyu"
                     X
                 </li>
             </ul>
-        </header>";s:4:"code";N;s:7:"viewBag";a:0:{}s:10:"staticMenu";a:1:{s:4:"code";s:9:"top-menyu";}}}
+        </header>";s:4:"code";N;s:7:"viewBag";a:0:{}s:10:"staticMenu";a:1:{s:4:"code";s:9:"top-menyu";}s:22:"staticMenu staticMenu2";a:1:{s:4:"code";s:11:"header-menu";}}}

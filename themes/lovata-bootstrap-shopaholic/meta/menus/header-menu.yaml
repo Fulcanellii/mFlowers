@@ -14,10 +14,28 @@ items:
             cssClass: ''
             isExternal: '0'
     -
-        title: Promo
+        title: Блог
         type: cms-page
         code: ''
-        reference: promo-block-list
+        reference: blog
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Магазин
+        type: cms-page
+        code: ''
+        reference: magazin
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Контакты
+        type: cms-page
+        code: ''
+        reference: kontakty
         viewBag:
             isHidden: '0'
             cssClass: ''

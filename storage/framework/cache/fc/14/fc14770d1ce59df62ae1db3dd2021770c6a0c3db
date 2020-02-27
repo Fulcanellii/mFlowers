@@ -1,4 +1,4 @@
-1582802122a:1:{s:46:"form/button-add-to-cart/button-add-to-cart.htm";a:5:{s:8:"fileName";s:46:"form/button-add-to-cart/button-add-to-cart.htm";s:7:"content";s:247:"<button class="btn btn-add-to-cart btn-dark {{ btnAddClasses }}" type="button" aria-label="Add to cart" data-container="body" data-toggle="popover" data-placement="top" data-content="">
+1582806287a:1:{s:46:"form/button-add-to-cart/button-add-to-cart.htm";a:5:{s:8:"fileName";s:46:"form/button-add-to-cart/button-add-to-cart.htm";s:7:"content";s:247:"<button class="btn btn-add-to-cart btn-dark {{ btnAddClasses }}" type="button" aria-label="Add to cart" data-container="body" data-toggle="popover" data-placement="top" data-content="">
     <i class="fa fa-shopping-cart"></i>Add to cart
 </button>
 ";s:5:"mtime";i:1582799023;s:6:"markup";s:246:"<button class="btn btn-add-to-cart btn-dark {{ btnAddClasses }}" type="button" aria-label="Add to cart" data-container="body" data-toggle="popover" data-placement="top" data-content="">

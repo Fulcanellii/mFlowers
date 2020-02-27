@@ -39,116 +39,63 @@ class __TwigTemplate_b26452cedadf94387067b93e3806ad1e4926f52ae4c0498c866bd090645
         echo "<!doctype html>
 <html lang=\"en\">
 <head>
-    <meta charset=\"utf-8\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
-    <link href=\"https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display&display=swap\" rel=\"stylesheet\">
-    <link href=\"https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps&display=swap\" rel=\"stylesheet\">
-    <link rel=\"stylesheet\" href=\"";
-        // line 9
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/css/main.css");
-        echo "\">
-    <script src=\"";
-        // line 10
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/js/modernizr.js");
-        echo "\"></script>
-    
     ";
-        // line 12
+        // line 5
+        $context['__cms_partial_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("header/head"        , $context['__cms_partial_params']        , true        );
+        unset($context['__cms_partial_params']);
+        // line 6
+        echo "    
+    ";
+        // line 7
         echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('css');
         echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('styles');
-        // line 13
+        // line 8
         echo "    ";
         if (($context["seo_toolbox_is_available"] ?? null)) {
-            // line 14
+            // line 9
             echo "        ";
-            $context['__placeholder_seo_tags_default_contents'] = null;            ob_start();            // line 15
+            $context['__placeholder_seo_tags_default_contents'] = null;            ob_start();            // line 10
             echo "            ";
             $context['__cms_component_params'] = [];
             echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("SeoToolbox"            , $context['__cms_component_params']            );
             unset($context['__cms_component_params']);
-            // line 16
+            // line 11
             echo "        ";
-            $context['__placeholder_seo_tags_default_contents'] = ob_get_clean();            // line 14
+            $context['__placeholder_seo_tags_default_contents'] = ob_get_clean();            // line 9
             echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('seo_tags', $context['__placeholder_seo_tags_default_contents']);
-            unset($context['__placeholder_seo_tags_default_contents']);            // line 17
+            unset($context['__placeholder_seo_tags_default_contents']);            // line 12
             echo "    ";
         }
-        // line 18
+        // line 13
         echo "</head>
 <body class=\"body\" data-cart-is-available=\"";
-        // line 19
+        // line 14
         echo twig_escape_filter($this->env, ($context["cart_is_available"] ?? null), "html", null, true);
         echo "\">
     ";
-        // line 20
+        // line 15
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("header/header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 21
+        // line 16
         echo "    <div class=\"site-content\">
         ";
-        // line 22
+        // line 17
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFunction();
-        // line 23
+        // line 18
         echo "    </div>
     ";
-        // line 24
+        // line 19
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("footer/footer"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 25
-        echo "<script src=\"";
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/jquery.js");
-        echo "\"></script>
-        <script src=\"";
-        // line 26
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/vendor/bootstrap.js");
-        echo "\"></script>
-        <script src=\"";
-        // line 27
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/javascript/app.js");
-        echo "\"></script>
-        <script src=\"";
-        // line 28
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/node_modules/jquery/dist/jquery.min.js");
-        echo "\"></script>
-        <script src=\"";
-        // line 29
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/node_modules/owl.carousel/dist/owl.carousel.min.js");
-        echo "\"></script>
-        <script src=\"";
-        // line 30
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/node_modules/easyzoom/dist/easyzoom.js");
-        echo "\"></script>
-        <script src=\"";
-        // line 31
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/js/main.js");
-        echo "\"></script>
-        <script src=\"";
-        // line 32
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/js/modernizr.js");
-        echo "\"></script>
-        <script src=\"";
-        // line 33
-        echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/js/vendor.js");
-        echo "\"></script>
-    ";
-        // line 34
-        $_minify = System\Classes\CombineAssets::instance()->useMinify;
-        if ($_minify) {
-            echo '<script src="' . Request::getBasePath() . '/modules/system/assets/js/framework.combined-min.js"></script>'.PHP_EOL;
-        }
-        else {
-            echo '<script src="' . Request::getBasePath() . '/modules/system/assets/js/framework.js"></script>'.PHP_EOL;
-            echo '<script src="' . Request::getBasePath() . '/modules/system/assets/js/framework.extras.js"></script>'.PHP_EOL;
-        }
-        echo '<link rel="stylesheet" property="stylesheet" href="' . Request::getBasePath() .'/modules/system/assets/css/framework.extras'.($_minify ? '-min' : '').'.css">'.PHP_EOL;
-        unset($_minify);
-        // line 35
+        // line 20
         echo "    ";
-        echo $this->env->getExtension('Cms\Twig\Extension')->assetsFunction('js');
-        echo $this->env->getExtension('Cms\Twig\Extension')->displayBlock('scripts');
-        // line 36
+        $context['__cms_partial_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("footer/foot"        , $context['__cms_partial_params']        , true        );
+        unset($context['__cms_partial_params']);
+        // line 21
         echo "</body>
 </html>
 ";
@@ -167,7 +114,7 @@ class __TwigTemplate_b26452cedadf94387067b93e3806ad1e4926f52ae4c0498c866bd090645
 
     public function getDebugInfo()
     {
-        return array (  152 => 36,  148 => 35,  137 => 34,  133 => 33,  129 => 32,  125 => 31,  121 => 30,  117 => 29,  113 => 28,  109 => 27,  105 => 26,  100 => 25,  96 => 24,  93 => 23,  91 => 22,  88 => 21,  84 => 20,  80 => 19,  77 => 18,  74 => 17,  72 => 14,  70 => 16,  65 => 15,  63 => 14,  60 => 13,  57 => 12,  52 => 10,  48 => 9,  39 => 2,  37 => 1,);
+        return array (  99 => 21,  94 => 20,  90 => 19,  87 => 18,  85 => 17,  82 => 16,  78 => 15,  74 => 14,  71 => 13,  68 => 12,  66 => 9,  64 => 11,  59 => 10,  57 => 9,  54 => 8,  51 => 7,  48 => 6,  44 => 5,  39 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -176,12 +123,7 @@ class __TwigTemplate_b26452cedadf94387067b93e3806ad1e4926f52ae4c0498c866bd090645
 <!doctype html>
 <html lang=\"en\">
 <head>
-    <meta charset=\"utf-8\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
-    <link href=\"https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display&display=swap\" rel=\"stylesheet\">
-    <link href=\"https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps&display=swap\" rel=\"stylesheet\">
-    <link rel=\"stylesheet\" href=\"{{ 'assets/css/main.css'|theme }}\">
-    <script src=\"{{ 'assets/js/modernizr.js'|theme }}\"></script>
+    {% partial 'header/head' %}
     
     {% styles %}
     {% if seo_toolbox_is_available %}
@@ -196,17 +138,7 @@ class __TwigTemplate_b26452cedadf94387067b93e3806ad1e4926f52ae4c0498c866bd090645
         {% page %}
     </div>
     {% partial 'footer/footer' %}
-<script src=\"{{ 'assets/vendor/jquery.js'|theme }}\"></script>
-        <script src=\"{{ 'assets/vendor/bootstrap.js'|theme }}\"></script>
-        <script src=\"{{ 'assets/javascript/app.js'|theme }}\"></script>
-        <script src=\"{{ 'assets/node_modules/jquery/dist/jquery.min.js'|theme }}\"></script>
-        <script src=\"{{ 'assets/node_modules/owl.carousel/dist/owl.carousel.min.js'|theme }}\"></script>
-        <script src=\"{{ 'assets/node_modules/easyzoom/dist/easyzoom.js'|theme }}\"></script>
-        <script src=\"{{ 'assets/js/main.js'|theme }}\"></script>
-        <script src=\"{{ 'assets/js/modernizr.js'|theme }}\"></script>
-        <script src=\"{{ 'assets/js/vendor.js'|theme }}\"></script>
-    {% framework extras %}
-    {% scripts %}
+    {% partial 'footer/foot' %}
 </body>
 </html>
 {% endspaceless %}", "D:\\open_server_5_3_5_basic_premium_ultimate\\OSPanel\\domains\\october/themes/lovata-bootstrap-shopaholic/layouts/main.htm", "");

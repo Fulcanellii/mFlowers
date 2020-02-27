@@ -101,7 +101,7 @@ class __TwigTemplate_59e1fc73e3b145a58a0fef820936bb42de0f6f25bdf61966b8357f1d0ed
                     ";
         // line 38
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["staticMenu"] ?? null), "menuItems", [], "any", false, false, false, 38));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["staticMenu2"] ?? null), "menuItems", [], "any", false, false, false, 38));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
             // line 39
             echo "                    <li class=\"header__list-desktop\">
@@ -269,7 +269,7 @@ class __TwigTemplate_59e1fc73e3b145a58a0fef820936bb42de0f6f25bdf61966b8357f1d0ed
                     <li>
                         <a href=\"/\" class=\"header__home-link\"><span class=\"icon-home\"></span></a>
                     </li>
-                    {% for item in staticMenu.menuItems %}
+                    {% for item in staticMenu2.menuItems %}
                     <li class=\"header__list-desktop\">
                     {% if item.items %}
      

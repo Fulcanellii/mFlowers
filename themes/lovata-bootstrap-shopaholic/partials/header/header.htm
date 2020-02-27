@@ -2,6 +2,9 @@
 
 [staticMenu]
 code = "top-menyu"
+
+[staticMenu staticMenu2]
+code = "header-menu"
 ==
 <header class="header">
             <div class="container">
@@ -40,7 +43,7 @@ code = "top-menyu"
                     <li>
                         <a href="/" class="header__home-link"><span class="icon-home"></span></a>
                     </li>
-                    {% for item in staticMenu.menuItems %}
+                    {% for item in staticMenu2.menuItems %}
                     <li class="header__list-desktop">
                     {% if item.items %}
      

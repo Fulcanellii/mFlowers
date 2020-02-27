@@ -1,4 +1,4 @@
-1582802122a:1:{s:58:"product/catalog-product-list/ajax-catalog-product-list.htm";a:5:{s:8:"fileName";s:58:"product/catalog-product-list/ajax-catalog-product-list.htm";s:7:"content";s:1164:"{% spaceless %}
+1582806184a:1:{s:58:"product/catalog-product-list/ajax-catalog-product-list.htm";a:5:{s:8:"fileName";s:58:"product/catalog-product-list/ajax-catalog-product-list.htm";s:7:"content";s:1164:"{% spaceless %}
 
 {# @var obActiveCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 

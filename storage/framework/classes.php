@@ -271,4 +271,9 @@
   'Lovata\\Shopaholic\\Classes\\Console\\PreconfigureImportSettingsFromXML' => 'plugins\\lovata\\shopaholic\\classes\\console\\PreconfigureImportSettingsFromXML.php',
   'Lovata\\OrdersShopaholic\\Classes\\Console\\SendManagerNotification' => 'plugins\\lovata\\ordersshopaholic\\classes\\console\\SendManagerNotification.php',
   'RainLab\\Blog\\Models\\Settings' => 'plugins\\rainlab\\blog\\models\\Settings.php',
+  'rainlab\\blog\\Controllers\\posts' => 'plugins\\rainlab\\blog\\controllers\\posts.php',
+  'RainLab\\Blog\\Models\\PostImport' => 'plugins\\rainlab\\blog\\models\\PostImport.php',
+  'RainLab\\Blog\\Models\\PostExport' => 'plugins\\rainlab\\blog\\models\\PostExport.php',
+  'rainlab\\blog\\Controllers\\categories' => 'plugins\\rainlab\\blog\\controllers\\categories.php',
+  'RainLab\\Blog\\FormWidgets\\BlogMarkdown' => 'plugins\\rainlab\\blog\\formwidgets\\BlogMarkdown.php',
 );
