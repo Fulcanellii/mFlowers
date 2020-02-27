@@ -1,9 +1,0 @@
-1582799894a:1:{s:51:"content/picture-preview-top/picture-preview-top.htm";a:5:{s:8:"fileName";s:51:"content/picture-preview-top/picture-preview-top.htm";s:7:"content";s:255:"{% if obImage is not empty %}
-<section class="container-fluid picture-top pl-0 pr-0">
-    <img class="picture-top__img w-100 h-100" src="{{ obImage.path }}" alt="{{ obImage.description }}" title="{{ obImage.title }}" loading="lazy">
-</section>
-{% endif %}";s:5:"mtime";i:1582799023;s:6:"markup";s:255:"{% if obImage is not empty %}
-<section class="container-fluid picture-top pl-0 pr-0">
-    <img class="picture-top__img w-100 h-100" src="{{ obImage.path }}" alt="{{ obImage.description }}" title="{{ obImage.title }}" loading="lazy">
-</section>
-{% endif %}";s:4:"code";N;}}

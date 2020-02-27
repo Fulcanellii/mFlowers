@@ -221,4 +221,12 @@
   'Lovata\\OrdersShopaholic\\Classes\\PromoMechanism\\OrderPromoMechanismProcessor' => 'plugins\\lovata\\ordersshopaholic\\classes\\promomechanism\\OrderPromoMechanismProcessor.php',
   'Lovata\\OrdersShopaholic\\Models\\OrderPromoMechanism' => 'plugins\\lovata\\ordersshopaholic\\models\\OrderPromoMechanism.php',
   'Lovata\\OrdersShopaholic\\Models\\Task' => 'plugins\\lovata\\ordersshopaholic\\models\\Task.php',
+  'rainlab\\builder\\Plugin' => 'plugins\\rainlab\\builder\\Plugin.php',
+  'rainlab\\sitemap\\Plugin' => 'plugins\\rainlab\\sitemap\\Plugin.php',
+  'rainlab\\blog\\Plugin' => 'plugins\\rainlab\\blog\\Plugin.php',
+  'RainLab\\Blog\\Models\\Post' => 'plugins\\rainlab\\blog\\models\\Post.php',
+  'RainLab\\Blog\\Classes\\TagProcessor' => 'plugins\\rainlab\\blog\\classes\\TagProcessor.php',
+  'RainLab\\Blog\\Models\\Category' => 'plugins\\rainlab\\blog\\models\\Category.php',
+  'anandpatel\\wysiwygeditors\\Plugin' => 'plugins\\anandpatel\\wysiwygeditors\\Plugin.php',
+  'toughdeveloper\\imageresizer\\Plugin' => 'plugins\\toughdeveloper\\imageresizer\\Plugin.php',
 );
