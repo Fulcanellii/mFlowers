@@ -1,4 +1,4 @@
-1582806155a:1:{s:11:"catalog.htm";a:15:{s:8:"fileName";s:11:"catalog.htm";s:7:"content";s:3877:"title = "Catalog"
+1582806583a:1:{s:11:"catalog.htm";a:15:{s:8:"fileName";s:11:"catalog.htm";s:7:"content";s:4003:"title = "Catalog"
 url = "/:category*/:slug?"
 layout = "main"
 is_hidden = 0
@@ -55,6 +55,7 @@ last-more_button_limit = 1
 last_button_name = "Last"
 last_button_limit = 3
 ==
+<?php
 function onInit() {
     $obProductItem = $this->ProductPage->get();
     $obBrandItem = $this->BrandPage->get();
@@ -90,6 +91,7 @@ function onInit() {
     $this['obActiveCategory'] = $obActiveCategoryItem;
     $this['arBreadcrumbs'] = $arBreadcrumbs;
 }
+?>
 ==
 {# @var obCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 {# @var obMainCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
@@ -113,7 +115,7 @@ function onInit() {
     {% partial 'content/text-preview/text-preview' sPreviewText=obActiveCategory.preview_text %}
     {% partial 'product/catalog-product-list/catalog-product-list' %}
     {% partial 'content/wysiwyg/wysiwyg' sContent=obActiveCategory.description %}
-{% endif %}";s:5:"mtime";i:1582799022;s:6:"markup";s:1303:"{# @var obCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
+{% endif %}";s:5:"mtime";i:1582805982;s:6:"markup";s:1325:"{# @var obCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 {# @var obMainCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 {# @var obActiveCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 
@@ -135,7 +137,7 @@ function onInit() {
     {% partial 'content/text-preview/text-preview' sPreviewText=obActiveCategory.preview_text %}
     {% partial 'product/catalog-product-list/catalog-product-list' %}
     {% partial 'content/wysiwyg/wysiwyg' sContent=obActiveCategory.description %}
-{% endif %}";s:4:"code";s:1477:"function onInit() {
+{% endif %}";s:4:"code";s:1511:"function onInit() {
     $obProductItem = $this->ProductPage->get();
     $obBrandItem = $this->BrandPage->get();
     $obCategoryItem = $this->CategoryPage->get();

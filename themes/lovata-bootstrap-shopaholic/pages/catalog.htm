@@ -55,6 +55,7 @@ last-more_button_limit = 1
 last_button_name = "Last"
 last_button_limit = 3
 ==
+<?php
 function onInit() {
     $obProductItem = $this->ProductPage->get();
     $obBrandItem = $this->BrandPage->get();
@@ -90,6 +91,7 @@ function onInit() {
     $this['obActiveCategory'] = $obActiveCategoryItem;
     $this['arBreadcrumbs'] = $arBreadcrumbs;
 }
+?>
 ==
 {# @var obCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 {# @var obMainCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}

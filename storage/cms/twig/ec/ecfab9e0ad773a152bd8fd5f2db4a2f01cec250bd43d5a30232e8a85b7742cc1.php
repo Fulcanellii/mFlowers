@@ -34,7 +34,7 @@ class __TwigTemplate_6f8756b679ce853a2c434822940c7ad0b007c1eb707df0d8c74976e4011
     {
         $macros = $this->macros;
         // line 1
-        echo "<section class=\"container-fliud breadcrumb-list\">
+        echo "<!-- <section class=\"container-fliud breadcrumb-list\">
     <nav class=\"container\" aria-label=\"breadcrumb\">
         <ol class=\"breadcrumb pl-0 pr-0\">
             ";
@@ -95,7 +95,70 @@ class __TwigTemplate_6f8756b679ce853a2c434822940c7ad0b007c1eb707df0d8c74976e4011
         // line 13
         echo "        </ol>
     </nav>
-</section>";
+</section>
+ -->
+
+<ul class=\"crumbs\">
+    ";
+        // line 19
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["arBreadcrumbs"] ?? null));
+        $context['loop'] = [
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        ];
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
+        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+            // line 20
+            echo "                ";
+            if (( !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["item"], "name", [], "any", false, false, false, 20)) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, false, 20)))) {
+                // line 21
+                echo "                    ";
+                if (twig_get_attribute($this->env, $this->source, $context["loop"], "last", [], "any", false, false, false, 21)) {
+                    // line 22
+                    echo "                        <li class=\"crumb active\" aria-current=\"page\">";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "name", [], "any", false, false, false, 22), "html", null, true);
+                    echo "</li>
+                    ";
+                } else {
+                    // line 24
+                    echo "                        <li class=\"crumb\"><a class=\"crumb-link\" href=\"";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, false, 24), "html", null, true);
+                    echo "\">";
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "name", [], "any", false, false, false, 24), "html", null, true);
+                    echo "</a></li>
+                    ";
+                }
+                // line 26
+                echo "                ";
+            }
+            // line 27
+            echo "                <span>/</span>
+            ";
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 29
+        echo "
+
+</ul>";
     }
 
     public function getTemplateName()
@@ -110,12 +173,12 @@ class __TwigTemplate_6f8756b679ce853a2c434822940c7ad0b007c1eb707df0d8c74976e4011
 
     public function getDebugInfo()
     {
-        return array (  96 => 13,  82 => 12,  79 => 11,  71 => 9,  65 => 7,  62 => 6,  59 => 5,  42 => 4,  37 => 1,);
+        return array (  159 => 29,  144 => 27,  141 => 26,  133 => 24,  127 => 22,  124 => 21,  121 => 20,  104 => 19,  96 => 13,  82 => 12,  79 => 11,  71 => 9,  65 => 7,  62 => 6,  59 => 5,  42 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<section class=\"container-fliud breadcrumb-list\">
+        return new Source("<!-- <section class=\"container-fliud breadcrumb-list\">
     <nav class=\"container\" aria-label=\"breadcrumb\">
         <ol class=\"breadcrumb pl-0 pr-0\">
             {% for item in arBreadcrumbs %}
@@ -129,6 +192,22 @@ class __TwigTemplate_6f8756b679ce853a2c434822940c7ad0b007c1eb707df0d8c74976e4011
             {% endfor %}
         </ol>
     </nav>
-</section>", "D:\\open_server_5_3_5_basic_premium_ultimate\\OSPanel\\domains\\october/themes/lovata-bootstrap-shopaholic/partials/navigation/breadcrumbs/breadcrumbs.htm", "");
+</section>
+ -->
+
+<ul class=\"crumbs\">
+    {% for item in arBreadcrumbs %}
+                {% if item.name is not empty and item.url is not empty %}
+                    {% if loop.last %}
+                        <li class=\"crumb active\" aria-current=\"page\">{{ item.name }}</li>
+                    {% else %}
+                        <li class=\"crumb\"><a class=\"crumb-link\" href=\"{{ item.url }}\">{{ item.name }}</a></li>
+                    {% endif %}
+                {% endif %}
+                <span>/</span>
+            {% endfor %}
+
+
+</ul>", "D:\\open_server_5_3_5_basic_premium_ultimate\\OSPanel\\domains\\october/themes/lovata-bootstrap-shopaholic/partials/navigation/breadcrumbs/breadcrumbs.htm", "");
     }
 }

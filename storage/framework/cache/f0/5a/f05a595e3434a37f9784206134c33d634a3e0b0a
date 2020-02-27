@@ -1,4 +1,4 @@
-1582806184a:1:{s:43:"product/product-sorting/product-sorting.htm";a:5:{s:8:"fileName";s:43:"product/product-sorting/product-sorting.htm";s:7:"content";s:563:"{% set sSortig = ProductList.getSorting() %}
+1582806785a:1:{s:43:"product/product-sorting/product-sorting.htm";a:5:{s:8:"fileName";s:43:"product/product-sorting/product-sorting.htm";s:7:"content";s:563:"{% set sSortig = ProductList.getSorting() %}
 
 <form class="mb-lg-0">
     <div class="form-group sorting mb-0">
