@@ -140,7 +140,8 @@ class Category extends ImportModel
         'code',
         'external_id',
         'preview_text',
-        'description'
+        'description',
+        'show_on_main'
     ];
 
     public $cached = [
@@ -154,6 +155,7 @@ class Category extends ImportModel
         'preview_image',
         'images',
         'updated_at',
+        'show_on_main'
     ];
 
     public $dates = ['created_at', 'updated_at'];

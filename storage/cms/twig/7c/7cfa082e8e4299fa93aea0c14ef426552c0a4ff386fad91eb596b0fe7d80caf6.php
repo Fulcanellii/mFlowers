@@ -77,13 +77,14 @@ class __TwigTemplate_49a534b5bbd6a8afe919bbe43763dcd316c1904d6639f67c10848411e35
             unset($context['__cms_partial_params']);
         } else {
             // line 17
-            echo "    ";
+            echo "    <!-- ";
             $context['__cms_partial_params'] = [];
             $context['__cms_partial_params']['obImage'] = twig_get_attribute($this->env, $this->source, ($context["obActiveCategory"] ?? null), "preview_image", [], "any", false, false, false, 17)            ;
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("content/picture-preview-top/picture-preview-top"            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
+            echo " -->
+    ";
             // line 18
-            echo "    ";
             $context['__cms_partial_params'] = [];
             $context['__cms_partial_params']['obActiveCategory'] = ($context["obActiveCategory"] ?? null)            ;
             $context['__cms_partial_params']['label'] = "catalog-product-list"            ;
@@ -127,7 +128,7 @@ class __TwigTemplate_49a534b5bbd6a8afe919bbe43763dcd316c1904d6639f67c10848411e35
 
     public function getDebugInfo()
     {
-        return array (  110 => 22,  105 => 21,  99 => 20,  93 => 19,  86 => 18,  80 => 17,  73 => 15,  67 => 14,  65 => 13,  62 => 12,  59 => 8,  57 => 10,  50 => 9,  47 => 8,  45 => 7,  42 => 6,  40 => 5,  37 => 4,);
+        return array (  111 => 22,  106 => 21,  100 => 20,  94 => 19,  88 => 18,  80 => 17,  73 => 15,  67 => 14,  65 => 13,  62 => 12,  59 => 8,  57 => 10,  50 => 9,  47 => 8,  45 => 7,  42 => 6,  40 => 5,  37 => 4,);
     }
 
     public function getSourceContext()
@@ -148,7 +149,7 @@ class __TwigTemplate_49a534b5bbd6a8afe919bbe43763dcd316c1904d6639f67c10848411e35
     {% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}
     {% partial 'product/product-card-detailed/product-card-detailed' obProduct=obProduct %}
 {% else %}
-    {% partial 'content/picture-preview-top/picture-preview-top' obImage=obActiveCategory.preview_image %}
+    <!-- {% partial 'content/picture-preview-top/picture-preview-top' obImage=obActiveCategory.preview_image %} -->
     {% partial 'product/catalog-panel/catalog-panel' obActiveCategory=obActiveCategory label='catalog-product-list' %}
     {% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}
     {% partial 'content/text-preview/text-preview' sPreviewText=obActiveCategory.preview_text %}

@@ -2,11 +2,9 @@ name: 'Header menu'
 items:
     -
         title: Catalog
-        nesting: '1'
+        nesting: '0'
         type: shop-catalog
-        url: ''
         code: ''
-        reference: ''
         cmsPage: catalog
         replace: '1'
         viewBag:
@@ -15,27 +13,39 @@ items:
             isExternal: '0'
     -
         title: Блог
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: blog
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: Магазин
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: magazin
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: Контакты
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: kontakty
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''

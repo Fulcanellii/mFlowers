@@ -81,34 +81,29 @@ class __TwigTemplate_7e3bc545f1e7d751f4ccdd2c0f7b1bd8718dc08a2c8584aee6cfe965c23
         $context["cat"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["CategoryList"] ?? null), "make", [], "method", false, false, false, 13), "tree", [], "method", false, false, false, 13);
         // line 14
         echo "
-";
-        // line 15
-        echo $this->extensions['Cms\Twig\DebugExtension']->runDump($this->env, $context, ($context["cat"] ?? null));
-        echo "
-
 <section class=\"occation\">
             <div class=\"container\">
                 <div class=\"occation__wrap\">
                 
                 ";
-        // line 21
+        // line 19
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($context["cat"]);
         foreach ($context['_seq'] as $context["_key"] => $context["cat"]) {
-            if ((twig_get_attribute($this->env, $this->source, $context["cat"], "show_on_main", [], "any", false, false, false, 21) == 1)) {
-                // line 22
-                echo "                
+            if ((twig_get_attribute($this->env, $this->source, $context["cat"], "show_on_main", [], "any", false, false, false, 19) == 1)) {
+                // line 20
+                echo "
                 <a href=\"";
-                // line 23
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "slug", [], "any", false, false, false, 23), "html", null, true);
+                // line 21
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "slug", [], "any", false, false, false, 21), "html", null, true);
                 echo "\" class=\"occation__link\">
                         <h3 class=\"occation__title\">";
-                // line 24
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "name", [], "any", false, false, false, 24), "html", null, true);
+                // line 22
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "name", [], "any", false, false, false, 22), "html", null, true);
                 echo "</h3>
                         <img src=\"";
-                // line 25
-                echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/mainPage/occantion/forHer.jpg");
+                // line 23
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["cat"], "preview_image", [], "any", false, false, false, 23), "path", [], "any", false, false, false, 23), "html", null, true);
                 echo "\" alt=\"#\">
                 </a>
                 
@@ -118,7 +113,7 @@ class __TwigTemplate_7e3bc545f1e7d751f4ccdd2c0f7b1bd8718dc08a2c8584aee6cfe965c23
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['cat'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 29
+        // line 27
         echo "                    
                 </div>
             </div>
@@ -127,40 +122,40 @@ class __TwigTemplate_7e3bc545f1e7d751f4ccdd2c0f7b1bd8718dc08a2c8584aee6cfe965c23
 <section class=\"mainblog\">
             <div class=\"container\">
                 ";
-        // line 36
+        // line 34
         $context['__cms_content_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->contentFunction("blog"        , $context['__cms_content_params']        );
         unset($context['__cms_content_params']);
-        // line 37
+        // line 35
         echo "                <div class=\"mainblog__blogs\">
                 ";
-        // line 38
-        $context["posts"] = twig_get_attribute($this->env, $this->source, ($context["blogPosts"] ?? null), "posts", [], "any", false, false, false, 38);
-        // line 39
+        // line 36
+        $context["posts"] = twig_get_attribute($this->env, $this->source, ($context["blogPosts"] ?? null), "posts", [], "any", false, false, false, 36);
+        // line 37
         echo "                ";
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["posts"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 40
+            // line 38
             echo "                
                     <div class=\"mainblog__blog\">
                     ";
-            // line 42
-            if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["post"], "featured_images", [], "any", false, false, false, 42), "count", [], "any", false, false, false, 42)) {
-                // line 43
+            // line 40
+            if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["post"], "featured_images", [], "any", false, false, false, 40), "count", [], "any", false, false, false, 40)) {
+                // line 41
                 echo "                    ";
                 $context['_parent'] = $context;
-                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["post"], "featured_images", [], "any", false, false, false, 43));
+                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["post"], "featured_images", [], "any", false, false, false, 41));
                 foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
-                    // line 44
+                    // line 42
                     echo "                        <a href=\"";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "url", [], "any", false, false, false, 44), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "url", [], "any", false, false, false, 42), "html", null, true);
                     echo "\" class=\"mainblog__img\">
                             <img src=\"";
-                    // line 45
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["image"], "path", [], "any", false, false, false, 45), "html", null, true);
+                    // line 43
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["image"], "path", [], "any", false, false, false, 43), "html", null, true);
                     echo "\" alt=\"";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["image"], "description", [], "any", false, false, false, 45), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["image"], "description", [], "any", false, false, false, 43), "html", null, true);
                     echo "\">
                             <span class=\"icon-search mainblog__icon\"></span>
                         </a>
@@ -169,28 +164,28 @@ class __TwigTemplate_7e3bc545f1e7d751f4ccdd2c0f7b1bd8718dc08a2c8584aee6cfe965c23
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 49
+                // line 47
                 echo "                    ";
             }
-            // line 50
+            // line 48
             echo "                        <div class=\"mainblog__date\">
                             <span class=\"icon-calendar\"></span>
                             <span>";
-            // line 52
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "published_at", [], "any", false, false, false, 52), "html", null, true);
+            // line 50
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "published_at", [], "any", false, false, false, 50), "html", null, true);
             echo "</span>
                         </div>
                         <h3 class=\"mainblog__title-blog\">";
-            // line 54
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 54), "html", null, true);
+            // line 52
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 52), "html", null, true);
             echo "</h3>
                         <p class=\"mainblog__subtitle-blog\">";
-            // line 55
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "content", [], "any", false, false, false, 55), "html", null, true);
+            // line 53
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "content", [], "any", false, false, false, 53), "html", null, true);
             echo "</p>
                         <a href=\"";
-            // line 56
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "url", [], "any", false, false, false, 56), "html", null, true);
+            // line 54
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "url", [], "any", false, false, false, 54), "html", null, true);
             echo "\" class=\"mainblog__link\">читать далее</a>
                     </div>
                     
@@ -199,7 +194,7 @@ class __TwigTemplate_7e3bc545f1e7d751f4ccdd2c0f7b1bd8718dc08a2c8584aee6cfe965c23
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 59
+        // line 57
         echo " 
                     
                     
@@ -220,7 +215,7 @@ class __TwigTemplate_7e3bc545f1e7d751f4ccdd2c0f7b1bd8718dc08a2c8584aee6cfe965c23
 
     public function getDebugInfo()
     {
-        return array (  203 => 59,  193 => 56,  189 => 55,  185 => 54,  180 => 52,  176 => 50,  173 => 49,  161 => 45,  156 => 44,  151 => 43,  149 => 42,  145 => 40,  140 => 39,  138 => 38,  135 => 37,  131 => 36,  122 => 29,  111 => 25,  107 => 24,  103 => 23,  100 => 22,  95 => 21,  86 => 15,  83 => 14,  81 => 13,  78 => 12,  74 => 11,  71 => 10,  66 => 9,  64 => 8,  61 => 7,  55 => 6,  52 => 5,  47 => 4,  45 => 3,  42 => 2,  37 => 1,);
+        return array (  198 => 57,  188 => 54,  184 => 53,  180 => 52,  175 => 50,  171 => 48,  168 => 47,  156 => 43,  151 => 42,  146 => 41,  144 => 40,  140 => 38,  135 => 37,  133 => 36,  130 => 35,  126 => 34,  117 => 27,  106 => 23,  102 => 22,  98 => 21,  95 => 20,  90 => 19,  83 => 14,  81 => 13,  78 => 12,  74 => 11,  71 => 10,  66 => 9,  64 => 8,  61 => 7,  55 => 6,  52 => 5,  47 => 4,  45 => 3,  42 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -239,17 +234,15 @@ class __TwigTemplate_7e3bc545f1e7d751f4ccdd2c0f7b1bd8718dc08a2c8584aee6cfe965c23
 
 {% set cat = CategoryList.make().tree() %}
 
-{{ dump(cat) }}
-
 <section class=\"occation\">
             <div class=\"container\">
                 <div class=\"occation__wrap\">
                 
                 {% for cat in cat if cat.show_on_main == 1 %}
-                
+
                 <a href=\"{{ cat.slug }}\" class=\"occation__link\">
                         <h3 class=\"occation__title\">{{ cat.name }}</h3>
-                        <img src=\"{{ 'assets/images/mainPage/occantion/forHer.jpg'|theme }}\" alt=\"#\">
+                        <img src=\"{{ cat.preview_image.path }}\" alt=\"#\">
                 </a>
                 
                 {% endfor %}

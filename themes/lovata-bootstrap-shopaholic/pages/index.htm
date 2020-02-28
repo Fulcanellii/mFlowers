@@ -33,17 +33,15 @@ postPage = "blog-post"
 
 {% set cat = CategoryList.make().tree() %}
 
-{{ dump(cat) }}
-
 <section class="occation">
             <div class="container">
                 <div class="occation__wrap">
                 
                 {% for cat in cat if cat.show_on_main == 1 %}
-                
+
                 <a href="{{ cat.slug }}" class="occation__link">
                         <h3 class="occation__title">{{ cat.name }}</h3>
-                        <img src="{{ 'assets/images/mainPage/occantion/forHer.jpg'|theme }}" alt="#">
+                        <img src="{{ cat.preview_image.path }}" alt="#">
                 </a>
                 
                 {% endfor %}
