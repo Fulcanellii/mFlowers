@@ -1,4 +1,4 @@
-1582890487a:1:{s:60:"category/category-product-column/category-product-column.htm";a:5:{s:8:"fileName";s:60:"category/category-product-column/category-product-column.htm";s:7:"content";s:3268:"{#
+1582893657a:1:{s:60:"category/category-product-column/category-product-column.htm";a:5:{s:8:"fileName";s:60:"category/category-product-column/category-product-column.htm";s:7:"content";s:3268:"{#
     @var obCategory \Lovata\Shopaholic\Classes\Item\CategoryItem
     @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem
     @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem

@@ -1,4 +1,4 @@
-1582890565a:1:{s:53:"product/catalog-product-list/catalog-product-list.htm";a:5:{s:8:"fileName";s:53:"product/catalog-product-list/catalog-product-list.htm";s:7:"content";s:187:"<section class="catalog container mt-4">
+1582893598a:1:{s:53:"product/catalog-product-list/catalog-product-list.htm";a:5:{s:8:"fileName";s:53:"product/catalog-product-list/catalog-product-list.htm";s:7:"content";s:187:"<section class="catalog container mt-4">
     <div class="_ajax_catalog_wrapper">
         {% partial 'product/catalog-product-list/ajax-catalog-product-list' %}
     </div>

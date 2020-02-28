@@ -1,4 +1,4 @@
-1582890337a:1:{s:11:"magazin.htm";a:11:{s:8:"fileName";s:11:"magazin.htm";s:7:"content";s:3859:"title = "Магазин"
+1582893580a:1:{s:11:"magazin.htm";a:11:{s:8:"fileName";s:11:"magazin.htm";s:7:"content";s:4041:"title = "Магазин"
 url = "/store"
 layout = "main"
 is_hidden = 0
@@ -23,7 +23,7 @@ sorting = "no"
         {% for obCategory in obCategoryList if obCategory.product_count > 0 %}
         
             <li class="category__list" data-id="{{ obCategory.id }}">
-            <a class="category__link" href="{{ obCategory.name }}">{{ obCategory.name }}</a>
+            <a class="category__link" href="{{ obCategory.slug }}">{{ obCategory.name }}</a>
                 {% if obCategory.children.isNotEmpty() %}
                     <ul class="category-child-menu-wrapper">
                         {% for obChildCategory in obCategory.children if obChildCategory.product_count > 0 %}
@@ -76,7 +76,8 @@ sorting = "no"
 
 
                 <div class="products__product store__product">
-                  <a href="{{ obProduct.getPageUrl('product-page') }}">
+
+                  <a href="{{ obProduct.getPageUrl('catalog') }}">
                     <div class="products__photo newproduct__photo">
                       <span class="icon-eye products__icon"></span>
                       <img src="{{ obProduct.preview_image.path }}" alt="{{ obProduct.preview_image.description }}">
@@ -89,7 +90,11 @@ sorting = "no"
                       <span class="products__price">{{ obOffer.price }} {{ obOffer.currency }}</span>
                     {% endif %}
                   
-                  <a href="{{ obProduct.getPageUrl('product-page') }}" class="products__button">в корзину</a>
+                  <form class="mb-0">
+                <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
+                <input type="hidden" name="quantity" value="1">
+                {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-sm' %}
+            </form>
                 </div>
                 {% endfor %}
               </div>
@@ -102,7 +107,7 @@ sorting = "no"
           </section>
         </div>
       </div>
-    </div>";s:5:"mtime";i:1582875273;s:6:"markup";s:3730:"<div class="storePage">
+    </div>";s:5:"mtime";i:1582892975;s:6:"markup";s:3912:"<div class="storePage">
       <div class="container">
         <div class="storePage__flex">
           <section class="category">
@@ -117,7 +122,7 @@ sorting = "no"
         {% for obCategory in obCategoryList if obCategory.product_count > 0 %}
         
             <li class="category__list" data-id="{{ obCategory.id }}">
-            <a class="category__link" href="{{ obCategory.name }}">{{ obCategory.name }}</a>
+            <a class="category__link" href="{{ obCategory.slug }}">{{ obCategory.name }}</a>
                 {% if obCategory.children.isNotEmpty() %}
                     <ul class="category-child-menu-wrapper">
                         {% for obChildCategory in obCategory.children if obChildCategory.product_count > 0 %}
@@ -170,7 +175,8 @@ sorting = "no"
 
 
                 <div class="products__product store__product">
-                  <a href="{{ obProduct.getPageUrl('product-page') }}">
+
+                  <a href="{{ obProduct.getPageUrl('catalog') }}">
                     <div class="products__photo newproduct__photo">
                       <span class="icon-eye products__icon"></span>
                       <img src="{{ obProduct.preview_image.path }}" alt="{{ obProduct.preview_image.description }}">
@@ -183,7 +189,11 @@ sorting = "no"
                       <span class="products__price">{{ obOffer.price }} {{ obOffer.currency }}</span>
                     {% endif %}
                   
-                  <a href="{{ obProduct.getPageUrl('product-page') }}" class="products__button">в корзину</a>
+                  <form class="mb-0">
+                <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
+                <input type="hidden" name="quantity" value="1">
+                {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-sm' %}
+            </form>
                 </div>
                 {% endfor %}
               </div>

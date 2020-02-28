@@ -23,7 +23,7 @@ sorting = "no"
         {% for obCategory in obCategoryList if obCategory.product_count > 0 %}
         
             <li class="category__list" data-id="{{ obCategory.id }}">
-            <a class="category__link" href="{{ obCategory.name }}">{{ obCategory.name }}</a>
+            <a class="category__link" href="{{ obCategory.slug }}">{{ obCategory.name }}</a>
                 {% if obCategory.children.isNotEmpty() %}
                     <ul class="category-child-menu-wrapper">
                         {% for obChildCategory in obCategory.children if obChildCategory.product_count > 0 %}
@@ -76,7 +76,8 @@ sorting = "no"
 
 
                 <div class="products__product store__product">
-                  <a href="{{ obProduct.getPageUrl('product-page') }}">
+
+                  <a href="{{ obProduct.getPageUrl('catalog') }}">
                     <div class="products__photo newproduct__photo">
                       <span class="icon-eye products__icon"></span>
                       <img src="{{ obProduct.preview_image.path }}" alt="{{ obProduct.preview_image.description }}">
@@ -89,7 +90,11 @@ sorting = "no"
                       <span class="products__price">{{ obOffer.price }} {{ obOffer.currency }}</span>
                     {% endif %}
                   
-                  <a href="{{ obProduct.getPageUrl('product-page') }}" class="products__button">в корзину</a>
+                  <form class="mb-0">
+                <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
+                <input type="hidden" name="quantity" value="1">
+                {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-sm' %}
+            </form>
                 </div>
                 {% endfor %}
               </div>

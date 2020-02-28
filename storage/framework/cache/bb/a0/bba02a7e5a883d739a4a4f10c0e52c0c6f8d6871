@@ -1,4 +1,4 @@
-1582893518a:1:{s:11:"Catalog.htm";a:15:{s:8:"fileName";s:11:"Catalog.htm";s:7:"content";s:4012:"title = "Catalog"
+1582892750a:1:{s:12:"/catalog.htm";a:15:{s:8:"fileName";s:12:"/catalog.htm";s:7:"content";s:4012:"title = "Catalog"
 url = "/:category*/:slug?"
 layout = "main"
 is_hidden = 0
@@ -115,7 +115,7 @@ function onInit() {
     {% partial 'content/text-preview/text-preview' sPreviewText=obActiveCategory.preview_text %}
     {% partial 'product/catalog-product-list/catalog-product-list' %}
     {% partial 'content/wysiwyg/wysiwyg' sContent=obActiveCategory.description %}
-{% endif %}";s:5:"mtime";i:1582892560;s:6:"markup";s:1334:"{# @var obCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
+{% endif %}";s:5:"mtime";i:1582889499;s:6:"markup";s:1334:"{# @var obCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 {# @var obMainCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 {# @var obActiveCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 

@@ -1,4 +1,4 @@
-1582890140a:1:{s:15:"footer/foot.htm";a:7:{s:8:"fileName";s:15:"footer/foot.htm";s:7:"content";s:848:"description = "Скрипты футера"
+1582893631a:1:{s:15:"footer/foot.htm";a:7:{s:8:"fileName";s:15:"footer/foot.htm";s:7:"content";s:848:"description = "Скрипты футера"
 
 [viewBag]
 ==
@@ -13,7 +13,7 @@
         <script src="{{ 'assets/js/vendor.js'|theme }}"></script>
 <script src="{{ path_js }}"></script>
     {% framework extras %}
-    {% scripts %}";s:5:"mtime";i:1582889538;s:6:"markup";s:786:"<script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+    {% scripts %}";s:5:"mtime";i:1582893029;s:6:"markup";s:786:"<script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
         <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
         <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
         <script src="{{ 'assets/node_modules/jquery/dist/jquery.min.js'|theme }}"></script>

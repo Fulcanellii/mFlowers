@@ -64,7 +64,7 @@ class __TwigTemplate_79ad7a5352d3ae99da34c3cca91731fcafd5a1314703c32474ea6301d40
                     echo "\">
             <a class=\"category__link\" href=\"";
                     // line 16
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obCategory"], "name", [], "any", false, false, false, 16), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obCategory"], "slug", [], "any", false, false, false, 16), "html", null, true);
                     echo "\">";
                     echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obCategory"], "name", [], "any", false, false, false, 16), "html", null, true);
                     echo "</a>
@@ -161,59 +161,70 @@ class __TwigTemplate_79ad7a5352d3ae99da34c3cca91731fcafd5a1314703c32474ea6301d40
                 echo "
 
                 <div class=\"products__product store__product\">
+
                   <a href=\"";
-                // line 69
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obProduct"], "getPageUrl", [0 => "product-page"], "method", false, false, false, 69), "html", null, true);
+                // line 70
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obProduct"], "getPageUrl", [0 => "catalog"], "method", false, false, false, 70), "html", null, true);
                 echo "\">
                     <div class=\"products__photo newproduct__photo\">
                       <span class=\"icon-eye products__icon\"></span>
                       <img src=\"";
-                // line 72
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["obProduct"], "preview_image", [], "any", false, false, false, 72), "path", [], "any", false, false, false, 72), "html", null, true);
+                // line 73
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["obProduct"], "preview_image", [], "any", false, false, false, 73), "path", [], "any", false, false, false, 73), "html", null, true);
                 echo "\" alt=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["obProduct"], "preview_image", [], "any", false, false, false, 72), "description", [], "any", false, false, false, 72), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["obProduct"], "preview_image", [], "any", false, false, false, 73), "description", [], "any", false, false, false, 73), "html", null, true);
                 echo "\">
                     </div>
                     <span class=\"products__name\">";
-                // line 74
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obProduct"], "name", [], "any", false, false, false, 74), "html", null, true);
+                // line 75
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obProduct"], "name", [], "any", false, false, false, 75), "html", null, true);
                 echo "</span>
                   </a>
                   ";
-                // line 76
-                $context["obOffer"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["obProduct"], "offer", [], "any", false, false, false, 76), "first", [], "method", false, false, false, 76);
                 // line 77
+                $context["obOffer"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["obProduct"], "offer", [], "any", false, false, false, 77), "first", [], "method", false, false, false, 77);
+                // line 78
                 echo "                  
                     ";
-                // line 78
-                if (twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "isNotEmpty", [], "method", false, false, false, 78)) {
+                // line 79
+                if (twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "isNotEmpty", [], "method", false, false, false, 79)) {
                     echo "  
                       <span class=\"products__price\">";
-                    // line 79
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "price", [], "any", false, false, false, 79), "html", null, true);
+                    // line 80
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "price", [], "any", false, false, false, 80), "html", null, true);
                     echo " ";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "currency", [], "any", false, false, false, 79), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "currency", [], "any", false, false, false, 80), "html", null, true);
                     echo "</span>
                     ";
                 }
-                // line 81
-                echo "                  
-                  <a href=\"";
                 // line 82
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obProduct"], "getPageUrl", [0 => "product-page"], "method", false, false, false, 82), "html", null, true);
-                echo "\" class=\"products__button\">в корзину</a>
+                echo "                  
+                  <form class=\"mb-0\">
+                <input type=\"hidden\" name=\"offer_id\" value=\"";
+                // line 84
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "id", [], "any", false, false, false, 84), "html", null, true);
+                echo "\">
+                <input type=\"hidden\" name=\"quantity\" value=\"1\">
+                ";
+                // line 86
+                $context['__cms_partial_params'] = [];
+                $context['__cms_partial_params']['btnAddClasses'] = "btn-sm"                ;
+                echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("form/button-add-to-cart/button-add-to-cart"                , $context['__cms_partial_params']                , true                );
+                unset($context['__cms_partial_params']);
+                // line 87
+                echo "            </form>
                 </div>
                 ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['obProduct'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 85
+            // line 90
             echo "              </div>
             
                ";
         }
-        // line 87
+        // line 92
         echo " 
             
               </div>
@@ -237,7 +248,7 @@ class __TwigTemplate_79ad7a5352d3ae99da34c3cca91731fcafd5a1314703c32474ea6301d40
 
     public function getDebugInfo()
     {
-        return array (  217 => 87,  212 => 85,  203 => 82,  200 => 81,  193 => 79,  189 => 78,  186 => 77,  184 => 76,  179 => 74,  172 => 72,  166 => 69,  161 => 66,  157 => 65,  154 => 64,  152 => 63,  148 => 61,  146 => 60,  143 => 59,  141 => 58,  109 => 28,  105 => 26,  97 => 24,  93 => 22,  83 => 20,  78 => 19,  75 => 18,  73 => 17,  67 => 16,  63 => 15,  60 => 14,  55 => 13,  52 => 12,  50 => 11,  48 => 10,  37 => 1,);
+        return array (  228 => 92,  223 => 90,  215 => 87,  210 => 86,  205 => 84,  201 => 82,  194 => 80,  190 => 79,  187 => 78,  185 => 77,  180 => 75,  173 => 73,  167 => 70,  161 => 66,  157 => 65,  154 => 64,  152 => 63,  148 => 61,  146 => 60,  143 => 59,  141 => 58,  109 => 28,  105 => 26,  97 => 24,  93 => 22,  83 => 20,  78 => 19,  75 => 18,  73 => 17,  67 => 16,  63 => 15,  60 => 14,  55 => 13,  52 => 12,  50 => 11,  48 => 10,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -257,7 +268,7 @@ class __TwigTemplate_79ad7a5352d3ae99da34c3cca91731fcafd5a1314703c32474ea6301d40
         {% for obCategory in obCategoryList if obCategory.product_count > 0 %}
         
             <li class=\"category__list\" data-id=\"{{ obCategory.id }}\">
-            <a class=\"category__link\" href=\"{{ obCategory.name }}\">{{ obCategory.name }}</a>
+            <a class=\"category__link\" href=\"{{ obCategory.slug }}\">{{ obCategory.name }}</a>
                 {% if obCategory.children.isNotEmpty() %}
                     <ul class=\"category-child-menu-wrapper\">
                         {% for obChildCategory in obCategory.children if obChildCategory.product_count > 0 %}
@@ -310,7 +321,8 @@ class __TwigTemplate_79ad7a5352d3ae99da34c3cca91731fcafd5a1314703c32474ea6301d40
 
 
                 <div class=\"products__product store__product\">
-                  <a href=\"{{ obProduct.getPageUrl('product-page') }}\">
+
+                  <a href=\"{{ obProduct.getPageUrl('catalog') }}\">
                     <div class=\"products__photo newproduct__photo\">
                       <span class=\"icon-eye products__icon\"></span>
                       <img src=\"{{ obProduct.preview_image.path }}\" alt=\"{{ obProduct.preview_image.description }}\">
@@ -323,7 +335,11 @@ class __TwigTemplate_79ad7a5352d3ae99da34c3cca91731fcafd5a1314703c32474ea6301d40
                       <span class=\"products__price\">{{ obOffer.price }} {{ obOffer.currency }}</span>
                     {% endif %}
                   
-                  <a href=\"{{ obProduct.getPageUrl('product-page') }}\" class=\"products__button\">в корзину</a>
+                  <form class=\"mb-0\">
+                <input type=\"hidden\" name=\"offer_id\" value=\"{{ obOffer.id }}\">
+                <input type=\"hidden\" name=\"quantity\" value=\"1\">
+                {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-sm' %}
+            </form>
                 </div>
                 {% endfor %}
               </div>
