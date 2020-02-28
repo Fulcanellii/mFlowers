@@ -40,3 +40,6 @@ columns:
         type: timetense
         sortable: true
         invisible: true
+    show_on_main:
+        label: 'Show on main'
+        type: switch

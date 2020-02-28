@@ -140,7 +140,7 @@ class Category extends ImportModel
         'code',
         'external_id',
         'preview_text',
-        'description',
+        'description'
     ];
 
     public $cached = [

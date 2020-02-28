@@ -1,7 +1,14 @@
 title = "Error 404"
 url = "/404"
-layout = "light"
+layout = "main"
 is_hidden = 0
 ==
+<!-- {% partial 'content/error/error' errorFigures='404' errorText='page not found' errorType='404' %} -->
 
-{% partial 'content/error/error' errorFigures='404' errorText='page not found' errorType='404' %}
+<div class="notfound">
+      <div class="container">     
+          <img src="{{'assets/images/404Page/404.png'|theme }}" alt="404" class="notfound__img">
+          <h1 class="notfound__title">Страница не найдена</h1>
+          <a href="/" class="notfound__link">На главную</a>    
+      </div>
+  </div>

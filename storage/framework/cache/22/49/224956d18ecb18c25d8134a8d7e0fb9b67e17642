@@ -1,0 +1,43 @@
+1582886190a:1:{s:16:"header-menu.yaml";a:7:{s:8:"fileName";s:16:"header-menu.yaml";s:7:"content";s:934:"name: 'Header menu'
+items:
+    -
+        title: Catalog
+        nesting: '1'
+        type: shop-catalog
+        url: ''
+        code: ''
+        reference: ''
+        cmsPage: catalog
+        replace: '1'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Блог
+        type: cms-page
+        code: ''
+        reference: blog
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Магазин
+        type: cms-page
+        code: ''
+        reference: magazin
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Контакты
+        type: cms-page
+        code: ''
+        reference: kontakty
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+";s:5:"mtime";i:1582875273;s:6:"markup";N;s:4:"code";N;s:4:"name";N;s:5:"items";a:0:{}}}

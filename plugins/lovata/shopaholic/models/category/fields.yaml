@@ -1,4 +1,8 @@
 fields:
+    show_on_main:
+        label: 'Show on mane page'
+        span: auto
+        type: switch
     active:
         label: 'lovata.toolbox::lang.field.active'
         span: left

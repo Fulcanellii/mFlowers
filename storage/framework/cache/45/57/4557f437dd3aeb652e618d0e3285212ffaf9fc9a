@@ -1,7 +1,0 @@
-1582806756a:1:{s:21:"dostavka-i-oplata.htm";a:7:{s:8:"fileName";s:21:"dostavka-i-oplata.htm";s:7:"content";s:140:"[viewBag]
-title = "Доставка и оплата"
-url = "/dostavka-i-oplata"
-layout = "main"
-is_hidden = 0
-navigation_hidden = 0
-==";s:5:"mtime";i:1582802320;s:6:"markup";s:0:"";s:4:"code";N;s:7:"viewBag";a:5:{s:5:"title";s:32:"Доставка и оплата";s:3:"url";s:18:"/dostavka-i-oplata";s:6:"layout";s:4:"main";s:9:"is_hidden";s:1:"0";s:17:"navigation_hidden";s:1:"0";}s:12:"parsedMarkup";s:0:"";}}

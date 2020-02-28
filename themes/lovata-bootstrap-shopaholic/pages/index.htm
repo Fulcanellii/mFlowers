@@ -6,10 +6,18 @@ is_hidden = 0
 [PromoBlockList]
 sorting = "default"
 
-[CategoryList]
-
 [ProductList]
 sorting = "no"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 3
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog-category"
+postPage = "blog-post"
+
+[CategoryList]
 ==
 {% partial 'content/carousel/carousel' arImageList=this.theme.main_slider %}
 
@@ -20,3 +28,58 @@ sorting = "no"
 
 {% set obCategoryList = CategoryList.make().merge([this.theme.category_left, this.theme.category_middle, this.theme.category_right]) %}
 {% partial 'category/category-product-column/category-product-column' obCategoryList=obCategoryList %}
+
+{% content 'main-banner.htm' %}
+
+{% set cat = CategoryList.make().tree() %}
+
+{{ dump(cat) }}
+
+<section class="occation">
+            <div class="container">
+                <div class="occation__wrap">
+                
+                {% for cat in cat if cat.show_on_main == 1 %}
+                
+                <a href="{{ cat.slug }}" class="occation__link">
+                        <h3 class="occation__title">{{ cat.name }}</h3>
+                        <img src="{{ 'assets/images/mainPage/occantion/forHer.jpg'|theme }}" alt="#">
+                </a>
+                
+                {% endfor %}
+                    
+                </div>
+            </div>
+        </section>
+        <div class="line"></div>
+<section class="mainblog">
+            <div class="container">
+                {% content 'blog' %}
+                <div class="mainblog__blogs">
+                {% set posts = blogPosts.posts %}
+                {% for post in posts %}
+                
+                    <div class="mainblog__blog">
+                    {% if post.featured_images.count %}
+                    {% for image in post.featured_images %}
+                        <a href="{{ post.url }}" class="mainblog__img">
+                            <img src="{{ image.path }}" alt="{{ image.description }}">
+                            <span class="icon-search mainblog__icon"></span>
+                        </a>
+                    {% endfor %}
+                    {% endif %}
+                        <div class="mainblog__date">
+                            <span class="icon-calendar"></span>
+                            <span>{{ post.published_at }}</span>
+                        </div>
+                        <h3 class="mainblog__title-blog">{{ post.title }}</h3>
+                        <p class="mainblog__subtitle-blog">{{ post.content }}</p>
+                        <a href="{{ post.url }}" class="mainblog__link">читать далее</a>
+                    </div>
+                    
+                {% endfor %} 
+                    
+                    
+                </div>
+            </div>
+        </section>

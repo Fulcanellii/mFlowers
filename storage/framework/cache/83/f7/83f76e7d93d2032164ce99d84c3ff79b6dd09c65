@@ -1,0 +1,199 @@
+1582886190a:1:{s:11:"magazin.htm";a:11:{s:8:"fileName";s:11:"magazin.htm";s:7:"content";s:3859:"title = "Магазин"
+url = "/store"
+layout = "main"
+is_hidden = 0
+
+[CategoryList]
+
+[ProductList]
+sorting = "no"
+==
+<div class="storePage">
+      <div class="container">
+        <div class="storePage__flex">
+          <section class="category">
+            <div class="category__wrap">
+              <ul>
+                <li class="category__title">
+                  <h3>Категории</h3>
+                </li>
+{% set obCategoryList = CategoryList.make().tree() %}
+{% if obCategoryList.isNotEmpty() %}
+ 
+        {% for obCategory in obCategoryList if obCategory.product_count > 0 %}
+        
+            <li class="category__list" data-id="{{ obCategory.id }}">
+            <a class="category__link" href="{{ obCategory.name }}">{{ obCategory.name }}</a>
+                {% if obCategory.children.isNotEmpty() %}
+                    <ul class="category-child-menu-wrapper">
+                        {% for obChildCategory in obCategory.children if obChildCategory.product_count > 0 %}
+                            <li>{{ obChildCategory.name }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+  
+{% endif %}
+              </ul>
+            </div>
+            
+          </section>
+          <section class="store">
+            <div class="store__wrap">
+              <div class="store__head">
+                <h2>день рождения</h2>
+                <div class="store__sorting">
+                  <span>Сортировка по:</span>
+
+                  <div class="store__ul">
+                    <div class="store__list">
+                      <span class="store__text">По цене возрастания</span>
+                      <div class="store__list-ul">
+                        <option value="#" class="store__list-li">По полулярности</option>
+                        <option value="#" class="store__list-li">По цене убывания</option >
+                        <option value="#" class="store__list-li">По цене возрастания</option>
+                      </div>
+                    </div>
+
+                    <div class="store__drop">
+                      <span class="icon-download store__sorting-icon"></span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+{% set obCategory = CategoryPage.get() %}
+
+{% set obProductList = ProductList.make().sort(ProductList.getSorting()).active() %}
+
+
+{% if obProductList.isNotEmpty() %}
+<div class="store__products">
+{% for obProduct in obProductList %}
+
+
+                <div class="products__product store__product">
+                  <a href="{{ obProduct.getPageUrl('product-page') }}">
+                    <div class="products__photo newproduct__photo">
+                      <span class="icon-eye products__icon"></span>
+                      <img src="{{ obProduct.preview_image.path }}" alt="{{ obProduct.preview_image.description }}">
+                    </div>
+                    <span class="products__name">{{ obProduct.name }}</span>
+                  </a>
+                  {% set obOffer = obProduct.offer.first() %}
+                  
+                    {% if obOffer.isNotEmpty()%}  
+                      <span class="products__price">{{ obOffer.price }} {{ obOffer.currency }}</span>
+                    {% endif %}
+                  
+                  <a href="{{ obProduct.getPageUrl('product-page') }}" class="products__button">в корзину</a>
+                </div>
+                {% endfor %}
+              </div>
+            
+               {% endif %} 
+            
+              </div>
+
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>";s:5:"mtime";i:1582875273;s:6:"markup";s:3730:"<div class="storePage">
+      <div class="container">
+        <div class="storePage__flex">
+          <section class="category">
+            <div class="category__wrap">
+              <ul>
+                <li class="category__title">
+                  <h3>Категории</h3>
+                </li>
+{% set obCategoryList = CategoryList.make().tree() %}
+{% if obCategoryList.isNotEmpty() %}
+ 
+        {% for obCategory in obCategoryList if obCategory.product_count > 0 %}
+        
+            <li class="category__list" data-id="{{ obCategory.id }}">
+            <a class="category__link" href="{{ obCategory.name }}">{{ obCategory.name }}</a>
+                {% if obCategory.children.isNotEmpty() %}
+                    <ul class="category-child-menu-wrapper">
+                        {% for obChildCategory in obCategory.children if obChildCategory.product_count > 0 %}
+                            <li>{{ obChildCategory.name }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+  
+{% endif %}
+              </ul>
+            </div>
+            
+          </section>
+          <section class="store">
+            <div class="store__wrap">
+              <div class="store__head">
+                <h2>день рождения</h2>
+                <div class="store__sorting">
+                  <span>Сортировка по:</span>
+
+                  <div class="store__ul">
+                    <div class="store__list">
+                      <span class="store__text">По цене возрастания</span>
+                      <div class="store__list-ul">
+                        <option value="#" class="store__list-li">По полулярности</option>
+                        <option value="#" class="store__list-li">По цене убывания</option >
+                        <option value="#" class="store__list-li">По цене возрастания</option>
+                      </div>
+                    </div>
+
+                    <div class="store__drop">
+                      <span class="icon-download store__sorting-icon"></span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+{% set obCategory = CategoryPage.get() %}
+
+{% set obProductList = ProductList.make().sort(ProductList.getSorting()).active() %}
+
+
+{% if obProductList.isNotEmpty() %}
+<div class="store__products">
+{% for obProduct in obProductList %}
+
+
+                <div class="products__product store__product">
+                  <a href="{{ obProduct.getPageUrl('product-page') }}">
+                    <div class="products__photo newproduct__photo">
+                      <span class="icon-eye products__icon"></span>
+                      <img src="{{ obProduct.preview_image.path }}" alt="{{ obProduct.preview_image.description }}">
+                    </div>
+                    <span class="products__name">{{ obProduct.name }}</span>
+                  </a>
+                  {% set obOffer = obProduct.offer.first() %}
+                  
+                    {% if obOffer.isNotEmpty()%}  
+                      <span class="products__price">{{ obOffer.price }} {{ obOffer.currency }}</span>
+                    {% endif %}
+                  
+                  <a href="{{ obProduct.getPageUrl('product-page') }}" class="products__button">в корзину</a>
+                </div>
+                {% endfor %}
+              </div>
+            
+               {% endif %} 
+            
+              </div>
+
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>";s:4:"code";N;s:5:"title";s:14:"Магазин";s:3:"url";s:6:"/store";s:6:"layout";s:4:"main";s:9:"is_hidden";s:1:"0";s:12:"CategoryList";a:0:{}s:11:"ProductList";a:1:{s:7:"sorting";s:2:"no";}}}
