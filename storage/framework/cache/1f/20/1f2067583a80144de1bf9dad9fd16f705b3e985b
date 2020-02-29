@@ -1,4 +1,4 @@
-1582893603a:1:{s:55:"product/product-card-detailed/product-card-detailed.htm";a:5:{s:8:"fileName";s:55:"product/product-card-detailed/product-card-detailed.htm";s:7:"content";s:4615:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
+1582906971a:1:{s:55:"product/product-card-detailed/product-card-detailed.htm";a:5:{s:8:"fileName";s:55:"product/product-card-detailed/product-card-detailed.htm";s:7:"content";s:4615:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
 
 {% set obOffer = obProduct.offer.first() %}
