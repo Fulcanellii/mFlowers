@@ -34,10 +34,10 @@ class __TwigTemplate_ae756f2a7362d2f8d2b44af115b7e10928512956f20fabef06e4ab43bb0
     {
         $macros = $this->macros;
         // line 1
-        echo "<button class=\"btn btn-add-to-cart btn-dark ";
+        echo "<button class=\"btn btn-add-to-cart btn-dark products__button ";
         echo twig_escape_filter($this->env, ($context["btnAddClasses"] ?? null), "html", null, true);
         echo "\" type=\"button\" aria-label=\"Add to cart\" data-container=\"body\" data-toggle=\"popover\" data-placement=\"top\" data-content=\"\">
-    <i class=\"fa fa-shopping-cart\"></i>Add to cart
+    <i class=\"fa fa-shopping-cart\"></i>в корзину
 </button>";
     }
 
@@ -58,8 +58,8 @@ class __TwigTemplate_ae756f2a7362d2f8d2b44af115b7e10928512956f20fabef06e4ab43bb0
 
     public function getSourceContext()
     {
-        return new Source("<button class=\"btn btn-add-to-cart btn-dark {{ btnAddClasses }}\" type=\"button\" aria-label=\"Add to cart\" data-container=\"body\" data-toggle=\"popover\" data-placement=\"top\" data-content=\"\">
-    <i class=\"fa fa-shopping-cart\"></i>Add to cart
+        return new Source("<button class=\"btn btn-add-to-cart btn-dark products__button {{ btnAddClasses }}\" type=\"button\" aria-label=\"Add to cart\" data-container=\"body\" data-toggle=\"popover\" data-placement=\"top\" data-content=\"\">
+    <i class=\"fa fa-shopping-cart\"></i>в корзину
 </button>", "D:\\open_server_5_3_5_basic_premium_ultimate\\OSPanel\\domains\\october/themes/lovata-bootstrap-shopaholic/partials/form/button-add-to-cart/button-add-to-cart.htm", "");
     }
 }
