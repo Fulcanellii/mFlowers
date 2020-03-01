@@ -1,4 +1,4 @@
-1583073758a:1:{s:25:"content/banner/banner.htm";a:5:{s:8:"fileName";s:25:"content/banner/banner.htm";s:7:"content";s:322:"{% if sImagePath is not empty %}
+1583076907a:1:{s:25:"content/banner/banner.htm";a:5:{s:8:"fileName";s:25:"content/banner/banner.htm";s:7:"content";s:322:"{% if sImagePath is not empty %}
 <section class="container banner">
     <a {% if sLink is not empty %}href="{{ sLink }}"{% endif %} target="_blank" aria-label="Banner link" rel="noopener" >
         <img class="banner__img rounded" src="{{ sImagePath|media }}" alt="" loading="lazy">
