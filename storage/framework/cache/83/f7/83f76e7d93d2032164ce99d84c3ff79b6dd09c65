@@ -1,4 +1,4 @@
-1583067100a:1:{s:11:"magazin.htm";a:11:{s:8:"fileName";s:11:"magazin.htm";s:7:"content";s:266:"title = "Магазин"
+1583076600a:1:{s:11:"magazin.htm";a:12:{s:8:"fileName";s:11:"magazin.htm";s:7:"content";s:907:"title = "Магазин"
 url = "/store"
 layout = "main"
 is_hidden = 0
@@ -7,17 +7,44 @@ is_hidden = 0
 
 [ProductList]
 sorting = "new"
+
+[Pagination]
+count_per_page = 10
+pagination_limit = 5
+active_class = "_act"
+first_button_name = "First"
+first_button_limit = 1
+first-more_button_name = "..."
+first-more_button_limit = 1
+prev_button_name = "Prev"
+prev_button_limit = 1
+prev-more_button_name = "..."
+prev-more_button_limit = 1
+next-more_button_name = "..."
+next-more_button_limit = 1
+next_button_name = "Next"
+next_button_limit = 1
+last-more_button_name = "..."
+last-more_button_limit = 1
+last_button_name = "Last"
+last_button_limit = 1
 ==
+{# Get product collection #}
+{% set obProductList = ProductList.make().active().sort(ProductList.getSorting()) %}
+
 <div class="storePage">
 <div class="container">
 
 {% partial 'product/catalog-product-list/catalog-product-list'  %}
 
 </div>
-</div>";s:5:"mtime";i:1583063207;s:6:"markup";s:136:"<div class="storePage">
+</div>";s:5:"mtime";i:1583073031;s:6:"markup";s:254:"{# Get product collection #}
+{% set obProductList = ProductList.make().active().sort(ProductList.getSorting()) %}
+
+<div class="storePage">
 <div class="container">
 
 {% partial 'product/catalog-product-list/catalog-product-list'  %}
 
 </div>
-</div>";s:4:"code";N;s:5:"title";s:14:"Магазин";s:3:"url";s:6:"/store";s:6:"layout";s:4:"main";s:9:"is_hidden";s:1:"0";s:12:"CategoryList";a:0:{}s:11:"ProductList";a:1:{s:7:"sorting";s:3:"new";}}}
+</div>";s:4:"code";N;s:5:"title";s:14:"Магазин";s:3:"url";s:6:"/store";s:6:"layout";s:4:"main";s:9:"is_hidden";s:1:"0";s:12:"CategoryList";a:0:{}s:11:"ProductList";a:1:{s:7:"sorting";s:3:"new";}s:10:"Pagination";a:19:{s:14:"count_per_page";s:2:"10";s:16:"pagination_limit";s:1:"5";s:12:"active_class";s:4:"_act";s:17:"first_button_name";s:5:"First";s:18:"first_button_limit";s:1:"1";s:22:"first-more_button_name";s:3:"...";s:23:"first-more_button_limit";s:1:"1";s:16:"prev_button_name";s:4:"Prev";s:17:"prev_button_limit";s:1:"1";s:21:"prev-more_button_name";s:3:"...";s:22:"prev-more_button_limit";s:1:"1";s:21:"next-more_button_name";s:3:"...";s:22:"next-more_button_limit";s:1:"1";s:16:"next_button_name";s:4:"Next";s:17:"next_button_limit";s:1:"1";s:21:"last-more_button_name";s:3:"...";s:22:"last-more_button_limit";s:1:"1";s:16:"last_button_name";s:4:"Last";s:17:"last_button_limit";s:1:"1";}}}

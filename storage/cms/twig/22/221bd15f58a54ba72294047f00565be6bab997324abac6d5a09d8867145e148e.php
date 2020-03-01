@@ -33,16 +33,19 @@ class __TwigTemplate_79ad7a5352d3ae99da34c3cca91731fcafd5a1314703c32474ea6301d40
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 1
-        echo "<div class=\"storePage\">
+        // line 2
+        $context["obProductList"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["ProductList"] ?? null), "make", [], "method", false, false, false, 2), "active", [], "method", false, false, false, 2), "sort", [0 => twig_get_attribute($this->env, $this->source, ($context["ProductList"] ?? null), "getSorting", [], "method", false, false, false, 2)], "method", false, false, false, 2);
+        // line 3
+        echo "
+<div class=\"storePage\">
 <div class=\"container\">
 
 ";
-        // line 4
+        // line 7
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("product/catalog-product-list/catalog-product-list"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 5
+        // line 8
         echo "
 </div>
 </div>";
@@ -60,12 +63,15 @@ class __TwigTemplate_79ad7a5352d3ae99da34c3cca91731fcafd5a1314703c32474ea6301d40
 
     public function getDebugInfo()
     {
-        return array (  46 => 5,  42 => 4,  37 => 1,);
+        return array (  49 => 8,  45 => 7,  39 => 3,  37 => 2,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<div class=\"storePage\">
+        return new Source("{# Get product collection #}
+{% set obProductList = ProductList.make().active().sort(ProductList.getSorting()) %}
+
+<div class=\"storePage\">
 <div class=\"container\">
 
 {% partial 'product/catalog-product-list/catalog-product-list'  %}
