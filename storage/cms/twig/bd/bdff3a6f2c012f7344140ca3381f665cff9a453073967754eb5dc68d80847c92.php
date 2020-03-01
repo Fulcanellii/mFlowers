@@ -63,7 +63,7 @@ class __TwigTemplate_0d66785e5ecd69d6d1f43abc21d9d19a3449c3c0396aef3e4eab6ef999e
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 11), "description", [], "any", false, false, false, 11), "html", null, true);
             echo "\" title=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 11), "title", [], "any", false, false, false, 11), "html", null, true);
-            echo "\" loading=\"lazy\">
+            echo "\">
         ";
         } else {
             // line 13
@@ -160,7 +160,7 @@ class __TwigTemplate_0d66785e5ecd69d6d1f43abc21d9d19a3449c3c0396aef3e4eab6ef999e
         {% if obProduct.preview_image is not empty %}
         <div class=\"products__photo newproduct__photo\">
         <span class=\"icon-eye products__icon\"></span>
-            <img src=\"{{ obProduct.preview_image.path }}\" alt=\"{{ obProduct.preview_image.description }}\" title=\"{{ obProduct.preview_image.title }}\" loading=\"lazy\">
+            <img src=\"{{ obProduct.preview_image.path }}\" alt=\"{{ obProduct.preview_image.description }}\" title=\"{{ obProduct.preview_image.title }}\">
         {% else %}
             <img src=\"{{ 'assets/images/no-image.png'|theme }}\">
         {% endif %}

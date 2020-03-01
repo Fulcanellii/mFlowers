@@ -66,6 +66,10 @@ class __TwigTemplate_49a534b5bbd6a8afe919bbe43763dcd316c1904d6639f67c10848411e35
         if (twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "isNotEmpty", [], "method", false, false, false, 14)) {
             // line 15
             echo "    ";
+            $context['__cms_partial_params'] = [];
+            $context['__cms_partial_params']['arBreadcrumbs'] = ($context["arBreadcrumbs"] ?? null)            ;
+            echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("navigation/breadcrumbs/breadcrumbs"            , $context['__cms_partial_params']            , true            );
+            unset($context['__cms_partial_params']);
             // line 16
             echo "    ";
             $context['__cms_partial_params'] = [];
@@ -114,7 +118,7 @@ class __TwigTemplate_49a534b5bbd6a8afe919bbe43763dcd316c1904d6639f67c10848411e35
 
     public function getDebugInfo()
     {
-        return array (  100 => 25,  93 => 23,  88 => 22,  82 => 21,  79 => 19,  77 => 18,  70 => 16,  68 => 15,  66 => 14,  63 => 13,  60 => 9,  58 => 11,  51 => 10,  48 => 9,  46 => 8,  43 => 7,  41 => 6,  37 => 4,);
+        return array (  104 => 25,  97 => 23,  92 => 22,  86 => 21,  83 => 19,  81 => 18,  74 => 16,  68 => 15,  66 => 14,  63 => 13,  60 => 9,  58 => 11,  51 => 10,  48 => 9,  46 => 8,  43 => 7,  41 => 6,  37 => 4,);
     }
 
     public function getSourceContext()
@@ -133,7 +137,7 @@ class __TwigTemplate_49a534b5bbd6a8afe919bbe43763dcd316c1904d6639f67c10848411e35
 {% endif %}
 
 {% if obProduct.isNotEmpty() %}
-    {#{% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}#}
+    {% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}
     {% partial 'product/product-card-detailed/product-card-detailed' obProduct=obProduct %}
 {% else %}
     {#{% partial 'content/picture-preview-top/picture-preview-top' obImage=obActiveCategory.preview_image %}#}

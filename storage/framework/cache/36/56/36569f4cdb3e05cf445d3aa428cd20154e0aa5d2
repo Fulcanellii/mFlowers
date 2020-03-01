@@ -1,4 +1,4 @@
-1583064252a:1:{s:11:"catalog.htm";a:15:{s:8:"fileName";s:11:"catalog.htm";s:7:"content";s:3968:"title = "Catalog"
+1583067150a:1:{s:11:"catalog.htm";a:15:{s:8:"fileName";s:11:"catalog.htm";s:7:"content";s:3964:"title = "Catalog"
 url = "/:category*/:slug?"
 layout = "main"
 is_hidden = 0
@@ -107,7 +107,7 @@ function onInit() {
 {% endif %}
 
 {% if obProduct.isNotEmpty() %}
-    {#{% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}#}
+    {% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}
     {% partial 'product/product-card-detailed/product-card-detailed' obProduct=obProduct %}
 {% else %}
     {#{% partial 'content/picture-preview-top/picture-preview-top' obImage=obActiveCategory.preview_image %}#}
@@ -119,7 +119,7 @@ function onInit() {
 {% endif %}
 
 </div>
-</div>";s:5:"mtime";i:1583063651;s:6:"markup";s:1290:"{# @var obCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
+</div>";s:5:"mtime";i:1583066545;s:6:"markup";s:1286:"{# @var obCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 {# @var obMainCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 {# @var obActiveCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 <div class="storePage">
@@ -133,7 +133,7 @@ function onInit() {
 {% endif %}
 
 {% if obProduct.isNotEmpty() %}
-    {#{% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}#}
+    {% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}
     {% partial 'product/product-card-detailed/product-card-detailed' obProduct=obProduct %}
 {% else %}
     {#{% partial 'content/picture-preview-top/picture-preview-top' obImage=obActiveCategory.preview_image %}#}
