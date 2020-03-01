@@ -1,22 +1,28 @@
-1582906966a:1:{s:43:"product/product-sorting/product-sorting.htm";a:5:{s:8:"fileName";s:43:"product/product-sorting/product-sorting.htm";s:7:"content";s:574:"{% set sSortig = ProductList.getSorting() %}
+1583052581a:1:{s:43:"product/product-sorting/product-sorting.htm";a:5:{s:8:"fileName";s:43:"product/product-sorting/product-sorting.htm";s:7:"content";s:765:"{% set sSortig = ProductList.getSorting() %}
 
-<form class="mb-lg-0">
-    <div class="form-group sorting mb-0">
+<form class="store__sorting">
+	<span>Сортировка по:</span>
+    <div class="store__ul">
+    	<div class="store__list">
         <select class="form-control sorting__select" name="sorting" aria-label="{{ label }}">
-            <option value="new" {% if sSortig == 'new' %}selected{% endif %}>New</option>
-            <option value="price|asc" {% if sSortig == 'price|asc' %}selected{% endif %}>Low price first</option>
-            <option value="price|desc" {% if sSortig == 'price|desc' %}selected{% endif %}>High price first</option>
+            <option class="store__list-li" value="new" {% if sSortig == 'new' %}selected{% endif %}>Новые</option>
+            <option class="store__list-li" value="price|asc" {% if sSortig == 'price|asc' %}selected{% endif %}>По цене убывания</option>
+            <option class="store__list-li" value="price|desc" {% if sSortig == 'price|desc' %}selected{% endif %}>По цене возрастания</option>
         </select>
+    	</div>
     </div>
 </form>
-";s:5:"mtime";i:1582875273;s:6:"markup";s:572:"{% set sSortig = ProductList.getSorting() %}
+";s:5:"mtime";i:1583042442;s:6:"markup";s:763:"{% set sSortig = ProductList.getSorting() %}
 
-<form class="mb-lg-0">
-    <div class="form-group sorting mb-0">
+<form class="store__sorting">
+	<span>Сортировка по:</span>
+    <div class="store__ul">
+    	<div class="store__list">
         <select class="form-control sorting__select" name="sorting" aria-label="{{ label }}">
-            <option value="new" {% if sSortig == 'new' %}selected{% endif %}>New</option>
-            <option value="price|asc" {% if sSortig == 'price|asc' %}selected{% endif %}>Low price first</option>
-            <option value="price|desc" {% if sSortig == 'price|desc' %}selected{% endif %}>High price first</option>
+            <option class="store__list-li" value="new" {% if sSortig == 'new' %}selected{% endif %}>Новые</option>
+            <option class="store__list-li" value="price|asc" {% if sSortig == 'price|asc' %}selected{% endif %}>По цене убывания</option>
+            <option class="store__list-li" value="price|desc" {% if sSortig == 'price|desc' %}selected{% endif %}>По цене возрастания</option>
         </select>
+    	</div>
     </div>
 </form>";s:4:"code";N;}}

@@ -1,4 +1,4 @@
-1582906966a:1:{s:9:"index.htm";a:13:{s:8:"fileName";s:9:"index.htm";s:7:"content";s:3148:"title = "Index"
+1583052572a:1:{s:9:"index.htm";a:13:{s:8:"fileName";s:9:"index.htm";s:7:"content";s:3248:"title = "Index"
 url = "/"
 layout = "main"
 is_hidden = 0
@@ -38,12 +38,14 @@ postPage = "blog-post"
                 <div class="occation__wrap">
                 
                 {% for cat in cat if cat.show_on_main == 1 %}
+                {% if cat.product_count > 0 %}
 
-                <a href="{{ cat.slug }}" class="occation__link">
+                <a href="{{ cat.getPageUrl('category-page') }}" class="occation__link">
                         <h3 class="occation__title">{{ cat.name }}</h3>
                         <img src="{{ cat.preview_image.path }}" alt="#">
                 </a>
                 
+                {% endif %}
                 {% endfor %}
                     
                 </div>
@@ -80,7 +82,7 @@ postPage = "blog-post"
                     
                 </div>
             </div>
-        </section>";s:5:"mtime";i:1582888091;s:6:"markup";s:2807:"{% partial 'content/carousel/carousel' arImageList=this.theme.main_slider %}
+        </section>";s:5:"mtime";i:1583046692;s:6:"markup";s:2907:"{% partial 'content/carousel/carousel' arImageList=this.theme.main_slider %}
 
 {% set obPromoBlockList = PromoBlockList.make().merge([this.theme.promo_block_left, this.theme.promo_block_middle, this.theme.promo_block_right]) %}
 {% partial 'promo-block/promo-block-product-tab/promo-block-product-tab' obPromoBlockList=obPromoBlockList %}
@@ -99,12 +101,14 @@ postPage = "blog-post"
                 <div class="occation__wrap">
                 
                 {% for cat in cat if cat.show_on_main == 1 %}
+                {% if cat.product_count > 0 %}
 
-                <a href="{{ cat.slug }}" class="occation__link">
+                <a href="{{ cat.getPageUrl('category-page') }}" class="occation__link">
                         <h3 class="occation__title">{{ cat.name }}</h3>
                         <img src="{{ cat.preview_image.path }}" alt="#">
                 </a>
                 
+                {% endif %}
                 {% endfor %}
                     
                 </div>

@@ -1,11 +1,14 @@
 {% set sSortig = ProductList.getSorting() %}
 
-<form class="mb-lg-0">
-    <div class="form-group sorting mb-0">
+<form class="store__sorting">
+	<span>Сортировка по:</span>
+    <div class="store__ul">
+    	<div class="store__list">
         <select class="form-control sorting__select" name="sorting" aria-label="{{ label }}">
-            <option value="new" {% if sSortig == 'new' %}selected{% endif %}>New</option>
-            <option value="price|asc" {% if sSortig == 'price|asc' %}selected{% endif %}>Low price first</option>
-            <option value="price|desc" {% if sSortig == 'price|desc' %}selected{% endif %}>High price first</option>
+            <option class="store__list-li" value="new" {% if sSortig == 'new' %}selected{% endif %}>Новые</option>
+            <option class="store__list-li" value="price|asc" {% if sSortig == 'price|asc' %}selected{% endif %}>По цене убывания</option>
+            <option class="store__list-li" value="price|desc" {% if sSortig == 'price|desc' %}selected{% endif %}>По цене возрастания</option>
         </select>
+    	</div>
     </div>
 </form>

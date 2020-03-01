@@ -1,4 +1,4 @@
-1582906966a:1:{s:11:"catalog.htm";a:15:{s:8:"fileName";s:11:"catalog.htm";s:7:"content";s:4012:"title = "Catalog"
+1583052572a:1:{s:11:"catalog.htm";a:15:{s:8:"fileName";s:11:"catalog.htm";s:7:"content";s:4078:"title = "Catalog"
 url = "/:category*/:slug?"
 layout = "main"
 is_hidden = 0
@@ -96,7 +96,8 @@ function onInit() {
 {# @var obCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 {# @var obMainCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 {# @var obActiveCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
-
+<div class="storePage">
+<div class="container">
 {% set arSEOParams = {'main_category': obMainCategory, 'category': obCategory, 'product': obProduct} %}
 
 {% if seo_toolbox_is_available %}
@@ -115,10 +116,14 @@ function onInit() {
     {% partial 'content/text-preview/text-preview' sPreviewText=obActiveCategory.preview_text %}
     {% partial 'product/catalog-product-list/catalog-product-list' %}
     {% partial 'content/wysiwyg/wysiwyg' sContent=obActiveCategory.description %}
-{% endif %}";s:5:"mtime";i:1582892560;s:6:"markup";s:1334:"{# @var obCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
+{% endif %}
+
+</div>
+</div>";s:5:"mtime";i:1583049879;s:6:"markup";s:1400:"{# @var obCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 {# @var obMainCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 {# @var obActiveCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
-
+<div class="storePage">
+<div class="container">
 {% set arSEOParams = {'main_category': obMainCategory, 'category': obCategory, 'product': obProduct} %}
 
 {% if seo_toolbox_is_available %}
@@ -137,7 +142,10 @@ function onInit() {
     {% partial 'content/text-preview/text-preview' sPreviewText=obActiveCategory.preview_text %}
     {% partial 'product/catalog-product-list/catalog-product-list' %}
     {% partial 'content/wysiwyg/wysiwyg' sContent=obActiveCategory.description %}
-{% endif %}";s:4:"code";s:1511:"function onInit() {
+{% endif %}
+
+</div>
+</div>";s:4:"code";s:1511:"function onInit() {
     $obProductItem = $this->ProductPage->get();
     $obBrandItem = $this->BrandPage->get();
     $obCategoryItem = $this->CategoryPage->get();

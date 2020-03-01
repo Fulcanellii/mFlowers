@@ -96,7 +96,8 @@ function onInit() {
 {# @var obCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 {# @var obMainCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 {# @var obActiveCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
-
+<div class="storePage">
+<div class="container">
 {% set arSEOParams = {'main_category': obMainCategory, 'category': obCategory, 'product': obProduct} %}
 
 {% if seo_toolbox_is_available %}
@@ -116,3 +117,6 @@ function onInit() {
     {% partial 'product/catalog-product-list/catalog-product-list' %}
     {% partial 'content/wysiwyg/wysiwyg' sContent=obActiveCategory.description %}
 {% endif %}
+
+</div>
+</div>

@@ -1,1 +1,212 @@
-1582892600N;
+1583052572a:1:{s:16:"product-page.htm";a:10:{s:8:"fileName";s:16:"product-page.htm";s:7:"content";s:4165:"title = "Product Page"
+url = "/product/:slug"
+layout = "main"
+is_hidden = 0
+
+[ProductPage]
+slug = "{{ :slug }}"
+slug_required = 1
+smart_url_check = 0
+skip_error = 0
+==
+{% set obProduct = ProductPage.get() %}
+
+<section class="info">
+      <div class="container">
+        <ul class="crumbs">
+          <li class="crumb">
+            <a href="/" class="crumb-link">Главная</a>
+            <span>/</span>
+          </li>
+          <li class="crumb">
+              <a href="{{ obProduct.category.getPageUrl('category-page') }}" class="crumb-link">{{ obProduct.category.name }}</a>
+            <span>/</span>
+          </li>
+          <li class="crumb">
+            {{ obProduct.name }}
+          </li>
+        </ul>
+        <div class="info__wrap">
+          <div class="info__photos">
+          {% if obProduct.preview_image is not empty %}
+            <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails ">
+              <a href="{{ obProduct.preview_image.path }}" class="info__img-wrap">
+                <img src="{{ obProduct.preview_image.path }}" alt="{{ obProduct.preview_image.description }}" class="info__img" />
+              </a>
+            </div>
+          {% endif %}
+          
+          {% if obProduct.images is not empty %}
+          
+          <div class="info__sliders">
+              <ul class="thumbnails info__thumbnails owl-carousel">
+              
+              <li class="info__li">
+                  <a href="{{ obProduct.preview_image.path }}" data-standard="{{ obProduct.preview_image.path }}">
+                    <img src="{{ obProduct.preview_image.path }}" alt="{{ obProduct.preview_image.description }}" />
+                  </a>
+                </li>
+              
+              {% for img in obProduct.images %}
+                <li class="info__li">
+                  <a href="{{ img.path }}" data-standard="{{ img.path }}">
+                    <img src="{{ img.path }}" alt="{{ img.description }}" />
+                  </a>
+                </li>
+              {% endfor %}
+              </ul>
+            </div>
+          
+          {% endif %}
+
+          </div>
+
+          <div class="info__spec">
+            <h1 class="info__name">{{ obProduct.name }}</h1>
+            <div class="info__price-wrap">
+            {% set obOffer = obProduct.offer.first() %}
+            {% if obOffer.isNotEmpty()%}  
+              <h3 class="info__price">{{ obOffer.price }} {{ obOffer.currency }}</h3>
+              
+              {% if obOffer.quantity == '0' %}
+                  <div class="info__no_stock">нет в наличии</div>
+              {% else %}
+                  <div class="info__stock">в наличии</div>
+              {% endif %}
+              
+            {% endif %}
+            </div>
+            <div class="info__description">
+              <h3>Описание товара</h3>
+              <p>
+                {{ obProduct.preview_text }}
+              </p>
+            </div>
+            <div class="info__counter">
+              <input type="number" value="1" class="info__counter-input">
+              <div class="info__btns">
+                <button type="button" class="info__btn">+</button>
+                <button type="button" class="info__btn">-</button>
+              </div>
+              {% if obOffer.quantity == '0' %}
+                  
+            </form>
+              {% else %}
+              
+                  <form class="mb-0">
+                <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
+                <input type="hidden" name="quantity" value="1">
+                {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-sm' %}
+            </form>
+              {% endif %}
+            </div>
+
+            <div class="info__category">
+              <strong>Категория: </strong>
+              <span><a class="category__link" href="{{ obProduct.category.getPageUrl('category-page') }}">{{ obProduct.category.name }}</a></span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>";s:5:"mtime";i:1583046466;s:6:"markup";s:3986:"{% set obProduct = ProductPage.get() %}
+
+<section class="info">
+      <div class="container">
+        <ul class="crumbs">
+          <li class="crumb">
+            <a href="/" class="crumb-link">Главная</a>
+            <span>/</span>
+          </li>
+          <li class="crumb">
+              <a href="{{ obProduct.category.getPageUrl('category-page') }}" class="crumb-link">{{ obProduct.category.name }}</a>
+            <span>/</span>
+          </li>
+          <li class="crumb">
+            {{ obProduct.name }}
+          </li>
+        </ul>
+        <div class="info__wrap">
+          <div class="info__photos">
+          {% if obProduct.preview_image is not empty %}
+            <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails ">
+              <a href="{{ obProduct.preview_image.path }}" class="info__img-wrap">
+                <img src="{{ obProduct.preview_image.path }}" alt="{{ obProduct.preview_image.description }}" class="info__img" />
+              </a>
+            </div>
+          {% endif %}
+          
+          {% if obProduct.images is not empty %}
+          
+          <div class="info__sliders">
+              <ul class="thumbnails info__thumbnails owl-carousel">
+              
+              <li class="info__li">
+                  <a href="{{ obProduct.preview_image.path }}" data-standard="{{ obProduct.preview_image.path }}">
+                    <img src="{{ obProduct.preview_image.path }}" alt="{{ obProduct.preview_image.description }}" />
+                  </a>
+                </li>
+              
+              {% for img in obProduct.images %}
+                <li class="info__li">
+                  <a href="{{ img.path }}" data-standard="{{ img.path }}">
+                    <img src="{{ img.path }}" alt="{{ img.description }}" />
+                  </a>
+                </li>
+              {% endfor %}
+              </ul>
+            </div>
+          
+          {% endif %}
+
+          </div>
+
+          <div class="info__spec">
+            <h1 class="info__name">{{ obProduct.name }}</h1>
+            <div class="info__price-wrap">
+            {% set obOffer = obProduct.offer.first() %}
+            {% if obOffer.isNotEmpty()%}  
+              <h3 class="info__price">{{ obOffer.price }} {{ obOffer.currency }}</h3>
+              
+              {% if obOffer.quantity == '0' %}
+                  <div class="info__no_stock">нет в наличии</div>
+              {% else %}
+                  <div class="info__stock">в наличии</div>
+              {% endif %}
+              
+            {% endif %}
+            </div>
+            <div class="info__description">
+              <h3>Описание товара</h3>
+              <p>
+                {{ obProduct.preview_text }}
+              </p>
+            </div>
+            <div class="info__counter">
+              <input type="number" value="1" class="info__counter-input">
+              <div class="info__btns">
+                <button type="button" class="info__btn">+</button>
+                <button type="button" class="info__btn">-</button>
+              </div>
+              {% if obOffer.quantity == '0' %}
+                  
+            </form>
+              {% else %}
+              
+                  <form class="mb-0">
+                <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
+                <input type="hidden" name="quantity" value="1">
+                {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-sm' %}
+            </form>
+              {% endif %}
+            </div>
+
+            <div class="info__category">
+              <strong>Категория: </strong>
+              <span><a class="category__link" href="{{ obProduct.category.getPageUrl('category-page') }}">{{ obProduct.category.name }}</a></span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>";s:4:"code";N;s:5:"title";s:12:"Product Page";s:3:"url";s:14:"/product/:slug";s:6:"layout";s:4:"main";s:9:"is_hidden";s:1:"0";s:11:"ProductPage";a:4:{s:4:"slug";s:11:"{{ :slug }}";s:13:"slug_required";s:1:"1";s:15:"smart_url_check";s:1:"0";s:10:"skip_error";s:1:"0";}}}

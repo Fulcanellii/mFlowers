@@ -1,4 +1,4 @@
-1582906966a:1:{s:58:"product/catalog-product-list/ajax-catalog-product-list.htm";a:5:{s:8:"fileName";s:58:"product/catalog-product-list/ajax-catalog-product-list.htm";s:7:"content";s:1193:"{% spaceless %}
+1583052594a:1:{s:58:"product/catalog-product-list/ajax-catalog-product-list.htm";a:5:{s:8:"fileName";s:58:"product/catalog-product-list/ajax-catalog-product-list.htm";s:7:"content";s:1230:"{% spaceless %}
 
 {# @var obActiveCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 
@@ -13,9 +13,9 @@
 
 {# Apply pagination to product collection and get array with product items #}
 {% set arProductList = obProductList.page(iPage, Pagination.getCountPerPage()) %}
-
+<div class="store__products">
 {% if arProductList is not empty %}
-    <ul class="catalog__list list-unstyled flex-wrap row">
+    <ul class="products__product store__product">
         {% for obProduct in arProductList %}
             <li class="catalog__item col-lg-4 col-sm-6 col-12">
                 {% partial 'product/product-card/product-card' obProduct=obProduct obActiveCategory=obActiveCategory %}
@@ -24,10 +24,12 @@
     </ul>
     {% partial 'navigation/pagination/pagination' iCount=obProductList.count() pagingLabel='catalog-product-list' %}
 {% else %}
-    <div>Products not found</div>
+    <div>Продуктов нет</div>
 {% endif %}
 {% endspaceless %}
-";s:5:"mtime";i:1582875273;s:6:"markup";s:1191:"{% spaceless %}
+</div>
+
+";s:5:"mtime";i:1583042818;s:6:"markup";s:1226:"{% spaceless %}
 
 {# @var obActiveCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 
@@ -42,9 +44,9 @@
 
 {# Apply pagination to product collection and get array with product items #}
 {% set arProductList = obProductList.page(iPage, Pagination.getCountPerPage()) %}
-
+<div class="store__products">
 {% if arProductList is not empty %}
-    <ul class="catalog__list list-unstyled flex-wrap row">
+    <ul class="products__product store__product">
         {% for obProduct in arProductList %}
             <li class="catalog__item col-lg-4 col-sm-6 col-12">
                 {% partial 'product/product-card/product-card' obProduct=obProduct obActiveCategory=obActiveCategory %}
@@ -53,6 +55,7 @@
     </ul>
     {% partial 'navigation/pagination/pagination' iCount=obProductList.count() pagingLabel='catalog-product-list' %}
 {% else %}
-    <div>Products not found</div>
+    <div>Продуктов нет</div>
 {% endif %}
-{% endspaceless %}";s:4:"code";N;}}
+{% endspaceless %}
+</div>";s:4:"code";N;}}

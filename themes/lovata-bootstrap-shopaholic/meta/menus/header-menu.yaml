@@ -1,12 +1,25 @@
 name: 'Header menu'
 items:
     -
-        title: Catalog
+        title: 'Для любимой'
         nesting: '0'
-        type: shop-catalog
+        type: shop-category
         code: ''
-        cmsPage: catalog
-        replace: '1'
+        reference: '8'
+        cmsPage: category-page
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Для мамы'
+        nesting: '0'
+        type: shop-category
+        code: ''
+        reference: '9'
+        cmsPage: category-page
+        replace: '0'
         viewBag:
             isHidden: '0'
             cssClass: ''

@@ -37,31 +37,34 @@ class __TwigTemplate_6eb5bebba2f43aa123d9f7fc1ef0b2b7153aef1b7cf06d6e19c90693032
         $context["sSortig"] = twig_get_attribute($this->env, $this->source, ($context["ProductList"] ?? null), "getSorting", [], "method", false, false, false, 1);
         // line 2
         echo "
-<form class=\"mb-lg-0\">
-    <div class=\"form-group sorting mb-0\">
+<form class=\"store__sorting\">
+\t<span>Сортировка по:</span>
+    <div class=\"store__ul\">
+    \t<div class=\"store__list\">
         <select class=\"form-control sorting__select\" name=\"sorting\" aria-label=\"";
-        // line 5
+        // line 7
         echo twig_escape_filter($this->env, ($context["label"] ?? null), "html", null, true);
         echo "\">
-            <option value=\"new\" ";
-        // line 6
+            <option class=\"store__list-li\" value=\"new\" ";
+        // line 8
         if ((($context["sSortig"] ?? null) == "new")) {
             echo "selected";
         }
-        echo ">New</option>
-            <option value=\"price|asc\" ";
-        // line 7
+        echo ">Новые</option>
+            <option class=\"store__list-li\" value=\"price|asc\" ";
+        // line 9
         if ((($context["sSortig"] ?? null) == "price|asc")) {
             echo "selected";
         }
-        echo ">Low price first</option>
-            <option value=\"price|desc\" ";
-        // line 8
+        echo ">По цене убывания</option>
+            <option class=\"store__list-li\" value=\"price|desc\" ";
+        // line 10
         if ((($context["sSortig"] ?? null) == "price|desc")) {
             echo "selected";
         }
-        echo ">High price first</option>
+        echo ">По цене возрастания</option>
         </select>
+    \t</div>
     </div>
 </form>";
     }
@@ -78,20 +81,23 @@ class __TwigTemplate_6eb5bebba2f43aa123d9f7fc1ef0b2b7153aef1b7cf06d6e19c90693032
 
     public function getDebugInfo()
     {
-        return array (  60 => 8,  54 => 7,  48 => 6,  44 => 5,  39 => 2,  37 => 1,);
+        return array (  62 => 10,  56 => 9,  50 => 8,  46 => 7,  39 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% set sSortig = ProductList.getSorting() %}
 
-<form class=\"mb-lg-0\">
-    <div class=\"form-group sorting mb-0\">
+<form class=\"store__sorting\">
+\t<span>Сортировка по:</span>
+    <div class=\"store__ul\">
+    \t<div class=\"store__list\">
         <select class=\"form-control sorting__select\" name=\"sorting\" aria-label=\"{{ label }}\">
-            <option value=\"new\" {% if sSortig == 'new' %}selected{% endif %}>New</option>
-            <option value=\"price|asc\" {% if sSortig == 'price|asc' %}selected{% endif %}>Low price first</option>
-            <option value=\"price|desc\" {% if sSortig == 'price|desc' %}selected{% endif %}>High price first</option>
+            <option class=\"store__list-li\" value=\"new\" {% if sSortig == 'new' %}selected{% endif %}>Новые</option>
+            <option class=\"store__list-li\" value=\"price|asc\" {% if sSortig == 'price|asc' %}selected{% endif %}>По цене убывания</option>
+            <option class=\"store__list-li\" value=\"price|desc\" {% if sSortig == 'price|desc' %}selected{% endif %}>По цене возрастания</option>
         </select>
+    \t</div>
     </div>
 </form>", "D:\\OSPanel\\domains\\october/themes/lovata-bootstrap-shopaholic/partials/product/product-sorting/product-sorting.htm", "");
     }

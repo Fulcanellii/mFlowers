@@ -34,86 +34,91 @@ class __TwigTemplate_49a534b5bbd6a8afe919bbe43763dcd316c1904d6639f67c10848411e35
     {
         $macros = $this->macros;
         // line 4
-        echo "
+        echo "<div class=\"storePage\">
+<div class=\"container\">
 ";
-        // line 5
-        $context["arSEOParams"] = ["main_category" => ($context["obMainCategory"] ?? null), "category" => ($context["obCategory"] ?? null), "product" => ($context["obProduct"] ?? null)];
         // line 6
+        $context["arSEOParams"] = ["main_category" => ($context["obMainCategory"] ?? null), "category" => ($context["obCategory"] ?? null), "product" => ($context["obProduct"] ?? null)];
+        // line 7
         echo "
 ";
-        // line 7
+        // line 8
         if (($context["seo_toolbox_is_available"] ?? null)) {
-            // line 8
-            echo "    ";
-            echo $this->env->getExtension('Cms\Twig\Extension')->startBlock('seo_tags'            );
             // line 9
             echo "    ";
+            echo $this->env->getExtension('Cms\Twig\Extension')->startBlock('seo_tags'            );
+            // line 10
+            echo "    ";
             $context['__cms_component_params'] = [];
-            $context['__cms_component_params']['model'] = ((twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "isNotEmpty", [], "method", false, false, false, 9)) ? (($context["obProduct"] ?? null)) : (($context["obActiveCategory"] ?? null)))            ;
+            $context['__cms_component_params']['model'] = ((twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "isNotEmpty", [], "method", false, false, false, 10)) ? (($context["obProduct"] ?? null)) : (($context["obActiveCategory"] ?? null)))            ;
             $context['__cms_component_params']['params'] = ($context["arSEOParams"] ?? null)            ;
             echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("SeoToolbox"            , $context['__cms_component_params']            );
             unset($context['__cms_component_params']);
-            // line 10
+            // line 11
             echo "    ";
-            // line 8
+            // line 9
             echo $this->env->getExtension('Cms\Twig\Extension')->endBlock(true            );
         }
-        // line 12
+        // line 13
         echo "
 ";
-        // line 13
-        if (twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "isNotEmpty", [], "method", false, false, false, 13)) {
-            // line 14
+        // line 14
+        if (twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "isNotEmpty", [], "method", false, false, false, 14)) {
+            // line 15
             echo "    ";
             $context['__cms_partial_params'] = [];
             $context['__cms_partial_params']['arBreadcrumbs'] = ($context["arBreadcrumbs"] ?? null)            ;
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("navigation/breadcrumbs/breadcrumbs"            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
-            // line 15
+            // line 16
             echo "    ";
             $context['__cms_partial_params'] = [];
             $context['__cms_partial_params']['obProduct'] = ($context["obProduct"] ?? null)            ;
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("product/product-card-detailed/product-card-detailed"            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
         } else {
-            // line 17
+            // line 18
             echo "    <!-- ";
             $context['__cms_partial_params'] = [];
-            $context['__cms_partial_params']['obImage'] = twig_get_attribute($this->env, $this->source, ($context["obActiveCategory"] ?? null), "preview_image", [], "any", false, false, false, 17)            ;
+            $context['__cms_partial_params']['obImage'] = twig_get_attribute($this->env, $this->source, ($context["obActiveCategory"] ?? null), "preview_image", [], "any", false, false, false, 18)            ;
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("content/picture-preview-top/picture-preview-top"            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
             echo " -->
     ";
-            // line 18
+            // line 19
             $context['__cms_partial_params'] = [];
             $context['__cms_partial_params']['obActiveCategory'] = ($context["obActiveCategory"] ?? null)            ;
             $context['__cms_partial_params']['label'] = "catalog-product-list"            ;
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("product/catalog-panel/catalog-panel"            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
-            // line 19
+            // line 20
             echo "    ";
             $context['__cms_partial_params'] = [];
             $context['__cms_partial_params']['arBreadcrumbs'] = ($context["arBreadcrumbs"] ?? null)            ;
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("navigation/breadcrumbs/breadcrumbs"            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
-            // line 20
-            echo "    ";
-            $context['__cms_partial_params'] = [];
-            $context['__cms_partial_params']['sPreviewText'] = twig_get_attribute($this->env, $this->source, ($context["obActiveCategory"] ?? null), "preview_text", [], "any", false, false, false, 20)            ;
-            echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("content/text-preview/text-preview"            , $context['__cms_partial_params']            , true            );
-            unset($context['__cms_partial_params']);
             // line 21
             echo "    ";
             $context['__cms_partial_params'] = [];
-            echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("product/catalog-product-list/catalog-product-list"            , $context['__cms_partial_params']            , true            );
+            $context['__cms_partial_params']['sPreviewText'] = twig_get_attribute($this->env, $this->source, ($context["obActiveCategory"] ?? null), "preview_text", [], "any", false, false, false, 21)            ;
+            echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("content/text-preview/text-preview"            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
             // line 22
             echo "    ";
             $context['__cms_partial_params'] = [];
-            $context['__cms_partial_params']['sContent'] = twig_get_attribute($this->env, $this->source, ($context["obActiveCategory"] ?? null), "description", [], "any", false, false, false, 22)            ;
+            echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("product/catalog-product-list/catalog-product-list"            , $context['__cms_partial_params']            , true            );
+            unset($context['__cms_partial_params']);
+            // line 23
+            echo "    ";
+            $context['__cms_partial_params'] = [];
+            $context['__cms_partial_params']['sContent'] = twig_get_attribute($this->env, $this->source, ($context["obActiveCategory"] ?? null), "description", [], "any", false, false, false, 23)            ;
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("content/wysiwyg/wysiwyg"            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
         }
+        // line 25
+        echo "
+</div>
+</div>";
     }
 
     public function getTemplateName()
@@ -128,7 +133,7 @@ class __TwigTemplate_49a534b5bbd6a8afe919bbe43763dcd316c1904d6639f67c10848411e35
 
     public function getDebugInfo()
     {
-        return array (  111 => 22,  106 => 21,  100 => 20,  94 => 19,  88 => 18,  80 => 17,  73 => 15,  67 => 14,  65 => 13,  62 => 12,  59 => 8,  57 => 10,  50 => 9,  47 => 8,  45 => 7,  42 => 6,  40 => 5,  37 => 4,);
+        return array (  119 => 25,  112 => 23,  107 => 22,  101 => 21,  95 => 20,  89 => 19,  81 => 18,  74 => 16,  68 => 15,  66 => 14,  63 => 13,  60 => 9,  58 => 11,  51 => 10,  48 => 9,  46 => 8,  43 => 7,  41 => 6,  37 => 4,);
     }
 
     public function getSourceContext()
@@ -136,7 +141,8 @@ class __TwigTemplate_49a534b5bbd6a8afe919bbe43763dcd316c1904d6639f67c10848411e35
         return new Source("{# @var obCategory \\Lovata\\Shopaholic\\Classes\\Item\\CategoryItem #}
 {# @var obMainCategory \\Lovata\\Shopaholic\\Classes\\Item\\CategoryItem #}
 {# @var obActiveCategory \\Lovata\\Shopaholic\\Classes\\Item\\CategoryItem #}
-
+<div class=\"storePage\">
+<div class=\"container\">
 {% set arSEOParams = {'main_category': obMainCategory, 'category': obCategory, 'product': obProduct} %}
 
 {% if seo_toolbox_is_available %}
@@ -155,6 +161,9 @@ class __TwigTemplate_49a534b5bbd6a8afe919bbe43763dcd316c1904d6639f67c10848411e35
     {% partial 'content/text-preview/text-preview' sPreviewText=obActiveCategory.preview_text %}
     {% partial 'product/catalog-product-list/catalog-product-list' %}
     {% partial 'content/wysiwyg/wysiwyg' sContent=obActiveCategory.description %}
-{% endif %}", "D:\\OSPanel\\domains\\october/themes/lovata-bootstrap-shopaholic/pages/catalog.htm", "");
+{% endif %}
+
+</div>
+</div>", "D:\\OSPanel\\domains\\october/themes/lovata-bootstrap-shopaholic/pages/catalog.htm", "");
     }
 }

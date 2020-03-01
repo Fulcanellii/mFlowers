@@ -41,7 +41,7 @@ class __TwigTemplate_e4514b7a5a84a3b420c7756feca42f13e7e94e80cf7f0ae201d8ae05d79
         echo "
 ";
         // line 4
-        $context["arBreadcrumbs"] = [0 => ["name" => "Home", "url" => $this->extensions['Cms\Twig\Extension']->pageFilter("index")], 1 => ["name" => "Checkout", "url" => $this->extensions['Cms\Twig\Extension']->pageFilter("checkout")]];
+        $context["arBreadcrumbs"] = [0 => ["name" => "Главная", "url" => $this->extensions['Cms\Twig\Extension']->pageFilter("index")], 1 => ["name" => "Корзина", "url" => $this->extensions['Cms\Twig\Extension']->pageFilter("checkout")]];
         // line 8
         echo "
 <div class=\"container\">
@@ -94,8 +94,8 @@ class __TwigTemplate_e4514b7a5a84a3b420c7756feca42f13e7e94e80cf7f0ae201d8ae05d79
 {% set obCartPositionList = Cart.get(obActiveShippingType) %}
 
 {% set arBreadcrumbs = [
-    {'name': 'Home', 'url': 'index'|page},
-    {'name': 'Checkout', 'url': 'checkout'|page}
+    {'name': 'Главная', 'url': 'index'|page},
+    {'name': 'Корзина', 'url': 'checkout'|page}
 ] %}
 
 <div class=\"container\">

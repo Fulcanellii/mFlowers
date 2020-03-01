@@ -60,12 +60,12 @@ class __TwigTemplate_c1526bc36ec2d1147684f435c2ef30e41dcae778ea35512657df93d7e07
         // line 15
         $context["arProductList"] = twig_get_attribute($this->env, $this->source, ($context["obProductList"] ?? null), "page", [0 => ($context["iPage"] ?? null), 1 => twig_get_attribute($this->env, $this->source, ($context["Pagination"] ?? null), "getCountPerPage", [], "method", false, false, false, 15)], "method", false, false, false, 15);
         // line 16
-        echo "
+        echo "<div class=\"store__products\">
 ";
         // line 17
         if ( !twig_test_empty(($context["arProductList"] ?? null))) {
             // line 18
-            echo "    <ul class=\"catalog__list list-unstyled flex-wrap row\">
+            echo "    <ul class=\"products__product store__product\">
         ";
             // line 19
             $context['_parent'] = $context;
@@ -98,10 +98,12 @@ class __TwigTemplate_c1526bc36ec2d1147684f435c2ef30e41dcae778ea35512657df93d7e07
             unset($context['__cms_partial_params']);
         } else {
             // line 27
-            echo "    <div>Products not found</div>
+            echo "    <div>Продуктов нет</div>
 ";
         }
         echo trim(preg_replace('/>\s+</', '><', ob_get_clean()));
+        // line 30
+        echo "</div>";
     }
 
     public function getTemplateName()
@@ -116,7 +118,7 @@ class __TwigTemplate_c1526bc36ec2d1147684f435c2ef30e41dcae778ea35512657df93d7e07
 
     public function getDebugInfo()
     {
-        return array (  101 => 27,  94 => 25,  91 => 24,  84 => 22,  78 => 21,  75 => 20,  71 => 19,  68 => 18,  66 => 17,  63 => 16,  61 => 15,  58 => 13,  56 => 12,  53 => 10,  49 => 8,  47 => 7,  45 => 6,  42 => 4,  39 => 2,  37 => 1,);
+        return array (  106 => 30,  101 => 27,  94 => 25,  91 => 24,  84 => 22,  78 => 21,  75 => 20,  71 => 19,  68 => 18,  66 => 17,  63 => 16,  61 => 15,  58 => 13,  56 => 12,  53 => 10,  49 => 8,  47 => 7,  45 => 6,  42 => 4,  39 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -136,9 +138,9 @@ class __TwigTemplate_c1526bc36ec2d1147684f435c2ef30e41dcae778ea35512657df93d7e07
 
 {# Apply pagination to product collection and get array with product items #}
 {% set arProductList = obProductList.page(iPage, Pagination.getCountPerPage()) %}
-
+<div class=\"store__products\">
 {% if arProductList is not empty %}
-    <ul class=\"catalog__list list-unstyled flex-wrap row\">
+    <ul class=\"products__product store__product\">
         {% for obProduct in arProductList %}
             <li class=\"catalog__item col-lg-4 col-sm-6 col-12\">
                 {% partial 'product/product-card/product-card' obProduct=obProduct obActiveCategory=obActiveCategory %}
@@ -147,8 +149,9 @@ class __TwigTemplate_c1526bc36ec2d1147684f435c2ef30e41dcae778ea35512657df93d7e07
     </ul>
     {% partial 'navigation/pagination/pagination' iCount=obProductList.count() pagingLabel='catalog-product-list' %}
 {% else %}
-    <div>Products not found</div>
+    <div>Продуктов нет</div>
 {% endif %}
-{% endspaceless %}", "D:\\OSPanel\\domains\\october/themes/lovata-bootstrap-shopaholic/partials/product/catalog-product-list/ajax-catalog-product-list.htm", "");
+{% endspaceless %}
+</div>", "D:\\OSPanel\\domains\\october/themes/lovata-bootstrap-shopaholic/partials/product/catalog-product-list/ajax-catalog-product-list.htm", "");
     }
 }

@@ -1,4 +1,4 @@
-1582906966a:1:{s:23:"content/error/error.htm";a:5:{s:8:"fileName";s:23:"content/error/error.htm";s:7:"content";s:682:"<section class="container h-100 d-flex justify-content-center align-items-center flex-column">
+1583052648a:1:{s:23:"content/error/error.htm";a:5:{s:8:"fileName";s:23:"content/error/error.htm";s:7:"content";s:682:"<section class="container h-100 d-flex justify-content-center align-items-center flex-column">
     <div class="row w-100 mb-5">
         <div class="col-md-6 d-flex justify-content-center justify-content-md-end">
             <span class="error__figures">{{ errorFigures }}</span>

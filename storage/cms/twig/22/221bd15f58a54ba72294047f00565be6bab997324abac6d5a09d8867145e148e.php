@@ -33,8 +33,9 @@ class __TwigTemplate_79ad7a5352d3ae99da34c3cca91731fcafd5a1314703c32474ea6301d40
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 1
-        echo "<div class=\"storePage\">
+        // line 2
+        echo "
+<div class=\"storePage\">
       <div class=\"container\">
         <div class=\"storePage__flex\">
           <section class=\"category\">
@@ -44,44 +45,44 @@ class __TwigTemplate_79ad7a5352d3ae99da34c3cca91731fcafd5a1314703c32474ea6301d40
                   <h3>Категории</h3>
                 </li>
 ";
-        // line 10
-        $context["obCategoryList"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["CategoryList"] ?? null), "make", [], "method", false, false, false, 10), "tree", [], "method", false, false, false, 10);
-        // line 11
-        if (twig_get_attribute($this->env, $this->source, ($context["obCategoryList"] ?? null), "isNotEmpty", [], "method", false, false, false, 11)) {
-            // line 12
+        // line 12
+        $context["obCategoryList"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["CategoryList"] ?? null), "make", [], "method", false, false, false, 12), "tree", [], "method", false, false, false, 12);
+        // line 13
+        if (twig_get_attribute($this->env, $this->source, ($context["obCategoryList"] ?? null), "isNotEmpty", [], "method", false, false, false, 13)) {
+            // line 14
             echo " 
         ";
-            // line 13
+            // line 15
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["obCategoryList"] ?? null));
             foreach ($context['_seq'] as $context["_key"] => $context["obCategory"]) {
-                if ((twig_get_attribute($this->env, $this->source, $context["obCategory"], "product_count", [], "any", false, false, false, 13) > 0)) {
-                    // line 14
+                if ((twig_get_attribute($this->env, $this->source, $context["obCategory"], "product_count", [], "any", false, false, false, 15) > 0)) {
+                    // line 16
                     echo "        
             <li class=\"category__list\" data-id=\"";
-                    // line 15
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obCategory"], "id", [], "any", false, false, false, 15), "html", null, true);
+                    // line 17
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obCategory"], "id", [], "any", false, false, false, 17), "html", null, true);
                     echo "\">
             <a class=\"category__link\" href=\"";
-                    // line 16
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obCategory"], "slug", [], "any", false, false, false, 16), "html", null, true);
+                    // line 18
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obCategory"], "getPageUrl", [0 => "category-page"], "method", false, false, false, 18), "html", null, true);
                     echo "\">";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obCategory"], "name", [], "any", false, false, false, 16), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obCategory"], "name", [], "any", false, false, false, 18), "html", null, true);
                     echo "</a>
                 ";
-                    // line 17
-                    if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["obCategory"], "children", [], "any", false, false, false, 17), "isNotEmpty", [], "method", false, false, false, 17)) {
-                        // line 18
+                    // line 19
+                    if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["obCategory"], "children", [], "any", false, false, false, 19), "isNotEmpty", [], "method", false, false, false, 19)) {
+                        // line 20
                         echo "                    <ul class=\"category-child-menu-wrapper\">
                         ";
-                        // line 19
+                        // line 21
                         $context['_parent'] = $context;
-                        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["obCategory"], "children", [], "any", false, false, false, 19));
+                        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["obCategory"], "children", [], "any", false, false, false, 21));
                         foreach ($context['_seq'] as $context["_key"] => $context["obChildCategory"]) {
-                            if ((twig_get_attribute($this->env, $this->source, $context["obChildCategory"], "product_count", [], "any", false, false, false, 19) > 0)) {
-                                // line 20
+                            if ((twig_get_attribute($this->env, $this->source, $context["obCategory"], "product_count", [], "any", false, false, false, 21) > 0)) {
+                                // line 22
                                 echo "                            <li>";
-                                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obChildCategory"], "name", [], "any", false, false, false, 20), "html", null, true);
+                                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obChildCategory"], "name", [], "any", false, false, false, 22), "html", null, true);
                                 echo "</li>
                         ";
                             }
@@ -89,11 +90,11 @@ class __TwigTemplate_79ad7a5352d3ae99da34c3cca91731fcafd5a1314703c32474ea6301d40
                         $_parent = $context['_parent'];
                         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['obChildCategory'], $context['_parent'], $context['loop']);
                         $context = array_intersect_key($context, $_parent) + $_parent;
-                        // line 22
+                        // line 24
                         echo "                    </ul>
                 ";
                     }
-                    // line 24
+                    // line 26
                     echo "            </li>
         ";
                 }
@@ -101,11 +102,11 @@ class __TwigTemplate_79ad7a5352d3ae99da34c3cca91731fcafd5a1314703c32474ea6301d40
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['obCategory'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 26
+            // line 28
             echo "  
 ";
         }
-        // line 28
+        // line 30
         echo "              </ul>
             </div>
             
@@ -113,105 +114,94 @@ class __TwigTemplate_79ad7a5352d3ae99da34c3cca91731fcafd5a1314703c32474ea6301d40
           <section class=\"store\">
             <div class=\"store__wrap\">
               <div class=\"store__head\">
-                <h2>день рождения</h2>
-                <div class=\"store__sorting\">
-                  <span>Сортировка по:</span>
-
-                  <div class=\"store__ul\">
-                    <div class=\"store__list\">
-                      <span class=\"store__text\">По цене возрастания</span>
-                      <div class=\"store__list-ul\">
-                        <option value=\"#\" class=\"store__list-li\">По полулярности</option>
-                        <option value=\"#\" class=\"store__list-li\">По цене убывания</option >
-                        <option value=\"#\" class=\"store__list-li\">По цене возрастания</option>
-                      </div>
-                    </div>
-
-                    <div class=\"store__drop\">
-                      <span class=\"icon-download store__sorting-icon\"></span>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
+                <h2>Все товары</h2>
+                ";
+        // line 38
+        $context['__cms_partial_params'] = [];
+        $context['__cms_partial_params']['obActiveCategory'] = ($context["obActiveCategory"] ?? null)        ;
+        $context['__cms_partial_params']['label'] = "magazin"        ;
+        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("product/catalog-panel/catalog-panel"        , $context['__cms_partial_params']        , true        );
+        unset($context['__cms_partial_params']);
+        // line 39
+        echo "              </div>
+<div class=\"_ajax_catalog_wrapper\">
 
 ";
-        // line 58
-        $context["obCategory"] = twig_get_attribute($this->env, $this->source, ($context["CategoryPage"] ?? null), "get", [], "method", false, false, false, 58);
-        // line 59
+        // line 42
+        $context["obCategory"] = twig_get_attribute($this->env, $this->source, ($context["CategoryPage"] ?? null), "get", [], "method", false, false, false, 42);
+        // line 43
         echo "
 ";
-        // line 60
-        $context["obProductList"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["ProductList"] ?? null), "make", [], "method", false, false, false, 60), "sort", [0 => twig_get_attribute($this->env, $this->source, ($context["ProductList"] ?? null), "getSorting", [], "method", false, false, false, 60)], "method", false, false, false, 60), "active", [], "method", false, false, false, 60);
-        // line 61
+        // line 44
+        $context["obProductList"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["ProductList"] ?? null), "make", [], "method", false, false, false, 44), "sort", [0 => twig_get_attribute($this->env, $this->source, ($context["ProductList"] ?? null), "getSorting", [], "method", false, false, false, 44)], "method", false, false, false, 44), "active", [], "method", false, false, false, 44);
+        // line 45
         echo "
 
 ";
-        // line 63
-        if (twig_get_attribute($this->env, $this->source, ($context["obProductList"] ?? null), "isNotEmpty", [], "method", false, false, false, 63)) {
-            // line 64
+        // line 47
+        if (twig_get_attribute($this->env, $this->source, ($context["obProductList"] ?? null), "isNotEmpty", [], "method", false, false, false, 47)) {
+            // line 48
             echo "<div class=\"store__products\">
 ";
-            // line 65
+            // line 49
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["obProductList"] ?? null));
             foreach ($context['_seq'] as $context["_key"] => $context["obProduct"]) {
-                // line 66
+                // line 50
                 echo "
 
                 <div class=\"products__product store__product\">
 
                   <a href=\"";
-                // line 70
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obProduct"], "getPageUrl", [0 => "catalog"], "method", false, false, false, 70), "html", null, true);
+                // line 54
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obProduct"], "getPageUrl", [0 => "product-page"], "method", false, false, false, 54), "html", null, true);
                 echo "\">
                     <div class=\"products__photo newproduct__photo\">
                       <span class=\"icon-eye products__icon\"></span>
                       <img src=\"";
-                // line 73
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["obProduct"], "preview_image", [], "any", false, false, false, 73), "path", [], "any", false, false, false, 73), "html", null, true);
+                // line 57
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["obProduct"], "preview_image", [], "any", false, false, false, 57), "path", [], "any", false, false, false, 57), "html", null, true);
                 echo "\" alt=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["obProduct"], "preview_image", [], "any", false, false, false, 73), "description", [], "any", false, false, false, 73), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["obProduct"], "preview_image", [], "any", false, false, false, 57), "description", [], "any", false, false, false, 57), "html", null, true);
                 echo "\">
                     </div>
                     <span class=\"products__name\">";
-                // line 75
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obProduct"], "name", [], "any", false, false, false, 75), "html", null, true);
+                // line 59
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obProduct"], "name", [], "any", false, false, false, 59), "html", null, true);
                 echo "</span>
                   </a>
                   ";
-                // line 77
-                $context["obOffer"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["obProduct"], "offer", [], "any", false, false, false, 77), "first", [], "method", false, false, false, 77);
-                // line 78
+                // line 61
+                $context["obOffer"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["obProduct"], "offer", [], "any", false, false, false, 61), "first", [], "method", false, false, false, 61);
+                // line 62
                 echo "                  
                     ";
-                // line 79
-                if (twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "isNotEmpty", [], "method", false, false, false, 79)) {
+                // line 63
+                if (twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "isNotEmpty", [], "method", false, false, false, 63)) {
                     echo "  
                       <span class=\"products__price\">";
-                    // line 80
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "price", [], "any", false, false, false, 80), "html", null, true);
+                    // line 64
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "price", [], "any", false, false, false, 64), "html", null, true);
                     echo " ";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "currency", [], "any", false, false, false, 80), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "currency", [], "any", false, false, false, 64), "html", null, true);
                     echo "</span>
                     ";
                 }
-                // line 82
+                // line 66
                 echo "                  
                   <form class=\"mb-0\">
                 <input type=\"hidden\" name=\"offer_id\" value=\"";
-                // line 84
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "id", [], "any", false, false, false, 84), "html", null, true);
+                // line 68
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "id", [], "any", false, false, false, 68), "html", null, true);
                 echo "\">
                 <input type=\"hidden\" name=\"quantity\" value=\"1\">
                 ";
-                // line 86
+                // line 70
                 $context['__cms_partial_params'] = [];
                 $context['__cms_partial_params']['btnAddClasses'] = "btn-sm"                ;
                 echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("form/button-add-to-cart/button-add-to-cart"                , $context['__cms_partial_params']                , true                );
                 unset($context['__cms_partial_params']);
-                // line 87
+                // line 71
                 echo "            </form>
                 </div>
                 ";
@@ -219,16 +209,16 @@ class __TwigTemplate_79ad7a5352d3ae99da34c3cca91731fcafd5a1314703c32474ea6301d40
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['obProduct'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 90
+            // line 74
             echo "              </div>
             
                ";
         }
-        // line 92
+        // line 76
         echo " 
             
               </div>
-
+            </div>
             </div>
           </section>
         </div>
@@ -248,12 +238,14 @@ class __TwigTemplate_79ad7a5352d3ae99da34c3cca91731fcafd5a1314703c32474ea6301d40
 
     public function getDebugInfo()
     {
-        return array (  228 => 92,  223 => 90,  215 => 87,  210 => 86,  205 => 84,  201 => 82,  194 => 80,  190 => 79,  187 => 78,  185 => 77,  180 => 75,  173 => 73,  167 => 70,  161 => 66,  157 => 65,  154 => 64,  152 => 63,  148 => 61,  146 => 60,  143 => 59,  141 => 58,  109 => 28,  105 => 26,  97 => 24,  93 => 22,  83 => 20,  78 => 19,  75 => 18,  73 => 17,  67 => 16,  63 => 15,  60 => 14,  55 => 13,  52 => 12,  50 => 11,  48 => 10,  37 => 1,);
+        return array (  218 => 76,  213 => 74,  205 => 71,  200 => 70,  195 => 68,  191 => 66,  184 => 64,  180 => 63,  177 => 62,  175 => 61,  170 => 59,  163 => 57,  157 => 54,  151 => 50,  147 => 49,  144 => 48,  142 => 47,  138 => 45,  136 => 44,  133 => 43,  131 => 42,  126 => 39,  120 => 38,  110 => 30,  106 => 28,  98 => 26,  94 => 24,  84 => 22,  79 => 21,  76 => 20,  74 => 19,  68 => 18,  64 => 17,  61 => 16,  56 => 15,  53 => 14,  51 => 13,  49 => 12,  37 => 2,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<div class=\"storePage\">
+        return new Source("{# @var obActiveCategory \\Lovata\\Shopaholic\\Classes\\Item\\CategoryItem #}
+
+<div class=\"storePage\">
       <div class=\"container\">
         <div class=\"storePage__flex\">
           <section class=\"category\">
@@ -268,10 +260,10 @@ class __TwigTemplate_79ad7a5352d3ae99da34c3cca91731fcafd5a1314703c32474ea6301d40
         {% for obCategory in obCategoryList if obCategory.product_count > 0 %}
         
             <li class=\"category__list\" data-id=\"{{ obCategory.id }}\">
-            <a class=\"category__link\" href=\"{{ obCategory.slug }}\">{{ obCategory.name }}</a>
+            <a class=\"category__link\" href=\"{{ obCategory.getPageUrl('category-page') }}\">{{ obCategory.name }}</a>
                 {% if obCategory.children.isNotEmpty() %}
                     <ul class=\"category-child-menu-wrapper\">
-                        {% for obChildCategory in obCategory.children if obChildCategory.product_count > 0 %}
+                        {% for obChildCategory in obCategory.children if obCategory.product_count > 0 %}
                             <li>{{ obChildCategory.name }}</li>
                         {% endfor %}
                     </ul>
@@ -287,28 +279,10 @@ class __TwigTemplate_79ad7a5352d3ae99da34c3cca91731fcafd5a1314703c32474ea6301d40
           <section class=\"store\">
             <div class=\"store__wrap\">
               <div class=\"store__head\">
-                <h2>день рождения</h2>
-                <div class=\"store__sorting\">
-                  <span>Сортировка по:</span>
-
-                  <div class=\"store__ul\">
-                    <div class=\"store__list\">
-                      <span class=\"store__text\">По цене возрастания</span>
-                      <div class=\"store__list-ul\">
-                        <option value=\"#\" class=\"store__list-li\">По полулярности</option>
-                        <option value=\"#\" class=\"store__list-li\">По цене убывания</option >
-                        <option value=\"#\" class=\"store__list-li\">По цене возрастания</option>
-                      </div>
-                    </div>
-
-                    <div class=\"store__drop\">
-                      <span class=\"icon-download store__sorting-icon\"></span>
-                    </div>
-                  </div>
-
-                </div>
+                <h2>Все товары</h2>
+                {% partial 'product/catalog-panel/catalog-panel' obActiveCategory=obActiveCategory label='magazin' %}
               </div>
-
+<div class=\"_ajax_catalog_wrapper\">
 
 {% set obCategory = CategoryPage.get() %}
 
@@ -322,7 +296,7 @@ class __TwigTemplate_79ad7a5352d3ae99da34c3cca91731fcafd5a1314703c32474ea6301d40
 
                 <div class=\"products__product store__product\">
 
-                  <a href=\"{{ obProduct.getPageUrl('catalog') }}\">
+                  <a href=\"{{ obProduct.getPageUrl('product-page') }}\">
                     <div class=\"products__photo newproduct__photo\">
                       <span class=\"icon-eye products__icon\"></span>
                       <img src=\"{{ obProduct.preview_image.path }}\" alt=\"{{ obProduct.preview_image.description }}\">
@@ -347,7 +321,7 @@ class __TwigTemplate_79ad7a5352d3ae99da34c3cca91731fcafd5a1314703c32474ea6301d40
                {% endif %} 
             
               </div>
-
+            </div>
             </div>
           </section>
         </div>

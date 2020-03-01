@@ -1,4 +1,4 @@
-1582906966a:1:{s:12:"checkout.htm";a:12:{s:8:"fileName";s:12:"checkout.htm";s:7:"content";s:1050:"title = "Checkout"
+1583052572a:1:{s:12:"checkout.htm";a:12:{s:8:"fileName";s:12:"checkout.htm";s:7:"content";s:1066:"title = "Checkout"
 url = "/checkout"
 layout = "main"
 is_hidden = 0
@@ -24,8 +24,8 @@ function onInit()
 {% set obCartPositionList = Cart.get(obActiveShippingType) %}
 
 {% set arBreadcrumbs = [
-    {'name': 'Home', 'url': 'index'|page},
-    {'name': 'Checkout', 'url': 'checkout'|page}
+    {'name': 'Главная', 'url': 'index'|page},
+    {'name': 'Корзина', 'url': 'checkout'|page}
 ] %}
 
 <div class="container">
@@ -34,12 +34,12 @@ function onInit()
     {% if obCartPositionList.count > 0 %}
         {% partial 'form/checkout-form/checkout-form' %}
     {% endif %}
-</div>";s:5:"mtime";i:1582875273;s:6:"markup";s:655:"{% set obActiveShippingType = ShippingTypeList.make().active().sort().first() %}
+</div>";s:5:"mtime";i:1583041557;s:6:"markup";s:671:"{% set obActiveShippingType = ShippingTypeList.make().active().sort().first() %}
 {% set obCartPositionList = Cart.get(obActiveShippingType) %}
 
 {% set arBreadcrumbs = [
-    {'name': 'Home', 'url': 'index'|page},
-    {'name': 'Checkout', 'url': 'checkout'|page}
+    {'name': 'Главная', 'url': 'index'|page},
+    {'name': 'Корзина', 'url': 'checkout'|page}
 ] %}
 
 <div class="container">
