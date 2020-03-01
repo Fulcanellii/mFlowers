@@ -1,10 +1,77 @@
-1583052594a:1:{s:53:"product/catalog-product-list/catalog-product-list.htm";a:5:{s:8:"fileName";s:53:"product/catalog-product-list/catalog-product-list.htm";s:7:"content";s:187:"<section class="catalog container mt-4">
+1583063958a:1:{s:53:"product/catalog-product-list/catalog-product-list.htm";a:6:{s:8:"fileName";s:53:"product/catalog-product-list/catalog-product-list.htm";s:7:"content";s:1334:"[CategoryList]
+
+
+==
+
+<div class="storePage__flex">
+
+	<section class="category">
+            <div class="category__wrap">
+              <ul>
+                <li class="category__title">
+                  <h3>Категории</h3>
+                </li>
+{% set obCategoryList = CategoryList.make().tree() %}
+{% if obCategoryList.isNotEmpty() %}
+ 
+        {% for obCategory in obCategoryList if obCategory.product_count > 0 %}
+        
+            <li class="category__list" data-id="{{ obCategory.id }}">
+            <a class="category__link" href="{{ obCategory.getPageUrl('catalog') }}">{{ obCategory.name }}</a>
+                {% if obCategory.children.isNotEmpty() %}
+                    <ul class="category-child-menu-wrapper">
+                        {% for obChildCategory in obCategory.children if obCategory.product_count > 0 %}
+                            <li>{{ obChildCategory.name }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+  
+{% endif %}
+              </ul>
+            </div>
+            
+          </section>
+<section class="store">
     <div class="_ajax_catalog_wrapper">
-        {% partial 'product/catalog-product-list/ajax-catalog-product-list' %}
+        {% partial 'product/catalog-product-list/ajax-catalog-product-list'  %}
     </div>
+</div>
 </section>
-";s:5:"mtime";i:1583050369;s:6:"markup";s:185:"<section class="catalog container mt-4">
+";s:5:"mtime";i:1583062696;s:6:"markup";s:1306:"<div class="storePage__flex">
+
+	<section class="category">
+            <div class="category__wrap">
+              <ul>
+                <li class="category__title">
+                  <h3>Категории</h3>
+                </li>
+{% set obCategoryList = CategoryList.make().tree() %}
+{% if obCategoryList.isNotEmpty() %}
+ 
+        {% for obCategory in obCategoryList if obCategory.product_count > 0 %}
+        
+            <li class="category__list" data-id="{{ obCategory.id }}">
+            <a class="category__link" href="{{ obCategory.getPageUrl('catalog') }}">{{ obCategory.name }}</a>
+                {% if obCategory.children.isNotEmpty() %}
+                    <ul class="category-child-menu-wrapper">
+                        {% for obChildCategory in obCategory.children if obCategory.product_count > 0 %}
+                            <li>{{ obChildCategory.name }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+  
+{% endif %}
+              </ul>
+            </div>
+            
+          </section>
+<section class="store">
     <div class="_ajax_catalog_wrapper">
-        {% partial 'product/catalog-product-list/ajax-catalog-product-list' %}
+        {% partial 'product/catalog-product-list/ajax-catalog-product-list'  %}
     </div>
-</section>";s:4:"code";N;}}
+</div>
+</section>";s:4:"code";N;s:12:"CategoryList";a:0:{}}}

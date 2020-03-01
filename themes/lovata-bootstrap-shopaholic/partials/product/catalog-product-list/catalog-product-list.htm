@@ -1,5 +1,41 @@
-<section class="catalog container mt-4">
+[CategoryList]
+
+
+==
+
+<div class="storePage__flex">
+
+	<section class="category">
+            <div class="category__wrap">
+              <ul>
+                <li class="category__title">
+                  <h3>Категории</h3>
+                </li>
+{% set obCategoryList = CategoryList.make().tree() %}
+{% if obCategoryList.isNotEmpty() %}
+ 
+        {% for obCategory in obCategoryList if obCategory.product_count > 0 %}
+        
+            <li class="category__list" data-id="{{ obCategory.id }}">
+            <a class="category__link" href="{{ obCategory.getPageUrl('catalog') }}">{{ obCategory.name }}</a>
+                {% if obCategory.children.isNotEmpty() %}
+                    <ul class="category-child-menu-wrapper">
+                        {% for obChildCategory in obCategory.children if obCategory.product_count > 0 %}
+                            <li>{{ obChildCategory.name }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+  
+{% endif %}
+              </ul>
+            </div>
+            
+          </section>
+<section class="store">
     <div class="_ajax_catalog_wrapper">
-        {% partial 'product/catalog-product-list/ajax-catalog-product-list' %}
+        {% partial 'product/catalog-product-list/ajax-catalog-product-list'  %}
     </div>
+</div>
 </section>

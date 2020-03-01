@@ -1,9 +1,18 @@
-1583052594a:1:{s:58:"product/catalog-product-list/ajax-catalog-product-list.htm";a:5:{s:8:"fileName";s:58:"product/catalog-product-list/ajax-catalog-product-list.htm";s:7:"content";s:1230:"{% spaceless %}
+1583064114a:1:{s:58:"product/catalog-product-list/ajax-catalog-product-list.htm";a:5:{s:8:"fileName";s:58:"product/catalog-product-list/ajax-catalog-product-list.htm";s:7:"content";s:1678:"{% spaceless %}
 
 {# @var obActiveCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 
 {# Get product collection #}
+
+{% if obActiveCategory.name %}
+
 {% set obProductList = ProductList.make().active().sort(ProductList.getSorting()).category(obActiveCategory.id, true) %}
+
+{% else %}
+
+{% set obProductList = ProductList.make().active().sort(ProductList.getSorting()) %}
+
+{% endif %}
 {% if obBrand.isNotEmpty() %}
     {% set obProductList = obProductList.brand(obBrand.id) %}
 {% endif %}
@@ -13,15 +22,24 @@
 
 {# Apply pagination to product collection and get array with product items #}
 {% set arProductList = obProductList.page(iPage, Pagination.getCountPerPage()) %}
-<div class="store__products">
+
+<div class="store__wrap">
+        <div class="store__head">
+            {% if obActiveCategory.name %}
+                <h2>{{obActiveCategory.name}}</h2>
+            {% else %}
+                <h2>Все товары</h2>
+            {% endif %}
+                {% partial 'product/catalog-panel/catalog-panel' obActiveCategory=obActiveCategory label='catalog-product-list' %}
+              </div>
 {% if arProductList is not empty %}
-    <ul class="products__product store__product">
+    <div class="store__products">
         {% for obProduct in arProductList %}
-            <li class="catalog__item col-lg-4 col-sm-6 col-12">
+            
                 {% partial 'product/product-card/product-card' obProduct=obProduct obActiveCategory=obActiveCategory %}
-            </li>
+
         {% endfor %}
-    </ul>
+    </div>
     {% partial 'navigation/pagination/pagination' iCount=obProductList.count() pagingLabel='catalog-product-list' %}
 {% else %}
     <div>Продуктов нет</div>
@@ -29,12 +47,21 @@
 {% endspaceless %}
 </div>
 
-";s:5:"mtime";i:1583042818;s:6:"markup";s:1226:"{% spaceless %}
+";s:5:"mtime";i:1583063513;s:6:"markup";s:1674:"{% spaceless %}
 
 {# @var obActiveCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 
 {# Get product collection #}
+
+{% if obActiveCategory.name %}
+
 {% set obProductList = ProductList.make().active().sort(ProductList.getSorting()).category(obActiveCategory.id, true) %}
+
+{% else %}
+
+{% set obProductList = ProductList.make().active().sort(ProductList.getSorting()) %}
+
+{% endif %}
 {% if obBrand.isNotEmpty() %}
     {% set obProductList = obProductList.brand(obBrand.id) %}
 {% endif %}
@@ -44,15 +71,24 @@
 
 {# Apply pagination to product collection and get array with product items #}
 {% set arProductList = obProductList.page(iPage, Pagination.getCountPerPage()) %}
-<div class="store__products">
+
+<div class="store__wrap">
+        <div class="store__head">
+            {% if obActiveCategory.name %}
+                <h2>{{obActiveCategory.name}}</h2>
+            {% else %}
+                <h2>Все товары</h2>
+            {% endif %}
+                {% partial 'product/catalog-panel/catalog-panel' obActiveCategory=obActiveCategory label='catalog-product-list' %}
+              </div>
 {% if arProductList is not empty %}
-    <ul class="products__product store__product">
+    <div class="store__products">
         {% for obProduct in arProductList %}
-            <li class="catalog__item col-lg-4 col-sm-6 col-12">
+            
                 {% partial 'product/product-card/product-card' obProduct=obProduct obActiveCategory=obActiveCategory %}
-            </li>
+
         {% endfor %}
-    </ul>
+    </div>
     {% partial 'navigation/pagination/pagination' iCount=obProductList.count() pagingLabel='catalog-product-list' %}
 {% else %}
     <div>Продуктов нет</div>

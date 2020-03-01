@@ -225,7 +225,7 @@ class __TwigTemplate_1add099458d76f3165ec95c8a4ca1638ed59ef10b710d5510e3bcb3392a
         // line 64
         echo "            <p class=\"product-detailed__category\">
                 <span class=\"font-weight-bold\">
-                    Category:
+                    Категория:
                 </span>
                 <a href=\"";
         // line 68
@@ -268,7 +268,9 @@ class __TwigTemplate_1add099458d76f3165ec95c8a4ca1638ed59ef10b710d5510e3bcb3392a
 <div class=\"container wysiwyg\">";
         // line 80
         echo twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "description", [], "any", false, false, false, 80);
-        echo "</div>";
+        echo "</div>
+      </div>
+    </section>";
     }
 
     public function getTemplateName()
@@ -353,7 +355,7 @@ class __TwigTemplate_1add099458d76f3165ec95c8a4ca1638ed59ef10b710d5510e3bcb3392a
             {% endif %}
             <p class=\"product-detailed__category\">
                 <span class=\"font-weight-bold\">
-                    Category:
+                    Категория:
                 </span>
                 <a href=\"{{ obProduct.category.getPageUrl('catalog') }}\" class=\"product-detailed__category-link\">{{ obProduct.category.name }}</a>
             </p>
@@ -367,6 +369,8 @@ class __TwigTemplate_1add099458d76f3165ec95c8a4ca1638ed59ef10b710d5510e3bcb3392a
         </div>
     </div>
 </section>
-<div class=\"container wysiwyg\">{{ obProduct.description|raw }}</div>", "D:\\OSPanel\\domains\\october/themes/lovata-bootstrap-shopaholic/partials/product/product-card-detailed/product-card-detailed.htm", "");
+<div class=\"container wysiwyg\">{{ obProduct.description|raw }}</div>
+      </div>
+    </section>", "D:\\OSPanel\\domains\\october/themes/lovata-bootstrap-shopaholic/partials/product/product-card-detailed/product-card-detailed.htm", "");
     }
 }

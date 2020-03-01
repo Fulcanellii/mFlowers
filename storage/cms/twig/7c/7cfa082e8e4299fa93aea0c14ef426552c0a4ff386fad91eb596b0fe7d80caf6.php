@@ -66,10 +66,6 @@ class __TwigTemplate_49a534b5bbd6a8afe919bbe43763dcd316c1904d6639f67c10848411e35
         if (twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "isNotEmpty", [], "method", false, false, false, 14)) {
             // line 15
             echo "    ";
-            $context['__cms_partial_params'] = [];
-            $context['__cms_partial_params']['arBreadcrumbs'] = ($context["arBreadcrumbs"] ?? null)            ;
-            echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("navigation/breadcrumbs/breadcrumbs"            , $context['__cms_partial_params']            , true            );
-            unset($context['__cms_partial_params']);
             // line 16
             echo "    ";
             $context['__cms_partial_params'] = [];
@@ -78,25 +74,10 @@ class __TwigTemplate_49a534b5bbd6a8afe919bbe43763dcd316c1904d6639f67c10848411e35
             unset($context['__cms_partial_params']);
         } else {
             // line 18
-            echo "    <!-- ";
-            $context['__cms_partial_params'] = [];
-            $context['__cms_partial_params']['obImage'] = twig_get_attribute($this->env, $this->source, ($context["obActiveCategory"] ?? null), "preview_image", [], "any", false, false, false, 18)            ;
-            echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("content/picture-preview-top/picture-preview-top"            , $context['__cms_partial_params']            , true            );
-            unset($context['__cms_partial_params']);
-            echo " -->
-    ";
-            // line 19
-            $context['__cms_partial_params'] = [];
-            $context['__cms_partial_params']['obActiveCategory'] = ($context["obActiveCategory"] ?? null)            ;
-            $context['__cms_partial_params']['label'] = "catalog-product-list"            ;
-            echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("product/catalog-panel/catalog-panel"            , $context['__cms_partial_params']            , true            );
-            unset($context['__cms_partial_params']);
-            // line 20
             echo "    ";
-            $context['__cms_partial_params'] = [];
-            $context['__cms_partial_params']['arBreadcrumbs'] = ($context["arBreadcrumbs"] ?? null)            ;
-            echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("navigation/breadcrumbs/breadcrumbs"            , $context['__cms_partial_params']            , true            );
-            unset($context['__cms_partial_params']);
+            // line 19
+            echo "    
+    ";
             // line 21
             echo "    ";
             $context['__cms_partial_params'] = [];
@@ -133,7 +114,7 @@ class __TwigTemplate_49a534b5bbd6a8afe919bbe43763dcd316c1904d6639f67c10848411e35
 
     public function getDebugInfo()
     {
-        return array (  119 => 25,  112 => 23,  107 => 22,  101 => 21,  95 => 20,  89 => 19,  81 => 18,  74 => 16,  68 => 15,  66 => 14,  63 => 13,  60 => 9,  58 => 11,  51 => 10,  48 => 9,  46 => 8,  43 => 7,  41 => 6,  37 => 4,);
+        return array (  100 => 25,  93 => 23,  88 => 22,  82 => 21,  79 => 19,  77 => 18,  70 => 16,  68 => 15,  66 => 14,  63 => 13,  60 => 9,  58 => 11,  51 => 10,  48 => 9,  46 => 8,  43 => 7,  41 => 6,  37 => 4,);
     }
 
     public function getSourceContext()
@@ -152,14 +133,14 @@ class __TwigTemplate_49a534b5bbd6a8afe919bbe43763dcd316c1904d6639f67c10848411e35
 {% endif %}
 
 {% if obProduct.isNotEmpty() %}
-    {% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}
+    {#{% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}#}
     {% partial 'product/product-card-detailed/product-card-detailed' obProduct=obProduct %}
 {% else %}
-    <!-- {% partial 'content/picture-preview-top/picture-preview-top' obImage=obActiveCategory.preview_image %} -->
-    {% partial 'product/catalog-panel/catalog-panel' obActiveCategory=obActiveCategory label='catalog-product-list' %}
-    {% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}
+    {#{% partial 'content/picture-preview-top/picture-preview-top' obImage=obActiveCategory.preview_image %}#}
+    
+    {#{% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}#}
     {% partial 'content/text-preview/text-preview' sPreviewText=obActiveCategory.preview_text %}
-    {% partial 'product/catalog-product-list/catalog-product-list' %}
+    {% partial 'product/catalog-product-list/catalog-product-list'  %}
     {% partial 'content/wysiwyg/wysiwyg' sContent=obActiveCategory.description %}
 {% endif %}
 

@@ -1,4 +1,4 @@
-1583047383a:1:{s:55:"product/product-card-detailed/product-card-detailed.htm";a:5:{s:8:"fileName";s:55:"product/product-card-detailed/product-card-detailed.htm";s:7:"content";s:4615:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
+1583064173a:1:{s:55:"product/product-card-detailed/product-card-detailed.htm";a:5:{s:8:"fileName";s:55:"product/product-card-detailed/product-card-detailed.htm";s:7:"content";s:4653:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
 
 {% set obOffer = obProduct.offer.first() %}
@@ -63,7 +63,7 @@
             {% endif %}
             <p class="product-detailed__category">
                 <span class="font-weight-bold">
-                    Category:
+                    Категория:
                 </span>
                 <a href="{{ obProduct.category.getPageUrl('catalog') }}" class="product-detailed__category-link">{{ obProduct.category.name }}</a>
             </p>
@@ -78,7 +78,8 @@
     </div>
 </section>
 <div class="container wysiwyg">{{ obProduct.description|raw }}</div>
-";s:5:"mtime";i:1582875273;s:6:"markup";s:4613:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
+      </div>
+    </section>";s:5:"mtime";i:1583052218;s:6:"markup";s:4653:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
 
 {% set obOffer = obProduct.offer.first() %}
@@ -143,7 +144,7 @@
             {% endif %}
             <p class="product-detailed__category">
                 <span class="font-weight-bold">
-                    Category:
+                    Категория:
                 </span>
                 <a href="{{ obProduct.category.getPageUrl('catalog') }}" class="product-detailed__category-link">{{ obProduct.category.name }}</a>
             </p>
@@ -157,4 +158,6 @@
         </div>
     </div>
 </section>
-<div class="container wysiwyg">{{ obProduct.description|raw }}</div>";s:4:"code";N;}}
+<div class="container wysiwyg">{{ obProduct.description|raw }}</div>
+      </div>
+    </section>";s:4:"code";N;}}

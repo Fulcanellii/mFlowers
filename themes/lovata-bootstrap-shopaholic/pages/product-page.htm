@@ -11,10 +11,6 @@ skip_error = 0
 ==
 {% set obProduct = ProductPage.get() %}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 0a4cb6fc3cba988548bb0775761f1313e4c6d9aa
 <section class="info">
       <div class="container">
         <ul class="crumbs">
@@ -23,13 +19,11 @@ skip_error = 0
             <span>/</span>
           </li>
           <li class="crumb">
-<<<<<<< HEAD
               <a href="{{ obProduct.category.getPageUrl('category-page') }}" class="crumb-link">{{ obProduct.category.name }}</a>
             <span>/</span>
           </li>
           <li class="crumb">
-=======
->>>>>>> 0a4cb6fc3cba988548bb0775761f1313e4c6d9aa
+
             {{ obProduct.name }}
           </li>
         </ul>
@@ -42,11 +36,7 @@ skip_error = 0
               </a>
             </div>
           {% endif %}
-<<<<<<< HEAD
-          
-=======
-           
->>>>>>> 0a4cb6fc3cba988548bb0775761f1313e4c6d9aa
+
           {% if obProduct.images is not empty %}
           
           <div class="info__sliders">
@@ -59,11 +49,7 @@ skip_error = 0
                 </li>
               
               {% for img in obProduct.images %}
-<<<<<<< HEAD
-=======
-              
-             
->>>>>>> 0a4cb6fc3cba988548bb0775761f1313e4c6d9aa
+
                 <li class="info__li">
                   <a href="{{ img.path }}" data-standard="{{ img.path }}">
                     <img src="{{ img.path }}" alt="{{ img.description }}" />
@@ -105,14 +91,12 @@ skip_error = 0
                 <button type="button" class="info__btn">-</button>
               </div>
               {% if obOffer.quantity == '0' %}
-<<<<<<< HEAD
-                  
-=======
+
                   <form class="mb-0">
                 <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
                 <input type="hidden" name="quantity" value="1">
                 {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-sm' %}
->>>>>>> 0a4cb6fc3cba988548bb0775761f1313e4c6d9aa
+
             </form>
               {% else %}
               
@@ -125,13 +109,10 @@ skip_error = 0
             </div>
 
             <div class="info__category">
-<<<<<<< HEAD
+
               <strong>Категория: </strong>
               <span><a class="category__link" href="{{ obProduct.category.getPageUrl('category-page') }}">{{ obProduct.category.name }}</a></span>
-=======
-              <strong>Категория:</strong>
-              <span>{{ obProduct.category.name }}</span>
->>>>>>> 0a4cb6fc3cba988548bb0775761f1313e4c6d9aa
+
             </div>
 
           </div>

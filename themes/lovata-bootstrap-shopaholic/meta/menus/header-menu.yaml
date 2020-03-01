@@ -6,7 +6,7 @@ items:
         type: shop-category
         code: ''
         reference: '8'
-        cmsPage: category-page
+        cmsPage: catalog
         replace: '0'
         viewBag:
             isHidden: '0'
@@ -18,7 +18,7 @@ items:
         type: shop-category
         code: ''
         reference: '9'
-        cmsPage: category-page
+        cmsPage: catalog
         replace: '0'
         viewBag:
             isHidden: '0'

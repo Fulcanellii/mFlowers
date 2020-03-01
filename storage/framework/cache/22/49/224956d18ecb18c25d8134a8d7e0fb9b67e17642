@@ -1,4 +1,4 @@
-1583052581a:1:{s:16:"header-menu.yaml";a:7:{s:8:"fileName";s:16:"header-menu.yaml";s:7:"content";s:1404:"name: 'Header menu'
+1583063958a:1:{s:16:"header-menu.yaml";a:7:{s:8:"fileName";s:16:"header-menu.yaml";s:7:"content";s:1392:"name: 'Header menu'
 items:
     -
         title: 'Для любимой'
@@ -6,7 +6,7 @@ items:
         type: shop-category
         code: ''
         reference: '8'
-        cmsPage: category-page
+        cmsPage: catalog
         replace: '0'
         viewBag:
             isHidden: '0'
@@ -18,7 +18,7 @@ items:
         type: shop-category
         code: ''
         reference: '9'
-        cmsPage: category-page
+        cmsPage: catalog
         replace: '0'
         viewBag:
             isHidden: '0'
@@ -63,4 +63,4 @@ items:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
-";s:5:"mtime";i:1583045832;s:6:"markup";N;s:4:"code";N;s:4:"name";N;s:5:"items";a:0:{}}}
+";s:5:"mtime";i:1583062744;s:6:"markup";N;s:4:"code";N;s:4:"name";N;s:5:"items";a:0:{}}}
