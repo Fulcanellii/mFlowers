@@ -64,7 +64,7 @@ class __TwigTemplate_361bced93ee2e3342f19eaef5925a1090b57e636a9a7aacd032d5a13d2e
                     echo "\">
             <a class=\"category__link\" href=\"";
                     // line 16
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obCategory"], "name", [], "any", false, false, false, 16), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obCategory"], "slug", [], "any", false, false, false, 16), "html", null, true);
                     echo "\">";
                     echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obCategory"], "name", [], "any", false, false, false, 16), "html", null, true);
                     echo "</a>
@@ -198,22 +198,32 @@ class __TwigTemplate_361bced93ee2e3342f19eaef5925a1090b57e636a9a7aacd032d5a13d2e
                 }
                 // line 81
                 echo "                  
-                  <a href=\"";
-                // line 82
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obProduct"], "getPageUrl", [0 => "product-page"], "method", false, false, false, 82), "html", null, true);
-                echo "\" class=\"products__button\">в корзину</a>
+                  <form class=\"mb-0\">
+                <input type=\"hidden\" name=\"offer_id\" value=\"";
+                // line 83
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "id", [], "any", false, false, false, 83), "html", null, true);
+                echo "\">
+                <input type=\"hidden\" name=\"quantity\" value=\"1\">
+                ";
+                // line 85
+                $context['__cms_partial_params'] = [];
+                $context['__cms_partial_params']['btnAddClasses'] = "btn-sm"                ;
+                echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("form/button-add-to-cart/button-add-to-cart"                , $context['__cms_partial_params']                , true                );
+                unset($context['__cms_partial_params']);
+                // line 86
+                echo "            </form>
                 </div>
                 ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['obProduct'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 85
+            // line 89
             echo "              </div>
             
                ";
         }
-        // line 87
+        // line 91
         echo " 
             
               </div>
@@ -237,7 +247,7 @@ class __TwigTemplate_361bced93ee2e3342f19eaef5925a1090b57e636a9a7aacd032d5a13d2e
 
     public function getDebugInfo()
     {
-        return array (  217 => 87,  212 => 85,  203 => 82,  200 => 81,  193 => 79,  189 => 78,  186 => 77,  184 => 76,  179 => 74,  172 => 72,  166 => 69,  161 => 66,  157 => 65,  154 => 64,  152 => 63,  148 => 61,  146 => 60,  143 => 59,  141 => 58,  109 => 28,  105 => 26,  97 => 24,  93 => 22,  83 => 20,  78 => 19,  75 => 18,  73 => 17,  67 => 16,  63 => 15,  60 => 14,  55 => 13,  52 => 12,  50 => 11,  48 => 10,  37 => 1,);
+        return array (  227 => 91,  222 => 89,  214 => 86,  209 => 85,  204 => 83,  200 => 81,  193 => 79,  189 => 78,  186 => 77,  184 => 76,  179 => 74,  172 => 72,  166 => 69,  161 => 66,  157 => 65,  154 => 64,  152 => 63,  148 => 61,  146 => 60,  143 => 59,  141 => 58,  109 => 28,  105 => 26,  97 => 24,  93 => 22,  83 => 20,  78 => 19,  75 => 18,  73 => 17,  67 => 16,  63 => 15,  60 => 14,  55 => 13,  52 => 12,  50 => 11,  48 => 10,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -257,7 +267,7 @@ class __TwigTemplate_361bced93ee2e3342f19eaef5925a1090b57e636a9a7aacd032d5a13d2e
         {% for obCategory in obCategoryList if obCategory.product_count > 0 %}
         
             <li class=\"category__list\" data-id=\"{{ obCategory.id }}\">
-            <a class=\"category__link\" href=\"{{ obCategory.name }}\">{{ obCategory.name }}</a>
+            <a class=\"category__link\" href=\"{{ obCategory.slug }}\">{{ obCategory.name }}</a>
                 {% if obCategory.children.isNotEmpty() %}
                     <ul class=\"category-child-menu-wrapper\">
                         {% for obChildCategory in obCategory.children if obChildCategory.product_count > 0 %}
@@ -323,7 +333,11 @@ class __TwigTemplate_361bced93ee2e3342f19eaef5925a1090b57e636a9a7aacd032d5a13d2e
                       <span class=\"products__price\">{{ obOffer.price }} {{ obOffer.currency }}</span>
                     {% endif %}
                   
-                  <a href=\"{{ obProduct.getPageUrl('product-page') }}\" class=\"products__button\">в корзину</a>
+                  <form class=\"mb-0\">
+                <input type=\"hidden\" name=\"offer_id\" value=\"{{ obOffer.id }}\">
+                <input type=\"hidden\" name=\"quantity\" value=\"1\">
+                {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-sm' %}
+            </form>
                 </div>
                 {% endfor %}
               </div>

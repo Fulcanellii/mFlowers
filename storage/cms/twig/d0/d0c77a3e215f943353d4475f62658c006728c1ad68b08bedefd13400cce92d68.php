@@ -55,7 +55,7 @@ class __TwigTemplate_df7d6b7e2ce9f999f213a63cc94ef17d95d008349637f42ca6a6dd8304f
         if ( !twig_test_empty(twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 8))) {
             // line 9
             echo "            <img class=\"product-card__img card-img-top\" src=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 9), "getThumb", [0 => 500, 1 => 500, 2 => ["quality" => 80]], "method", false, false, false, 9), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 9), "path", [], "any", false, false, false, 9), "html", null, true);
             echo "\" alt=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 9), "description", [], "any", false, false, false, 9), "html", null, true);
             echo "\" title=\"";
@@ -173,7 +173,7 @@ class __TwigTemplate_df7d6b7e2ce9f999f213a63cc94ef17d95d008349637f42ca6a6dd8304f
   <div class=\"product-card card shadow\" data-id=\"{{ obProduct.id }}\">
     <a class=\"product-card__link product-card__link_img\" href=\"{{ obProduct.getPageUrl('catalog') }}\" aria-label=\"Read more about {{ obProduct.name }}\">
         {% if obProduct.preview_image is not empty %}
-            <img class=\"product-card__img card-img-top\" src=\"{{ obProduct.preview_image.getThumb(500, 500, {'quality': 80}) }}\" alt=\"{{ obProduct.preview_image.description }}\" title=\"{{ obProduct.preview_image.title }}\" loading=\"lazy\">
+            <img class=\"product-card__img card-img-top\" src=\"{{ obProduct.preview_image.path }}\" alt=\"{{ obProduct.preview_image.description }}\" title=\"{{ obProduct.preview_image.title }}\" loading=\"lazy\">
         {% else %}
             <img class=\"product-card__img card-img-top\" src=\"{{ 'assets/images/no-image.png'|theme }}\">
         {% endif %}

@@ -97,10 +97,11 @@ class __TwigTemplate_6f8756b679ce853a2c434822940c7ad0b007c1eb707df0d8c74976e4011
     </nav>
 </section>
  -->
-
+<section class=\"info\">
+      <div class=\"container\">
 <ul class=\"crumbs\">
     ";
-        // line 19
+        // line 20
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["arBreadcrumbs"] ?? null));
         $context['loop'] = [
@@ -117,30 +118,30 @@ class __TwigTemplate_6f8756b679ce853a2c434822940c7ad0b007c1eb707df0d8c74976e4011
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 20
+            // line 21
             echo "                ";
-            if (( !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["item"], "name", [], "any", false, false, false, 20)) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, false, 20)))) {
-                // line 21
+            if (( !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["item"], "name", [], "any", false, false, false, 21)) &&  !twig_test_empty(twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, false, 21)))) {
+                // line 22
                 echo "                    ";
-                if (twig_get_attribute($this->env, $this->source, $context["loop"], "last", [], "any", false, false, false, 21)) {
-                    // line 22
+                if (twig_get_attribute($this->env, $this->source, $context["loop"], "last", [], "any", false, false, false, 22)) {
+                    // line 23
                     echo "                        <li class=\"crumb active\" aria-current=\"page\">";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "name", [], "any", false, false, false, 22), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "name", [], "any", false, false, false, 23), "html", null, true);
                     echo "</li>
                     ";
                 } else {
-                    // line 24
+                    // line 25
                     echo "                        <li class=\"crumb\"><a class=\"crumb-link\" href=\"";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, false, 24), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, false, 25), "html", null, true);
                     echo "\">";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "name", [], "any", false, false, false, 24), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "name", [], "any", false, false, false, 25), "html", null, true);
                     echo "</a></li>
                     ";
                 }
-                // line 26
+                // line 27
                 echo "                ";
             }
-            // line 27
+            // line 28
             echo "                <span>/</span>
             ";
             ++$context['loop']['index0'];
@@ -155,7 +156,7 @@ class __TwigTemplate_6f8756b679ce853a2c434822940c7ad0b007c1eb707df0d8c74976e4011
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 29
+        // line 30
         echo "
 
 </ul>";
@@ -173,7 +174,7 @@ class __TwigTemplate_6f8756b679ce853a2c434822940c7ad0b007c1eb707df0d8c74976e4011
 
     public function getDebugInfo()
     {
-        return array (  159 => 29,  144 => 27,  141 => 26,  133 => 24,  127 => 22,  124 => 21,  121 => 20,  104 => 19,  96 => 13,  82 => 12,  79 => 11,  71 => 9,  65 => 7,  62 => 6,  59 => 5,  42 => 4,  37 => 1,);
+        return array (  160 => 30,  145 => 28,  142 => 27,  134 => 25,  128 => 23,  125 => 22,  122 => 21,  105 => 20,  96 => 13,  82 => 12,  79 => 11,  71 => 9,  65 => 7,  62 => 6,  59 => 5,  42 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -194,7 +195,8 @@ class __TwigTemplate_6f8756b679ce853a2c434822940c7ad0b007c1eb707df0d8c74976e4011
     </nav>
 </section>
  -->
-
+<section class=\"info\">
+      <div class=\"container\">
 <ul class=\"crumbs\">
     {% for item in arBreadcrumbs %}
                 {% if item.name is not empty and item.url is not empty %}

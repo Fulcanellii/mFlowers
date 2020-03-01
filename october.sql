@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 29 2020 г., 08:16
+-- Время создания: Фев 29 2020 г., 10:14
 -- Версия сервера: 10.3.13-MariaDB-log
 -- Версия PHP: 7.1.32
 
@@ -468,7 +468,8 @@ INSERT INTO `lovata_orders_shopaholic_cart_positions` (`id`, `cart_id`, `item_id
 (2, 1, 1, 'Lovata\\Shopaholic\\Models\\Offer', 1, NULL, '2020-02-27 04:33:03', '2020-02-27 05:53:20', '2020-02-27 05:53:20'),
 (4, 1, 2, 'Lovata\\Shopaholic\\Models\\Offer', 1, NULL, '2020-02-27 06:01:50', '2020-02-27 06:23:25', '2020-02-27 06:23:25'),
 (5, 2, 2, 'Lovata\\Shopaholic\\Models\\Offer', 1, NULL, '2020-02-28 02:04:09', '2020-02-28 02:22:57', '2020-02-28 02:22:57'),
-(7, 2, 3, 'Lovata\\Shopaholic\\Models\\Offer', 6, NULL, '2020-02-28 05:35:41', '2020-02-28 10:13:09', '2020-02-28 10:13:09');
+(7, 2, 3, 'Lovata\\Shopaholic\\Models\\Offer', 6, NULL, '2020-02-28 05:35:41', '2020-02-28 10:13:09', '2020-02-28 10:13:09'),
+(8, 1, 3, 'Lovata\\Shopaholic\\Models\\Offer', 4, NULL, '2020-02-29 00:30:30', '2020-02-29 01:13:49', '2020-02-29 01:13:49');
 
 -- --------------------------------------------------------
 
@@ -785,7 +786,7 @@ CREATE TABLE `lovata_shopaholic_categories` (
 --
 
 INSERT INTO `lovata_shopaholic_categories` (`id`, `active`, `name`, `slug`, `code`, `external_id`, `preview_text`, `description`, `parent_id`, `nest_left`, `nest_right`, `nest_depth`, `created_at`, `updated_at`, `show_on_main`) VALUES
-(8, 1, 'Для любимой', 'dlya-lyubimoj', '', '', '', '', NULL, 1, 2, 0, '2020-02-28 05:03:37', '2020-02-28 05:03:37', 1),
+(8, 1, 'Для любимой', 'dlya-lyubimoj', '', '', '', '', NULL, 1, 2, 0, '2020-02-28 05:03:37', '2020-02-29 00:29:35', 1),
 (9, 1, 'Для мамы', 'domashnie', '', '', '', '', NULL, 3, 4, 0, '2020-02-28 05:04:06', '2020-02-28 05:52:22', 1);
 
 -- --------------------------------------------------------
@@ -942,7 +943,7 @@ INSERT INTO `lovata_shopaholic_products` (`id`, `active`, `name`, `slug`, `brand
 (1, 1, 'Test123', 'test123', NULL, 1, '', '', '', '', '2020-02-28 03:48:06', '2020-02-27 04:27:34', '2020-02-28 03:48:06'),
 (2, 1, 'Product', 'product', NULL, 1, '', '', '', '', '2020-02-28 03:48:07', '2020-02-27 04:34:30', '2020-02-28 03:48:07'),
 (3, 1, 'Product', 'product123', NULL, 3, '', '', '', '', '2020-02-28 03:48:07', '2020-02-28 03:13:58', '2020-02-28 03:48:07'),
-(4, 1, 'Цветы для нее', 'cvety-dlya-nee', NULL, 8, '', '', '', '', NULL, '2020-02-28 05:23:34', '2020-02-28 05:23:43');
+(4, 1, 'Цветы для нее', 'cvety-dlya-nee', NULL, 8, '', '', 'Описание цветы для нее', '', NULL, '2020-02-28 05:23:34', '2020-02-29 01:12:01');
 
 -- --------------------------------------------------------
 
@@ -1285,8 +1286,8 @@ INSERT INTO `system_files` (`id`, `disk_name`, `file_name`, `file_size`, `conten
 (8, '5e58d9c56126d599172429.png', 'flower.png', 519526, 'image/png', NULL, NULL, 'preview_image', '3', 'Lovata\\Shopaholic\\Models\\Product', 1, 8, '2020-02-28 03:13:41', '2020-02-28 03:13:58'),
 (14, '5e58f3876547d876599504.jpg', 'forHer.jpg', 31075, 'image/jpeg', NULL, NULL, 'preview_image', '8', 'Lovata\\Shopaholic\\Models\\Category', 1, 14, '2020-02-28 05:03:35', '2020-02-28 05:03:37'),
 (16, '5e58f3bde4c15828024934.jpg', 'formom.jpg', 26110, 'image/jpeg', NULL, NULL, 'preview_image', '9', 'Lovata\\Shopaholic\\Models\\Category', 1, 16, '2020-02-28 05:04:29', '2020-02-28 05:04:33'),
-(17, '5e58f82bbb73f581070482.png', 'flower.png', 32210, 'image/png', NULL, NULL, 'preview_image', '4', 'Lovata\\Shopaholic\\Models\\Product', 1, 17, '2020-02-28 05:23:23', '2020-02-28 05:23:34'),
-(18, '5e58f834adeeb456299423.png', 'blog.png', 539878, 'image/png', NULL, NULL, 'images', '4', 'Lovata\\Shopaholic\\Models\\Product', 1, 18, '2020-02-28 05:23:32', '2020-02-28 05:23:34');
+(18, '5e58f834adeeb456299423.png', 'blog.png', 539878, 'image/png', NULL, NULL, 'images', '4', 'Lovata\\Shopaholic\\Models\\Product', 1, 18, '2020-02-28 05:23:32', '2020-02-28 05:23:34'),
+(20, '5e5a079e929c9236437928.png', 'flower.png', 122139, 'image/png', NULL, NULL, 'preview_image', '4', 'Lovata\\Shopaholic\\Models\\Product', 1, 20, '2020-02-29 00:41:34', '2020-02-29 00:41:36');
 
 -- --------------------------------------------------------
 
@@ -2443,7 +2444,7 @@ ALTER TABLE `cms_theme_templates`
 -- AUTO_INCREMENT для таблицы `deferred_bindings`
 --
 ALTER TABLE `deferred_bindings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT для таблицы `failed_jobs`
@@ -2485,7 +2486,7 @@ ALTER TABLE `lovata_orders_shopaholic_carts`
 -- AUTO_INCREMENT для таблицы `lovata_orders_shopaholic_cart_positions`
 --
 ALTER TABLE `lovata_orders_shopaholic_cart_positions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT для таблицы `lovata_orders_shopaholic_orders`
@@ -2641,7 +2642,7 @@ ALTER TABLE `system_event_logs`
 -- AUTO_INCREMENT для таблицы `system_files`
 --
 ALTER TABLE `system_files`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT для таблицы `system_mail_layouts`

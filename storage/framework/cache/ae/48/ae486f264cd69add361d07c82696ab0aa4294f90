@@ -1,0 +1,101 @@
+1582961052a:1:{s:13:"garantiya.htm";a:7:{s:8:"fileName";s:13:"garantiya.htm";s:7:"content";s:1984:"[viewBag]
+title = "Гарантия"
+url = "/garantiya"
+layout = "main"
+is_hidden = 0
+navigation_hidden = 0
+==
+<div class="faq">
+	<div class="container">
+
+		<ul class="crumbs">
+			<li class="crumb"><a class="crumb-link" href="#">Главная</a> <span>/</span></li>
+			<li class="crumb">Страница</li>
+		</ul>
+		<div class="faq__wrap">
+
+			<h2>FAQ Layout 2</h2>
+			<div>
+
+				<h3>What payment mehods do you accept?</h3>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+				<h3>Do I have to sign a long-term contract?</h3>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+				<h3>I need to update the credit card on my account, how can I do that?</h3>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+				<h3>Is VAT collected?</h3>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+				<h3>I need to update the credit card on my account, how can I do that?</h3>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			</div></div></div></div>";s:5:"mtime";i:1582957334;s:6:"markup";s:1866:"<div class="faq">
+	<div class="container">
+
+		<ul class="crumbs">
+			<li class="crumb"><a class="crumb-link" href="#">Главная</a> <span>/</span></li>
+			<li class="crumb">Страница</li>
+		</ul>
+		<div class="faq__wrap">
+
+			<h2>FAQ Layout 2</h2>
+			<div>
+
+				<h3>What payment mehods do you accept?</h3>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+				<h3>Do I have to sign a long-term contract?</h3>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+				<h3>I need to update the credit card on my account, how can I do that?</h3>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+				<h3>Is VAT collected?</h3>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+				<h3>I need to update the credit card on my account, how can I do that?</h3>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			</div></div></div></div>";s:4:"code";N;s:7:"viewBag";a:5:{s:5:"title";s:16:"Гарантия";s:3:"url";s:10:"/garantiya";s:6:"layout";s:4:"main";s:9:"is_hidden";s:1:"0";s:17:"navigation_hidden";s:1:"0";}s:12:"parsedMarkup";s:1866:"<div class="faq">
+	<div class="container">
+
+		<ul class="crumbs">
+			<li class="crumb"><a class="crumb-link" href="#">Главная</a> <span>/</span></li>
+			<li class="crumb">Страница</li>
+		</ul>
+		<div class="faq__wrap">
+
+			<h2>FAQ Layout 2</h2>
+			<div>
+
+				<h3>What payment mehods do you accept?</h3>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+				<h3>Do I have to sign a long-term contract?</h3>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+				<h3>I need to update the credit card on my account, how can I do that?</h3>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+				<h3>Is VAT collected?</h3>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+				<h3>I need to update the credit card on my account, how can I do that?</h3>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			</div></div></div></div>";}}

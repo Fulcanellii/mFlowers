@@ -1,0 +1,5 @@
+1582960472a:1:{s:27:"content/wysiwyg/wysiwyg.htm";a:5:{s:8:"fileName";s:27:"content/wysiwyg/wysiwyg.htm";s:7:"content";s:102:"{% if sContent is not empty %}
+    <div class="container wysiwyg">{{ sContent|raw }}</div>
+{% endif %}";s:5:"mtime";i:1582799023;s:6:"markup";s:102:"{% if sContent is not empty %}
+    <div class="container wysiwyg">{{ sContent|raw }}</div>
+{% endif %}";s:4:"code";N;}}

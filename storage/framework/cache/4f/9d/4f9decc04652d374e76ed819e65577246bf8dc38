@@ -1,0 +1,13 @@
+1582960472a:1:{s:37:"content/text-preview/text-preview.htm";a:5:{s:8:"fileName";s:37:"content/text-preview/text-preview.htm";s:7:"content";s:150:"{% if sPreviewText is not empty %}
+<section class="container">
+    <p class="wysiwyg pb-0">
+        {{ sPreviewText }}
+    </p>
+</section>
+{% endif %}";s:5:"mtime";i:1582799023;s:6:"markup";s:150:"{% if sPreviewText is not empty %}
+<section class="container">
+    <p class="wysiwyg pb-0">
+        {{ sPreviewText }}
+    </p>
+</section>
+{% endif %}";s:4:"code";N;}}

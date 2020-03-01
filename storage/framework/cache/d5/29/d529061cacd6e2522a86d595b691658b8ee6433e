@@ -1,0 +1,183 @@
+1582961052a:1:{s:8:"blog.htm";a:11:{s:8:"fileName";s:8:"blog.htm";s:7:"content";s:3258:"title = "Blog"
+url = "/blog"
+layout = "main"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog-category"
+postPage = "blog-post"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "blog-category"
+==
+<div class="wrapper">
+        
+
+        <div class="blogpage">
+      <div class="container">
+        <ul class="crumbs">
+          <li class="crumb">
+            <a href="#" class="crumb-link">Главная</a>
+            <span>/</span>
+          </li>
+          <li class="crumb">
+            Блог
+          </li>
+        </ul>
+        <div class="blogpage__flex">
+          <div class="blogpage__asides">
+            <form action="#" class="blogpage__search">
+              <input type="search" class="blogpage__search-input" placeholder="Поиск...">
+              <input type="submit" value="Искать" class="blogpage__search-btn">
+            </form>
+            <aside class="blogpage__aside">
+              <h3>Архив</h3>
+              <ul>
+                <li>
+                  <a href="#" class="blogpage__link-acide">Июнь <span>2019</span> </a>
+                </li>
+                <li>
+                  <a href="#" class="blogpage__link-acide">Сентябрь <span>2019</span></a>
+                </li>
+                <li>
+                  <a href="#" class="blogpage__link-acide">Январь <span>2020</span></a>
+                </li>
+                <li>
+                  <a href="#" class="blogpage__link-acide">Февраль <span>2020</span></a>
+                </li>
+              </ul>
+            </aside>
+            <aside class="blogpage__aside">
+              <h3>Категории</h3>
+              <ul>
+                <li>
+                  <a href="#" class="blogpage__link-acide">{% component 'blogCategories' %}</a>
+                </li>
+              </ul>
+            </aside>
+          </div>
+
+          <div class="blogpage__blogs">
+          
+          {% set posts = blogPosts.posts %}
+            {% for post in posts %}
+            
+            <div class="blogpage__blog">
+        
+            {% if post.featured_images.count %}
+                {% for image in post.featured_images %}
+                  <a href="{{ post.url }}" class="blogpage__img-wrap">
+                    <img src="{{ image.path }}" alt="{{ image.description }}" class="blogpage__img">
+                    <span class="icon-search blogpage__icon"></span>
+                  </a>
+              {% endfor %}
+            {% endif %}
+              <div class="mainblog__date">
+                <span class="icon-calendar"></span>
+                <span>{{ post.published_at }}</span>
+              </div>
+              <h3 class="blogpage__title-blog">{{ post.title }}</h3>
+              <p class="blogpage__subtitle-blog">{{ post.content }}</p>
+              <a href="{{ post.url }}" class="blogpage__link">читать далее</a>
+              
+             
+            </div>
+{% endfor %} 
+          </div>
+            
+        </div>
+
+
+      </div>
+    </div>
+
+        
+        </div>";s:5:"mtime";i:1582805296;s:6:"markup";s:2913:"<div class="wrapper">
+        
+
+        <div class="blogpage">
+      <div class="container">
+        <ul class="crumbs">
+          <li class="crumb">
+            <a href="#" class="crumb-link">Главная</a>
+            <span>/</span>
+          </li>
+          <li class="crumb">
+            Блог
+          </li>
+        </ul>
+        <div class="blogpage__flex">
+          <div class="blogpage__asides">
+            <form action="#" class="blogpage__search">
+              <input type="search" class="blogpage__search-input" placeholder="Поиск...">
+              <input type="submit" value="Искать" class="blogpage__search-btn">
+            </form>
+            <aside class="blogpage__aside">
+              <h3>Архив</h3>
+              <ul>
+                <li>
+                  <a href="#" class="blogpage__link-acide">Июнь <span>2019</span> </a>
+                </li>
+                <li>
+                  <a href="#" class="blogpage__link-acide">Сентябрь <span>2019</span></a>
+                </li>
+                <li>
+                  <a href="#" class="blogpage__link-acide">Январь <span>2020</span></a>
+                </li>
+                <li>
+                  <a href="#" class="blogpage__link-acide">Февраль <span>2020</span></a>
+                </li>
+              </ul>
+            </aside>
+            <aside class="blogpage__aside">
+              <h3>Категории</h3>
+              <ul>
+                <li>
+                  <a href="#" class="blogpage__link-acide">{% component 'blogCategories' %}</a>
+                </li>
+              </ul>
+            </aside>
+          </div>
+
+          <div class="blogpage__blogs">
+          
+          {% set posts = blogPosts.posts %}
+            {% for post in posts %}
+            
+            <div class="blogpage__blog">
+        
+            {% if post.featured_images.count %}
+                {% for image in post.featured_images %}
+                  <a href="{{ post.url }}" class="blogpage__img-wrap">
+                    <img src="{{ image.path }}" alt="{{ image.description }}" class="blogpage__img">
+                    <span class="icon-search blogpage__icon"></span>
+                  </a>
+              {% endfor %}
+            {% endif %}
+              <div class="mainblog__date">
+                <span class="icon-calendar"></span>
+                <span>{{ post.published_at }}</span>
+              </div>
+              <h3 class="blogpage__title-blog">{{ post.title }}</h3>
+              <p class="blogpage__subtitle-blog">{{ post.content }}</p>
+              <a href="{{ post.url }}" class="blogpage__link">читать далее</a>
+              
+             
+            </div>
+{% endfor %} 
+          </div>
+            
+        </div>
+
+
+      </div>
+    </div>
+
+        
+        </div>";s:4:"code";N;s:5:"title";s:4:"Blog";s:3:"url";s:5:"/blog";s:6:"layout";s:4:"main";s:9:"is_hidden";s:1:"0";s:9:"blogPosts";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:2:"10";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:13:"blog-category";s:8:"postPage";s:9:"blog-post";}s:14:"blogCategories";a:3:{s:4:"slug";s:11:"{{ :slug }}";s:12:"displayEmpty";s:1:"0";s:12:"categoryPage";s:13:"blog-category";}}}
