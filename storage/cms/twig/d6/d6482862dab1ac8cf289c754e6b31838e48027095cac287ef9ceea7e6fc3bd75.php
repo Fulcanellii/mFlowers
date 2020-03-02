@@ -42,7 +42,7 @@ class __TwigTemplate_67898d1f1c582ccb6d831899caba9dfa481ae2810063dcd5205727c6ccf
         // line 5
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/css/main.css");
         echo "\">
-    <!-- <link rel=\"stylesheet\" href=\"";
+<!-- <link rel=\"stylesheet\" href=\"";
         // line 6
         echo twig_escape_filter($this->env, ($context["path_css"] ?? null), "html", null, true);
         echo "\"> -->
@@ -74,7 +74,7 @@ class __TwigTemplate_67898d1f1c582ccb6d831899caba9dfa481ae2810063dcd5205727c6ccf
     <link href=\"https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display&display=swap\" rel=\"stylesheet\">
     <link href=\"https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps&display=swap\" rel=\"stylesheet\">
     <link rel=\"stylesheet\" href=\"{{ 'assets/css/main.css'|theme }}\">
-    <!-- <link rel=\"stylesheet\" href=\"{{ path_css }}\"> -->
+<!-- <link rel=\"stylesheet\" href=\"{{ path_css }}\"> -->
     <script src=\"{{ 'assets/js/modernizr.js'|theme }}\"></script>", "D:\\open_server_5_3_5_basic_premium_ultimate\\OSPanel\\domains\\october/themes/lovata-bootstrap-shopaholic/partials/header/head.htm", "");
     }
 }

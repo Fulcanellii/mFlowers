@@ -346,4 +346,10 @@
   'lovata\\shopaholic\\Controllers\\promoblocks' => 'plugins\\lovata\\shopaholic\\controllers\\promoblocks.php',
   'lovata\\ordersshopaholic\\Controllers\\paymentmethods' => 'plugins\\lovata\\ordersshopaholic\\controllers\\paymentmethods.php',
   'lovata\\ordersshopaholic\\Controllers\\shippingtypes' => 'plugins\\lovata\\ordersshopaholic\\controllers\\shippingtypes.php',
+  'system\\Controllers\\mailtemplates' => 'modules\\system\\controllers\\mailtemplates.php',
+  'system\\Controllers\\mailbrandsettings' => 'modules\\system\\controllers\\mailbrandsettings.php',
+  'lovata\\ordersshopaholic\\Controllers\\statuses' => 'plugins\\lovata\\ordersshopaholic\\controllers\\statuses.php',
+  'lovata\\ordersshopaholic\\Controllers\\orderproperties' => 'plugins\\lovata\\ordersshopaholic\\controllers\\orderproperties.php',
+  'lovata\\ordersshopaholic\\Controllers\\orderpositionproperties' => 'plugins\\lovata\\ordersshopaholic\\controllers\\orderpositionproperties.php',
+  'lovata\\shopaholic\\Controllers\\measures' => 'plugins\\lovata\\shopaholic\\controllers\\measures.php',
 );

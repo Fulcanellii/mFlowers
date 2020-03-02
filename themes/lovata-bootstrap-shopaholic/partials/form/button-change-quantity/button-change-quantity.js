@@ -4,7 +4,7 @@ export default new class ButtonChangeQuantity {
   constructor() {
     /* selectors */
     this.productQuantitySelector = '.product-detailed__btn-qty';
-    this.btnQuantityChangeSelector = '.product-detailed__btn-qty-change';
+    this.btnQuantityChangeSelector = '.info__btn';
     this.quantitySelector = '.product-detailed__btn-qty-input';
 
     /* variables */

@@ -34,7 +34,12 @@ class __TwigTemplate_00f24846e2a6ba2ba7ede822a0b82302899448766bb074bfa542b15cab6
     {
         $macros = $this->macros;
         // line 1
-        echo "<div class=\"wrapper\">
+        $context["blog"] = twig_get_attribute($this->env, $this->source, ($context["blogPost"] ?? null), "post", [], "any", false, false, false, 1);
+        // line 2
+        $context["cat"] = twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "categories", [], "any", false, false, false, 2);
+        // line 3
+        echo "
+<div class=\"wrapper\">
         
 
         <div class=\"blogpage\">
@@ -45,7 +50,35 @@ class __TwigTemplate_00f24846e2a6ba2ba7ede822a0b82302899448766bb074bfa542b15cab6
             <span>/</span>
           </li>
           <li class=\"crumb\">
-            Блог
+            <a href=\"/blog\" class=\"crumb-link\">Блог</a>
+            <span>/</span>
+          </li>
+          ";
+        // line 18
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($context["cat"]);
+        foreach ($context['_seq'] as $context["_key"] => $context["cat"]) {
+            // line 19
+            echo "          <li class=\"crumb\">
+            <a href=\"";
+            // line 20
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "url", [], "any", false, false, false, 20), "html", null, true);
+            echo "\" class=\"crumb-link\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "name", [], "any", false, false, false, 20), "html", null, true);
+            echo "</a>
+            <span>/</span>
+          </li>
+          ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['cat'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 24
+        echo "          <li class=\"crumb\">
+            <a class=\"crumb-link\">";
+        // line 25
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "title", [], "any", false, false, false, 25), "html", null, true);
+        echo "</a>
           </li>
         </ul>
         <div class=\"blogpage__flex\">
@@ -73,43 +106,54 @@ class __TwigTemplate_00f24846e2a6ba2ba7ede822a0b82302899448766bb074bfa542b15cab6
             </aside>
             <aside class=\"blogpage__aside\">
               <h3>Категории</h3>
-              <ul>
-                <li>
-                  <a href=\"#\" class=\"blogpage__link-acide\">";
-        // line 42
-        $context['__cms_component_params'] = [];
-        echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("blogCategories"        , $context['__cms_component_params']        );
-        unset($context['__cms_component_params']);
-        echo "</a>
+              
+              ";
+        // line 54
+        $context["cat"] = twig_get_attribute($this->env, $this->source, ($context["blogCategories"] ?? null), "categories", [], "any", false, false, false, 54);
+        // line 55
+        echo "              <ul>
+              ";
+        // line 56
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($context["cat"]);
+        foreach ($context['_seq'] as $context["_key"] => $context["cat"]) {
+            // line 57
+            echo "                <li>
+                  <a href=\"";
+            // line 58
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "url", [], "any", false, false, false, 58), "html", null, true);
+            echo "\" class=\"blogpage__link-acide\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "name", [], "any", false, false, false, 58), "html", null, true);
+            echo "</a>
                 </li>
-              </ul>
+              ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['cat'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 61
+        echo "              </ul>
             </aside>
           </div>
-
           
-          ";
-        // line 49
-        $context["blog"] = twig_get_attribute($this->env, $this->source, ($context["blogPost"] ?? null), "post", [], "any", false, false, false, 49);
-        // line 50
-        echo "          
           <div class=\"bloginner__blog\">
           ";
-        // line 52
-        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "featured_images", [], "any", false, false, false, 52), "count", [], "any", false, false, false, 52)) {
-            // line 53
+        // line 66
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "featured_images", [], "any", false, false, false, 66), "count", [], "any", false, false, false, 66)) {
+            // line 67
             echo "          ";
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "featured_images", [], "any", false, false, false, 53));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "featured_images", [], "any", false, false, false, 67));
             foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
-                // line 54
+                // line 68
                 echo "            <div class=\"bloginner__img-wrap\">
               <img src=\"";
-                // line 55
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["image"], "path", [], "any", false, false, false, 55), "html", null, true);
+                // line 69
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["image"], "path", [], "any", false, false, false, 69), "html", null, true);
                 echo "\" alt=\"#\" class=\"bloginner__img\">
               <time class=\"bloginner__time\"><span class=\"icon-calendar\"></span>";
-                // line 56
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "published_at", [], "any", false, false, false, 56), "html", null, true);
+                // line 70
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "published_at", [], "any", false, false, false, 70), "html", null, true);
                 echo "</time>
             </div>
             ";
@@ -117,16 +161,16 @@ class __TwigTemplate_00f24846e2a6ba2ba7ede822a0b82302899448766bb074bfa542b15cab6
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 59
+            // line 73
             echo "             ";
         }
-        // line 60
+        // line 74
         echo "            <h1 class=\"bloginner__title\">";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "title", [], "any", false, false, false, 60), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "title", [], "any", false, false, false, 74), "html", null, true);
         echo "</h1>
             <p class=\"bloginner__paraph\">";
-        // line 61
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "content", [], "any", false, false, false, 61), "html", null, true);
+        // line 75
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["blog"] ?? null), "content", [], "any", false, false, false, 75), "html", null, true);
         echo "</p>
           </div>
             
@@ -152,12 +196,15 @@ class __TwigTemplate_00f24846e2a6ba2ba7ede822a0b82302899448766bb074bfa542b15cab6
 
     public function getDebugInfo()
     {
-        return array (  129 => 61,  124 => 60,  121 => 59,  112 => 56,  108 => 55,  105 => 54,  100 => 53,  98 => 52,  94 => 50,  92 => 49,  80 => 42,  37 => 1,);
+        return array (  173 => 75,  168 => 74,  165 => 73,  156 => 70,  152 => 69,  149 => 68,  144 => 67,  142 => 66,  135 => 61,  124 => 58,  121 => 57,  117 => 56,  114 => 55,  112 => 54,  80 => 25,  77 => 24,  65 => 20,  62 => 19,  58 => 18,  41 => 3,  39 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<div class=\"wrapper\">
+        return new Source("{% set blog = blogPost.post %}
+{% set cat = blog.categories %}
+
+<div class=\"wrapper\">
         
 
         <div class=\"blogpage\">
@@ -168,7 +215,17 @@ class __TwigTemplate_00f24846e2a6ba2ba7ede822a0b82302899448766bb074bfa542b15cab6
             <span>/</span>
           </li>
           <li class=\"crumb\">
-            Блог
+            <a href=\"/blog\" class=\"crumb-link\">Блог</a>
+            <span>/</span>
+          </li>
+          {% for cat in cat %}
+          <li class=\"crumb\">
+            <a href=\"{{ cat.url }}\" class=\"crumb-link\">{{ cat.name }}</a>
+            <span>/</span>
+          </li>
+          {% endfor %}
+          <li class=\"crumb\">
+            <a class=\"crumb-link\">{{ blog.title }}</a>
           </li>
         </ul>
         <div class=\"blogpage__flex\">
@@ -196,16 +253,17 @@ class __TwigTemplate_00f24846e2a6ba2ba7ede822a0b82302899448766bb074bfa542b15cab6
             </aside>
             <aside class=\"blogpage__aside\">
               <h3>Категории</h3>
+              
+              {% set cat = blogCategories.categories %}
               <ul>
+              {% for cat in cat %}
                 <li>
-                  <a href=\"#\" class=\"blogpage__link-acide\">{% component 'blogCategories' %}</a>
+                  <a href=\"{{ cat.url }}\" class=\"blogpage__link-acide\">{{ cat.name }}</a>
                 </li>
+              {% endfor %}
               </ul>
             </aside>
           </div>
-
-          
-          {% set blog = blogPost.post %}
           
           <div class=\"bloginner__blog\">
           {% if blog.featured_images.count %}

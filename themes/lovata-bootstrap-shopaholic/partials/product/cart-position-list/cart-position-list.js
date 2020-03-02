@@ -37,7 +37,7 @@ export default new class CartPositionList {
 
     $(document).on('click', this.buttonRemoveItemSelector, function (e) {
       const $btnRemoveItem = $(e.currentTarget);
-
+      
       _this.removeItemFromTable($btnRemoveItem);
       _this.sendRequestRemoveItem($btnRemoveItem);
 

@@ -1,4 +1,4 @@
-1582960970a:1:{s:11:"magazin.htm";a:11:{s:8:"fileName";s:11:"magazin.htm";s:7:"content";s:4044:"title = "Магазин"
+1583152896a:1:{s:11:"magazin.htm";a:12:{s:8:"fileName";s:11:"magazin.htm";s:7:"content";s:906:"title = "Магазин"
 url = "/store"
 layout = "main"
 is_hidden = 0
@@ -6,202 +6,45 @@ is_hidden = 0
 [CategoryList]
 
 [ProductList]
-sorting = "no"
+sorting = "new"
+
+[Pagination]
+count_per_page = 6
+pagination_limit = 5
+active_class = "_act"
+first_button_name = "First"
+first_button_limit = 1
+first-more_button_name = "..."
+first-more_button_limit = 1
+prev_button_name = "Prev"
+prev_button_limit = 1
+prev-more_button_name = "..."
+prev-more_button_limit = 1
+next-more_button_name = "..."
+next-more_button_limit = 1
+next_button_name = "Next"
+next_button_limit = 1
+last-more_button_name = "..."
+last-more_button_limit = 1
+last_button_name = "Last"
+last_button_limit = 1
 ==
+{# Get product collection #}
+{% set obProductList = ProductList.make().active().sort(ProductList.getSorting()) %}
+
 <div class="storePage">
-      <div class="container">
-        <div class="storePage__flex">
-          <section class="category">
-            <div class="category__wrap">
-              <ul>
-                <li class="category__title">
-                  <h3>Категории</h3>
-                </li>
-{% set obCategoryList = CategoryList.make().tree() %}
-{% if obCategoryList.isNotEmpty() %}
- 
-        {% for obCategory in obCategoryList if obCategory.product_count > 0 %}
-        
-            <li class="category__list" data-id="{{ obCategory.id }}">
-            <a class="category__link" href="{{ obCategory.slug }}">{{ obCategory.name }}</a>
-                {% if obCategory.children.isNotEmpty() %}
-                    <ul class="category-child-menu-wrapper">
-                        {% for obChildCategory in obCategory.children if obChildCategory.product_count > 0 %}
-                            <li>{{ obChildCategory.name }}</li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            </li>
-        {% endfor %}
-  
-{% endif %}
-              </ul>
-            </div>
-            
-          </section>
-          <section class="store">
-            <div class="store__wrap">
-              <div class="store__head">
-                <h2>день рождения</h2>
-                <div class="store__sorting">
-                  <span>Сортировка по:</span>
+<div class="container">
 
-                  <div class="store__ul">
-                    <div class="store__list">
-                      <span class="store__text">По цене возрастания</span>
-                      <div class="store__list-ul">
-                        <option value="#" class="store__list-li">По полулярности</option>
-                        <option value="#" class="store__list-li">По цене убывания</option >
-                        <option value="#" class="store__list-li">По цене возрастания</option>
-                      </div>
-                    </div>
+{% partial 'product/catalog-product-list/catalog-product-list'  %}
 
-                    <div class="store__drop">
-                      <span class="icon-download store__sorting-icon"></span>
-                    </div>
-                  </div>
+</div>
+</div>";s:5:"mtime";i:1583127318;s:6:"markup";s:254:"{# Get product collection #}
+{% set obProductList = ProductList.make().active().sort(ProductList.getSorting()) %}
 
-                </div>
-              </div>
+<div class="storePage">
+<div class="container">
 
+{% partial 'product/catalog-product-list/catalog-product-list'  %}
 
-{% set obCategory = CategoryPage.get() %}
-
-{% set obProductList = ProductList.make().sort(ProductList.getSorting()).active() %}
-
-
-{% if obProductList.isNotEmpty() %}
-<div class="store__products">
-{% for obProduct in obProductList %}
-
-
-                <div class="products__product store__product">
-                  <a href="{{ obProduct.getPageUrl('product-page') }}">
-                    <div class="products__photo newproduct__photo">
-                      <span class="icon-eye products__icon"></span>
-                      <img src="{{ obProduct.preview_image.path }}" alt="{{ obProduct.preview_image.description }}">
-                    </div>
-                    <span class="products__name">{{ obProduct.name }}</span>
-                  </a>
-                  {% set obOffer = obProduct.offer.first() %}
-                  
-                    {% if obOffer.isNotEmpty()%}  
-                      <span class="products__price">{{ obOffer.price }} {{ obOffer.currency }}</span>
-                    {% endif %}
-                  
-                  <form class="mb-0">
-                <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
-                <input type="hidden" name="quantity" value="1">
-                {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-sm' %}
-            </form>
-                </div>
-                {% endfor %}
-              </div>
-            
-               {% endif %} 
-            
-              </div>
-
-            </div>
-          </section>
-        </div>
-      </div>
-    </div>";s:5:"mtime";i:1582958926;s:6:"markup";s:3915:"<div class="storePage">
-      <div class="container">
-        <div class="storePage__flex">
-          <section class="category">
-            <div class="category__wrap">
-              <ul>
-                <li class="category__title">
-                  <h3>Категории</h3>
-                </li>
-{% set obCategoryList = CategoryList.make().tree() %}
-{% if obCategoryList.isNotEmpty() %}
- 
-        {% for obCategory in obCategoryList if obCategory.product_count > 0 %}
-        
-            <li class="category__list" data-id="{{ obCategory.id }}">
-            <a class="category__link" href="{{ obCategory.slug }}">{{ obCategory.name }}</a>
-                {% if obCategory.children.isNotEmpty() %}
-                    <ul class="category-child-menu-wrapper">
-                        {% for obChildCategory in obCategory.children if obChildCategory.product_count > 0 %}
-                            <li>{{ obChildCategory.name }}</li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            </li>
-        {% endfor %}
-  
-{% endif %}
-              </ul>
-            </div>
-            
-          </section>
-          <section class="store">
-            <div class="store__wrap">
-              <div class="store__head">
-                <h2>день рождения</h2>
-                <div class="store__sorting">
-                  <span>Сортировка по:</span>
-
-                  <div class="store__ul">
-                    <div class="store__list">
-                      <span class="store__text">По цене возрастания</span>
-                      <div class="store__list-ul">
-                        <option value="#" class="store__list-li">По полулярности</option>
-                        <option value="#" class="store__list-li">По цене убывания</option >
-                        <option value="#" class="store__list-li">По цене возрастания</option>
-                      </div>
-                    </div>
-
-                    <div class="store__drop">
-                      <span class="icon-download store__sorting-icon"></span>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-
-{% set obCategory = CategoryPage.get() %}
-
-{% set obProductList = ProductList.make().sort(ProductList.getSorting()).active() %}
-
-
-{% if obProductList.isNotEmpty() %}
-<div class="store__products">
-{% for obProduct in obProductList %}
-
-
-                <div class="products__product store__product">
-                  <a href="{{ obProduct.getPageUrl('product-page') }}">
-                    <div class="products__photo newproduct__photo">
-                      <span class="icon-eye products__icon"></span>
-                      <img src="{{ obProduct.preview_image.path }}" alt="{{ obProduct.preview_image.description }}">
-                    </div>
-                    <span class="products__name">{{ obProduct.name }}</span>
-                  </a>
-                  {% set obOffer = obProduct.offer.first() %}
-                  
-                    {% if obOffer.isNotEmpty()%}  
-                      <span class="products__price">{{ obOffer.price }} {{ obOffer.currency }}</span>
-                    {% endif %}
-                  
-                  <form class="mb-0">
-                <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
-                <input type="hidden" name="quantity" value="1">
-                {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-sm' %}
-            </form>
-                </div>
-                {% endfor %}
-              </div>
-            
-               {% endif %} 
-            
-              </div>
-
-            </div>
-          </section>
-        </div>
-      </div>
-    </div>";s:4:"code";N;s:5:"title";s:14:"Магазин";s:3:"url";s:6:"/store";s:6:"layout";s:4:"main";s:9:"is_hidden";s:1:"0";s:12:"CategoryList";a:0:{}s:11:"ProductList";a:1:{s:7:"sorting";s:2:"no";}}}
+</div>
+</div>";s:4:"code";N;s:5:"title";s:14:"Магазин";s:3:"url";s:6:"/store";s:6:"layout";s:4:"main";s:9:"is_hidden";s:1:"0";s:12:"CategoryList";a:0:{}s:11:"ProductList";a:1:{s:7:"sorting";s:3:"new";}s:10:"Pagination";a:19:{s:14:"count_per_page";s:1:"6";s:16:"pagination_limit";s:1:"5";s:12:"active_class";s:4:"_act";s:17:"first_button_name";s:5:"First";s:18:"first_button_limit";s:1:"1";s:22:"first-more_button_name";s:3:"...";s:23:"first-more_button_limit";s:1:"1";s:16:"prev_button_name";s:4:"Prev";s:17:"prev_button_limit";s:1:"1";s:21:"prev-more_button_name";s:3:"...";s:22:"prev-more_button_limit";s:1:"1";s:21:"next-more_button_name";s:3:"...";s:22:"next-more_button_limit";s:1:"1";s:16:"next_button_name";s:4:"Next";s:17:"next_button_limit";s:1:"1";s:21:"last-more_button_name";s:3:"...";s:22:"last-more_button_limit";s:1:"1";s:16:"last_button_name";s:4:"Last";s:17:"last_button_limit";s:1:"1";}}}

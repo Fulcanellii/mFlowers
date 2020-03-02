@@ -1,4 +1,4 @@
-1582961052a:1:{s:13:"blog-post.htm";a:11:{s:8:"fileName";s:13:"blog-post.htm";s:7:"content";s:2694:"title = "Blog Post"
+1583152896a:1:{s:13:"blog-post.htm";a:11:{s:8:"fileName";s:13:"blog-post.htm";s:7:"content";s:3212:"title = "Blog Post"
 url = "/blog/post/:slug"
 layout = "main"
 is_hidden = 0
@@ -12,6 +12,9 @@ categoryPage = "blog-category"
 slug = "{{ :slug }}"
 categoryPage = "blog-category"
 ==
+{% set blog = blogPost.post %}
+{% set cat = blog.categories %}
+
 <div class="wrapper">
         
 
@@ -23,7 +26,17 @@ categoryPage = "blog-category"
             <span>/</span>
           </li>
           <li class="crumb">
-            Блог
+            <a href="/blog" class="crumb-link">Блог</a>
+            <span>/</span>
+          </li>
+          {% for cat in cat %}
+          <li class="crumb">
+            <a href="{{ cat.url }}" class="crumb-link">{{ cat.name }}</a>
+            <span>/</span>
+          </li>
+          {% endfor %}
+          <li class="crumb">
+            <a class="crumb-link">{{ blog.title }}</a>
           </li>
         </ul>
         <div class="blogpage__flex">
@@ -51,16 +64,17 @@ categoryPage = "blog-category"
             </aside>
             <aside class="blogpage__aside">
               <h3>Категории</h3>
+              
+              {% set cat = blogCategories.categories %}
               <ul>
+              {% for cat in cat %}
                 <li>
-                  <a href="#" class="blogpage__link-acide">{% component 'blogCategories' %}</a>
+                  <a href="{{ cat.url }}" class="blogpage__link-acide">{{ cat.name }}</a>
                 </li>
+              {% endfor %}
               </ul>
             </aside>
           </div>
-
-          
-          {% set blog = blogPost.post %}
           
           <div class="bloginner__blog">
           {% if blog.featured_images.count %}
@@ -82,7 +96,10 @@ categoryPage = "blog-category"
     </div>
 
         
-        </div>";s:5:"mtime";i:1582957334;s:6:"markup";s:2451:"<div class="wrapper">
+        </div>";s:5:"mtime";i:1583127196;s:6:"markup";s:2969:"{% set blog = blogPost.post %}
+{% set cat = blog.categories %}
+
+<div class="wrapper">
         
 
         <div class="blogpage">
@@ -93,7 +110,17 @@ categoryPage = "blog-category"
             <span>/</span>
           </li>
           <li class="crumb">
-            Блог
+            <a href="/blog" class="crumb-link">Блог</a>
+            <span>/</span>
+          </li>
+          {% for cat in cat %}
+          <li class="crumb">
+            <a href="{{ cat.url }}" class="crumb-link">{{ cat.name }}</a>
+            <span>/</span>
+          </li>
+          {% endfor %}
+          <li class="crumb">
+            <a class="crumb-link">{{ blog.title }}</a>
           </li>
         </ul>
         <div class="blogpage__flex">
@@ -121,16 +148,17 @@ categoryPage = "blog-category"
             </aside>
             <aside class="blogpage__aside">
               <h3>Категории</h3>
+              
+              {% set cat = blogCategories.categories %}
               <ul>
+              {% for cat in cat %}
                 <li>
-                  <a href="#" class="blogpage__link-acide">{% component 'blogCategories' %}</a>
+                  <a href="{{ cat.url }}" class="blogpage__link-acide">{{ cat.name }}</a>
                 </li>
+              {% endfor %}
               </ul>
             </aside>
           </div>
-
-          
-          {% set blog = blogPost.post %}
           
           <div class="bloginner__blog">
           {% if blog.featured_images.count %}

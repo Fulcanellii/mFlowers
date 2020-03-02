@@ -1,4 +1,4 @@
-1582961052a:1:{s:8:"blog.htm";a:11:{s:8:"fileName";s:8:"blog.htm";s:7:"content";s:3258:"title = "Blog"
+1583152896a:1:{s:8:"blog.htm";a:11:{s:8:"fileName";s:8:"blog.htm";s:7:"content";s:3428:"title = "Blog"
 url = "/blog"
 layout = "main"
 is_hidden = 0
@@ -23,11 +23,11 @@ categoryPage = "blog-category"
       <div class="container">
         <ul class="crumbs">
           <li class="crumb">
-            <a href="#" class="crumb-link">Главная</a>
+            <a href="/" class="crumb-link">Главная</a>
             <span>/</span>
           </li>
           <li class="crumb">
-            Блог
+            <a href="/blog" class="crumb-link">Блог</a>
           </li>
         </ul>
         <div class="blogpage__flex">
@@ -55,10 +55,14 @@ categoryPage = "blog-category"
             </aside>
             <aside class="blogpage__aside">
               <h3>Категории</h3>
+              
+              {% set cat = blogCategories.categories %}
               <ul>
+              {% for cat in cat %}
                 <li>
-                  <a href="#" class="blogpage__link-acide">{% component 'blogCategories' %}</a>
+                  <a href="{{ cat.url }}" class="blogpage__link-acide">{{ cat.name }}</a>
                 </li>
+              {% endfor %}
               </ul>
             </aside>
           </div>
@@ -98,18 +102,18 @@ categoryPage = "blog-category"
     </div>
 
         
-        </div>";s:5:"mtime";i:1582805296;s:6:"markup";s:2913:"<div class="wrapper">
+        </div>";s:5:"mtime";i:1583127196;s:6:"markup";s:3083:"<div class="wrapper">
         
 
         <div class="blogpage">
       <div class="container">
         <ul class="crumbs">
           <li class="crumb">
-            <a href="#" class="crumb-link">Главная</a>
+            <a href="/" class="crumb-link">Главная</a>
             <span>/</span>
           </li>
           <li class="crumb">
-            Блог
+            <a href="/blog" class="crumb-link">Блог</a>
           </li>
         </ul>
         <div class="blogpage__flex">
@@ -137,10 +141,14 @@ categoryPage = "blog-category"
             </aside>
             <aside class="blogpage__aside">
               <h3>Категории</h3>
+              
+              {% set cat = blogCategories.categories %}
               <ul>
+              {% for cat in cat %}
                 <li>
-                  <a href="#" class="blogpage__link-acide">{% component 'blogCategories' %}</a>
+                  <a href="{{ cat.url }}" class="blogpage__link-acide">{{ cat.name }}</a>
                 </li>
+              {% endfor %}
               </ul>
             </aside>
           </div>

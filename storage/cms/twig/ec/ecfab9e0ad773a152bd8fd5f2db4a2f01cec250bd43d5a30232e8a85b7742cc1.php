@@ -128,22 +128,24 @@ class __TwigTemplate_6f8756b679ce853a2c434822940c7ad0b007c1eb707df0d8c74976e4011
                     echo "                        <li class=\"crumb active\" aria-current=\"page\">";
                     echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "name", [], "any", false, false, false, 23), "html", null, true);
                     echo "</li>
+                        <span>/</span>
                     ";
                 } else {
-                    // line 25
+                    // line 26
                     echo "                        <li class=\"crumb\"><a class=\"crumb-link\" href=\"";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, false, 25), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, false, 26), "html", null, true);
                     echo "\">";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "name", [], "any", false, false, false, 25), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "name", [], "any", false, false, false, 26), "html", null, true);
                     echo "</a></li>
+                        <span>/</span>
                     ";
                 }
-                // line 27
-                echo "                ";
+                // line 29
+                echo "
+                ";
             }
-            // line 28
-            echo "                <span>/</span>
-            ";
+            // line 31
+            echo "            ";
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
             $context['loop']['first'] = false;
@@ -156,7 +158,7 @@ class __TwigTemplate_6f8756b679ce853a2c434822940c7ad0b007c1eb707df0d8c74976e4011
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 30
+        // line 32
         echo "
 
 </ul>";
@@ -174,7 +176,7 @@ class __TwigTemplate_6f8756b679ce853a2c434822940c7ad0b007c1eb707df0d8c74976e4011
 
     public function getDebugInfo()
     {
-        return array (  160 => 30,  145 => 28,  142 => 27,  134 => 25,  128 => 23,  125 => 22,  122 => 21,  105 => 20,  96 => 13,  82 => 12,  79 => 11,  71 => 9,  65 => 7,  62 => 6,  59 => 5,  42 => 4,  37 => 1,);
+        return array (  162 => 32,  148 => 31,  144 => 29,  135 => 26,  128 => 23,  125 => 22,  122 => 21,  105 => 20,  96 => 13,  82 => 12,  79 => 11,  71 => 9,  65 => 7,  62 => 6,  59 => 5,  42 => 4,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -202,11 +204,13 @@ class __TwigTemplate_6f8756b679ce853a2c434822940c7ad0b007c1eb707df0d8c74976e4011
                 {% if item.name is not empty and item.url is not empty %}
                     {% if loop.last %}
                         <li class=\"crumb active\" aria-current=\"page\">{{ item.name }}</li>
+                        <span>/</span>
                     {% else %}
                         <li class=\"crumb\"><a class=\"crumb-link\" href=\"{{ item.url }}\">{{ item.name }}</a></li>
+                        <span>/</span>
                     {% endif %}
+
                 {% endif %}
-                <span>/</span>
             {% endfor %}
 
 

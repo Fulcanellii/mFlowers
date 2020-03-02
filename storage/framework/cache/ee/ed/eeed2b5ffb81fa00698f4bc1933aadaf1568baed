@@ -1,4 +1,4 @@
-1582960724a:1:{s:16:"product-page.htm";a:10:{s:8:"fileName";s:16:"product-page.htm";s:7:"content";s:4165:"title = "Product Page"
+1583152896a:1:{s:16:"product-page.htm";a:10:{s:8:"fileName";s:16:"product-page.htm";s:7:"content";s:4430:"title = "Product Page"
 url = "/product/:slug"
 layout = "main"
 is_hidden = 0
@@ -11,7 +11,6 @@ skip_error = 0
 ==
 {% set obProduct = ProductPage.get() %}
 
-
 <section class="info">
       <div class="container">
         <ul class="crumbs">
@@ -20,6 +19,11 @@ skip_error = 0
             <span>/</span>
           </li>
           <li class="crumb">
+              <a href="{{ obProduct.category.getPageUrl('category-page') }}" class="crumb-link">{{ obProduct.category.name }}</a>
+            <span>/</span>
+          </li>
+          <li class="crumb">
+
             {{ obProduct.name }}
           </li>
         </ul>
@@ -32,7 +36,7 @@ skip_error = 0
               </a>
             </div>
           {% endif %}
-           
+
           {% if obProduct.images is not empty %}
           
           <div class="info__sliders">
@@ -45,8 +49,7 @@ skip_error = 0
                 </li>
               
               {% for img in obProduct.images %}
-              
-             
+
                 <li class="info__li">
                   <a href="{{ img.path }}" data-standard="{{ img.path }}">
                     <img src="{{ img.path }}" alt="{{ img.description }}" />
@@ -88,10 +91,12 @@ skip_error = 0
                 <button type="button" class="info__btn">-</button>
               </div>
               {% if obOffer.quantity == '0' %}
+
                   <form class="mb-0">
                 <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
                 <input type="hidden" name="quantity" value="1">
                 {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-sm' %}
+
             </form>
               {% else %}
               
@@ -104,15 +109,16 @@ skip_error = 0
             </div>
 
             <div class="info__category">
-              <strong>Категория:</strong>
-              <span>{{ obProduct.category.name }}</span>
+
+              <strong>Категория: </strong>
+              <span><a class="category__link" href="{{ obProduct.category.getPageUrl('category-page') }}">{{ obProduct.category.name }}</a></span>
+
             </div>
 
           </div>
         </div>
       </div>
-    </section>";s:5:"mtime";i:1582959518;s:6:"markup";s:3986:"{% set obProduct = ProductPage.get() %}
-
+    </section>";s:5:"mtime";i:1583127196;s:6:"markup";s:4251:"{% set obProduct = ProductPage.get() %}
 
 <section class="info">
       <div class="container">
@@ -122,6 +128,11 @@ skip_error = 0
             <span>/</span>
           </li>
           <li class="crumb">
+              <a href="{{ obProduct.category.getPageUrl('category-page') }}" class="crumb-link">{{ obProduct.category.name }}</a>
+            <span>/</span>
+          </li>
+          <li class="crumb">
+
             {{ obProduct.name }}
           </li>
         </ul>
@@ -134,7 +145,7 @@ skip_error = 0
               </a>
             </div>
           {% endif %}
-           
+
           {% if obProduct.images is not empty %}
           
           <div class="info__sliders">
@@ -147,8 +158,7 @@ skip_error = 0
                 </li>
               
               {% for img in obProduct.images %}
-              
-             
+
                 <li class="info__li">
                   <a href="{{ img.path }}" data-standard="{{ img.path }}">
                     <img src="{{ img.path }}" alt="{{ img.description }}" />
@@ -190,10 +200,12 @@ skip_error = 0
                 <button type="button" class="info__btn">-</button>
               </div>
               {% if obOffer.quantity == '0' %}
+
                   <form class="mb-0">
                 <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
                 <input type="hidden" name="quantity" value="1">
                 {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-sm' %}
+
             </form>
               {% else %}
               
@@ -206,8 +218,10 @@ skip_error = 0
             </div>
 
             <div class="info__category">
-              <strong>Категория:</strong>
-              <span>{{ obProduct.category.name }}</span>
+
+              <strong>Категория: </strong>
+              <span><a class="category__link" href="{{ obProduct.category.getPageUrl('category-page') }}">{{ obProduct.category.name }}</a></span>
+
             </div>
 
           </div>

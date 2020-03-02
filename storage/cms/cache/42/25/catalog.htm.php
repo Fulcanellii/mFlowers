@@ -1,5 +1,5 @@
 <?php 
-class Cms5e5a0f0a6c936144462368_958f4101bb88c3c03d1be5366f1c477dClass extends Cms\Classes\PageCode
+class Cms5e5cc100ad1ae146218324_a28df5721a9ea5962d057ac46d3c3537Class extends Cms\Classes\PageCode
 {
 public function onInit() {
     $obProductItem = $this->ProductPage->get();
@@ -28,7 +28,7 @@ public function onInit() {
         }
     }
 
-    $arBreadcrumbs[] = ['name' => 'Home', 'url' => \Cms\Classes\Page::url('index')];
+    $arBreadcrumbs[] = ['name' => 'Главная', 'url' => \Cms\Classes\Page::url('index')];
     $arBreadcrumbs = array_reverse($arBreadcrumbs);
 
     $this['obProduct'] = $obProductItem;

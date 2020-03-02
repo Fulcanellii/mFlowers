@@ -21,11 +21,13 @@
                 {% if item.name is not empty and item.url is not empty %}
                     {% if loop.last %}
                         <li class="crumb active" aria-current="page">{{ item.name }}</li>
+                        <span>/</span>
                     {% else %}
                         <li class="crumb"><a class="crumb-link" href="{{ item.url }}">{{ item.name }}</a></li>
+                        <span>/</span>
                     {% endif %}
+
                 {% endif %}
-                <span>/</span>
             {% endfor %}
 
 

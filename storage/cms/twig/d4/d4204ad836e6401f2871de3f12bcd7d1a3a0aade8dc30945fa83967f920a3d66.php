@@ -41,16 +41,11 @@ class __TwigTemplate_304869e48e96f0c85f7c7f113018517b621c133c0e74ad3f1715fa3a1b0
         echo "
 ";
         // line 4
-        $context["arBreadcrumbs"] = [0 => ["name" => "Home", "url" => $this->extensions['Cms\Twig\Extension']->pageFilter("index")], 1 => ["name" => "Checkout", "url" => $this->extensions['Cms\Twig\Extension']->pageFilter("checkout")]];
+        $context["arBreadcrumbs"] = [0 => ["name" => "Главная", "url" => $this->extensions['Cms\Twig\Extension']->pageFilter("index")], 1 => ["name" => "Корзина", "url" => $this->extensions['Cms\Twig\Extension']->pageFilter("checkout")]];
         // line 8
         echo "
 <div class=\"container\">
     ";
-        // line 10
-        $context['__cms_partial_params'] = [];
-        $context['__cms_partial_params']['arBreadcrumbs'] = ($context["arBreadcrumbs"] ?? null)        ;
-        echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("navigation/breadcrumbs/breadcrumbs"        , $context['__cms_partial_params']        , true        );
-        unset($context['__cms_partial_params']);
         // line 11
         echo "    ";
         $context['__cms_partial_params'] = [];
@@ -85,7 +80,7 @@ class __TwigTemplate_304869e48e96f0c85f7c7f113018517b621c133c0e74ad3f1715fa3a1b0
 
     public function getDebugInfo()
     {
-        return array (  73 => 15,  70 => 14,  65 => 13,  62 => 12,  55 => 11,  50 => 10,  46 => 8,  44 => 4,  41 => 3,  39 => 2,  37 => 1,);
+        return array (  68 => 15,  65 => 14,  60 => 13,  57 => 12,  50 => 11,  46 => 8,  44 => 4,  41 => 3,  39 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -94,12 +89,12 @@ class __TwigTemplate_304869e48e96f0c85f7c7f113018517b621c133c0e74ad3f1715fa3a1b0
 {% set obCartPositionList = Cart.get(obActiveShippingType) %}
 
 {% set arBreadcrumbs = [
-    {'name': 'Home', 'url': 'index'|page},
-    {'name': 'Checkout', 'url': 'checkout'|page}
+    {'name': 'Главная', 'url': 'index'|page},
+    {'name': 'Корзина', 'url': 'checkout'|page}
 ] %}
 
 <div class=\"container\">
-    {% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}
+    {#{% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}#}
     {% partial 'product/cart-position-list/cart-position-list' obCartPositionList=obCartPositionList obActiveShippingType=obActiveShippingType %}
     {% if obCartPositionList.count > 0 %}
         {% partial 'form/checkout-form/checkout-form' %}

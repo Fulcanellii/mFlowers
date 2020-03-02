@@ -1,4 +1,4 @@
-1582960994a:1:{s:11:"catalog.htm";a:15:{s:8:"fileName";s:11:"catalog.htm";s:7:"content";s:4012:"title = "Catalog"
+1583152896a:1:{s:11:"catalog.htm";a:15:{s:8:"fileName";s:11:"catalog.htm";s:7:"content";s:3974:"title = "Catalog"
 url = "/:category*/:slug?"
 layout = "main"
 is_hidden = 0
@@ -83,7 +83,7 @@ function onInit() {
         }
     }
 
-    $arBreadcrumbs[] = ['name' => 'Home', 'url' => \Cms\Classes\Page::url('index')];
+    $arBreadcrumbs[] = ['name' => 'Главная', 'url' => \Cms\Classes\Page::url('index')];
     $arBreadcrumbs = array_reverse($arBreadcrumbs);
 
     $this['obProduct'] = $obProductItem;
@@ -96,7 +96,8 @@ function onInit() {
 {# @var obCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 {# @var obMainCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 {# @var obActiveCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
-
+<div class="storePage">
+<div class="container">
 {% set arSEOParams = {'main_category': obMainCategory, 'category': obCategory, 'product': obProduct} %}
 
 {% if seo_toolbox_is_available %}
@@ -109,16 +110,20 @@ function onInit() {
     {% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}
     {% partial 'product/product-card-detailed/product-card-detailed' obProduct=obProduct %}
 {% else %}
-    <!-- {% partial 'content/picture-preview-top/picture-preview-top' obImage=obActiveCategory.preview_image %} -->
-    {% partial 'product/catalog-panel/catalog-panel' obActiveCategory=obActiveCategory label='catalog-product-list' %}
-    {% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}
+    {#{% partial 'content/picture-preview-top/picture-preview-top' obImage=obActiveCategory.preview_image %}#}
+    
+    {#{% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}#}
     {% partial 'content/text-preview/text-preview' sPreviewText=obActiveCategory.preview_text %}
-    {% partial 'product/catalog-product-list/catalog-product-list' %}
+    {% partial 'product/catalog-product-list/catalog-product-list'  %}
     {% partial 'content/wysiwyg/wysiwyg' sContent=obActiveCategory.description %}
-{% endif %}";s:5:"mtime";i:1582960393;s:6:"markup";s:1334:"{# @var obCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
+{% endif %}
+
+</div>
+</div>";s:5:"mtime";i:1583137023;s:6:"markup";s:1286:"{# @var obCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 {# @var obMainCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 {# @var obActiveCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
-
+<div class="storePage">
+<div class="container">
 {% set arSEOParams = {'main_category': obMainCategory, 'category': obCategory, 'product': obProduct} %}
 
 {% if seo_toolbox_is_available %}
@@ -131,13 +136,16 @@ function onInit() {
     {% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}
     {% partial 'product/product-card-detailed/product-card-detailed' obProduct=obProduct %}
 {% else %}
-    <!-- {% partial 'content/picture-preview-top/picture-preview-top' obImage=obActiveCategory.preview_image %} -->
-    {% partial 'product/catalog-panel/catalog-panel' obActiveCategory=obActiveCategory label='catalog-product-list' %}
-    {% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}
+    {#{% partial 'content/picture-preview-top/picture-preview-top' obImage=obActiveCategory.preview_image %}#}
+    
+    {#{% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}#}
     {% partial 'content/text-preview/text-preview' sPreviewText=obActiveCategory.preview_text %}
-    {% partial 'product/catalog-product-list/catalog-product-list' %}
+    {% partial 'product/catalog-product-list/catalog-product-list'  %}
     {% partial 'content/wysiwyg/wysiwyg' sContent=obActiveCategory.description %}
-{% endif %}";s:4:"code";s:1511:"function onInit() {
+{% endif %}
+
+</div>
+</div>";s:4:"code";s:1521:"function onInit() {
     $obProductItem = $this->ProductPage->get();
     $obBrandItem = $this->BrandPage->get();
     $obCategoryItem = $this->CategoryPage->get();
@@ -164,7 +172,7 @@ function onInit() {
         }
     }
 
-    $arBreadcrumbs[] = ['name' => 'Home', 'url' => \Cms\Classes\Page::url('index')];
+    $arBreadcrumbs[] = ['name' => 'Главная', 'url' => \Cms\Classes\Page::url('index')];
     $arBreadcrumbs = array_reverse($arBreadcrumbs);
 
     $this['obProduct'] = $obProductItem;

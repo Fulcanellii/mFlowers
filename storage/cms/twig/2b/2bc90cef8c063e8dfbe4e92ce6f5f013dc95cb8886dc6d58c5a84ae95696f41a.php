@@ -39,235 +39,197 @@ class __TwigTemplate_5f433b52bc00d36c110eba462adb075daa458c6f33339b3100aaa89c52e
         // line 4
         $context["obOffer"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "offer", [], "any", false, false, false, 4), "first", [], "method", false, false, false, 4);
         // line 5
-        echo "<section class=\"container shadow p-3 mb-5 bg-white rounded product-page-detailed pb-4\">
-    <div class=\"row\">
-        <div class=\"col-lg-6\">
-            <div id=\"carouselExampleIndicators\" class=\"carousel product-detailed__carousel slide\" data-ride=\"carousel\">
-                <ol class=\"carousel-indicators\">
-                    ";
+        echo "
+<section class=\"info\">
+
+        <div class=\"info__wrap\">
+            <div class=\"info__photos\">
+            ";
         // line 10
-        if ( !twig_test_empty(twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "images", [], "any", false, false, false, 10))) {
+        if ( !twig_test_empty(twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 10))) {
             // line 11
-            echo "                        ";
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "images", [], "any", false, false, false, 11), "count", [], "method", false, false, false, 11));
-            $context['loop'] = [
-              'parent' => $context['_parent'],
-              'index0' => 0,
-              'index'  => 1,
-              'first'  => true,
-            ];
-            if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
-                $length = count($context['_seq']);
-                $context['loop']['revindex0'] = $length - 1;
-                $context['loop']['revindex'] = $length;
-                $context['loop']['length'] = $length;
-                $context['loop']['last'] = 1 === $length;
-            }
-            foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-                // line 12
-                echo "                            <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index0", [], "any", false, false, false, 12), "html", null, true);
-                echo "\" class=\"";
-                if (twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 12)) {
-                    echo " active ";
-                }
-                echo "\"></li>
-                        ";
-                ++$context['loop']['index0'];
-                ++$context['loop']['index'];
-                $context['loop']['first'] = false;
-                if (isset($context['loop']['length'])) {
-                    --$context['loop']['revindex0'];
-                    --$context['loop']['revindex'];
-                    $context['loop']['last'] = 0 === $context['loop']['revindex0'];
-                }
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 14
-            echo "                    ";
-        } else {
-            // line 15
-            echo "                        <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li>
-                    ";
+            echo "            <div class=\"easyzoom easyzoom--overlay easyzoom--with-thumbnails \">
+              <a href=\"";
+            // line 12
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 12), "path", [], "any", false, false, false, 12), "html", null, true);
+            echo "\" class=\"info__img-wrap\">
+                <img src=\"";
+            // line 13
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 13), "path", [], "any", false, false, false, 13), "html", null, true);
+            echo "\" alt=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 13), "description", [], "any", false, false, false, 13), "html", null, true);
+            echo "\" class=\"info__img\" />
+              </a>
+            </div>
+          ";
         }
         // line 17
-        echo "                </ol>
-                <div class=\"carousel-inner mb-3 mb-lg-0 product-detailed__carousel-inner\">
-                    ";
-        // line 19
-        if ( !twig_test_empty(twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "images", [], "any", false, false, false, 19))) {
-            // line 20
-            echo "                        ";
+        echo "
+          ";
+        // line 18
+        if ( !twig_test_empty(twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "images", [], "any", false, false, false, 18))) {
+            // line 19
+            echo "          
+          <div class=\"info__sliders\">
+              <ul class=\"thumbnails info__thumbnails owl-carousel\">
+              
+              <li class=\"info__li\">
+                  <a href=\"";
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 24), "path", [], "any", false, false, false, 24), "html", null, true);
+            echo "\" data-standard=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 24), "path", [], "any", false, false, false, 24), "html", null, true);
+            echo "\">
+                    <img src=\"";
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 25), "path", [], "any", false, false, false, 25), "html", null, true);
+            echo "\" alt=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 25), "description", [], "any", false, false, false, 25), "html", null, true);
+            echo "\" />
+                  </a>
+                </li>
+              
+              ";
+            // line 29
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "images", [], "any", false, false, false, 20));
-            $context['loop'] = [
-              'parent' => $context['_parent'],
-              'index0' => 0,
-              'index'  => 1,
-              'first'  => true,
-            ];
-            if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
-                $length = count($context['_seq']);
-                $context['loop']['revindex0'] = $length - 1;
-                $context['loop']['revindex'] = $length;
-                $context['loop']['length'] = $length;
-                $context['loop']['last'] = 1 === $length;
-            }
-            foreach ($context['_seq'] as $context["_key"] => $context["obImage"]) {
-                // line 21
-                echo "                            <div class=\"carousel-item product-detailed__carousel-item ";
-                if (twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 21)) {
-                    echo " active ";
-                }
-                echo " h-100\">
-                                <img class=\"d-block w-100 h-100 product-detailed__carousel-item-img\" src=\"";
-                // line 22
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obImage"], "path", [], "any", false, false, false, 22), "html", null, true);
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "images", [], "any", false, false, false, 29));
+            foreach ($context['_seq'] as $context["_key"] => $context["img"]) {
+                // line 30
+                echo "
+                <li class=\"info__li\">
+                  <a href=\"";
+                // line 32
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["img"], "path", [], "any", false, false, false, 32), "html", null, true);
+                echo "\" data-standard=\"";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["img"], "path", [], "any", false, false, false, 32), "html", null, true);
+                echo "\">
+                    <img src=\"";
+                // line 33
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["img"], "path", [], "any", false, false, false, 33), "html", null, true);
                 echo "\" alt=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obImage"], "description", [], "any", false, false, false, 22), "html", null, true);
-                echo "\" title=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obImage"], "title", [], "any", false, false, false, 22), "html", null, true);
-                echo "\" loading=\"lazy\">
-                            </div>
-                        ";
-                ++$context['loop']['index0'];
-                ++$context['loop']['index'];
-                $context['loop']['first'] = false;
-                if (isset($context['loop']['length'])) {
-                    --$context['loop']['revindex0'];
-                    --$context['loop']['revindex'];
-                    $context['loop']['last'] = 0 === $context['loop']['revindex0'];
-                }
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["img"], "description", [], "any", false, false, false, 33), "html", null, true);
+                echo "\" />
+                  </a>
+                </li>
+              ";
             }
             $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['obImage'], $context['_parent'], $context['loop']);
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['img'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 25
-            echo "                    ";
-        } else {
-            // line 26
-            echo "                        <div class=\"carousel-item product-detailed__carousel-item active h-100\">
-                            <img class=\"d-block w-100 h-100 product-detailed__carousel-item-img\" src=\"";
-            // line 27
-            echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/no-image.png");
-            echo "\">
-                        </div>
-                    ";
-        }
-        // line 30
-        echo "                </div>
-                <a class=\"carousel-control-prev\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"prev\">
-                    <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
-                    <span class=\"sr-only\">Previous</span>
-                </a>
-                <a class=\"carousel-control-next\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"next\">
-                    <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>
-                    <span class=\"sr-only\">Next</span>
-                </a>
+            // line 37
+            echo "              </ul>
             </div>
-        </div>
-        <div class=\"col-lg-6\">
-            <h1>";
-        // line 42
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "name", [], "any", false, false, false, 42), "html", null, true);
-        echo "</h1>
-            <div class=\"product-card__price-bar mb-3\">
-                <span class=\"product-card__current-price pr-2 font-weight-bold text-danger\">
-                    ";
-        // line 45
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "price", [], "any", false, false, false, 45), "html", null, true);
-        echo "  ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "currency", [], "any", false, false, false, 45), "html", null, true);
-        echo "
-                </span>
-                ";
-        // line 47
-        if ((twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "old_price_value", [], "any", false, false, false, 47) > 0)) {
-            // line 48
-            echo "                    <span class=\"product-card__old-price text-muted pr-2\">
-                    <s>";
-            // line 49
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "old_price", [], "any", false, false, false, 49), "html", null, true);
-            echo " ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "currency", [], "any", false, false, false, 49), "html", null, true);
-            echo "</s>
-                </span>
-                ";
+          
+          ";
         }
-        // line 52
-        echo "            </div>
-            <p class=\"product-detailed__description\">
+        // line 41
+        echo "        </div>
+        <div class=\"info__spec\">
+            <h1 class=\"info__name\">";
+        // line 43
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "name", [], "any", false, false, false, 43), "html", null, true);
+        echo "</h1>
+            <div class=\"info__price-wrap\">
+
+              <h3 class=\"info__price\">";
+        // line 46
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "price", [], "any", false, false, false, 46), "html", null, true);
+        echo " ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "currency", [], "any", false, false, false, 46), "html", null, true);
+        echo "</h3>
+              
+              ";
+        // line 48
+        if ((twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "quantity", [], "any", false, false, false, 48) == "0")) {
+            // line 49
+            echo "                  <div class=\"info__no_stock\">нет в наличии</div>
+              ";
+        } else {
+            // line 51
+            echo "                  <div class=\"info__stock\">в наличии</div>
+              ";
+        }
+        // line 53
+        echo "              
+   
+            </div>
+            <div class=\"info__description\">
+              <h3>Описание товара</h3>
+              <p>
                 ";
-        // line 54
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_text", [], "any", false, false, false, 54), "html", null, true);
+        // line 59
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_text", [], "any", false, false, false, 59), "html", null, true);
         echo "
-            </p>
-            ";
-        // line 56
-        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "brand", [], "any", false, false, false, 56), "isNotEmpty", [], "method", false, false, false, 56)) {
-            // line 57
+              </p>
+            </div>
+           <!--  ";
+        // line 62
+        if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "brand", [], "any", false, false, false, 62), "isNotEmpty", [], "method", false, false, false, 62)) {
+            // line 63
             echo "            <p class=\"product-detailed__brand\">
                 <span class=\"font-weight-bold\">
                     Brand:
                 </span>
                 <a href=\"";
-            // line 61
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "brand", [], "any", false, false, false, 61), "getPageUrl", [0 => "catalog"], "method", false, false, false, 61), "html", null, true);
+            // line 67
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "brand", [], "any", false, false, false, 67), "getPageUrl", [0 => "catalog"], "method", false, false, false, 67), "html", null, true);
             echo "\" class=\"product-detailed__category-link\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "brand", [], "any", false, false, false, 61), "name", [], "any", false, false, false, 61), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "brand", [], "any", false, false, false, 67), "name", [], "any", false, false, false, 67), "html", null, true);
             echo "</a>
             </p>
             ";
         }
-        // line 64
-        echo "            <p class=\"product-detailed__category\">
-                <span class=\"font-weight-bold\">
-                    Категория:
-                </span>
-                <a href=\"";
-        // line 68
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "category", [], "any", false, false, false, 68), "getPageUrl", [0 => "catalog"], "method", false, false, false, 68), "html", null, true);
-        echo "\" class=\"product-detailed__category-link\">";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "category", [], "any", false, false, false, 68), "name", [], "any", false, false, false, 68), "html", null, true);
-        echo "</a>
-            </p>
-            ";
         // line 70
+        echo "             -->
+            ";
+        // line 71
         if (($context["cart_is_available"] ?? null)) {
-            // line 71
+            // line 72
             echo "                <form class=\"mb-0\">
                     <input type=\"hidden\" name=\"offer_id\" value=\"";
-            // line 72
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "id", [], "any", false, false, false, 72), "html", null, true);
+            // line 73
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "id", [], "any", false, false, false, 73), "html", null, true);
             echo "\">
                     ";
-            // line 73
+            // line 74
             $context['__cms_partial_params'] = [];
             $context['__cms_partial_params']['btnChangeQtyValue'] = 1            ;
             $context['__cms_partial_params']['btnProductPage'] = true            ;
-            $context['__cms_partial_params']['btnMaxQtyValue'] = twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "quantity", [], "any", false, false, false, 73)            ;
+            $context['__cms_partial_params']['btnMaxQtyValue'] = twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "quantity", [], "any", false, false, false, 74)            ;
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("form/button-change-quantity/button-change-quantity"            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
-            // line 74
+            // line 75
             echo "                    ";
             $context['__cms_partial_params'] = [];
             $context['__cms_partial_params']['btnAddClasses'] = "btn-lg"            ;
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("form/button-add-to-cart/button-add-to-cart"            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
-            // line 75
-            echo "                </form>
+            echo " 
+
+                </div>
+                </form>
             ";
         }
-        // line 77
-        echo "        </div>
-    </div>
+        // line 80
+        echo "
+            <div class=\"info__category\">
+
+              <strong>Категория: </strong>
+              <span><a class=\"category__link\" href=\"";
+        // line 84
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "category", [], "any", false, false, false, 84), "getPageUrl", [0 => "category-page"], "method", false, false, false, 84), "html", null, true);
+        echo "\">";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "category", [], "any", false, false, false, 84), "name", [], "any", false, false, false, 84), "html", null, true);
+        echo "</a></span>
+
+            </div>
+        </div>
+
+</div>
 </section>
 <div class=\"container wysiwyg\">";
-        // line 80
-        echo twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "description", [], "any", false, false, false, 80);
+        // line 91
+        echo twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "description", [], "any", false, false, false, 91);
         echo "</div>
       </div>
     </section>";
@@ -285,7 +247,7 @@ class __TwigTemplate_5f433b52bc00d36c110eba462adb075daa458c6f33339b3100aaa89c52e
 
     public function getDebugInfo()
     {
-        return array (  270 => 80,  265 => 77,  261 => 75,  255 => 74,  248 => 73,  244 => 72,  241 => 71,  239 => 70,  232 => 68,  226 => 64,  218 => 61,  212 => 57,  210 => 56,  205 => 54,  201 => 52,  193 => 49,  190 => 48,  188 => 47,  181 => 45,  175 => 42,  161 => 30,  155 => 27,  152 => 26,  149 => 25,  128 => 22,  121 => 21,  103 => 20,  101 => 19,  97 => 17,  93 => 15,  90 => 14,  69 => 12,  51 => 11,  49 => 10,  42 => 5,  40 => 4,  37 => 3,);
+        return array (  232 => 91,  220 => 84,  214 => 80,  202 => 75,  195 => 74,  191 => 73,  188 => 72,  186 => 71,  183 => 70,  175 => 67,  169 => 63,  167 => 62,  161 => 59,  153 => 53,  149 => 51,  145 => 49,  143 => 48,  136 => 46,  130 => 43,  126 => 41,  120 => 37,  108 => 33,  102 => 32,  98 => 30,  94 => 29,  85 => 25,  79 => 24,  72 => 19,  70 => 18,  67 => 17,  58 => 13,  54 => 12,  51 => 11,  49 => 10,  42 => 5,  40 => 4,  37 => 3,);
     }
 
     public function getSourceContext()
@@ -294,58 +256,64 @@ class __TwigTemplate_5f433b52bc00d36c110eba462adb075daa458c6f33339b3100aaa89c52e
 {# @var obOffer \\Lovata\\Shopaholic\\Classes\\Item\\OfferItem #}
 
 {% set obOffer = obProduct.offer.first() %}
-<section class=\"container shadow p-3 mb-5 bg-white rounded product-page-detailed pb-4\">
-    <div class=\"row\">
-        <div class=\"col-lg-6\">
-            <div id=\"carouselExampleIndicators\" class=\"carousel product-detailed__carousel slide\" data-ride=\"carousel\">
-                <ol class=\"carousel-indicators\">
-                    {% if obProduct.images is not empty %}
-                        {% for i in obProduct.images.count() %}
-                            <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"{{ loop.index0 }}\" class=\"{% if loop.first %} active {% endif %}\"></li>
-                        {% endfor %}
-                    {% else %}
-                        <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li>
-                    {% endif %}
-                </ol>
-                <div class=\"carousel-inner mb-3 mb-lg-0 product-detailed__carousel-inner\">
-                    {% if obProduct.images is not empty %}
-                        {% for obImage in obProduct.images %}
-                            <div class=\"carousel-item product-detailed__carousel-item {% if loop.first %} active {% endif %} h-100\">
-                                <img class=\"d-block w-100 h-100 product-detailed__carousel-item-img\" src=\"{{ obImage.path }}\" alt=\"{{ obImage.description }}\" title=\"{{ obImage.title }}\" loading=\"lazy\">
-                            </div>
-                        {% endfor %}
-                    {% else %}
-                        <div class=\"carousel-item product-detailed__carousel-item active h-100\">
-                            <img class=\"d-block w-100 h-100 product-detailed__carousel-item-img\" src=\"{{ 'assets/images/no-image.png'|theme }}\">
-                        </div>
-                    {% endif %}
-                </div>
-                <a class=\"carousel-control-prev\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"prev\">
-                    <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
-                    <span class=\"sr-only\">Previous</span>
-                </a>
-                <a class=\"carousel-control-next\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"next\">
-                    <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>
-                    <span class=\"sr-only\">Next</span>
-                </a>
+
+<section class=\"info\">
+
+        <div class=\"info__wrap\">
+            <div class=\"info__photos\">
+            {% if obProduct.preview_image is not empty %}
+            <div class=\"easyzoom easyzoom--overlay easyzoom--with-thumbnails \">
+              <a href=\"{{ obProduct.preview_image.path }}\" class=\"info__img-wrap\">
+                <img src=\"{{ obProduct.preview_image.path }}\" alt=\"{{ obProduct.preview_image.description }}\" class=\"info__img\" />
+              </a>
             </div>
+          {% endif %}
+
+          {% if obProduct.images is not empty %}
+          
+          <div class=\"info__sliders\">
+              <ul class=\"thumbnails info__thumbnails owl-carousel\">
+              
+              <li class=\"info__li\">
+                  <a href=\"{{ obProduct.preview_image.path }}\" data-standard=\"{{ obProduct.preview_image.path }}\">
+                    <img src=\"{{ obProduct.preview_image.path }}\" alt=\"{{ obProduct.preview_image.description }}\" />
+                  </a>
+                </li>
+              
+              {% for img in obProduct.images %}
+
+                <li class=\"info__li\">
+                  <a href=\"{{ img.path }}\" data-standard=\"{{ img.path }}\">
+                    <img src=\"{{ img.path }}\" alt=\"{{ img.description }}\" />
+                  </a>
+                </li>
+              {% endfor %}
+              </ul>
+            </div>
+          
+          {% endif %}
         </div>
-        <div class=\"col-lg-6\">
-            <h1>{{ obProduct.name }}</h1>
-            <div class=\"product-card__price-bar mb-3\">
-                <span class=\"product-card__current-price pr-2 font-weight-bold text-danger\">
-                    {{ obOffer.price }}  {{ obOffer.currency }}
-                </span>
-                {% if obOffer.old_price_value > 0 %}
-                    <span class=\"product-card__old-price text-muted pr-2\">
-                    <s>{{ obOffer.old_price }} {{ obOffer.currency }}</s>
-                </span>
-                {% endif %}
+        <div class=\"info__spec\">
+            <h1 class=\"info__name\">{{ obProduct.name }}</h1>
+            <div class=\"info__price-wrap\">
+
+              <h3 class=\"info__price\">{{ obOffer.price }} {{ obOffer.currency }}</h3>
+              
+              {% if obOffer.quantity == '0' %}
+                  <div class=\"info__no_stock\">нет в наличии</div>
+              {% else %}
+                  <div class=\"info__stock\">в наличии</div>
+              {% endif %}
+              
+   
             </div>
-            <p class=\"product-detailed__description\">
+            <div class=\"info__description\">
+              <h3>Описание товара</h3>
+              <p>
                 {{ obProduct.preview_text }}
-            </p>
-            {% if obProduct.brand.isNotEmpty() %}
+              </p>
+            </div>
+           <!--  {% if obProduct.brand.isNotEmpty() %}
             <p class=\"product-detailed__brand\">
                 <span class=\"font-weight-bold\">
                     Brand:
@@ -353,21 +321,26 @@ class __TwigTemplate_5f433b52bc00d36c110eba462adb075daa458c6f33339b3100aaa89c52e
                 <a href=\"{{ obProduct.brand.getPageUrl('catalog') }}\" class=\"product-detailed__category-link\">{{ obProduct.brand.name }}</a>
             </p>
             {% endif %}
-            <p class=\"product-detailed__category\">
-                <span class=\"font-weight-bold\">
-                    Категория:
-                </span>
-                <a href=\"{{ obProduct.category.getPageUrl('catalog') }}\" class=\"product-detailed__category-link\">{{ obProduct.category.name }}</a>
-            </p>
+             -->
             {% if cart_is_available %}
                 <form class=\"mb-0\">
                     <input type=\"hidden\" name=\"offer_id\" value=\"{{ obOffer.id }}\">
                     {% partial 'form/button-change-quantity/button-change-quantity' btnChangeQtyValue=1 btnProductPage=true btnMaxQtyValue=obOffer.quantity %}
-                    {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-lg' %}
+                    {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-lg' %} 
+
+                </div>
                 </form>
             {% endif %}
+
+            <div class=\"info__category\">
+
+              <strong>Категория: </strong>
+              <span><a class=\"category__link\" href=\"{{ obProduct.category.getPageUrl('category-page') }}\">{{ obProduct.category.name }}</a></span>
+
+            </div>
         </div>
-    </div>
+
+</div>
 </section>
 <div class=\"container wysiwyg\">{{ obProduct.description|raw }}</div>
       </div>
