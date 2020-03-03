@@ -58,7 +58,7 @@ class __TwigTemplate_df7d6b7e2ce9f999f213a63cc94ef17d95d008349637f42ca6a6dd8304f
         <span class=\"icon-eye products__icon\"></span>
             <img src=\"";
             // line 11
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 11), "path", [], "any", false, false, false, 11), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 11), "getThumb", [0 => 300, 1 => 300, 2 => ["quality" => 80]], "method", false, false, false, 11), "html", null, true);
             echo "\" alt=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 11), "description", [], "any", false, false, false, 11), "html", null, true);
             echo "\" title=\"";
@@ -160,7 +160,7 @@ class __TwigTemplate_df7d6b7e2ce9f999f213a63cc94ef17d95d008349637f42ca6a6dd8304f
         {% if obProduct.preview_image is not empty %}
         <div class=\"products__photo newproduct__photo\">
         <span class=\"icon-eye products__icon\"></span>
-            <img src=\"{{ obProduct.preview_image.path }}\" alt=\"{{ obProduct.preview_image.description }}\" title=\"{{ obProduct.preview_image.title }}\">
+            <img src=\"{{ obProduct.preview_image.getThumb(300, 300, {quality: 80}) }}\" alt=\"{{ obProduct.preview_image.description }}\" title=\"{{ obProduct.preview_image.title }}\">
         {% else %}
             <img src=\"{{ 'assets/images/no-image.png'|theme }}\">
         {% endif %}

@@ -1,4 +1,4 @@
-1583152896a:1:{s:9:"index.htm";a:13:{s:8:"fileName";s:9:"index.htm";s:7:"content";s:3248:"title = "Index"
+1583228622a:1:{s:9:"index.htm";a:14:{s:8:"fileName";s:9:"index.htm";s:7:"content";s:10812:"title = "Index"
 url = "/"
 layout = "main"
 is_hidden = 0
@@ -18,9 +18,14 @@ categoryPage = "blog-category"
 postPage = "blog-post"
 
 [CategoryList]
+
+[ProductList ProductList2]
+sorting = "new"
 ==
 {% partial 'content/carousel/carousel' arImageList=this.theme.main_slider %}
 
+{% set cat = CategoryList.make().tree() %}
+
 {% set obPromoBlockList = PromoBlockList.make().merge([this.theme.promo_block_left, this.theme.promo_block_middle, this.theme.promo_block_right]) %}
 {% partial 'promo-block/promo-block-product-tab/promo-block-product-tab' obPromoBlockList=obPromoBlockList %}
 
@@ -31,7 +36,146 @@ postPage = "blog-post"
 
 {% content 'main-banner.htm' %}
 
-{% set cat = CategoryList.make().tree() %}
+
+<section class="products">
+            <div class="container">
+                    <div class="products__group">
+                    
+                    {% set obCategory = CategoryPage.get() %}
+                    
+                    {% set obProductList = ProductList.make().sort(ProductList.getSorting()).active() %}
+                    
+                    {% if obProductList.isNotEmpty() %}
+
+                    {% for obProduct in obProductList|slice(0, 8) %}
+                    
+                    {% set obOffer = obProduct.offer.first() %}
+                    
+                        <div class="products__product" data-id="{{ obProduct.id }}" >
+                            {% if obProduct.preview_image is not empty %}
+                            <a href="{{ obProduct.getPageUrl('catalog') }}">
+                                <div class="products__photo">
+                                    <span class="icon-eye products__icon"></span>
+                                    <img src="{{ obProduct.preview_image.getThumb(300, 300, {quality: 80}) }}" alt="{{ obProduct.preview_image.description }}">
+                                </div>
+                                <span class="products__name">{{ obProduct.name }}</span>
+                            </a>
+                            {% endif %}
+                            <span class="products__price">{{ obOffer.price }}  {{ obOffer.currency }}</span>
+                            <form class="mb-0">
+                <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
+                <input type="hidden" name="quantity" value="1">
+                {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-sm' %}
+            </form>
+                        </div>
+
+                    {% endfor %}
+                    {% endif %}
+            </div>      
+        </section>
+        
+<div class="line"></div>
+
+<section class="newproduct">
+            <div class="container">
+                <div class="newproduct__wrap">
+
+                    <div class="newproduct__text">
+                        <img src="{{ 'assets/images/mainPage/newproduct/uzor.png'|theme }}" alt="uzor" class="newproduct__uzor">
+                        <h2 class="newproduct__title">
+                            НОВИНКИ НАШЕЙ ПРОДУКЦИИ
+                        </h2>
+                        <p class="newproduct__subtitle">
+                            Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов,
+                            но это не совсем так. Его корни уходят в один фрагмент классической латыни.
+                        </p>
+                    </div>
+
+                    <div class="newproduct__products owl-carousel  owl-theme owl-dots">
+                    
+                    {% set obProductList2 = ProductList2.make().sort(ProductList2.getSorting()).active() %}
+             
+                    {% if obProductList2.isNotEmpty() %}
+                    
+                    {% for obProduct2 in obProductList2 %}
+                    
+                    {% set obOffer2 = obProduct2.offer.first() %}
+                    
+                        <div class="products__product products__product-new">
+                            <a href="{{ obProduct2.getPageUrl('catalog') }}">
+                                <div class="products__photo newproduct__photo">
+                                    <span class="icon-eye products__icon"></span>
+                                    {% if obProduct2.preview_image is not empty %}
+                                    <img src="{{ obProduct2.preview_image.getThumb(300, 300, {quality: 80}) }}" alt="{{ obProduct2.preview_image.description }}">
+                                    {% endif %}
+                                </div>
+                                <span class="products__name">{{ obProduct2.name }}</span>
+                            </a>
+                            <span class="products__price">{{ obOffer2.price }}  {{ obOffer2.currency }}</span>
+                            <form class="mb-0">
+                <input type="hidden" name="offer_id" value="{{ obOffer2.id }}">
+                <input type="hidden" name="quantity" value="1">
+                {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-sm' %}
+            </form>
+                        </div>
+                    
+                    {% endfor %}
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+<section class="newproduct">
+            <div class="container">
+                <div class="newproduct__wrap newproduct__wrap-reverse">
+
+                    <div class="newproduct__text">
+                        <img src="{{ 'assets/images/mainPage/newproduct/uzor2.png'|theme }}" alt="uzor" class="newproduct__uzor-two">
+                        <h2 class="newproduct__title">
+                            РЕКОМЕНДУЕМ ДАННЫЙ ТОВАР
+                        </h2>
+                        <p class="newproduct__subtitle">
+                            Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов,
+                            но это не совсем так. Его корни уходят в один фрагмент классической латыни.
+                        </p>
+                    </div>
+
+                    <div class="newproduct__products owl-carousel  owl-theme owl-dots">
+                    
+                    {% set obProductList2 = ProductList2.make().active().random(5) %}
+         
+
+
+                    {% for obProduct2 in obProductList2 %}
+                    
+                    {% set obOffer2 = obProduct2.offer.first() %}
+                    
+                        <div class="products__product products__product-new">
+                            <a href="{{ obProduct2.getPageUrl('catalog') }}">
+                                <div class="products__photo newproduct__photo">
+                                    <span class="icon-eye products__icon"></span>
+                                    {% if obProduct2.preview_image is not empty %}
+                                    <img src="{{ obProduct2.preview_image.getThumb(300, 300, {quality: 80}) }}" alt="{{ obProduct2.preview_image.description }}">
+                                    {% endif %}
+                                </div>
+                                <span class="products__name">{{ obProduct2.name }}</span>
+                            </a>
+                            <span class="products__price">{{ obOffer2.price }}  {{ obOffer2.currency }}</span>
+                            <form class="mb-0">
+                <input type="hidden" name="offer_id" value="{{ obOffer2.id }}">
+                <input type="hidden" name="quantity" value="1">
+                {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-sm' %}
+            </form>
+                        </div>
+                         {% endfor %}
+               
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="line"></div>
 
 <section class="occation">
             <div class="container">
@@ -82,7 +226,9 @@ postPage = "blog-post"
                     
                 </div>
             </div>
-        </section>";s:5:"mtime";i:1583127196;s:6:"markup";s:2907:"{% partial 'content/carousel/carousel' arImageList=this.theme.main_slider %}
+        </section>";s:5:"mtime";i:1583224854;s:6:"markup";s:10424:"{% partial 'content/carousel/carousel' arImageList=this.theme.main_slider %}
+
+{% set cat = CategoryList.make().tree() %}
 
 {% set obPromoBlockList = PromoBlockList.make().merge([this.theme.promo_block_left, this.theme.promo_block_middle, this.theme.promo_block_right]) %}
 {% partial 'promo-block/promo-block-product-tab/promo-block-product-tab' obPromoBlockList=obPromoBlockList %}
@@ -94,7 +240,146 @@ postPage = "blog-post"
 
 {% content 'main-banner.htm' %}
 
-{% set cat = CategoryList.make().tree() %}
+
+<section class="products">
+            <div class="container">
+                    <div class="products__group">
+                    
+                    {% set obCategory = CategoryPage.get() %}
+                    
+                    {% set obProductList = ProductList.make().sort(ProductList.getSorting()).active() %}
+                    
+                    {% if obProductList.isNotEmpty() %}
+
+                    {% for obProduct in obProductList|slice(0, 8) %}
+                    
+                    {% set obOffer = obProduct.offer.first() %}
+                    
+                        <div class="products__product" data-id="{{ obProduct.id }}" >
+                            {% if obProduct.preview_image is not empty %}
+                            <a href="{{ obProduct.getPageUrl('catalog') }}">
+                                <div class="products__photo">
+                                    <span class="icon-eye products__icon"></span>
+                                    <img src="{{ obProduct.preview_image.getThumb(300, 300, {quality: 80}) }}" alt="{{ obProduct.preview_image.description }}">
+                                </div>
+                                <span class="products__name">{{ obProduct.name }}</span>
+                            </a>
+                            {% endif %}
+                            <span class="products__price">{{ obOffer.price }}  {{ obOffer.currency }}</span>
+                            <form class="mb-0">
+                <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
+                <input type="hidden" name="quantity" value="1">
+                {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-sm' %}
+            </form>
+                        </div>
+
+                    {% endfor %}
+                    {% endif %}
+            </div>      
+        </section>
+        
+<div class="line"></div>
+
+<section class="newproduct">
+            <div class="container">
+                <div class="newproduct__wrap">
+
+                    <div class="newproduct__text">
+                        <img src="{{ 'assets/images/mainPage/newproduct/uzor.png'|theme }}" alt="uzor" class="newproduct__uzor">
+                        <h2 class="newproduct__title">
+                            НОВИНКИ НАШЕЙ ПРОДУКЦИИ
+                        </h2>
+                        <p class="newproduct__subtitle">
+                            Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов,
+                            но это не совсем так. Его корни уходят в один фрагмент классической латыни.
+                        </p>
+                    </div>
+
+                    <div class="newproduct__products owl-carousel  owl-theme owl-dots">
+                    
+                    {% set obProductList2 = ProductList2.make().sort(ProductList2.getSorting()).active() %}
+             
+                    {% if obProductList2.isNotEmpty() %}
+                    
+                    {% for obProduct2 in obProductList2 %}
+                    
+                    {% set obOffer2 = obProduct2.offer.first() %}
+                    
+                        <div class="products__product products__product-new">
+                            <a href="{{ obProduct2.getPageUrl('catalog') }}">
+                                <div class="products__photo newproduct__photo">
+                                    <span class="icon-eye products__icon"></span>
+                                    {% if obProduct2.preview_image is not empty %}
+                                    <img src="{{ obProduct2.preview_image.getThumb(300, 300, {quality: 80}) }}" alt="{{ obProduct2.preview_image.description }}">
+                                    {% endif %}
+                                </div>
+                                <span class="products__name">{{ obProduct2.name }}</span>
+                            </a>
+                            <span class="products__price">{{ obOffer2.price }}  {{ obOffer2.currency }}</span>
+                            <form class="mb-0">
+                <input type="hidden" name="offer_id" value="{{ obOffer2.id }}">
+                <input type="hidden" name="quantity" value="1">
+                {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-sm' %}
+            </form>
+                        </div>
+                    
+                    {% endfor %}
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+<section class="newproduct">
+            <div class="container">
+                <div class="newproduct__wrap newproduct__wrap-reverse">
+
+                    <div class="newproduct__text">
+                        <img src="{{ 'assets/images/mainPage/newproduct/uzor2.png'|theme }}" alt="uzor" class="newproduct__uzor-two">
+                        <h2 class="newproduct__title">
+                            РЕКОМЕНДУЕМ ДАННЫЙ ТОВАР
+                        </h2>
+                        <p class="newproduct__subtitle">
+                            Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов,
+                            но это не совсем так. Его корни уходят в один фрагмент классической латыни.
+                        </p>
+                    </div>
+
+                    <div class="newproduct__products owl-carousel  owl-theme owl-dots">
+                    
+                    {% set obProductList2 = ProductList2.make().active().random(5) %}
+         
+
+
+                    {% for obProduct2 in obProductList2 %}
+                    
+                    {% set obOffer2 = obProduct2.offer.first() %}
+                    
+                        <div class="products__product products__product-new">
+                            <a href="{{ obProduct2.getPageUrl('catalog') }}">
+                                <div class="products__photo newproduct__photo">
+                                    <span class="icon-eye products__icon"></span>
+                                    {% if obProduct2.preview_image is not empty %}
+                                    <img src="{{ obProduct2.preview_image.getThumb(300, 300, {quality: 80}) }}" alt="{{ obProduct2.preview_image.description }}">
+                                    {% endif %}
+                                </div>
+                                <span class="products__name">{{ obProduct2.name }}</span>
+                            </a>
+                            <span class="products__price">{{ obOffer2.price }}  {{ obOffer2.currency }}</span>
+                            <form class="mb-0">
+                <input type="hidden" name="offer_id" value="{{ obOffer2.id }}">
+                <input type="hidden" name="quantity" value="1">
+                {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-sm' %}
+            </form>
+                        </div>
+                         {% endfor %}
+               
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="line"></div>
 
 <section class="occation">
             <div class="container">
@@ -145,4 +430,4 @@ postPage = "blog-post"
                     
                 </div>
             </div>
-        </section>";s:4:"code";N;s:5:"title";s:5:"Index";s:3:"url";s:1:"/";s:6:"layout";s:4:"main";s:9:"is_hidden";s:1:"0";s:14:"PromoBlockList";a:1:{s:7:"sorting";s:7:"default";}s:11:"ProductList";a:1:{s:7:"sorting";s:2:"no";}s:9:"blogPosts";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"3";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:13:"blog-category";s:8:"postPage";s:9:"blog-post";}s:12:"CategoryList";a:0:{}}}
+        </section>";s:4:"code";N;s:5:"title";s:5:"Index";s:3:"url";s:1:"/";s:6:"layout";s:4:"main";s:9:"is_hidden";s:1:"0";s:14:"PromoBlockList";a:1:{s:7:"sorting";s:7:"default";}s:11:"ProductList";a:1:{s:7:"sorting";s:2:"no";}s:9:"blogPosts";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"3";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:13:"blog-category";s:8:"postPage";s:9:"blog-post";}s:12:"CategoryList";a:0:{}s:24:"ProductList ProductList2";a:1:{s:7:"sorting";s:3:"new";}}}

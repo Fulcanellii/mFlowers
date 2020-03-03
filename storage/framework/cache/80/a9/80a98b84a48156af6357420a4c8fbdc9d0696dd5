@@ -1,4 +1,4 @@
-1583152905a:1:{s:54:"form/button-change-quantity/button-change-quantity.htm";a:5:{s:8:"fileName";s:54:"form/button-change-quantity/button-change-quantity.htm";s:7:"content";s:1175:"<div class="info__counter">
+1583227701a:1:{s:54:"form/button-change-quantity/button-change-quantity.htm";a:5:{s:8:"fileName";s:54:"form/button-change-quantity/button-change-quantity.htm";s:7:"content";s:1175:"<div class="info__counter">
    <div class="input-group product-detailed__btn-qty {% if btnProductPage %} mb-3 {% endif %}">
 
     <input
@@ -35,7 +35,7 @@
 
 
 
-";s:5:"mtime";i:1583145706;s:6:"markup";s:1171:"<div class="info__counter">
+";s:5:"mtime";i:1583215887;s:6:"markup";s:1171:"<div class="info__counter">
    <div class="input-group product-detailed__btn-qty {% if btnProductPage %} mb-3 {% endif %}">
 
     <input

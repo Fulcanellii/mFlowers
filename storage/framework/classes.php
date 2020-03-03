@@ -352,4 +352,5 @@
   'lovata\\ordersshopaholic\\Controllers\\orderproperties' => 'plugins\\lovata\\ordersshopaholic\\controllers\\orderproperties.php',
   'lovata\\ordersshopaholic\\Controllers\\orderpositionproperties' => 'plugins\\lovata\\ordersshopaholic\\controllers\\orderpositionproperties.php',
   'lovata\\shopaholic\\Controllers\\measures' => 'plugins\\lovata\\shopaholic\\controllers\\measures.php',
+  'lovata\\shopaholic\\Controllers\\pricetypes' => 'plugins\\lovata\\shopaholic\\controllers\\pricetypes.php',
 );

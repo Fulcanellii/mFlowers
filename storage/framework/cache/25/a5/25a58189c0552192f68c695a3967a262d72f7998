@@ -1,4 +1,4 @@
-1583149058a:1:{s:37:"product/product-card/product-card.htm";a:5:{s:8:"fileName";s:37:"product/product-card/product-card.htm";s:7:"content";s:1678:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
+1583227334a:1:{s:37:"product/product-card/product-card.htm";a:5:{s:8:"fileName";s:37:"product/product-card/product-card.htm";s:7:"content";s:1707:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
 
 {% set obOffer = obProduct.offer.first() %}
@@ -8,7 +8,7 @@
         {% if obProduct.preview_image is not empty %}
         <div class="products__photo newproduct__photo">
         <span class="icon-eye products__icon"></span>
-            <img src="{{ obProduct.preview_image.path }}" alt="{{ obProduct.preview_image.description }}" title="{{ obProduct.preview_image.title }}">
+            <img src="{{ obProduct.preview_image.getThumb(300, 300, {quality: 80}) }}" alt="{{ obProduct.preview_image.description }}" title="{{ obProduct.preview_image.title }}">
         {% else %}
             <img src="{{ 'assets/images/no-image.png'|theme }}">
         {% endif %}
@@ -36,7 +36,7 @@
   </div>
 
 
-";s:5:"mtime";i:1583127196;s:6:"markup";s:1672:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
+";s:5:"mtime";i:1583225253;s:6:"markup";s:1701:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
 
 {% set obOffer = obProduct.offer.first() %}
@@ -46,7 +46,7 @@
         {% if obProduct.preview_image is not empty %}
         <div class="products__photo newproduct__photo">
         <span class="icon-eye products__icon"></span>
-            <img src="{{ obProduct.preview_image.path }}" alt="{{ obProduct.preview_image.description }}" title="{{ obProduct.preview_image.title }}">
+            <img src="{{ obProduct.preview_image.getThumb(300, 300, {quality: 80}) }}" alt="{{ obProduct.preview_image.description }}" title="{{ obProduct.preview_image.title }}">
         {% else %}
             <img src="{{ 'assets/images/no-image.png'|theme }}">
         {% endif %}
