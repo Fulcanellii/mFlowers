@@ -1,4 +1,4 @@
-1583227370a:1:{s:49:"product/cart-position-list/cart-position-list.htm";a:5:{s:8:"fileName";s:49:"product/cart-position-list/cart-position-list.htm";s:7:"content";s:8312:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
+1583239851a:1:{s:49:"product/cart-position-list/cart-position-list.htm";a:5:{s:8:"fileName";s:49:"product/cart-position-list/cart-position-list.htm";s:7:"content";s:8371:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
 {# @var obCartPosition \Lovata\OrdersShopaholic\Classes\Item\CartPositionItem #}
 {# @var obActiveShippingType \Lovata\OrdersShopaholic\Classes\Item\ShippingTypeItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
@@ -66,7 +66,7 @@
                     </td>
                     <td class="cart__delete-position align-middle">
                         <button class="btn btn-outline-secondary btn_bg-white cart__delete-btn" aria-label="Delete" data-id="{{ obOffer.id }}">
-                            <i class="fa fa-times"></i>
+                            <img src="{{ 'assets/images/basketPage/bin.svg'|theme }}" alt="#" width="18">
                         </button>
                     </td>
                 </tr>
@@ -112,10 +112,10 @@
     </div>
     {% endif %}
 
-    <div class="basket__btns-main cart__table">
+    <!-- <div class="basket__btns-main cart__table">
                     <a href="/store" class="basket__continue">продолжить покупки</a>
                     <button type="button" class="basket__clear cart__delete-btn">очистить корзину</button>
-                  </div>
+                  </div> -->
 
     <div class="basket__none cart__empty {% if obCartPositionList.isNotEmpty() %}d-none{% endif %}">
               <div>Корзина пуста</div>
@@ -126,7 +126,7 @@
 </section>
 
 
-";s:5:"mtime";i:1583215735;s:6:"markup";s:8309:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
+";s:5:"mtime";i:1583237339;s:6:"markup";s:8368:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
 {# @var obCartPosition \Lovata\OrdersShopaholic\Classes\Item\CartPositionItem #}
 {# @var obActiveShippingType \Lovata\OrdersShopaholic\Classes\Item\ShippingTypeItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
@@ -194,7 +194,7 @@
                     </td>
                     <td class="cart__delete-position align-middle">
                         <button class="btn btn-outline-secondary btn_bg-white cart__delete-btn" aria-label="Delete" data-id="{{ obOffer.id }}">
-                            <i class="fa fa-times"></i>
+                            <img src="{{ 'assets/images/basketPage/bin.svg'|theme }}" alt="#" width="18">
                         </button>
                     </td>
                 </tr>
@@ -240,10 +240,10 @@
     </div>
     {% endif %}
 
-    <div class="basket__btns-main cart__table">
+    <!-- <div class="basket__btns-main cart__table">
                     <a href="/store" class="basket__continue">продолжить покупки</a>
                     <button type="button" class="basket__clear cart__delete-btn">очистить корзину</button>
-                  </div>
+                  </div> -->
 
     <div class="basket__none cart__empty {% if obCartPositionList.isNotEmpty() %}d-none{% endif %}">
               <div>Корзина пуста</div>

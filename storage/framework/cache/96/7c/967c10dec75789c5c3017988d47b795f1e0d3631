@@ -1,4 +1,4 @@
-1583227933a:1:{s:55:"product/product-card-detailed/product-card-detailed.htm";a:5:{s:8:"fileName";s:55:"product/product-card-detailed/product-card-detailed.htm";s:7:"content";s:3738:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
+1583238109a:1:{s:55:"product/product-card-detailed/product-card-detailed.htm";a:5:{s:8:"fileName";s:55:"product/product-card-detailed/product-card-detailed.htm";s:7:"content";s:3877:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
 
 {% set obOffer = obProduct.offer.first() %}
@@ -69,13 +69,18 @@
             {% endif %}
              -->
             {% if cart_is_available %}
-                <form class="mb-0">
+            {% if obOffer.quantity == '0' %}
+                  
+              {% else %}
+                  <form class="mb-0">
                     <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
                     {% partial 'form/button-change-quantity/button-change-quantity' btnChangeQtyValue=1 btnProductPage=true btnMaxQtyValue=obOffer.quantity %}
                     {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-lg' %} 
 
                 </div>
                 </form>
+              {% endif %}
+                
             {% endif %}
 
             <div class="info__category">
@@ -97,7 +102,7 @@
         
         
           
-          ";s:5:"mtime";i:1583145735;s:6:"markup";s:3682:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
+          ";s:5:"mtime";i:1583237508;s:6:"markup";s:3821:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
 
 {% set obOffer = obProduct.offer.first() %}
@@ -168,13 +173,18 @@
             {% endif %}
              -->
             {% if cart_is_available %}
-                <form class="mb-0">
+            {% if obOffer.quantity == '0' %}
+                  
+              {% else %}
+                  <form class="mb-0">
                     <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
                     {% partial 'form/button-change-quantity/button-change-quantity' btnChangeQtyValue=1 btnProductPage=true btnMaxQtyValue=obOffer.quantity %}
                     {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-lg' %} 
 
                 </div>
                 </form>
+              {% endif %}
+                
             {% endif %}
 
             <div class="info__category">

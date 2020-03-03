@@ -193,7 +193,10 @@ class __TwigTemplate_a583a85a5f2de90c068369218d76dea8bf7bdd450bf1764399fce538eb9
                 // line 68
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "id", [], "any", false, false, false, 68), "html", null, true);
                 echo "\">
-                            <i class=\"fa fa-times\"></i>
+                            <img src=\"";
+                // line 69
+                echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/images/basketPage/bin.svg");
+                echo "\" alt=\"#\" width=\"18\">
                         </button>
                     </td>
                 </tr>
@@ -306,10 +309,10 @@ class __TwigTemplate_a583a85a5f2de90c068369218d76dea8bf7bdd450bf1764399fce538eb9
         }
         // line 114
         echo "
-    <div class=\"basket__btns-main cart__table\">
+    <!-- <div class=\"basket__btns-main cart__table\">
                     <a href=\"/store\" class=\"basket__continue\">продолжить покупки</a>
                     <button type=\"button\" class=\"basket__clear cart__delete-btn\">очистить корзину</button>
-                  </div>
+                  </div> -->
 
     <div class=\"basket__none cart__empty ";
         // line 120
@@ -337,7 +340,7 @@ class __TwigTemplate_a583a85a5f2de90c068369218d76dea8bf7bdd450bf1764399fce538eb9
 
     public function getDebugInfo()
     {
-        return array (  316 => 120,  308 => 114,  300 => 109,  296 => 108,  286 => 105,  278 => 104,  269 => 98,  265 => 97,  255 => 94,  247 => 93,  238 => 87,  234 => 86,  224 => 83,  216 => 82,  206 => 74,  194 => 68,  185 => 64,  179 => 63,  173 => 62,  169 => 60,  162 => 59,  157 => 56,  149 => 53,  146 => 52,  144 => 51,  137 => 49,  133 => 48,  125 => 43,  121 => 42,  116 => 40,  112 => 39,  107 => 36,  101 => 34,  91 => 32,  89 => 31,  83 => 30,  71 => 28,  68 => 27,  65 => 26,  61 => 25,  45 => 11,  43 => 10,  37 => 6,);
+        return array (  319 => 120,  311 => 114,  303 => 109,  299 => 108,  289 => 105,  281 => 104,  272 => 98,  268 => 97,  258 => 94,  250 => 93,  241 => 87,  237 => 86,  227 => 83,  219 => 82,  209 => 74,  198 => 69,  194 => 68,  185 => 64,  179 => 63,  173 => 62,  169 => 60,  162 => 59,  157 => 56,  149 => 53,  146 => 52,  144 => 51,  137 => 49,  133 => 48,  125 => 43,  121 => 42,  116 => 40,  112 => 39,  107 => 36,  101 => 34,  91 => 32,  89 => 31,  83 => 30,  71 => 28,  68 => 27,  65 => 26,  61 => 25,  45 => 11,  43 => 10,  37 => 6,);
     }
 
     public function getSourceContext()
@@ -410,7 +413,7 @@ class __TwigTemplate_a583a85a5f2de90c068369218d76dea8bf7bdd450bf1764399fce538eb9
                     </td>
                     <td class=\"cart__delete-position align-middle\">
                         <button class=\"btn btn-outline-secondary btn_bg-white cart__delete-btn\" aria-label=\"Delete\" data-id=\"{{ obOffer.id }}\">
-                            <i class=\"fa fa-times\"></i>
+                            <img src=\"{{ 'assets/images/basketPage/bin.svg'|theme }}\" alt=\"#\" width=\"18\">
                         </button>
                     </td>
                 </tr>
@@ -456,10 +459,10 @@ class __TwigTemplate_a583a85a5f2de90c068369218d76dea8bf7bdd450bf1764399fce538eb9
     </div>
     {% endif %}
 
-    <div class=\"basket__btns-main cart__table\">
+    <!-- <div class=\"basket__btns-main cart__table\">
                     <a href=\"/store\" class=\"basket__continue\">продолжить покупки</a>
                     <button type=\"button\" class=\"basket__clear cart__delete-btn\">очистить корзину</button>
-                  </div>
+                  </div> -->
 
     <div class=\"basket__none cart__empty {% if obCartPositionList.isNotEmpty() %}d-none{% endif %}\">
               <div>Корзина пуста</div>

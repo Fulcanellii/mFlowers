@@ -1,4 +1,4 @@
-1583228622a:1:{s:15:"header/head.htm";a:7:{s:8:"fileName";s:15:"header/head.htm";s:7:"content";s:602:"description = "Скрипты и метаданные"
+1583239851a:1:{s:15:"header/head.htm";a:7:{s:8:"fileName";s:15:"header/head.htm";s:7:"content";s:602:"description = "Скрипты и метаданные"
 
 [viewBag]
 ==
@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ 'assets/css/main.css'|theme }}">
 <!-- <link rel="stylesheet" href="{{ path_css }}"> -->
-    <script src="{{ 'assets/js/modernizr.js'|theme }}"></script>";s:5:"mtime";i:1583223956;s:6:"markup";s:529:"<meta charset="utf-8">
+    <script src="{{ 'assets/js/modernizr.js'|theme }}"></script>";s:5:"mtime";i:1583235520;s:6:"markup";s:529:"<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps&display=swap" rel="stylesheet">

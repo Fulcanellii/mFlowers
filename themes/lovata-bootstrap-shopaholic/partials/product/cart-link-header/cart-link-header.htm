@@ -1,10 +1,13 @@
 {% if cart_is_available %}
+
+
 <a href="{{ 'checkout'|page }}" class="header__basket">
 	<div class="icon-shopping-bag header__icon-shoping"></div>
 	<div class="header__basket-info">
-		<span class="header__bakcet-name">Корзина</span>
-		
 		<span class="header__bakcet-pieces">{{ Cart.get().count }}</span>
+        <span class="header__bakcet-name">Корзина</span>
+        <span class="header__bakcet-price">/ {{ Cart.get().getTotalPrice() }} c</span>
+
 	</div>
 </a>
 {% endif %}

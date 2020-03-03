@@ -10,9 +10,19 @@ description = "Скрипты футера"
 
 
 <script src="{{ 'assets/js/modernizr.js'|theme }}"></script>
-<script src="{{ 'assets/js/common.js'|theme }}"></script>
-<script src="{{ 'assets/js/vendor.js'|theme }}"></script>
-<script src="{{ 'assets/js/main.js'|theme }}"></script>
 
+
+
+
+
+<script src="{{ 'assets/js/vendor.js'|theme }}"></script>
+
+<script src="{{ 'assets/js/common.js'|theme }}"></script>
+    <script>
+$.noConflict(true);
+</script>
+
+<script src="{{ 'assets/js/main.js'|theme }}"></script>
+<script src="{{ 'assets/js/script.js'|theme }}"></script>
     {% framework extras %}
     {% scripts %}

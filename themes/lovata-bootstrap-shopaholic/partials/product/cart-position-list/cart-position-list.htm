@@ -66,7 +66,7 @@
                     </td>
                     <td class="cart__delete-position align-middle">
                         <button class="btn btn-outline-secondary btn_bg-white cart__delete-btn" aria-label="Delete" data-id="{{ obOffer.id }}">
-                            <i class="fa fa-times"></i>
+                            <img src="{{ 'assets/images/basketPage/bin.svg'|theme }}" alt="#" width="18">
                         </button>
                     </td>
                 </tr>
@@ -112,10 +112,10 @@
     </div>
     {% endif %}
 
-    <div class="basket__btns-main cart__table">
+    <!-- <div class="basket__btns-main cart__table">
                     <a href="/store" class="basket__continue">продолжить покупки</a>
                     <button type="button" class="basket__clear cart__delete-btn">очистить корзину</button>
-                  </div>
+                  </div> -->
 
     <div class="basket__none cart__empty {% if obCartPositionList.isNotEmpty() %}d-none{% endif %}">
               <div>Корзина пуста</div>

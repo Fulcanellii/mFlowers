@@ -85,12 +85,13 @@ class __TwigTemplate_59e1fc73e3b145a58a0fef820936bb42de0f6f25bdf61966b8357f1d0ed
         echo "\" alt=\"logo\">
                     </div>
                     <div class=\"_ajax_cart_link_header_wrapper col-12 col-lg-auto mb-4 mb-lg-0\">
+                    
                 ";
-        // line 30
+        // line 31
         $context['__cms_partial_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("product/cart-link-header/cart-link-header"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 31
+        // line 32
         echo "            </div>
                  
                 </nav>
@@ -99,37 +100,37 @@ class __TwigTemplate_59e1fc73e3b145a58a0fef820936bb42de0f6f25bdf61966b8357f1d0ed
                         <a href=\"/\" class=\"header__home-link\"><span class=\"icon-home\"></span></a>
                     </li>
                     ";
-        // line 38
+        // line 39
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["staticMenu2"] ?? null), "menuItems", [], "any", false, false, false, 38));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, ($context["staticMenu2"] ?? null), "menuItems", [], "any", false, false, false, 39));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 39
+            // line 40
             echo "                    <li class=\"header__list-desktop\">
                     ";
-            // line 40
-            if (twig_get_attribute($this->env, $this->source, $context["item"], "items", [], "any", false, false, false, 40)) {
-                // line 41
+            // line 41
+            if (twig_get_attribute($this->env, $this->source, $context["item"], "items", [], "any", false, false, false, 41)) {
+                // line 42
                 echo "     
                         <a href=\"";
-                // line 42
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, false, 42), "html", null, true);
+                // line 43
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, false, 43), "html", null, true);
                 echo "\" class=\"header__link-desktop\">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, false, 42), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, false, 43), "html", null, true);
                 echo "</a>
             
                         <ul class=\"header__drop\">
                         ";
-                // line 45
+                // line 46
                 $context['_parent'] = $context;
-                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["item"], "items", [], "any", false, false, false, 45));
+                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["item"], "items", [], "any", false, false, false, 46));
                 foreach ($context['_seq'] as $context["_key"] => $context["child"]) {
-                    // line 46
+                    // line 47
                     echo "                            <li class=\"header__sublist-desktop\">
                                 <a href=\"";
-                    // line 47
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["child"], "url", [], "any", false, false, false, 47), "html", null, true);
+                    // line 48
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["child"], "url", [], "any", false, false, false, 48), "html", null, true);
                     echo "\">";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["child"], "title", [], "any", false, false, false, 47), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["child"], "title", [], "any", false, false, false, 48), "html", null, true);
                     echo "</a>
                             </li>
                         ";
@@ -137,26 +138,26 @@ class __TwigTemplate_59e1fc73e3b145a58a0fef820936bb42de0f6f25bdf61966b8357f1d0ed
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['child'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 50
+                // line 51
                 echo "                        </ul>
                     ";
             } else {
-                // line 52
+                // line 53
                 echo "                        <a href=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, false, 52), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "url", [], "any", false, false, false, 53), "html", null, true);
                 echo "\" class=\"header__link-desktop\">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, false, 52), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "title", [], "any", false, false, false, 53), "html", null, true);
                 echo "</a>
                     ";
             }
-            // line 54
+            // line 55
             echo "                    </li>
                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 56
+        // line 57
         echo "                </ul>
 
             </div>
@@ -227,7 +228,7 @@ class __TwigTemplate_59e1fc73e3b145a58a0fef820936bb42de0f6f25bdf61966b8357f1d0ed
 
     public function getDebugInfo()
     {
-        return array (  160 => 56,  153 => 54,  145 => 52,  141 => 50,  130 => 47,  127 => 46,  123 => 45,  115 => 42,  112 => 41,  110 => 40,  107 => 39,  103 => 38,  94 => 31,  90 => 30,  84 => 27,  68 => 13,  57 => 11,  53 => 10,  45 => 7,  37 => 1,);
+        return array (  161 => 57,  154 => 55,  146 => 53,  142 => 51,  131 => 48,  128 => 47,  124 => 46,  116 => 43,  113 => 42,  111 => 41,  108 => 40,  104 => 39,  95 => 32,  91 => 31,  84 => 27,  68 => 13,  57 => 11,  53 => 10,  45 => 7,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -261,6 +262,7 @@ class __TwigTemplate_59e1fc73e3b145a58a0fef820936bb42de0f6f25bdf61966b8357f1d0ed
                         <img src=\"{{ 'assets/images/mainPage/header/fullLogo.svg'|theme }}\" alt=\"logo\">
                     </div>
                     <div class=\"_ajax_cart_link_header_wrapper col-12 col-lg-auto mb-4 mb-lg-0\">
+                    
                 {% partial 'product/cart-link-header/cart-link-header' %}
             </div>
                  

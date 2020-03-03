@@ -185,41 +185,52 @@ class __TwigTemplate_5f433b52bc00d36c110eba462adb075daa458c6f33339b3100aaa89c52e
         // line 71
         if (($context["cart_is_available"] ?? null)) {
             // line 72
-            echo "                <form class=\"mb-0\">
+            echo "            ";
+            if ((twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "quantity", [], "any", false, false, false, 72) == "0")) {
+                // line 73
+                echo "                  
+              ";
+            } else {
+                // line 75
+                echo "                  <form class=\"mb-0\">
                     <input type=\"hidden\" name=\"offer_id\" value=\"";
-            // line 73
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "id", [], "any", false, false, false, 73), "html", null, true);
-            echo "\">
+                // line 76
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "id", [], "any", false, false, false, 76), "html", null, true);
+                echo "\">
                     ";
-            // line 74
-            $context['__cms_partial_params'] = [];
-            $context['__cms_partial_params']['btnChangeQtyValue'] = 1            ;
-            $context['__cms_partial_params']['btnProductPage'] = true            ;
-            $context['__cms_partial_params']['btnMaxQtyValue'] = twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "quantity", [], "any", false, false, false, 74)            ;
-            echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("form/button-change-quantity/button-change-quantity"            , $context['__cms_partial_params']            , true            );
-            unset($context['__cms_partial_params']);
-            // line 75
-            echo "                    ";
-            $context['__cms_partial_params'] = [];
-            $context['__cms_partial_params']['btnAddClasses'] = "btn-lg"            ;
-            echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("form/button-add-to-cart/button-add-to-cart"            , $context['__cms_partial_params']            , true            );
-            unset($context['__cms_partial_params']);
-            echo " 
+                // line 77
+                $context['__cms_partial_params'] = [];
+                $context['__cms_partial_params']['btnChangeQtyValue'] = 1                ;
+                $context['__cms_partial_params']['btnProductPage'] = true                ;
+                $context['__cms_partial_params']['btnMaxQtyValue'] = twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "quantity", [], "any", false, false, false, 77)                ;
+                echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("form/button-change-quantity/button-change-quantity"                , $context['__cms_partial_params']                , true                );
+                unset($context['__cms_partial_params']);
+                // line 78
+                echo "                    ";
+                $context['__cms_partial_params'] = [];
+                $context['__cms_partial_params']['btnAddClasses'] = "btn-lg"                ;
+                echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("form/button-add-to-cart/button-add-to-cart"                , $context['__cms_partial_params']                , true                );
+                unset($context['__cms_partial_params']);
+                echo " 
 
                 </div>
                 </form>
+              ";
+            }
+            // line 83
+            echo "                
             ";
         }
-        // line 80
+        // line 85
         echo "
             <div class=\"info__category\">
 
               <strong>Категория: </strong>
               <span><a class=\"category__link\" href=\"";
-        // line 84
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "category", [], "any", false, false, false, 84), "getPageUrl", [0 => "category-page"], "method", false, false, false, 84), "html", null, true);
+        // line 89
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "category", [], "any", false, false, false, 89), "getPageUrl", [0 => "category-page"], "method", false, false, false, 89), "html", null, true);
         echo "\">";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "category", [], "any", false, false, false, 84), "name", [], "any", false, false, false, 84), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "category", [], "any", false, false, false, 89), "name", [], "any", false, false, false, 89), "html", null, true);
         echo "</a></span>
 
             </div>
@@ -228,8 +239,8 @@ class __TwigTemplate_5f433b52bc00d36c110eba462adb075daa458c6f33339b3100aaa89c52e
 </div>
 </section>
 <div class=\"container wysiwyg\">";
-        // line 91
-        echo twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "description", [], "any", false, false, false, 91);
+        // line 96
+        echo twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "description", [], "any", false, false, false, 96);
         echo "</div>
       </div>
     </section>";
@@ -247,7 +258,7 @@ class __TwigTemplate_5f433b52bc00d36c110eba462adb075daa458c6f33339b3100aaa89c52e
 
     public function getDebugInfo()
     {
-        return array (  232 => 91,  220 => 84,  214 => 80,  202 => 75,  195 => 74,  191 => 73,  188 => 72,  186 => 71,  183 => 70,  175 => 67,  169 => 63,  167 => 62,  161 => 59,  153 => 53,  149 => 51,  145 => 49,  143 => 48,  136 => 46,  130 => 43,  126 => 41,  120 => 37,  108 => 33,  102 => 32,  98 => 30,  94 => 29,  85 => 25,  79 => 24,  72 => 19,  70 => 18,  67 => 17,  58 => 13,  54 => 12,  51 => 11,  49 => 10,  42 => 5,  40 => 4,  37 => 3,);
+        return array (  243 => 96,  231 => 89,  225 => 85,  221 => 83,  209 => 78,  202 => 77,  198 => 76,  195 => 75,  191 => 73,  188 => 72,  186 => 71,  183 => 70,  175 => 67,  169 => 63,  167 => 62,  161 => 59,  153 => 53,  149 => 51,  145 => 49,  143 => 48,  136 => 46,  130 => 43,  126 => 41,  120 => 37,  108 => 33,  102 => 32,  98 => 30,  94 => 29,  85 => 25,  79 => 24,  72 => 19,  70 => 18,  67 => 17,  58 => 13,  54 => 12,  51 => 11,  49 => 10,  42 => 5,  40 => 4,  37 => 3,);
     }
 
     public function getSourceContext()
@@ -323,13 +334,18 @@ class __TwigTemplate_5f433b52bc00d36c110eba462adb075daa458c6f33339b3100aaa89c52e
             {% endif %}
              -->
             {% if cart_is_available %}
-                <form class=\"mb-0\">
+            {% if obOffer.quantity == '0' %}
+                  
+              {% else %}
+                  <form class=\"mb-0\">
                     <input type=\"hidden\" name=\"offer_id\" value=\"{{ obOffer.id }}\">
                     {% partial 'form/button-change-quantity/button-change-quantity' btnChangeQtyValue=1 btnProductPage=true btnMaxQtyValue=obOffer.quantity %}
                     {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-lg' %} 
 
                 </div>
                 </form>
+              {% endif %}
+                
             {% endif %}
 
             <div class=\"info__category\">

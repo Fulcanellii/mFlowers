@@ -1,4 +1,4 @@
-1583228622a:1:{s:17:"header/header.htm";a:8:{s:8:"fileName";s:17:"header/header.htm";s:7:"content";s:5083:"[viewBag]
+1583239851a:1:{s:17:"header/header.htm";a:8:{s:8:"fileName";s:17:"header/header.htm";s:7:"content";s:5105:"[viewBag]
 
 [staticMenu]
 code = "top-menyu"
@@ -35,6 +35,7 @@ code = "header-menu"
                         <img src="{{ 'assets/images/mainPage/header/fullLogo.svg'|theme }}" alt="logo">
                     </div>
                     <div class="_ajax_cart_link_header_wrapper col-12 col-lg-auto mb-4 mb-lg-0">
+                    
                 {% partial 'product/cart-link-header/cart-link-header' %}
             </div>
                  
@@ -116,7 +117,7 @@ code = "header-menu"
                     X
                 </li>
             </ul>
-        </header>";s:5:"mtime";i:1582804300;s:6:"markup";s:4982:"<header class="header">
+        </header>";s:5:"mtime";i:1583237753;s:6:"markup";s:5004:"<header class="header">
             <div class="container">
                 <div class="header__head">
 <ul class="header__languages">
@@ -145,6 +146,7 @@ code = "header-menu"
                         <img src="{{ 'assets/images/mainPage/header/fullLogo.svg'|theme }}" alt="logo">
                     </div>
                     <div class="_ajax_cart_link_header_wrapper col-12 col-lg-auto mb-4 mb-lg-0">
+                    
                 {% partial 'product/cart-link-header/cart-link-header' %}
             </div>
                  
