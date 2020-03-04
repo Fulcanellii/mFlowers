@@ -1,4 +1,4 @@
-1583239170a:1:{s:37:"product/product-card/product-card.htm";a:5:{s:8:"fileName";s:37:"product/product-card/product-card.htm";s:7:"content";s:1707:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
+1583318199a:1:{s:37:"product/product-card/product-card.htm";a:5:{s:8:"fileName";s:37:"product/product-card/product-card.htm";s:7:"content";s:1707:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
 
 {% set obOffer = obProduct.offer.first() %}
@@ -36,7 +36,7 @@
   </div>
 
 
-";s:5:"mtime";i:1583225253;s:6:"markup";s:1701:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
+";s:5:"mtime";i:1583299487;s:6:"markup";s:1701:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
 
 {% set obOffer = obProduct.offer.first() %}

@@ -1,0 +1,14 @@
+{{{% set obShippingTypeList = ShippingTypeList.make().sort().active() %}
+        {% if obShippingTypeList.isNotEmpty() %}
+            <fieldset class="form-group">
+                {% for obShippingType in obShippingTypeList %}
+                    <div class="form-check{% if not loop.first %} mt-2{% endif %}">
+                        <input class="form-check-input" type="radio" name="shipping_type_id" id="sipping-type-{{ obShippingType.id }}" value="{{ obShippingType.id }}" required {% if loop.first %}checked{% endif %}>
+                        <label class="form-check-label" for="sipping-type-{{ obShippingType.id }}">
+                            {{ obShippingType.name }} - {{ obShippingType.price }} {{ obShippingType.currency }}
+                        </label>
+                    </div>
+                {% endfor %}
+            </fieldset>
+            <hr>
+        {% endif %}}}

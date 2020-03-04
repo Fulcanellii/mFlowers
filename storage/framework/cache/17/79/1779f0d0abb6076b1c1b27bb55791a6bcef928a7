@@ -1,0 +1,70 @@
+1583318214a:1:{s:50:"form/button-change-quantity/button-change-cart.htm";a:5:{s:8:"fileName";s:50:"form/button-change-quantity/button-change-cart.htm";s:7:"content";s:1185:"
+   <div class="input-group product-detailed__btn-qty {% if btnProductPage %} mb-3 {% endif %}">
+
+    <input
+            type="number"
+            class="product-detailed__btn-qty-input info__counter-input"
+            name="quantity"
+            value="{{ btnChangeQtyValue }}"
+            min="1"
+            max="{{ btnMaxQtyValue }}"
+            aria-label="Input quantity"
+            {% if btnChangeQtyAjax %} data-ajax="updateTotal" {% endif %}>
+
+    <button
+            class="info__btn product-detailed__btn-qty-change"
+            data-qty="minus"
+            {% if btnChangeQtyAjax %} data-ajax="updateTotal" {% endif %}
+            {% if btnChangeQtyValue == 1 %}disabled{% endif %}
+            aria-label="Increase quantity"
+            type="button">
+        -
+    </button>
+    <button
+            class="info__btn product-detailed__btn-qty-change"
+            data-qty="plus"
+            {% if btnChangeQtyAjax %} data-ajax="updateTotal" {% endif %}
+            {% if btnChangeQtyValue >= btnMaxQtyValue %}disabled{% endif %}
+            aria-label="Decrease quantity"
+            type="button">
+        +
+    </button>
+
+
+</div>
+
+
+
+";s:5:"mtime";i:1583297589;s:6:"markup";s:1172:"<div class="input-group product-detailed__btn-qty {% if btnProductPage %} mb-3 {% endif %}">
+
+    <input
+            type="number"
+            class="product-detailed__btn-qty-input info__counter-input"
+            name="quantity"
+            value="{{ btnChangeQtyValue }}"
+            min="1"
+            max="{{ btnMaxQtyValue }}"
+            aria-label="Input quantity"
+            {% if btnChangeQtyAjax %} data-ajax="updateTotal" {% endif %}>
+
+    <button
+            class="info__btn product-detailed__btn-qty-change"
+            data-qty="minus"
+            {% if btnChangeQtyAjax %} data-ajax="updateTotal" {% endif %}
+            {% if btnChangeQtyValue == 1 %}disabled{% endif %}
+            aria-label="Increase quantity"
+            type="button">
+        -
+    </button>
+    <button
+            class="info__btn product-detailed__btn-qty-change"
+            data-qty="plus"
+            {% if btnChangeQtyAjax %} data-ajax="updateTotal" {% endif %}
+            {% if btnChangeQtyValue >= btnMaxQtyValue %}disabled{% endif %}
+            aria-label="Decrease quantity"
+            type="button">
+        +
+    </button>
+
+
+</div>";s:4:"code";N;}}

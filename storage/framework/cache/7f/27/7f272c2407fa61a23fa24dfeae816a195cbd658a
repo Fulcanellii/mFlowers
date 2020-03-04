@@ -1,4 +1,4 @@
-1583239850a:1:{s:9:"index.htm";a:14:{s:8:"fileName";s:9:"index.htm";s:7:"content";s:10812:"title = "Index"
+1583318198a:1:{s:9:"index.htm";a:14:{s:8:"fileName";s:9:"index.htm";s:7:"content";s:10806:"title = "Index"
 url = "/"
 layout = "main"
 is_hidden = 0
@@ -184,7 +184,7 @@ sorting = "new"
                 {% for cat in cat if cat.show_on_main == 1 %}
                 {% if cat.product_count > 0 %}
 
-                <a href="{{ cat.getPageUrl('category-page') }}" class="occation__link">
+                <a href="{{ cat.getPageUrl('catalog') }}" class="occation__link">
                         <h3 class="occation__title">{{ cat.name }}</h3>
                         <img src="{{ cat.preview_image.path }}" alt="#">
                 </a>
@@ -226,7 +226,7 @@ sorting = "new"
                     
                 </div>
             </div>
-        </section>";s:5:"mtime";i:1583224854;s:6:"markup";s:10424:"{% partial 'content/carousel/carousel' arImageList=this.theme.main_slider %}
+        </section>";s:5:"mtime";i:1583299692;s:6:"markup";s:10418:"{% partial 'content/carousel/carousel' arImageList=this.theme.main_slider %}
 
 {% set cat = CategoryList.make().tree() %}
 
@@ -388,7 +388,7 @@ sorting = "new"
                 {% for cat in cat if cat.show_on_main == 1 %}
                 {% if cat.product_count > 0 %}
 
-                <a href="{{ cat.getPageUrl('category-page') }}" class="occation__link">
+                <a href="{{ cat.getPageUrl('catalog') }}" class="occation__link">
                         <h3 class="occation__title">{{ cat.name }}</h3>
                         <img src="{{ cat.preview_image.path }}" alt="#">
                 </a>

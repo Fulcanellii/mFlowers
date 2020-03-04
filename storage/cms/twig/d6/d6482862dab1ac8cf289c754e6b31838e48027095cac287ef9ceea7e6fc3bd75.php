@@ -38,16 +38,17 @@ class __TwigTemplate_67898d1f1c582ccb6d831899caba9dfa481ae2810063dcd5205727c6ccf
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
     <link href=\"https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display&display=swap\" rel=\"stylesheet\">
     <link href=\"https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps&display=swap\" rel=\"stylesheet\">
+    
     <link rel=\"stylesheet\" href=\"";
-        // line 5
+        // line 6
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/css/main.css");
         echo "\">
 <!-- <link rel=\"stylesheet\" href=\"";
-        // line 6
+        // line 7
         echo twig_escape_filter($this->env, ($context["path_css"] ?? null), "html", null, true);
         echo "\"> -->
     <script src=\"";
-        // line 7
+        // line 8
         echo $this->extensions['Cms\Twig\Extension']->themeFilter("assets/js/modernizr.js");
         echo "\"></script>";
     }
@@ -64,7 +65,7 @@ class __TwigTemplate_67898d1f1c582ccb6d831899caba9dfa481ae2810063dcd5205727c6ccf
 
     public function getDebugInfo()
     {
-        return array (  51 => 7,  47 => 6,  43 => 5,  37 => 1,);
+        return array (  52 => 8,  48 => 7,  44 => 6,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -73,6 +74,7 @@ class __TwigTemplate_67898d1f1c582ccb6d831899caba9dfa481ae2810063dcd5205727c6ccf
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
     <link href=\"https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display&display=swap\" rel=\"stylesheet\">
     <link href=\"https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps&display=swap\" rel=\"stylesheet\">
+    
     <link rel=\"stylesheet\" href=\"{{ 'assets/css/main.css'|theme }}\">
 <!-- <link rel=\"stylesheet\" href=\"{{ path_css }}\"> -->
     <script src=\"{{ 'assets/js/modernizr.js'|theme }}\"></script>", "D:\\open_server_5_3_5_basic_premium_ultimate\\OSPanel\\domains\\october/themes/lovata-bootstrap-shopaholic/partials/header/head.htm", "");

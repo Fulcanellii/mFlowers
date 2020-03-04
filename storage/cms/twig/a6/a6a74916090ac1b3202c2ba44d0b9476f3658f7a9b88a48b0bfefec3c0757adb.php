@@ -34,73 +34,87 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
     {
         $macros = $this->macros;
         // line 1
-        echo "<section class=\"row form\">
-    <form class=\"col-12 col-lg-8 needs-validation _ajax_create_order\" novalidate>
-        <div class=\"row\">
-            <div class=\"col-sm-6 mb-3\">
-                <input type=\"text\" class=\"form-control\" name=\"name\" placeholder=\"First name\" aria-label=\"Input first name\" required>
-                <div class=\"invalid-feedback\">
-                    Please add your name
-                </div>
+        echo "<section class=\"row form order\" id=\"order-page\" style=\"display: none;\">
+<div class=\"container\">
+<div class=\"order__wrap\">
+    <h2 class=\"order__title\">Оформление заказа</h2>
+    <form class=\"order__form _ajax_create_order\" novalidate>
+        <div class=\"order__form-wrap\">
+            <div class=\"order__group order__group-half\">
+                <label for=\"order_name\" class=\"order__label\">Имя<span>*</span></label>
+                <input type=\"text\" id=\"order_name\" name=\"name\" class=\"order__input form-control\" required>
+              </div>
+            <div class=\"order__group order__group-half\">
+                <label for=\"order_lastname\" class=\"order__label\">Фамилия<span>*</span></label>
+                <input type=\"text\" id=\"order_lastname\" name=\"last_name\" class=\"order__input\" required>
             </div>
-            <div class=\"col-sm-6 mb-3\">
-                <input type=\"text\" class=\"form-control\" name=\"last_name\" placeholder=\"Last name\" aria-label=\"Input last name\" required>
-                <div class=\"invalid-feedback\">
-                    Please add your last name
-                </div>
+            <div class=\"order__group\">
+                <label for=\"order_company\" class=\"order__label\">Название компании (необязательно)</label>
+                <input type=\"text\" id=\"order_company\" name=\"company\" class=\"order__input\">
             </div>
-        </div>
-        <div class=\"form-group mb-3\">
-            <label class=\"sr-only\" for=\"inlineFormInputGroup\">Email</label>
-            <div class=\"input-group\">
-                <div class=\"input-group-prepend\">
-                    <div class=\"input-group-text\">@</div>
-                </div>
-                <input type=\"text\" class=\"form-control\" id=\"inlineFormInputGroup\" name=\"email\" placeholder=\"Email\" required>
-                <div class=\"invalid-feedback\">
-                    Please add your email
-                </div>
+
+            <div class=\"order__group\">
+            <label for=\"order_region\" class=\"order__label\">Область/Округ<span>*</span></label>
+            <input type=\"text\" id=\"order_region\" name=\"state\" class=\"order__input\" required>
             </div>
-        </div>
-        <div class=\"form-group\">
-            <label for=\"inputAddress\">Address</label>
-            <input type=\"text\" class=\"form-control\" id=\"inputAddress\" name=\"address1\" placeholder=\"1234 Main St\" required>
-            <div class=\"invalid-feedback\">
-                Please add your address
+
+            <div class=\"order__group order__group-half\">
+                <label for=\"order_city\" class=\"order__label\">Город<span>*</span></label>
+                <input type=\"text\" id=\"order_city\" name=\"city\" class=\"order__input\" required>
             </div>
-        </div>
-        <div class=\"form-group\">
-            <label for=\"inputAddress2\">Address 2 (optional)</label>
-            <input type=\"text\" class=\"form-control\" id=\"inputAddress2\" name=\"address2\" placeholder=\"Apartment or suite\">
-        </div>
+
+            <div class=\"order__group order__group-half\">
+                <label for=\"order_index\" class=\"order__label\">Почтовый индекс<span>*</span></label>
+                <input type=\"text\" id=\"order_index\" name=\"postcode\" class=\"order__input\" required>
+            </div>
+
+            <div class=\"order__group order__group-half\">
+                <label for=\"order_street\" class=\"order__label\">Улица <span>*</span></label>
+                <input type=\"text\" id=\"order_street\" name=\"street\" class=\"order__input\" required>
+            </div>
+
+            <div class=\"order__group order__group-half\">
+                <label for=\"order_home\" class=\"order__label\">Дом<span>*</span></label>
+                <input type=\"text\" id=\"order_home\" name=\"house\" class=\"order__input\" required>
+            </div>
+
+            <div class=\"order__group\">
+                <label for=\"order_email\" class=\"order__label\">Адрес электронной почты (необязательно) </label>
+                <input type=\"email\" id=\"order_email\" name=\"email\" class=\"order__input\">
+            </div>
+
+            <div class=\"order__group\">
+                <label for=\"order_phone\" class=\"order__label\">Телефон<span>*</span></label>
+                <input type=\"text\" id=\"order_phone\" name=\"phone\" class=\"order__input\" required>
+            </div>
 
         ";
-        // line 41
+        // line 55
         if (($context["location_is_available"] ?? null)) {
-            // line 42
+            // line 56
             echo "        <div class=\"form-row _ajax_location_select_wrapper\">
             ";
-            // line 43
+            // line 57
             $context['__cms_partial_params'] = [];
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("form/locataion-select/locataion-select"            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
-            // line 44
+            // line 58
             echo "        </div>
         ";
         }
-        // line 46
+        // line 60
         echo "        <hr>
 
         ";
-        // line 48
-        $context["obShippingTypeList"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["ShippingTypeList"] ?? null), "make", [], "method", false, false, false, 48), "sort", [], "method", false, false, false, 48), "active", [], "method", false, false, false, 48);
-        // line 49
+        // line 62
+        $context["obShippingTypeList"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["ShippingTypeList"] ?? null), "make", [], "method", false, false, false, 62), "sort", [], "method", false, false, false, 62), "active", [], "method", false, false, false, 62);
+        // line 63
         echo "        ";
-        if (twig_get_attribute($this->env, $this->source, ($context["obShippingTypeList"] ?? null), "isNotEmpty", [], "method", false, false, false, 49)) {
-            // line 50
+        if (twig_get_attribute($this->env, $this->source, ($context["obShippingTypeList"] ?? null), "isNotEmpty", [], "method", false, false, false, 63)) {
+            // line 64
             echo "            <fieldset class=\"form-group\">
                 ";
-            // line 51
+            // line 65
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["obShippingTypeList"] ?? null));
             $context['loop'] = [
@@ -117,33 +131,33 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["obShippingType"]) {
-                // line 52
+                // line 66
                 echo "                    <div class=\"form-check";
-                if ( !twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 52)) {
+                if ( !twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 66)) {
                     echo " mt-2";
                 }
                 echo "\">
                         <input class=\"form-check-input\" type=\"radio\" name=\"shipping_type_id\" id=\"sipping-type-";
-                // line 53
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "id", [], "any", false, false, false, 53), "html", null, true);
+                // line 67
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "id", [], "any", false, false, false, 67), "html", null, true);
                 echo "\" value=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "id", [], "any", false, false, false, 53), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "id", [], "any", false, false, false, 67), "html", null, true);
                 echo "\" required ";
-                if (twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 53)) {
+                if (twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 67)) {
                     echo "checked";
                 }
                 echo ">
                         <label class=\"form-check-label\" for=\"sipping-type-";
-                // line 54
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "id", [], "any", false, false, false, 54), "html", null, true);
+                // line 68
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "id", [], "any", false, false, false, 68), "html", null, true);
                 echo "\">
                             ";
-                // line 55
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "name", [], "any", false, false, false, 55), "html", null, true);
+                // line 69
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "name", [], "any", false, false, false, 69), "html", null, true);
                 echo " - ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "price", [], "any", false, false, false, 55), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "price", [], "any", false, false, false, 69), "html", null, true);
                 echo " ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "currency", [], "any", false, false, false, 55), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "currency", [], "any", false, false, false, 69), "html", null, true);
                 echo "
                         </label>
                     </div>
@@ -160,21 +174,21 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['obShippingType'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 59
+            // line 73
             echo "            </fieldset>
             <hr>
         ";
         }
-        // line 62
+        // line 76
         echo "        ";
-        $context["obPaymentMethodList"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["PaymentMethodList"] ?? null), "make", [], "method", false, false, false, 62), "sort", [], "method", false, false, false, 62), "active", [], "method", false, false, false, 62);
-        // line 63
+        $context["obPaymentMethodList"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["PaymentMethodList"] ?? null), "make", [], "method", false, false, false, 76), "sort", [], "method", false, false, false, 76), "active", [], "method", false, false, false, 76);
+        // line 77
         echo "        ";
-        if (twig_get_attribute($this->env, $this->source, ($context["obPaymentMethodList"] ?? null), "isNotEmpty", [], "method", false, false, false, 63)) {
-            // line 64
+        if (twig_get_attribute($this->env, $this->source, ($context["obPaymentMethodList"] ?? null), "isNotEmpty", [], "method", false, false, false, 77)) {
+            // line 78
             echo "            <fieldset class=\"form-group\">
                 ";
-            // line 65
+            // line 79
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["obPaymentMethodList"] ?? null));
             $context['loop'] = [
@@ -191,29 +205,29 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["obPaymentMethod"]) {
-                // line 66
+                // line 80
                 echo "                    <div class=\"form-check";
-                if ( !twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 66)) {
+                if ( !twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 80)) {
                     echo " mt-2";
                 }
                 echo "\">
                         <input class=\"form-check-input\" type=\"radio\" name=\"payment_method_id\" id=\"payment-method-";
-                // line 67
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "id", [], "any", false, false, false, 67), "html", null, true);
+                // line 81
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "id", [], "any", false, false, false, 81), "html", null, true);
                 echo "\" value=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "id", [], "any", false, false, false, 67), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "id", [], "any", false, false, false, 81), "html", null, true);
                 echo "\" required ";
-                if (twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 67)) {
+                if (twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 81)) {
                     echo "checked";
                 }
                 echo ">
                         <label class=\"form-check-label\" for=\"payment-method-";
-                // line 68
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "id", [], "any", false, false, false, 68), "html", null, true);
+                // line 82
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "id", [], "any", false, false, false, 82), "html", null, true);
                 echo "\">
                             ";
-                // line 69
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "name", [], "any", false, false, false, 69), "html", null, true);
+                // line 83
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "name", [], "any", false, false, false, 83), "html", null, true);
                 echo "
                         </label>
                     </div>
@@ -230,15 +244,26 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['obPaymentMethod'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 73
+            // line 87
             echo "            </fieldset>
         ";
         }
-        // line 75
+        // line 89
         echo "        <div class=\"form-group\">
             <button type=\"submit\" class=\"btn btn-dark w-100 text-uppercase _create_order_button\" data-container=\"body\" data-toggle=\"popover\" data-placement=\"top\" data-content=\"\">continue to checkout</button>
         </div>
+    </div>
+    <div class=\"order__info\">
+
+            <div class=\"order__group-textarea\">
+                <label for=\"order_message\" class=\"order__label\">Примечания к заказу (необязательно)</label>
+                <textarea id=\"order_message\" name=\"comment\" class=\"order__input order__message\"></textarea>
+            </div>
+
+            </div>
     </form>
+</div>
+</div>
 </section>";
     }
 
@@ -254,50 +279,64 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
 
     public function getDebugInfo()
     {
-        return array (  238 => 75,  234 => 73,  216 => 69,  212 => 68,  202 => 67,  195 => 66,  178 => 65,  175 => 64,  172 => 63,  169 => 62,  164 => 59,  142 => 55,  138 => 54,  128 => 53,  121 => 52,  104 => 51,  101 => 50,  98 => 49,  96 => 48,  92 => 46,  88 => 44,  84 => 43,  81 => 42,  79 => 41,  37 => 1,);
+        return array (  252 => 89,  248 => 87,  230 => 83,  226 => 82,  216 => 81,  209 => 80,  192 => 79,  189 => 78,  186 => 77,  183 => 76,  178 => 73,  156 => 69,  152 => 68,  142 => 67,  135 => 66,  118 => 65,  115 => 64,  112 => 63,  110 => 62,  106 => 60,  102 => 58,  98 => 57,  95 => 56,  93 => 55,  37 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<section class=\"row form\">
-    <form class=\"col-12 col-lg-8 needs-validation _ajax_create_order\" novalidate>
-        <div class=\"row\">
-            <div class=\"col-sm-6 mb-3\">
-                <input type=\"text\" class=\"form-control\" name=\"name\" placeholder=\"First name\" aria-label=\"Input first name\" required>
-                <div class=\"invalid-feedback\">
-                    Please add your name
-                </div>
+        return new Source("<section class=\"row form order\" id=\"order-page\" style=\"display: none;\">
+<div class=\"container\">
+<div class=\"order__wrap\">
+    <h2 class=\"order__title\">Оформление заказа</h2>
+    <form class=\"order__form _ajax_create_order\" novalidate>
+        <div class=\"order__form-wrap\">
+            <div class=\"order__group order__group-half\">
+                <label for=\"order_name\" class=\"order__label\">Имя<span>*</span></label>
+                <input type=\"text\" id=\"order_name\" name=\"name\" class=\"order__input form-control\" required>
+              </div>
+            <div class=\"order__group order__group-half\">
+                <label for=\"order_lastname\" class=\"order__label\">Фамилия<span>*</span></label>
+                <input type=\"text\" id=\"order_lastname\" name=\"last_name\" class=\"order__input\" required>
             </div>
-            <div class=\"col-sm-6 mb-3\">
-                <input type=\"text\" class=\"form-control\" name=\"last_name\" placeholder=\"Last name\" aria-label=\"Input last name\" required>
-                <div class=\"invalid-feedback\">
-                    Please add your last name
-                </div>
+            <div class=\"order__group\">
+                <label for=\"order_company\" class=\"order__label\">Название компании (необязательно)</label>
+                <input type=\"text\" id=\"order_company\" name=\"company\" class=\"order__input\">
             </div>
-        </div>
-        <div class=\"form-group mb-3\">
-            <label class=\"sr-only\" for=\"inlineFormInputGroup\">Email</label>
-            <div class=\"input-group\">
-                <div class=\"input-group-prepend\">
-                    <div class=\"input-group-text\">@</div>
-                </div>
-                <input type=\"text\" class=\"form-control\" id=\"inlineFormInputGroup\" name=\"email\" placeholder=\"Email\" required>
-                <div class=\"invalid-feedback\">
-                    Please add your email
-                </div>
+
+            <div class=\"order__group\">
+            <label for=\"order_region\" class=\"order__label\">Область/Округ<span>*</span></label>
+            <input type=\"text\" id=\"order_region\" name=\"state\" class=\"order__input\" required>
             </div>
-        </div>
-        <div class=\"form-group\">
-            <label for=\"inputAddress\">Address</label>
-            <input type=\"text\" class=\"form-control\" id=\"inputAddress\" name=\"address1\" placeholder=\"1234 Main St\" required>
-            <div class=\"invalid-feedback\">
-                Please add your address
+
+            <div class=\"order__group order__group-half\">
+                <label for=\"order_city\" class=\"order__label\">Город<span>*</span></label>
+                <input type=\"text\" id=\"order_city\" name=\"city\" class=\"order__input\" required>
             </div>
-        </div>
-        <div class=\"form-group\">
-            <label for=\"inputAddress2\">Address 2 (optional)</label>
-            <input type=\"text\" class=\"form-control\" id=\"inputAddress2\" name=\"address2\" placeholder=\"Apartment or suite\">
-        </div>
+
+            <div class=\"order__group order__group-half\">
+                <label for=\"order_index\" class=\"order__label\">Почтовый индекс<span>*</span></label>
+                <input type=\"text\" id=\"order_index\" name=\"postcode\" class=\"order__input\" required>
+            </div>
+
+            <div class=\"order__group order__group-half\">
+                <label for=\"order_street\" class=\"order__label\">Улица <span>*</span></label>
+                <input type=\"text\" id=\"order_street\" name=\"street\" class=\"order__input\" required>
+            </div>
+
+            <div class=\"order__group order__group-half\">
+                <label for=\"order_home\" class=\"order__label\">Дом<span>*</span></label>
+                <input type=\"text\" id=\"order_home\" name=\"house\" class=\"order__input\" required>
+            </div>
+
+            <div class=\"order__group\">
+                <label for=\"order_email\" class=\"order__label\">Адрес электронной почты (необязательно) </label>
+                <input type=\"email\" id=\"order_email\" name=\"email\" class=\"order__input\">
+            </div>
+
+            <div class=\"order__group\">
+                <label for=\"order_phone\" class=\"order__label\">Телефон<span>*</span></label>
+                <input type=\"text\" id=\"order_phone\" name=\"phone\" class=\"order__input\" required>
+            </div>
 
         {% if location_is_available %}
         <div class=\"form-row _ajax_location_select_wrapper\">
@@ -336,7 +375,18 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
         <div class=\"form-group\">
             <button type=\"submit\" class=\"btn btn-dark w-100 text-uppercase _create_order_button\" data-container=\"body\" data-toggle=\"popover\" data-placement=\"top\" data-content=\"\">continue to checkout</button>
         </div>
+    </div>
+    <div class=\"order__info\">
+
+            <div class=\"order__group-textarea\">
+                <label for=\"order_message\" class=\"order__label\">Примечания к заказу (необязательно)</label>
+                <textarea id=\"order_message\" name=\"comment\" class=\"order__input order__message\"></textarea>
+            </div>
+
+            </div>
     </form>
+</div>
+</div>
 </section>", "D:\\open_server_5_3_5_basic_premium_ultimate\\OSPanel\\domains\\october/themes/lovata-bootstrap-shopaholic/partials/form/checkout-form/checkout-form.htm", "");
     }
 }

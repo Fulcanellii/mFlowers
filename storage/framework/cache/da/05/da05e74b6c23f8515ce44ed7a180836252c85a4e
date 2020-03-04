@@ -1,4 +1,4 @@
-1583239850a:1:{s:12:"checkout.htm";a:12:{s:8:"fileName";s:12:"checkout.htm";s:7:"content";s:1070:"title = "Checkout"
+1583318198a:1:{s:12:"checkout.htm";a:12:{s:8:"fileName";s:12:"checkout.htm";s:7:"content";s:1070:"title = "Checkout"
 url = "/checkout"
 layout = "main"
 is_hidden = 0
@@ -34,7 +34,7 @@ function onInit()
     {% if obCartPositionList.count > 0 %}
         {% partial 'form/checkout-form/checkout-form' %}
     {% endif %}
-</div>";s:5:"mtime";i:1583137547;s:6:"markup";s:675:"{% set obActiveShippingType = ShippingTypeList.make().active().sort().first() %}
+</div>";s:5:"mtime";i:1583308763;s:6:"markup";s:675:"{% set obActiveShippingType = ShippingTypeList.make().active().sort().first() %}
 {% set obCartPositionList = Cart.get(obActiveShippingType) %}
 
 {% set arBreadcrumbs = [

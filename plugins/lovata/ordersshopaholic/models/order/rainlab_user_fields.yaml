@@ -1,11 +1,14 @@
 fields:
     name:
-        label: rainlab.user::lang.user.name
+        label: 'rainlab.user::lang.user.name'
         span: auto
+        type: text
     surname:
-        label: rainlab.user::lang.user.surname
+        label: 'rainlab.user::lang.user.surname'
         span: auto
+        type: text
     email:
-        label: rainlab.user::lang.user.email
-        tab: rainlab.user::lang.user.account
+        label: 'rainlab.user::lang.user.email'
+        tab: 'rainlab.user::lang.user.account'
         span: full
+        type: text

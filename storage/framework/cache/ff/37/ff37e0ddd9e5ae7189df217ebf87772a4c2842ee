@@ -1,4 +1,4 @@
-1583239851a:1:{s:16:"header-menu.yaml";a:7:{s:8:"fileName";s:16:"header-menu.yaml";s:7:"content";s:1457:"name: 'Header menu'
+1583318199a:1:{s:16:"header-menu.yaml";a:7:{s:8:"fileName";s:16:"header-menu.yaml";s:7:"content";s:1392:"name: 'Header menu'
 items:
     -
         title: 'Для любимой'
@@ -63,4 +63,4 @@ items:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
-";s:5:"mtime";i:1583127196;s:6:"markup";N;s:4:"code";N;s:4:"name";N;s:5:"items";a:0:{}}}
+";s:5:"mtime";i:1583299620;s:6:"markup";N;s:4:"code";N;s:4:"name";N;s:5:"items";a:0:{}}}

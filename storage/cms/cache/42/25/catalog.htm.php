@@ -1,5 +1,5 @@
 <?php 
-class Cms5e5dfefe265a3519182231_9ffb1eb84884d8fd573d003717838421Class extends Cms\Classes\PageCode
+class Cms5e5f825ef2b83663391668_4b4dfeaa7924bac42e134987f5ce3919Class extends Cms\Classes\PageCode
 {
 public function onInit() {
     $obProductItem = $this->ProductPage->get();

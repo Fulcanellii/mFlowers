@@ -1,8 +1,10 @@
-1583239170a:1:{s:46:"form/button-add-to-cart/button-add-to-cart.htm";a:5:{s:8:"fileName";s:46:"form/button-add-to-cart/button-add-to-cart.htm";s:7:"content";s:249:"<button class="btn-add-to-cart products__button {{ btnAddClasses }}" type="button" aria-label="Add to cart" data-container="body" data-toggle="popover"
+1583318199a:1:{s:46:"form/button-add-to-cart/button-add-to-cart.htm";a:5:{s:8:"fileName";s:46:"form/button-add-to-cart/button-add-to-cart.htm";s:7:"content";s:253:"<button class="btn-add-to-cart products__button {{ btnAddClasses }}" type="button" aria-label="Add to cart" data-container="body" data-toggle="popover"
 title="Popover Header" data-placement="top" data-content="">
     в корзину
 </button>
-";s:5:"mtime";i:1583235273;s:6:"markup";s:247:"<button class="btn-add-to-cart products__button {{ btnAddClasses }}" type="button" aria-label="Add to cart" data-container="body" data-toggle="popover"
+
+
+";s:5:"mtime";i:1583297453;s:6:"markup";s:247:"<button class="btn-add-to-cart products__button {{ btnAddClasses }}" type="button" aria-label="Add to cart" data-container="body" data-toggle="popover"
 title="Popover Header" data-placement="top" data-content="">
     в корзину
 </button>";s:4:"code";N;}}

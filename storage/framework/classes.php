@@ -353,4 +353,7 @@
   'lovata\\ordersshopaholic\\Controllers\\orderpositionproperties' => 'plugins\\lovata\\ordersshopaholic\\controllers\\orderpositionproperties.php',
   'lovata\\shopaholic\\Controllers\\measures' => 'plugins\\lovata\\shopaholic\\controllers\\measures.php',
   'lovata\\shopaholic\\Controllers\\pricetypes' => 'plugins\\lovata\\shopaholic\\controllers\\pricetypes.php',
+  'lovata\\ordersshopaholic\\Controllers\\promomechanisms' => 'plugins\\lovata\\ordersshopaholic\\controllers\\promomechanisms.php',
+  'Lovata\\OrdersShopaholic\\Models\\PromoMechanism' => 'plugins\\lovata\\ordersshopaholic\\models\\PromoMechanism.php',
+  'Lovata\\OrdersShopaholic\\Classes\\Item\\PaymentMethodItem' => 'plugins\\lovata\\ordersshopaholic\\classes\\item\\PaymentMethodItem.php',
 );

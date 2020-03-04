@@ -395,7 +395,7 @@ class __TwigTemplate_925b2d89c14c88241a0c6d4a5904c90ab9948a46480d07aeb475e5d5cd1
                     echo "
                 <a href=\"";
                     // line 163
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "getPageUrl", [0 => "category-page"], "method", false, false, false, 163), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["cat"], "getPageUrl", [0 => "catalog"], "method", false, false, false, 163), "html", null, true);
                     echo "\" class=\"occation__link\">
                         <h3 class=\"occation__title\">";
                     // line 164
@@ -685,7 +685,7 @@ class __TwigTemplate_925b2d89c14c88241a0c6d4a5904c90ab9948a46480d07aeb475e5d5cd1
                 {% for cat in cat if cat.show_on_main == 1 %}
                 {% if cat.product_count > 0 %}
 
-                <a href=\"{{ cat.getPageUrl('category-page') }}\" class=\"occation__link\">
+                <a href=\"{{ cat.getPageUrl('catalog') }}\" class=\"occation__link\">
                         <h3 class=\"occation__title\">{{ cat.name }}</h3>
                         <img src=\"{{ cat.preview_image.path }}\" alt=\"#\">
                 </a>
