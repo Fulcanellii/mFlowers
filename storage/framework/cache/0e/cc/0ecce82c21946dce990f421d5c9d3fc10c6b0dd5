@@ -1,4 +1,4 @@
-1583318199a:1:{s:36:"navigation/pagination/pagination.htm";a:5:{s:8:"fileName";s:36:"navigation/pagination/pagination.htm";s:7:"content";s:3008:"{#  For disabling prev, next or other buttons you should use class 'disabled',
+1583322581a:1:{s:36:"navigation/pagination/pagination.htm";a:5:{s:8:"fileName";s:36:"navigation/pagination/pagination.htm";s:7:"content";s:3008:"{#  For disabling prev, next or other buttons you should use class 'disabled',
     for active page - 'active' class and render node '<span class="sr-only">(current)</span>' (a11y requirement)
 #}
 

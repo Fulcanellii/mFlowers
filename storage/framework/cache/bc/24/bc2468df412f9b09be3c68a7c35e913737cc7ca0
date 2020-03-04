@@ -1,4 +1,10 @@
-1583318290a:1:{s:36:"form/checkout-form/checkout-form.htm";a:5:{s:8:"fileName";s:36:"form/checkout-form/checkout-form.htm";s:7:"content";s:5637:"<section class="row form order" id="order-page" style="display: none;">
+1583324811a:1:{s:36:"form/checkout-form/checkout-form.htm";a:5:{s:8:"fileName";s:36:"form/checkout-form/checkout-form.htm";s:7:"content";s:8343:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
+{# @var obCartPosition \Lovata\OrdersShopaholic\Classes\Item\CartPositionItem #}
+{# @var obActiveShippingType \Lovata\OrdersShopaholic\Classes\Item\ShippingTypeItem #}
+{# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
+{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
+
+<section class="row form order" id="order-page" style="display: none;">
 <div class="container">
 <div class="order__wrap">
     <h2 class="order__title">Оформление заказа</h2>
@@ -58,21 +64,8 @@
         </div>
         {% endif %}
         <hr>
+    
 
-        {% set obShippingTypeList = ShippingTypeList.make().sort().active() %}
-        {% if obShippingTypeList.isNotEmpty() %}
-            <fieldset class="form-group">
-                {% for obShippingType in obShippingTypeList %}
-                    <div class="form-check{% if not loop.first %} mt-2{% endif %}">
-                        <input class="form-check-input" type="radio" name="shipping_type_id" id="sipping-type-{{ obShippingType.id }}" value="{{ obShippingType.id }}" required {% if loop.first %}checked{% endif %}>
-                        <label class="form-check-label" for="sipping-type-{{ obShippingType.id }}">
-                            {{ obShippingType.name }} - {{ obShippingType.price }} {{ obShippingType.currency }}
-                        </label>
-                    </div>
-                {% endfor %}
-            </fieldset>
-            <hr>
-        {% endif %}
         {% set obPaymentMethodList = PaymentMethodList.make().sort().active() %}
         {% if obPaymentMethodList.isNotEmpty() %}
             <fieldset class="form-group">
@@ -91,18 +84,91 @@
         </div>
     </div>
     <div class="order__info">
-
-            <div class="order__group-textarea">
+    <div class="order__group-textarea">
                 <label for="order_message" class="order__label">Примечания к заказу (необязательно)</label>
                 <textarea id="order_message" name="comment" class="order__input order__message"></textarea>
             </div>
+            <p>
+                Ваши данные полностью защищены и не будут передаваться третьим лицам.Пожалуйста проверьте правильность
+                ввода данных.
+              </p>
+        <div class="order__info-text">
+                <h2>Информация о заказе</h2>
+                <div>
+                  <div class="order__info-title">Продукт</div>
 
+                {% set obCartPositionList = Cart.get(obActiveShippingType) %}
+
+                  <div class="order__products">
+
+                    {% for obCartPosition in obCartPositionList %}
+                
+                {% set obOffer = obCartPosition.offer %}
+                {% set obProduct = obOffer.product %}
+
+                    <div class="order__product">
+                      <div class="order__product-name">{{ obProduct.name }}</div>
+                      <div>
+                        <input type="text" value="{{ obCartPosition.price }}" class="order__info-input" readonly>c
+                      </div>
+                    </div>
+
+                    {% endfor %}
+
+                  </div>
+                  <div class="order__resident">
+                    <div class="order__info-title">Промежуточный итог:</div>
+                    <div>
+                      <input type="text" value="{{ obCartPositionList.getTotalPrice() }}" class="order__info-input order__resident-input" readonly>c
+                    </div>
+                  </div>
+
+                  <div class="order__resident">
+                    <div class="order__info-title">Перевозка:</div>
+                    <div class="order__radios">
+
+                        {% set obShippingTypeList = ShippingTypeList.make().sort().active() %}
+        
+        {% if obShippingTypeList.isNotEmpty() %}
+                
+                    <div class="form-check order__radio-text {% if not loop.first %} mt-2{% endif %}">
+                        {% for obShippingType in obShippingTypeList %}
+                        <input class="form-check-input order__radio" type="radio" name="shipping_type_id" id="sipping-type-{{ obShippingType.id }}" value="{{ obShippingType.id }}" required >
+
+                        <!-- {% if loop.first %}checked{% endif %} -->
+                            {{ obShippingType.name }}: {{ obShippingType.price }}{{ obShippingType.currency }}
+                        {% endfor %}
+                    </div>
+                
+
+        {% endif %}
+                    </div>
+                  </div>
+                  <div class="order__resident">
+                    <div class="order__info-title">Общая стоимость:</div>
+                    <div>
+                      <span class="cart__total-price-current-price col-3 col-lg-2 text-right">
+                <span class="cart__total-price-price-value basket__total-order">{{ Cart.getTotalPrice() }}</span>
+                <!-- <span class="cart__total-price-price-currency">{{ Cart.getCurrency() }}</span> -->
+            </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            
             </div>
     </form>
 </div>
 </div>
 </section>
-";s:5:"mtime";i:1583317673;s:6:"markup";s:5636:"<section class="row form order" id="order-page" style="display: none;">
+";s:5:"mtime";i:1583322714;s:6:"markup";s:8342:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
+{# @var obCartPosition \Lovata\OrdersShopaholic\Classes\Item\CartPositionItem #}
+{# @var obActiveShippingType \Lovata\OrdersShopaholic\Classes\Item\ShippingTypeItem #}
+{# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
+{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
+
+<section class="row form order" id="order-page" style="display: none;">
 <div class="container">
 <div class="order__wrap">
     <h2 class="order__title">Оформление заказа</h2>
@@ -162,21 +228,8 @@
         </div>
         {% endif %}
         <hr>
+    
 
-        {% set obShippingTypeList = ShippingTypeList.make().sort().active() %}
-        {% if obShippingTypeList.isNotEmpty() %}
-            <fieldset class="form-group">
-                {% for obShippingType in obShippingTypeList %}
-                    <div class="form-check{% if not loop.first %} mt-2{% endif %}">
-                        <input class="form-check-input" type="radio" name="shipping_type_id" id="sipping-type-{{ obShippingType.id }}" value="{{ obShippingType.id }}" required {% if loop.first %}checked{% endif %}>
-                        <label class="form-check-label" for="sipping-type-{{ obShippingType.id }}">
-                            {{ obShippingType.name }} - {{ obShippingType.price }} {{ obShippingType.currency }}
-                        </label>
-                    </div>
-                {% endfor %}
-            </fieldset>
-            <hr>
-        {% endif %}
         {% set obPaymentMethodList = PaymentMethodList.make().sort().active() %}
         {% if obPaymentMethodList.isNotEmpty() %}
             <fieldset class="form-group">
@@ -195,12 +248,79 @@
         </div>
     </div>
     <div class="order__info">
-
-            <div class="order__group-textarea">
+    <div class="order__group-textarea">
                 <label for="order_message" class="order__label">Примечания к заказу (необязательно)</label>
                 <textarea id="order_message" name="comment" class="order__input order__message"></textarea>
             </div>
+            <p>
+                Ваши данные полностью защищены и не будут передаваться третьим лицам.Пожалуйста проверьте правильность
+                ввода данных.
+              </p>
+        <div class="order__info-text">
+                <h2>Информация о заказе</h2>
+                <div>
+                  <div class="order__info-title">Продукт</div>
 
+                {% set obCartPositionList = Cart.get(obActiveShippingType) %}
+
+                  <div class="order__products">
+
+                    {% for obCartPosition in obCartPositionList %}
+                
+                {% set obOffer = obCartPosition.offer %}
+                {% set obProduct = obOffer.product %}
+
+                    <div class="order__product">
+                      <div class="order__product-name">{{ obProduct.name }}</div>
+                      <div>
+                        <input type="text" value="{{ obCartPosition.price }}" class="order__info-input" readonly>c
+                      </div>
+                    </div>
+
+                    {% endfor %}
+
+                  </div>
+                  <div class="order__resident">
+                    <div class="order__info-title">Промежуточный итог:</div>
+                    <div>
+                      <input type="text" value="{{ obCartPositionList.getTotalPrice() }}" class="order__info-input order__resident-input" readonly>c
+                    </div>
+                  </div>
+
+                  <div class="order__resident">
+                    <div class="order__info-title">Перевозка:</div>
+                    <div class="order__radios">
+
+                        {% set obShippingTypeList = ShippingTypeList.make().sort().active() %}
+        
+        {% if obShippingTypeList.isNotEmpty() %}
+                
+                    <div class="form-check order__radio-text {% if not loop.first %} mt-2{% endif %}">
+                        {% for obShippingType in obShippingTypeList %}
+                        <input class="form-check-input order__radio" type="radio" name="shipping_type_id" id="sipping-type-{{ obShippingType.id }}" value="{{ obShippingType.id }}" required >
+
+                        <!-- {% if loop.first %}checked{% endif %} -->
+                            {{ obShippingType.name }}: {{ obShippingType.price }}{{ obShippingType.currency }}
+                        {% endfor %}
+                    </div>
+                
+
+        {% endif %}
+                    </div>
+                  </div>
+                  <div class="order__resident">
+                    <div class="order__info-title">Общая стоимость:</div>
+                    <div>
+                      <span class="cart__total-price-current-price col-3 col-lg-2 text-right">
+                <span class="cart__total-price-price-value basket__total-order">{{ Cart.getTotalPrice() }}</span>
+                <!-- <span class="cart__total-price-price-currency">{{ Cart.getCurrency() }}</span> -->
+            </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            
             </div>
     </form>
 </div>

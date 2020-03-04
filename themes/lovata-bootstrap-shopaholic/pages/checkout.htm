@@ -20,7 +20,7 @@ function onInit()
 }
 ?>
 ==
-{% set obActiveShippingType = ShippingTypeList.make().active().sort().first() %}
+{% set obActiveShippingType = ShippingTypeList.make().active().sort().getByCode('zabr0') %}
 {% set obCartPositionList = Cart.get(obActiveShippingType) %}
 
 {% set arBreadcrumbs = [

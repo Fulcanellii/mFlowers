@@ -34,7 +34,7 @@ class __TwigTemplate_304869e48e96f0c85f7c7f113018517b621c133c0e74ad3f1715fa3a1b0
     {
         $macros = $this->macros;
         // line 1
-        $context["obActiveShippingType"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["ShippingTypeList"] ?? null), "make", [], "method", false, false, false, 1), "active", [], "method", false, false, false, 1), "sort", [], "method", false, false, false, 1), "first", [], "method", false, false, false, 1);
+        $context["obActiveShippingType"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["ShippingTypeList"] ?? null), "make", [], "method", false, false, false, 1), "active", [], "method", false, false, false, 1), "sort", [], "method", false, false, false, 1), "getByCode", [0 => "zabr0"], "method", false, false, false, 1);
         // line 2
         $context["obCartPositionList"] = twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "get", [0 => ($context["obActiveShippingType"] ?? null)], "method", false, false, false, 2);
         // line 3
@@ -85,7 +85,7 @@ class __TwigTemplate_304869e48e96f0c85f7c7f113018517b621c133c0e74ad3f1715fa3a1b0
 
     public function getSourceContext()
     {
-        return new Source("{% set obActiveShippingType = ShippingTypeList.make().active().sort().first() %}
+        return new Source("{% set obActiveShippingType = ShippingTypeList.make().active().sort().getByCode('zabr0') %}
 {% set obCartPositionList = Cart.get(obActiveShippingType) %}
 
 {% set arBreadcrumbs = [

@@ -59,7 +59,7 @@
                         {% partial 'form/button-change-quantity/button-change-cart' btnChangeQtyValue=obCartPosition.quantity btnChangeQtyAjax=true btnMaxQtyValue=obOffer.quantity %}
                     </td>
                     <td class="cart__total-price align-middle">
-                        <span class="cart__total-price-figures cart__position-price-value">{{ obCartPosition.price }}</span>
+                        <span class="cart__total-price-figures cart__position-price-value basket__input basket__input-total">{{ obCartPosition.price }}</span>
                         <span class="text-muted cart__position-old-price-figures {% if obCartPosition.discount_price_value == 0 %}d-none{% endif %}">
                             <span class="cart__position-old-price-value">{{ obCartPosition.old_price }}</span> {{ obCartPosition.currency }}
                         </span>
@@ -87,28 +87,7 @@
                 <span class="cart__total-position-price-value basket__total-resident">{{ obCartPositionList.getTotalPrice() }}</span>
             </span>
         </div>
-        <div class="cart__total-shipping basket__info">
-            <span class="cart__total-shipping-title col-6 col-lg-4 font-weight-bold">Доставка:</span>
-            <span class="cart__total-shipping-old-price col-3 col-lg-2 text-right text-muted">
-                <span class="cart__total-shipping-old-price-value {% if obActiveShippingType.discount_price_value == 0 %}d-none{% endif %}">{{ obActiveShippingType.old_price }}</span>
-                <span class="cart__total-shipping-old-price-currency {% if obActiveShippingType.discount_price_value == 0 %}d-none{% endif %}">{{ Cart.getCurrency() }}</span>
-            </span>
-            <span class="cart__total-shipping-current-price basket__radios">
-                <span class="cart__total-shipping-price-value basket__delivery">{{ obActiveShippingType.price }}</span>
-      
-            </span>
-        </div>
-        <div class="cart__total-price basket__info">
-            <span class="cart__total-price-title col-6 col-lg-4 font-weight-bold">Общая стоимость:</span>
-            <span class="cart__total-price-old-price col-3 col-lg-2 text-right text-muted">
-                <span class="cart__total-price-old-price-value {% if Cart.getDiscountTotalPriceValue() == 0 %}d-none{% endif %}">{{ Cart.getOldTotalPrice() }}</span>
-                <span class="cart__total-price-old-price-currency {% if Cart.getDiscountTotalPriceValue() == 0 %}d-none{% endif %}">{{ Cart.getCurrency() }}</span>
-            </span>
-            <span class="cart__total-price-current-price col-3 col-lg-2 text-right">
-                <span class="cart__total-price-price-value basket__total-order">{{ Cart.getTotalPrice() }}</span>
-                <!-- <span class="cart__total-price-price-currency">{{ Cart.getCurrency() }}</span> -->
-            </span>
-        </div>
+
         <button class="basket__btn-pay">перейти к оплате</button>
     </div>
     {% endif %}

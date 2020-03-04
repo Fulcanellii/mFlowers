@@ -2,6 +2,8 @@
 
 
 $(".basket__btn-pay").click(function(event) {
-	$("#order-page").show('slow/400/fast');
-	$(".basket").hide();
+	$("#order-page").show('slow/400/fast', function() {
+		
+	});
+	// $(".basket").hide();
 });

@@ -167,7 +167,7 @@ class __TwigTemplate_a583a85a5f2de90c068369218d76dea8bf7bdd450bf1764399fce538eb9
                 // line 60
                 echo "                    </td>
                     <td class=\"cart__total-price align-middle\">
-                        <span class=\"cart__total-price-figures cart__position-price-value\">";
+                        <span class=\"cart__total-price-figures cart__position-price-value basket__input basket__input-total\">";
                 // line 62
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obCartPosition"], "price", [], "any", false, false, false, 62), "html", null, true);
                 echo "</span>
@@ -236,70 +236,12 @@ class __TwigTemplate_a583a85a5f2de90c068369218d76dea8bf7bdd450bf1764399fce538eb9
             echo "</span>
             </span>
         </div>
-        <div class=\"cart__total-shipping basket__info\">
-            <span class=\"cart__total-shipping-title col-6 col-lg-4 font-weight-bold\">Доставка:</span>
-            <span class=\"cart__total-shipping-old-price col-3 col-lg-2 text-right text-muted\">
-                <span class=\"cart__total-shipping-old-price-value ";
-            // line 93
-            if ((twig_get_attribute($this->env, $this->source, ($context["obActiveShippingType"] ?? null), "discount_price_value", [], "any", false, false, false, 93) == 0)) {
-                echo "d-none";
-            }
-            echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obActiveShippingType"] ?? null), "old_price", [], "any", false, false, false, 93), "html", null, true);
-            echo "</span>
-                <span class=\"cart__total-shipping-old-price-currency ";
-            // line 94
-            if ((twig_get_attribute($this->env, $this->source, ($context["obActiveShippingType"] ?? null), "discount_price_value", [], "any", false, false, false, 94) == 0)) {
-                echo "d-none";
-            }
-            echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getCurrency", [], "method", false, false, false, 94), "html", null, true);
-            echo "</span>
-            </span>
-            <span class=\"cart__total-shipping-current-price basket__radios\">
-                <span class=\"cart__total-shipping-price-value basket__delivery\">";
-            // line 97
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obActiveShippingType"] ?? null), "price", [], "any", false, false, false, 97), "html", null, true);
-            echo "</span>
-      
-            </span>
-        </div>
-        <div class=\"cart__total-price basket__info\">
-            <span class=\"cart__total-price-title col-6 col-lg-4 font-weight-bold\">Общая стоимость:</span>
-            <span class=\"cart__total-price-old-price col-3 col-lg-2 text-right text-muted\">
-                <span class=\"cart__total-price-old-price-value ";
-            // line 104
-            if ((twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getDiscountTotalPriceValue", [], "method", false, false, false, 104) == 0)) {
-                echo "d-none";
-            }
-            echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getOldTotalPrice", [], "method", false, false, false, 104), "html", null, true);
-            echo "</span>
-                <span class=\"cart__total-price-old-price-currency ";
-            // line 105
-            if ((twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getDiscountTotalPriceValue", [], "method", false, false, false, 105) == 0)) {
-                echo "d-none";
-            }
-            echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getCurrency", [], "method", false, false, false, 105), "html", null, true);
-            echo "</span>
-            </span>
-            <span class=\"cart__total-price-current-price col-3 col-lg-2 text-right\">
-                <span class=\"cart__total-price-price-value basket__total-order\">";
-            // line 108
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getTotalPrice", [], "method", false, false, false, 108), "html", null, true);
-            echo "</span>
-                <!-- <span class=\"cart__total-price-price-currency\">";
-            // line 109
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getCurrency", [], "method", false, false, false, 109), "html", null, true);
-            echo "</span> -->
-            </span>
-        </div>
+
         <button class=\"basket__btn-pay\">перейти к оплате</button>
     </div>
     ";
         }
-        // line 115
+        // line 94
         echo "
     <!-- <div class=\"basket__btns-main cart__table\">
                     <a href=\"/store\" class=\"basket__continue\">продолжить покупки</a>
@@ -307,8 +249,8 @@ class __TwigTemplate_a583a85a5f2de90c068369218d76dea8bf7bdd450bf1764399fce538eb9
                   </div> -->
 
     <div class=\"basket__none cart__empty ";
-        // line 121
-        if (twig_get_attribute($this->env, $this->source, ($context["obCartPositionList"] ?? null), "isNotEmpty", [], "method", false, false, false, 121)) {
+        // line 100
+        if (twig_get_attribute($this->env, $this->source, ($context["obCartPositionList"] ?? null), "isNotEmpty", [], "method", false, false, false, 100)) {
             echo "d-none";
         }
         echo "\">
@@ -332,7 +274,7 @@ class __TwigTemplate_a583a85a5f2de90c068369218d76dea8bf7bdd450bf1764399fce538eb9
 
     public function getDebugInfo()
     {
-        return array (  311 => 121,  303 => 115,  294 => 109,  290 => 108,  280 => 105,  272 => 104,  262 => 97,  252 => 94,  244 => 93,  235 => 87,  225 => 84,  217 => 83,  206 => 74,  195 => 69,  191 => 68,  182 => 64,  176 => 63,  172 => 62,  168 => 60,  161 => 59,  155 => 55,  147 => 53,  144 => 52,  142 => 51,  137 => 49,  133 => 48,  125 => 43,  121 => 42,  116 => 40,  112 => 39,  107 => 36,  101 => 34,  91 => 32,  89 => 31,  83 => 30,  71 => 28,  68 => 27,  65 => 26,  61 => 25,  45 => 11,  43 => 10,  37 => 6,);
+        return array (  253 => 100,  245 => 94,  235 => 87,  225 => 84,  217 => 83,  206 => 74,  195 => 69,  191 => 68,  182 => 64,  176 => 63,  172 => 62,  168 => 60,  161 => 59,  155 => 55,  147 => 53,  144 => 52,  142 => 51,  137 => 49,  133 => 48,  125 => 43,  121 => 42,  116 => 40,  112 => 39,  107 => 36,  101 => 34,  91 => 32,  89 => 31,  83 => 30,  71 => 28,  68 => 27,  65 => 26,  61 => 25,  45 => 11,  43 => 10,  37 => 6,);
     }
 
     public function getSourceContext()
@@ -398,7 +340,7 @@ class __TwigTemplate_a583a85a5f2de90c068369218d76dea8bf7bdd450bf1764399fce538eb9
                         {% partial 'form/button-change-quantity/button-change-cart' btnChangeQtyValue=obCartPosition.quantity btnChangeQtyAjax=true btnMaxQtyValue=obOffer.quantity %}
                     </td>
                     <td class=\"cart__total-price align-middle\">
-                        <span class=\"cart__total-price-figures cart__position-price-value\">{{ obCartPosition.price }}</span>
+                        <span class=\"cart__total-price-figures cart__position-price-value basket__input basket__input-total\">{{ obCartPosition.price }}</span>
                         <span class=\"text-muted cart__position-old-price-figures {% if obCartPosition.discount_price_value == 0 %}d-none{% endif %}\">
                             <span class=\"cart__position-old-price-value\">{{ obCartPosition.old_price }}</span> {{ obCartPosition.currency }}
                         </span>
@@ -426,28 +368,7 @@ class __TwigTemplate_a583a85a5f2de90c068369218d76dea8bf7bdd450bf1764399fce538eb9
                 <span class=\"cart__total-position-price-value basket__total-resident\">{{ obCartPositionList.getTotalPrice() }}</span>
             </span>
         </div>
-        <div class=\"cart__total-shipping basket__info\">
-            <span class=\"cart__total-shipping-title col-6 col-lg-4 font-weight-bold\">Доставка:</span>
-            <span class=\"cart__total-shipping-old-price col-3 col-lg-2 text-right text-muted\">
-                <span class=\"cart__total-shipping-old-price-value {% if obActiveShippingType.discount_price_value == 0 %}d-none{% endif %}\">{{ obActiveShippingType.old_price }}</span>
-                <span class=\"cart__total-shipping-old-price-currency {% if obActiveShippingType.discount_price_value == 0 %}d-none{% endif %}\">{{ Cart.getCurrency() }}</span>
-            </span>
-            <span class=\"cart__total-shipping-current-price basket__radios\">
-                <span class=\"cart__total-shipping-price-value basket__delivery\">{{ obActiveShippingType.price }}</span>
-      
-            </span>
-        </div>
-        <div class=\"cart__total-price basket__info\">
-            <span class=\"cart__total-price-title col-6 col-lg-4 font-weight-bold\">Общая стоимость:</span>
-            <span class=\"cart__total-price-old-price col-3 col-lg-2 text-right text-muted\">
-                <span class=\"cart__total-price-old-price-value {% if Cart.getDiscountTotalPriceValue() == 0 %}d-none{% endif %}\">{{ Cart.getOldTotalPrice() }}</span>
-                <span class=\"cart__total-price-old-price-currency {% if Cart.getDiscountTotalPriceValue() == 0 %}d-none{% endif %}\">{{ Cart.getCurrency() }}</span>
-            </span>
-            <span class=\"cart__total-price-current-price col-3 col-lg-2 text-right\">
-                <span class=\"cart__total-price-price-value basket__total-order\">{{ Cart.getTotalPrice() }}</span>
-                <!-- <span class=\"cart__total-price-price-currency\">{{ Cart.getCurrency() }}</span> -->
-            </span>
-        </div>
+
         <button class=\"basket__btn-pay\">перейти к оплате</button>
     </div>
     {% endif %}

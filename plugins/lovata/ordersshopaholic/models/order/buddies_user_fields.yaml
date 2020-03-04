@@ -25,8 +25,3 @@ fields:
         label: Компания
         span: full
         type: text
-    comment:
-        label: Комментарий
-        size: large
-        span: full
-        type: textarea
