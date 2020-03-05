@@ -1,4 +1,4 @@
-1583324810a:1:{s:16:"product-page.htm";a:10:{s:8:"fileName";s:16:"product-page.htm";s:7:"content";s:4430:"title = "Product Page"
+1583392943a:1:{s:16:"product-page.htm";a:10:{s:8:"fileName";s:16:"product-page.htm";s:7:"content";s:4430:"title = "Product Page"
 url = "/product/:slug"
 layout = "main"
 is_hidden = 0

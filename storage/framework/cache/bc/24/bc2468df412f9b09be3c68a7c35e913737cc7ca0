@@ -1,8 +1,10 @@
-1583324811a:1:{s:36:"form/checkout-form/checkout-form.htm";a:5:{s:8:"fileName";s:36:"form/checkout-form/checkout-form.htm";s:7:"content";s:8343:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
+1583392292a:1:{s:36:"form/checkout-form/checkout-form.htm";a:5:{s:8:"fileName";s:36:"form/checkout-form/checkout-form.htm";s:7:"content";s:9162:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
 {# @var obCartPosition \Lovata\OrdersShopaholic\Classes\Item\CartPositionItem #}
 {# @var obActiveShippingType \Lovata\OrdersShopaholic\Classes\Item\ShippingTypeItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
 {# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
+
+
 
 <section class="row form order" id="order-page" style="display: none;">
 <div class="container">
@@ -66,22 +68,7 @@
         <hr>
     
 
-        {% set obPaymentMethodList = PaymentMethodList.make().sort().active() %}
-        {% if obPaymentMethodList.isNotEmpty() %}
-            <fieldset class="form-group">
-                {% for obPaymentMethod in obPaymentMethodList %}
-                    <div class="form-check{% if not loop.first %} mt-2{% endif %}">
-                        <input class="form-check-input" type="radio" name="payment_method_id" id="payment-method-{{ obPaymentMethod.id }}" value="{{ obPaymentMethod.id }}" required {% if loop.first %}checked{% endif %}>
-                        <label class="form-check-label" for="payment-method-{{ obPaymentMethod.id }}">
-                            {{ obPaymentMethod.name }}
-                        </label>
-                    </div>
-                {% endfor %}
-            </fieldset>
-        {% endif %}
-        <div class="form-group">
-            <button type="submit" class="btn btn-dark w-100 text-uppercase _create_order_button" data-container="body" data-toggle="popover" data-placement="top" data-content="">continue to checkout</button>
-        </div>
+       
     </div>
     <div class="order__info">
     <div class="order__group-textarea">
@@ -96,9 +83,7 @@
                 <h2>Информация о заказе</h2>
                 <div>
                   <div class="order__info-title">Продукт</div>
-
-                {% set obCartPositionList = Cart.get(obActiveShippingType) %}
-
+    
                   <div class="order__products">
 
                     {% for obCartPosition in obCartPositionList %}
@@ -109,7 +94,7 @@
                     <div class="order__product">
                       <div class="order__product-name">{{ obProduct.name }}</div>
                       <div>
-                        <input type="text" value="{{ obCartPosition.price }}" class="order__info-input" readonly>c
+                        <input type="text" value="{{ obOffer.price }}" class="order__info-input" readonly>c
                       </div>
                     </div>
 
@@ -118,7 +103,7 @@
                   </div>
                   <div class="order__resident">
                     <div class="order__info-title">Промежуточный итог:</div>
-                    <div>
+                    <div class="cart__total-position-price-value">
                       <input type="text" value="{{ obCartPositionList.getTotalPrice() }}" class="order__info-input order__resident-input" readonly>c
                     </div>
                   </div>
@@ -148,7 +133,7 @@
                     <div class="order__info-title">Общая стоимость:</div>
                     <div>
                       <span class="cart__total-price-current-price col-3 col-lg-2 text-right">
-                <span class="cart__total-price-price-value basket__total-order">{{ Cart.getTotalPrice() }}</span>
+                <span class="cart__total-price-price-value basket__total-order">{{ Cart.getTotalPrice() }}c</span>
                 <!-- <span class="cart__total-price-price-currency">{{ Cart.getCurrency() }}</span> -->
             </span>
                     </div>
@@ -157,16 +142,57 @@
               </div>
 
             
+            </div>
+
+    
+        
+
+        <div class="order__pay">
+              <h3 class="order__pay-title">ВЫБЕРИТЕ СПОСОБ ОПЛАТЫ</h3>
+
+              {% set obPaymentMethodList = PaymentMethodList.make().sort().active() %}
+              {% if obPaymentMethodList.isNotEmpty() %}
+              <div class="order__pay-radios">
+                {% for obPaymentMethod in obPaymentMethodList %}
+                <div class="form-check{% if not loop.first %} mt-2{% endif %}">
+                        <input class="form-check-input" type="radio" name="payment_method_id" id="payment-method-{{ obPaymentMethod.id }}" value="{{ obPaymentMethod.id }}" required {% if loop.first %}checked{% endif %}>
+                        <label class="form-check-label" for="payment-method-{{ obPaymentMethod.id }}">
+                            {{ obPaymentMethod.name }}
+                        </label>
+                    </div>
+                {% endfor %}
+                
+                
+              </div>
+              {% endif %}
+
+              <div class="order__pay-flex">
+    
+                <div class="order__pay-total">
+                  <div class="order__pay-summ">
+                    <span class="order__pay-order">Сумма заказа</span>
+                    <div class="cart__total-price-price-value"><span class="cart__total-price-price-value basket__total-order">{{ Cart.getTotalPrice() }}c</span></div>
+                  </div>
+                  <div class="order__pay-summ">
+                    <span class="order__pay-order">К оплате</span>
+                    <div class="cart__total-price-price-value"><span class="cart__total-price-price-value basket__total-order">{{ Cart.getTotalPrice() }}c</span></div>
+                  </div>
+
+                </div>
+              </div>
+              <button type="submit" class="order__button _create_order_button">оформить заказ</button>
             </div>
     </form>
 </div>
 </div>
 </section>
-";s:5:"mtime";i:1583322714;s:6:"markup";s:8342:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
+";s:5:"mtime";i:1583388182;s:6:"markup";s:9161:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
 {# @var obCartPosition \Lovata\OrdersShopaholic\Classes\Item\CartPositionItem #}
 {# @var obActiveShippingType \Lovata\OrdersShopaholic\Classes\Item\ShippingTypeItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
 {# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
+
+
 
 <section class="row form order" id="order-page" style="display: none;">
 <div class="container">
@@ -230,22 +256,7 @@
         <hr>
     
 
-        {% set obPaymentMethodList = PaymentMethodList.make().sort().active() %}
-        {% if obPaymentMethodList.isNotEmpty() %}
-            <fieldset class="form-group">
-                {% for obPaymentMethod in obPaymentMethodList %}
-                    <div class="form-check{% if not loop.first %} mt-2{% endif %}">
-                        <input class="form-check-input" type="radio" name="payment_method_id" id="payment-method-{{ obPaymentMethod.id }}" value="{{ obPaymentMethod.id }}" required {% if loop.first %}checked{% endif %}>
-                        <label class="form-check-label" for="payment-method-{{ obPaymentMethod.id }}">
-                            {{ obPaymentMethod.name }}
-                        </label>
-                    </div>
-                {% endfor %}
-            </fieldset>
-        {% endif %}
-        <div class="form-group">
-            <button type="submit" class="btn btn-dark w-100 text-uppercase _create_order_button" data-container="body" data-toggle="popover" data-placement="top" data-content="">continue to checkout</button>
-        </div>
+       
     </div>
     <div class="order__info">
     <div class="order__group-textarea">
@@ -260,9 +271,7 @@
                 <h2>Информация о заказе</h2>
                 <div>
                   <div class="order__info-title">Продукт</div>
-
-                {% set obCartPositionList = Cart.get(obActiveShippingType) %}
-
+    
                   <div class="order__products">
 
                     {% for obCartPosition in obCartPositionList %}
@@ -273,7 +282,7 @@
                     <div class="order__product">
                       <div class="order__product-name">{{ obProduct.name }}</div>
                       <div>
-                        <input type="text" value="{{ obCartPosition.price }}" class="order__info-input" readonly>c
+                        <input type="text" value="{{ obOffer.price }}" class="order__info-input" readonly>c
                       </div>
                     </div>
 
@@ -282,7 +291,7 @@
                   </div>
                   <div class="order__resident">
                     <div class="order__info-title">Промежуточный итог:</div>
-                    <div>
+                    <div class="cart__total-position-price-value">
                       <input type="text" value="{{ obCartPositionList.getTotalPrice() }}" class="order__info-input order__resident-input" readonly>c
                     </div>
                   </div>
@@ -312,7 +321,7 @@
                     <div class="order__info-title">Общая стоимость:</div>
                     <div>
                       <span class="cart__total-price-current-price col-3 col-lg-2 text-right">
-                <span class="cart__total-price-price-value basket__total-order">{{ Cart.getTotalPrice() }}</span>
+                <span class="cart__total-price-price-value basket__total-order">{{ Cart.getTotalPrice() }}c</span>
                 <!-- <span class="cart__total-price-price-currency">{{ Cart.getCurrency() }}</span> -->
             </span>
                     </div>
@@ -321,6 +330,45 @@
               </div>
 
             
+            </div>
+
+    
+        
+
+        <div class="order__pay">
+              <h3 class="order__pay-title">ВЫБЕРИТЕ СПОСОБ ОПЛАТЫ</h3>
+
+              {% set obPaymentMethodList = PaymentMethodList.make().sort().active() %}
+              {% if obPaymentMethodList.isNotEmpty() %}
+              <div class="order__pay-radios">
+                {% for obPaymentMethod in obPaymentMethodList %}
+                <div class="form-check{% if not loop.first %} mt-2{% endif %}">
+                        <input class="form-check-input" type="radio" name="payment_method_id" id="payment-method-{{ obPaymentMethod.id }}" value="{{ obPaymentMethod.id }}" required {% if loop.first %}checked{% endif %}>
+                        <label class="form-check-label" for="payment-method-{{ obPaymentMethod.id }}">
+                            {{ obPaymentMethod.name }}
+                        </label>
+                    </div>
+                {% endfor %}
+                
+                
+              </div>
+              {% endif %}
+
+              <div class="order__pay-flex">
+    
+                <div class="order__pay-total">
+                  <div class="order__pay-summ">
+                    <span class="order__pay-order">Сумма заказа</span>
+                    <div class="cart__total-price-price-value"><span class="cart__total-price-price-value basket__total-order">{{ Cart.getTotalPrice() }}c</span></div>
+                  </div>
+                  <div class="order__pay-summ">
+                    <span class="order__pay-order">К оплате</span>
+                    <div class="cart__total-price-price-value"><span class="cart__total-price-price-value basket__total-order">{{ Cart.getTotalPrice() }}c</span></div>
+                  </div>
+
+                </div>
+              </div>
+              <button type="submit" class="order__button _create_order_button">оформить заказ</button>
             </div>
     </form>
 </div>

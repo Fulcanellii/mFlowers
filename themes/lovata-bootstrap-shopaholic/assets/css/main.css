@@ -119,3 +119,11 @@
     background-color: #fff;
     border: 1px solid #dee2e6;
 }
+
+.cart__total-position-price-value {
+	text-align: right;
+    border: none;
+    font-family: Montserrat;
+    color: #838383;
+    font-size: 1.125rem;
+}

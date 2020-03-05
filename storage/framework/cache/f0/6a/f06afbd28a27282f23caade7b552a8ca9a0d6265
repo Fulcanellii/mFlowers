@@ -1,4 +1,4 @@
-1583318845a:1:{s:63:"promo-block/promo-block-product-tab/promo-block-product-tab.htm";a:5:{s:8:"fileName";s:63:"promo-block/promo-block-product-tab/promo-block-product-tab.htm";s:7:"content";s:1468:"{# @var obPromoBlockList \Lovata\Shopaholic\Classes\Collection\PromoBlockCollection #}
+1583392944a:1:{s:63:"promo-block/promo-block-product-tab/promo-block-product-tab.htm";a:5:{s:8:"fileName";s:63:"promo-block/promo-block-product-tab/promo-block-product-tab.htm";s:7:"content";s:1468:"{# @var obPromoBlockList \Lovata\Shopaholic\Classes\Collection\PromoBlockCollection #}
 {# @var obPromoBlock \Lovata\Shopaholic\Classes\Item\PromoBlockItem #}
 
 {% if obPromoBlockList.isNotEmpty() %}

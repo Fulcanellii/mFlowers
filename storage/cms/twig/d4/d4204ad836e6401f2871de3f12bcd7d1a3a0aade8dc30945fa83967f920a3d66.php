@@ -59,6 +59,7 @@ class __TwigTemplate_304869e48e96f0c85f7c7f113018517b621c133c0e74ad3f1715fa3a1b0
             // line 13
             echo "        ";
             $context['__cms_partial_params'] = [];
+            $context['__cms_partial_params']['obCartPositionList'] = ($context["obCartPositionList"] ?? null)            ;
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("form/checkout-form/checkout-form"            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
             // line 14
@@ -80,7 +81,7 @@ class __TwigTemplate_304869e48e96f0c85f7c7f113018517b621c133c0e74ad3f1715fa3a1b0
 
     public function getDebugInfo()
     {
-        return array (  68 => 15,  65 => 14,  60 => 13,  57 => 12,  50 => 11,  46 => 8,  44 => 4,  41 => 3,  39 => 2,  37 => 1,);
+        return array (  69 => 15,  66 => 14,  60 => 13,  57 => 12,  50 => 11,  46 => 8,  44 => 4,  41 => 3,  39 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -97,7 +98,7 @@ class __TwigTemplate_304869e48e96f0c85f7c7f113018517b621c133c0e74ad3f1715fa3a1b0
     {#{% partial 'navigation/breadcrumbs/breadcrumbs' arBreadcrumbs=arBreadcrumbs %}#}
     {% partial 'product/cart-position-list/cart-position-list' obCartPositionList=obCartPositionList obActiveShippingType=obActiveShippingType %}
     {% if obCartPositionList.count > 0 %}
-        {% partial 'form/checkout-form/checkout-form' %}
+        {% partial 'form/checkout-form/checkout-form' obCartPositionList=obCartPositionList %}
     {% endif %}
 </div>", "D:\\open_server_5_3_5_basic_premium_ultimate\\OSPanel\\domains\\october/themes/lovata-bootstrap-shopaholic/pages/checkout.htm", "");
     }

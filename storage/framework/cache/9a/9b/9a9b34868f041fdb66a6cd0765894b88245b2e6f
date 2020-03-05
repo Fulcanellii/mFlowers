@@ -1,0 +1,67 @@
+1583386272a:1:{s:38:"navigation/breadcrumbs/breadcrumbs.htm";a:5:{s:8:"fileName";s:38:"navigation/breadcrumbs/breadcrumbs.htm";s:7:"content";s:1314:"<!-- <section class="container-fliud breadcrumb-list">
+    <nav class="container" aria-label="breadcrumb">
+        <ol class="breadcrumb pl-0 pr-0">
+            {% for item in arBreadcrumbs %}
+                {% if item.name is not empty and item.url is not empty %}
+                    {% if loop.last %}
+                        <li class="breadcrumb-item active" aria-current="page">{{ item.name }}</li>
+                    {% else %}
+                        <li class="breadcrumb-item"><a class="breadcrumb-link" href="{{ item.url }}">{{ item.name }}</a></li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </ol>
+    </nav>
+</section>
+ -->
+<section class="info">
+      <div class="container">
+<ul class="crumbs">
+    {% for item in arBreadcrumbs %}
+                {% if item.name is not empty and item.url is not empty %}
+                    {% if loop.last %}
+                        <li class="crumb active" aria-current="page">{{ item.name }}</li>
+                        <span>/</span>
+                    {% else %}
+                        <li class="crumb"><a class="crumb-link" href="{{ item.url }}">{{ item.name }}</a></li>
+                        <span>/</span>
+                    {% endif %}
+
+                {% endif %}
+            {% endfor %}
+
+
+</ul>";s:5:"mtime";i:1583137083;s:6:"markup";s:1314:"<!-- <section class="container-fliud breadcrumb-list">
+    <nav class="container" aria-label="breadcrumb">
+        <ol class="breadcrumb pl-0 pr-0">
+            {% for item in arBreadcrumbs %}
+                {% if item.name is not empty and item.url is not empty %}
+                    {% if loop.last %}
+                        <li class="breadcrumb-item active" aria-current="page">{{ item.name }}</li>
+                    {% else %}
+                        <li class="breadcrumb-item"><a class="breadcrumb-link" href="{{ item.url }}">{{ item.name }}</a></li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </ol>
+    </nav>
+</section>
+ -->
+<section class="info">
+      <div class="container">
+<ul class="crumbs">
+    {% for item in arBreadcrumbs %}
+                {% if item.name is not empty and item.url is not empty %}
+                    {% if loop.last %}
+                        <li class="crumb active" aria-current="page">{{ item.name }}</li>
+                        <span>/</span>
+                    {% else %}
+                        <li class="crumb"><a class="crumb-link" href="{{ item.url }}">{{ item.name }}</a></li>
+                        <span>/</span>
+                    {% endif %}
+
+                {% endif %}
+            {% endfor %}
+
+
+</ul>";s:4:"code";N;}}

@@ -1,4 +1,4 @@
-1583324811a:1:{s:49:"product/cart-position-list/cart-position-list.htm";a:5:{s:8:"fileName";s:49:"product/cart-position-list/cart-position-list.htm";s:7:"content";s:6578:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
+1583392292a:1:{s:49:"product/cart-position-list/cart-position-list.htm";a:5:{s:8:"fileName";s:49:"product/cart-position-list/cart-position-list.htm";s:7:"content";s:6578:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
 {# @var obCartPosition \Lovata\OrdersShopaholic\Classes\Item\CartPositionItem #}
 {# @var obActiveShippingType \Lovata\OrdersShopaholic\Classes\Item\ShippingTypeItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
@@ -105,7 +105,7 @@
 </div>
 </section>
 
-";s:5:"mtime";i:1583322704;s:6:"markup";s:6576:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
+";s:5:"mtime";i:1583386753;s:6:"markup";s:6576:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
 {# @var obCartPosition \Lovata\OrdersShopaholic\Classes\Item\CartPositionItem #}
 {# @var obActiveShippingType \Lovata\OrdersShopaholic\Classes\Item\ShippingTypeItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}

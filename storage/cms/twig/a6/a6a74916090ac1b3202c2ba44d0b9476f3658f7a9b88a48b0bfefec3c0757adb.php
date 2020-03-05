@@ -35,6 +35,8 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
         $macros = $this->macros;
         // line 6
         echo "
+
+
 <section class=\"row form order\" id=\"order-page\" style=\"display: none;\">
 <div class=\"container\">
 <div class=\"order__wrap\">
@@ -90,96 +92,24 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
             </div>
 
         ";
-        // line 61
+        // line 63
         if (($context["location_is_available"] ?? null)) {
-            // line 62
+            // line 64
             echo "        <div class=\"form-row _ajax_location_select_wrapper\">
             ";
-            // line 63
+            // line 65
             $context['__cms_partial_params'] = [];
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("form/locataion-select/locataion-select"            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
-            // line 64
+            // line 66
             echo "        </div>
         ";
         }
-        // line 66
+        // line 68
         echo "        <hr>
     
 
-        ";
-        // line 69
-        $context["obPaymentMethodList"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["PaymentMethodList"] ?? null), "make", [], "method", false, false, false, 69), "sort", [], "method", false, false, false, 69), "active", [], "method", false, false, false, 69);
-        // line 70
-        echo "        ";
-        if (twig_get_attribute($this->env, $this->source, ($context["obPaymentMethodList"] ?? null), "isNotEmpty", [], "method", false, false, false, 70)) {
-            // line 71
-            echo "            <fieldset class=\"form-group\">
-                ";
-            // line 72
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(($context["obPaymentMethodList"] ?? null));
-            $context['loop'] = [
-              'parent' => $context['_parent'],
-              'index0' => 0,
-              'index'  => 1,
-              'first'  => true,
-            ];
-            if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
-                $length = count($context['_seq']);
-                $context['loop']['revindex0'] = $length - 1;
-                $context['loop']['revindex'] = $length;
-                $context['loop']['length'] = $length;
-                $context['loop']['last'] = 1 === $length;
-            }
-            foreach ($context['_seq'] as $context["_key"] => $context["obPaymentMethod"]) {
-                // line 73
-                echo "                    <div class=\"form-check";
-                if ( !twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 73)) {
-                    echo " mt-2";
-                }
-                echo "\">
-                        <input class=\"form-check-input\" type=\"radio\" name=\"payment_method_id\" id=\"payment-method-";
-                // line 74
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "id", [], "any", false, false, false, 74), "html", null, true);
-                echo "\" value=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "id", [], "any", false, false, false, 74), "html", null, true);
-                echo "\" required ";
-                if (twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 74)) {
-                    echo "checked";
-                }
-                echo ">
-                        <label class=\"form-check-label\" for=\"payment-method-";
-                // line 75
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "id", [], "any", false, false, false, 75), "html", null, true);
-                echo "\">
-                            ";
-                // line 76
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "name", [], "any", false, false, false, 76), "html", null, true);
-                echo "
-                        </label>
-                    </div>
-                ";
-                ++$context['loop']['index0'];
-                ++$context['loop']['index'];
-                $context['loop']['first'] = false;
-                if (isset($context['loop']['length'])) {
-                    --$context['loop']['revindex0'];
-                    --$context['loop']['revindex'];
-                    $context['loop']['last'] = 0 === $context['loop']['revindex0'];
-                }
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['obPaymentMethod'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 80
-            echo "            </fieldset>
-        ";
-        }
-        // line 82
-        echo "        <div class=\"form-group\">
-            <button type=\"submit\" class=\"btn btn-dark w-100 text-uppercase _create_order_button\" data-container=\"body\" data-toggle=\"popover\" data-placement=\"top\" data-content=\"\">continue to checkout</button>
-        </div>
+       
     </div>
     <div class=\"order__info\">
     <div class=\"order__group-textarea\">
@@ -194,38 +124,33 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                 <h2>Информация о заказе</h2>
                 <div>
                   <div class=\"order__info-title\">Продукт</div>
-
-                ";
-        // line 100
-        $context["obCartPositionList"] = twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "get", [0 => ($context["obActiveShippingType"] ?? null)], "method", false, false, false, 100);
-        // line 101
-        echo "
+    
                   <div class=\"order__products\">
 
                     ";
-        // line 104
+        // line 89
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["obCartPositionList"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["obCartPosition"]) {
-            // line 105
+            // line 90
             echo "                
                 ";
-            // line 106
-            $context["obOffer"] = twig_get_attribute($this->env, $this->source, $context["obCartPosition"], "offer", [], "any", false, false, false, 106);
-            // line 107
+            // line 91
+            $context["obOffer"] = twig_get_attribute($this->env, $this->source, $context["obCartPosition"], "offer", [], "any", false, false, false, 91);
+            // line 92
             echo "                ";
-            $context["obProduct"] = twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "product", [], "any", false, false, false, 107);
-            // line 108
+            $context["obProduct"] = twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "product", [], "any", false, false, false, 92);
+            // line 93
             echo "
                     <div class=\"order__product\">
                       <div class=\"order__product-name\">";
-            // line 110
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "name", [], "any", false, false, false, 110), "html", null, true);
+            // line 95
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "name", [], "any", false, false, false, 95), "html", null, true);
             echo "</div>
                       <div>
                         <input type=\"text\" value=\"";
-            // line 112
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obCartPosition"], "price", [], "any", false, false, false, 112), "html", null, true);
+            // line 97
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "price", [], "any", false, false, false, 97), "html", null, true);
             echo "\" class=\"order__info-input\" readonly>c
                       </div>
                     </div>
@@ -235,15 +160,15 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['obCartPosition'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 117
+        // line 102
         echo "
                   </div>
                   <div class=\"order__resident\">
                     <div class=\"order__info-title\">Промежуточный итог:</div>
-                    <div>
+                    <div class=\"cart__total-position-price-value\">
                       <input type=\"text\" value=\"";
-        // line 122
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obCartPositionList"] ?? null), "getTotalPrice", [], "method", false, false, false, 122), "html", null, true);
+        // line 107
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obCartPositionList"] ?? null), "getTotalPrice", [], "method", false, false, false, 107), "html", null, true);
         echo "\" class=\"order__info-input order__resident-input\" readonly>c
                     </div>
                   </div>
@@ -253,23 +178,23 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                     <div class=\"order__radios\">
 
                         ";
-        // line 130
-        $context["obShippingTypeList"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["ShippingTypeList"] ?? null), "make", [], "method", false, false, false, 130), "sort", [], "method", false, false, false, 130), "active", [], "method", false, false, false, 130);
-        // line 131
+        // line 115
+        $context["obShippingTypeList"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["ShippingTypeList"] ?? null), "make", [], "method", false, false, false, 115), "sort", [], "method", false, false, false, 115), "active", [], "method", false, false, false, 115);
+        // line 116
         echo "        
         ";
-        // line 132
-        if (twig_get_attribute($this->env, $this->source, ($context["obShippingTypeList"] ?? null), "isNotEmpty", [], "method", false, false, false, 132)) {
-            // line 133
+        // line 117
+        if (twig_get_attribute($this->env, $this->source, ($context["obShippingTypeList"] ?? null), "isNotEmpty", [], "method", false, false, false, 117)) {
+            // line 118
             echo "                
                     <div class=\"form-check order__radio-text ";
-            // line 134
-            if ( !twig_get_attribute($this->env, $this->source, ($context["loop"] ?? null), "first", [], "any", false, false, false, 134)) {
+            // line 119
+            if ( !twig_get_attribute($this->env, $this->source, ($context["loop"] ?? null), "first", [], "any", false, false, false, 119)) {
                 echo " mt-2";
             }
             echo "\">
                         ";
-            // line 135
+            // line 120
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["obShippingTypeList"] ?? null));
             $context['loop'] = [
@@ -286,25 +211,25 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["obShippingType"]) {
-                // line 136
+                // line 121
                 echo "                        <input class=\"form-check-input order__radio\" type=\"radio\" name=\"shipping_type_id\" id=\"sipping-type-";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "id", [], "any", false, false, false, 136), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "id", [], "any", false, false, false, 121), "html", null, true);
                 echo "\" value=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "id", [], "any", false, false, false, 136), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "id", [], "any", false, false, false, 121), "html", null, true);
                 echo "\" required >
 
                         <!-- ";
-                // line 138
-                if (twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 138)) {
+                // line 123
+                if (twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 123)) {
                     echo "checked";
                 }
                 echo " -->
                             ";
-                // line 139
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "name", [], "any", false, false, false, 139), "html", null, true);
+                // line 124
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "name", [], "any", false, false, false, 124), "html", null, true);
                 echo ": ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "price", [], "any", false, false, false, 139), "html", null, true);
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "currency", [], "any", false, false, false, 139), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "price", [], "any", false, false, false, 124), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "currency", [], "any", false, false, false, 124), "html", null, true);
                 echo "
                         ";
                 ++$context['loop']['index0'];
@@ -319,13 +244,13 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['obShippingType'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 141
+            // line 126
             echo "                    </div>
                 
 
         ";
         }
-        // line 145
+        // line 130
         echo "                    </div>
                   </div>
                   <div class=\"order__resident\">
@@ -333,12 +258,12 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                     <div>
                       <span class=\"cart__total-price-current-price col-3 col-lg-2 text-right\">
                 <span class=\"cart__total-price-price-value basket__total-order\">";
-        // line 151
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getTotalPrice", [], "method", false, false, false, 151), "html", null, true);
-        echo "</span>
+        // line 136
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getTotalPrice", [], "method", false, false, false, 136), "html", null, true);
+        echo "c</span>
                 <!-- <span class=\"cart__total-price-price-currency\">";
-        // line 152
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getCurrency", [], "method", false, false, false, 152), "html", null, true);
+        // line 137
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getCurrency", [], "method", false, false, false, 137), "html", null, true);
         echo "</span> -->
             </span>
                     </div>
@@ -347,6 +272,108 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
               </div>
 
             
+            </div>
+
+    
+        
+
+        <div class=\"order__pay\">
+              <h3 class=\"order__pay-title\">ВЫБЕРИТЕ СПОСОБ ОПЛАТЫ</h3>
+
+              ";
+        // line 153
+        $context["obPaymentMethodList"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["PaymentMethodList"] ?? null), "make", [], "method", false, false, false, 153), "sort", [], "method", false, false, false, 153), "active", [], "method", false, false, false, 153);
+        // line 154
+        echo "              ";
+        if (twig_get_attribute($this->env, $this->source, ($context["obPaymentMethodList"] ?? null), "isNotEmpty", [], "method", false, false, false, 154)) {
+            // line 155
+            echo "              <div class=\"order__pay-radios\">
+                ";
+            // line 156
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(($context["obPaymentMethodList"] ?? null));
+            $context['loop'] = [
+              'parent' => $context['_parent'],
+              'index0' => 0,
+              'index'  => 1,
+              'first'  => true,
+            ];
+            if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+                $length = count($context['_seq']);
+                $context['loop']['revindex0'] = $length - 1;
+                $context['loop']['revindex'] = $length;
+                $context['loop']['length'] = $length;
+                $context['loop']['last'] = 1 === $length;
+            }
+            foreach ($context['_seq'] as $context["_key"] => $context["obPaymentMethod"]) {
+                // line 157
+                echo "                <div class=\"form-check";
+                if ( !twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 157)) {
+                    echo " mt-2";
+                }
+                echo "\">
+                        <input class=\"form-check-input\" type=\"radio\" name=\"payment_method_id\" id=\"payment-method-";
+                // line 158
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "id", [], "any", false, false, false, 158), "html", null, true);
+                echo "\" value=\"";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "id", [], "any", false, false, false, 158), "html", null, true);
+                echo "\" required ";
+                if (twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 158)) {
+                    echo "checked";
+                }
+                echo ">
+                        <label class=\"form-check-label\" for=\"payment-method-";
+                // line 159
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "id", [], "any", false, false, false, 159), "html", null, true);
+                echo "\">
+                            ";
+                // line 160
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "name", [], "any", false, false, false, 160), "html", null, true);
+                echo "
+                        </label>
+                    </div>
+                ";
+                ++$context['loop']['index0'];
+                ++$context['loop']['index'];
+                $context['loop']['first'] = false;
+                if (isset($context['loop']['length'])) {
+                    --$context['loop']['revindex0'];
+                    --$context['loop']['revindex'];
+                    $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+                }
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['obPaymentMethod'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 164
+            echo "                
+                
+              </div>
+              ";
+        }
+        // line 168
+        echo "
+              <div class=\"order__pay-flex\">
+    
+                <div class=\"order__pay-total\">
+                  <div class=\"order__pay-summ\">
+                    <span class=\"order__pay-order\">Сумма заказа</span>
+                    <div class=\"cart__total-price-price-value\"><span class=\"cart__total-price-price-value basket__total-order\">";
+        // line 174
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getTotalPrice", [], "method", false, false, false, 174), "html", null, true);
+        echo "c</span></div>
+                  </div>
+                  <div class=\"order__pay-summ\">
+                    <span class=\"order__pay-order\">К оплате</span>
+                    <div class=\"cart__total-price-price-value\"><span class=\"cart__total-price-price-value basket__total-order\">";
+        // line 178
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getTotalPrice", [], "method", false, false, false, 178), "html", null, true);
+        echo "c</span></div>
+                  </div>
+
+                </div>
+              </div>
+              <button type=\"submit\" class=\"order__button _create_order_button\">оформить заказ</button>
             </div>
     </form>
 </div>
@@ -366,7 +393,7 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
 
     public function getDebugInfo()
     {
-        return array (  341 => 152,  337 => 151,  329 => 145,  323 => 141,  304 => 139,  298 => 138,  290 => 136,  273 => 135,  267 => 134,  264 => 133,  262 => 132,  259 => 131,  257 => 130,  246 => 122,  239 => 117,  228 => 112,  223 => 110,  219 => 108,  216 => 107,  214 => 106,  211 => 105,  207 => 104,  202 => 101,  200 => 100,  180 => 82,  176 => 80,  158 => 76,  154 => 75,  144 => 74,  137 => 73,  120 => 72,  117 => 71,  114 => 70,  112 => 69,  107 => 66,  103 => 64,  99 => 63,  96 => 62,  94 => 61,  37 => 6,);
+        return array (  370 => 178,  363 => 174,  355 => 168,  349 => 164,  331 => 160,  327 => 159,  317 => 158,  310 => 157,  293 => 156,  290 => 155,  287 => 154,  285 => 153,  266 => 137,  262 => 136,  254 => 130,  248 => 126,  229 => 124,  223 => 123,  215 => 121,  198 => 120,  192 => 119,  189 => 118,  187 => 117,  184 => 116,  182 => 115,  171 => 107,  164 => 102,  153 => 97,  148 => 95,  144 => 93,  141 => 92,  139 => 91,  136 => 90,  132 => 89,  109 => 68,  105 => 66,  101 => 65,  98 => 64,  96 => 63,  37 => 6,);
     }
 
     public function getSourceContext()
@@ -376,6 +403,8 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
 {# @var obActiveShippingType \\Lovata\\OrdersShopaholic\\Classes\\Item\\ShippingTypeItem #}
 {# @var obOffer \\Lovata\\Shopaholic\\Classes\\Item\\OfferItem #}
 {# @var obProduct \\Lovata\\Shopaholic\\Classes\\Item\\ProductItem #}
+
+
 
 <section class=\"row form order\" id=\"order-page\" style=\"display: none;\">
 <div class=\"container\">
@@ -439,22 +468,7 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
         <hr>
     
 
-        {% set obPaymentMethodList = PaymentMethodList.make().sort().active() %}
-        {% if obPaymentMethodList.isNotEmpty() %}
-            <fieldset class=\"form-group\">
-                {% for obPaymentMethod in obPaymentMethodList %}
-                    <div class=\"form-check{% if not loop.first %} mt-2{% endif %}\">
-                        <input class=\"form-check-input\" type=\"radio\" name=\"payment_method_id\" id=\"payment-method-{{ obPaymentMethod.id }}\" value=\"{{ obPaymentMethod.id }}\" required {% if loop.first %}checked{% endif %}>
-                        <label class=\"form-check-label\" for=\"payment-method-{{ obPaymentMethod.id }}\">
-                            {{ obPaymentMethod.name }}
-                        </label>
-                    </div>
-                {% endfor %}
-            </fieldset>
-        {% endif %}
-        <div class=\"form-group\">
-            <button type=\"submit\" class=\"btn btn-dark w-100 text-uppercase _create_order_button\" data-container=\"body\" data-toggle=\"popover\" data-placement=\"top\" data-content=\"\">continue to checkout</button>
-        </div>
+       
     </div>
     <div class=\"order__info\">
     <div class=\"order__group-textarea\">
@@ -469,9 +483,7 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                 <h2>Информация о заказе</h2>
                 <div>
                   <div class=\"order__info-title\">Продукт</div>
-
-                {% set obCartPositionList = Cart.get(obActiveShippingType) %}
-
+    
                   <div class=\"order__products\">
 
                     {% for obCartPosition in obCartPositionList %}
@@ -482,7 +494,7 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                     <div class=\"order__product\">
                       <div class=\"order__product-name\">{{ obProduct.name }}</div>
                       <div>
-                        <input type=\"text\" value=\"{{ obCartPosition.price }}\" class=\"order__info-input\" readonly>c
+                        <input type=\"text\" value=\"{{ obOffer.price }}\" class=\"order__info-input\" readonly>c
                       </div>
                     </div>
 
@@ -491,7 +503,7 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                   </div>
                   <div class=\"order__resident\">
                     <div class=\"order__info-title\">Промежуточный итог:</div>
-                    <div>
+                    <div class=\"cart__total-position-price-value\">
                       <input type=\"text\" value=\"{{ obCartPositionList.getTotalPrice() }}\" class=\"order__info-input order__resident-input\" readonly>c
                     </div>
                   </div>
@@ -521,7 +533,7 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                     <div class=\"order__info-title\">Общая стоимость:</div>
                     <div>
                       <span class=\"cart__total-price-current-price col-3 col-lg-2 text-right\">
-                <span class=\"cart__total-price-price-value basket__total-order\">{{ Cart.getTotalPrice() }}</span>
+                <span class=\"cart__total-price-price-value basket__total-order\">{{ Cart.getTotalPrice() }}c</span>
                 <!-- <span class=\"cart__total-price-price-currency\">{{ Cart.getCurrency() }}</span> -->
             </span>
                     </div>
@@ -530,6 +542,45 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
               </div>
 
             
+            </div>
+
+    
+        
+
+        <div class=\"order__pay\">
+              <h3 class=\"order__pay-title\">ВЫБЕРИТЕ СПОСОБ ОПЛАТЫ</h3>
+
+              {% set obPaymentMethodList = PaymentMethodList.make().sort().active() %}
+              {% if obPaymentMethodList.isNotEmpty() %}
+              <div class=\"order__pay-radios\">
+                {% for obPaymentMethod in obPaymentMethodList %}
+                <div class=\"form-check{% if not loop.first %} mt-2{% endif %}\">
+                        <input class=\"form-check-input\" type=\"radio\" name=\"payment_method_id\" id=\"payment-method-{{ obPaymentMethod.id }}\" value=\"{{ obPaymentMethod.id }}\" required {% if loop.first %}checked{% endif %}>
+                        <label class=\"form-check-label\" for=\"payment-method-{{ obPaymentMethod.id }}\">
+                            {{ obPaymentMethod.name }}
+                        </label>
+                    </div>
+                {% endfor %}
+                
+                
+              </div>
+              {% endif %}
+
+              <div class=\"order__pay-flex\">
+    
+                <div class=\"order__pay-total\">
+                  <div class=\"order__pay-summ\">
+                    <span class=\"order__pay-order\">Сумма заказа</span>
+                    <div class=\"cart__total-price-price-value\"><span class=\"cart__total-price-price-value basket__total-order\">{{ Cart.getTotalPrice() }}c</span></div>
+                  </div>
+                  <div class=\"order__pay-summ\">
+                    <span class=\"order__pay-order\">К оплате</span>
+                    <div class=\"cart__total-price-price-value\"><span class=\"cart__total-price-price-value basket__total-order\">{{ Cart.getTotalPrice() }}c</span></div>
+                  </div>
+
+                </div>
+              </div>
+              <button type=\"submit\" class=\"order__button _create_order_button\">оформить заказ</button>
             </div>
     </form>
 </div>
