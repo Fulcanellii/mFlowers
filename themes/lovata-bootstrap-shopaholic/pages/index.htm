@@ -37,11 +37,22 @@ sorting = "new"
 {% content 'main-banner.htm' %}
 
 
+{% for cat in cat if cat.show_on_main == 1 %}
+                {% if cat.product_count > 0 %}
+
+                <div class="category_main">
+                    <a href="#{{cat.id}}">{{ cat.name }}</a>
+                </div>
+
+                {% endif %}
+                {% endfor %}
+                
 <section class="products">
             <div class="container">
                     <div class="products__group">
                     
                     {% set obCategory = CategoryPage.get() %}
+
                     
                     {% set obProductList = ProductList.make().sort(ProductList.getSorting()).active() %}
                     
