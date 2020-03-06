@@ -1,4 +1,4 @@
-1583405084a:1:{s:15:"footer/foot.htm";a:7:{s:8:"fileName";s:15:"footer/foot.htm";s:7:"content";s:872:"description = "Скрипты футера"
+1583494784a:1:{s:15:"footer/foot.htm";a:7:{s:8:"fileName";s:15:"footer/foot.htm";s:7:"content";s:973:"description = "Скрипты футера"
 
 [viewBag]
 ==
@@ -11,21 +11,17 @@
 
 <script src="{{ 'assets/js/modernizr.js'|theme }}"></script>
 
-
-
-
-
 <script src="{{ 'assets/js/vendor.js'|theme }}"></script>
 
 <script src="{{ 'assets/js/common.js'|theme }}"></script>
     <script>
 $.noConflict(true);
 </script>
-
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="{{ 'assets/js/main.js'|theme }}"></script>
-<script src="{{ 'assets/js/script.js'|theme }}"></script>
+<script src="{{ 'assets/js/custom.js'|theme }}"></script>
     {% framework extras %}
-    {% scripts %}";s:5:"mtime";i:1583235744;s:6:"markup";s:810:"<!-- <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+    {% scripts %}";s:5:"mtime";i:1583488047;s:6:"markup";s:911:"<!-- <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
 <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
 <script src="{{ 'assets/node_modules/jquery/dist/jquery.min.js'|theme }}"></script>
 <script src="{{ 'assets/node_modules/owl.carousel/dist/owl.carousel.min.js'|theme }}"></script>
@@ -34,18 +30,14 @@ $.noConflict(true);
 
 <script src="{{ 'assets/js/modernizr.js'|theme }}"></script>
 
-
-
-
-
 <script src="{{ 'assets/js/vendor.js'|theme }}"></script>
 
 <script src="{{ 'assets/js/common.js'|theme }}"></script>
     <script>
 $.noConflict(true);
 </script>
-
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="{{ 'assets/js/main.js'|theme }}"></script>
-<script src="{{ 'assets/js/script.js'|theme }}"></script>
+<script src="{{ 'assets/js/custom.js'|theme }}"></script>
     {% framework extras %}
     {% scripts %}";s:4:"code";N;s:11:"description";s:27:"Скрипты футера";s:7:"viewBag";a:0:{}}}

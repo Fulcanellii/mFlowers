@@ -51,7 +51,7 @@ class __TwigTemplate_5f433b52bc00d36c110eba462adb075daa458c6f33339b3100aaa89c52e
             echo "            <div class=\"easyzoom easyzoom--overlay easyzoom--with-thumbnails \">
               <a href=\"";
             // line 12
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 12), "path", [], "any", false, false, false, 12), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "path", [], "any", false, false, false, 12), "html", null, true);
             echo "\" class=\"info__img-wrap\">
                 <img src=\"";
             // line 13
@@ -76,13 +76,13 @@ class __TwigTemplate_5f433b52bc00d36c110eba462adb075daa458c6f33339b3100aaa89c52e
               <li class=\"info__li\">
                   <a href=\"";
             // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 24), "path", [], "any", false, false, false, 24), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "path", [], "any", false, false, false, 24), "html", null, true);
             echo "\" data-standard=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 24), "path", [], "any", false, false, false, 24), "html", null, true);
             echo "\">
                     <img src=\"";
             // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 25), "path", [], "any", false, false, false, 25), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 25), "getThumb", [0 => 450, 1 => 450, 2 => ["quality" => 100]], "method", false, false, false, 25), "html", null, true);
             echo "\" alt=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "preview_image", [], "any", false, false, false, 25), "description", [], "any", false, false, false, 25), "html", null, true);
             echo "\" />
@@ -105,7 +105,7 @@ class __TwigTemplate_5f433b52bc00d36c110eba462adb075daa458c6f33339b3100aaa89c52e
                 echo "\">
                     <img src=\"";
                 // line 33
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["img"], "path", [], "any", false, false, false, 33), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["img"], "getThumb", [0 => 150, 1 => 150, 2 => ["quality" => 100]], "method", false, false, false, 33), "html", null, true);
                 echo "\" alt=\"";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["img"], "description", [], "any", false, false, false, 33), "html", null, true);
                 echo "\" />
@@ -274,7 +274,7 @@ class __TwigTemplate_5f433b52bc00d36c110eba462adb075daa458c6f33339b3100aaa89c52e
             <div class=\"info__photos\">
             {% if obProduct.preview_image is not empty %}
             <div class=\"easyzoom easyzoom--overlay easyzoom--with-thumbnails \">
-              <a href=\"{{ obProduct.preview_image.path }}\" class=\"info__img-wrap\">
+              <a href=\"{{ obProduct.path }}\" class=\"info__img-wrap\">
                 <img src=\"{{ obProduct.preview_image.getThumb(450, 450, {quality: 100}) }}\" alt=\"{{ obProduct.preview_image.description }}\" class=\"info__img\" />
               </a>
             </div>
@@ -286,8 +286,8 @@ class __TwigTemplate_5f433b52bc00d36c110eba462adb075daa458c6f33339b3100aaa89c52e
               <ul class=\"thumbnails info__thumbnails owl-carousel\">
               
               <li class=\"info__li\">
-                  <a href=\"{{ obProduct.preview_image.path }}\" data-standard=\"{{ obProduct.preview_image.path }}\">
-                    <img src=\"{{ obProduct.preview_image.path }}\" alt=\"{{ obProduct.preview_image.description }}\" />
+                  <a href=\"{{ obProduct.path }}\" data-standard=\"{{ obProduct.preview_image.path }}\">
+                    <img src=\"{{ obProduct.preview_image.getThumb(450, 450, {quality: 100}) }}\" alt=\"{{ obProduct.preview_image.description }}\" />
                   </a>
                 </li>
               
@@ -295,7 +295,7 @@ class __TwigTemplate_5f433b52bc00d36c110eba462adb075daa458c6f33339b3100aaa89c52e
 
                 <li class=\"info__li\">
                   <a href=\"{{ img.path }}\" data-standard=\"{{ img.path }}\">
-                    <img src=\"{{ img.path }}\" alt=\"{{ img.description }}\" />
+                    <img src=\"{{ img.getThumb(150, 150, {quality: 100}) }}\" alt=\"{{ img.description }}\" />
                   </a>
                 </li>
               {% endfor %}

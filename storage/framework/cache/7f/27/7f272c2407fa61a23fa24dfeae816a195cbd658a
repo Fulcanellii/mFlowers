@@ -1,4 +1,4 @@
-1583405083a:1:{s:9:"index.htm";a:14:{s:8:"fileName";s:9:"index.htm";s:7:"content";s:11115:"title = "Index"
+1583494804a:1:{s:9:"index.htm";a:14:{s:8:"fileName";s:9:"index.htm";s:7:"content";s:11238:"title = "Index"
 url = "/"
 layout = "main"
 is_hidden = 0
@@ -36,25 +36,22 @@ sorting = "new"
 
 {% content 'main-banner.htm' %}
 
-
+<div id="slider">
 {% for cat in cat if cat.show_on_main == 1 %}
+
+
                 {% if cat.product_count > 0 %}
 
-                <div class="category_main">
-                    <a href="#{{cat.id}}">{{ cat.name }}</a>
-                </div>
-
-                {% endif %}
-                {% endfor %}
                 
-<section class="products">
-            <div class="container">
+                  <div class="slide " title="{{ cat.name }}">
+                  
+                     <section class="products">
+                    <div class="container">
                     <div class="products__group">
                     
                     {% set obCategory = CategoryPage.get() %}
-
                     
-                    {% set obProductList = ProductList.make().sort(ProductList.getSorting()).active() %}
+                    {% set obProductList = ProductList.make().sort(ProductList.getSorting()).active().category(cat.id) %}
                     
                     {% if obProductList.isNotEmpty() %}
 
@@ -82,9 +79,26 @@ sorting = "new"
 
                     {% endfor %}
                     {% endif %}
-            </div>      
+            </div>
+            </div>    
         </section>
         
+                  </div>
+               
+
+                {% endif %}
+                {% endfor %}
+                 </div>
+
+
+
+
+
+
+
+
+
+
 <div class="line"></div>
 
 <section class="newproduct">
@@ -237,7 +251,7 @@ sorting = "new"
                     
                 </div>
             </div>
-        </section>";s:5:"mtime";i:1583395592;s:6:"markup";s:10727:"{% partial 'content/carousel/carousel' arImageList=this.theme.main_slider %}
+        </section>";s:5:"mtime";i:1583494203;s:6:"markup";s:10850:"{% partial 'content/carousel/carousel' arImageList=this.theme.main_slider %}
 
 {% set cat = CategoryList.make().tree() %}
 
@@ -251,25 +265,22 @@ sorting = "new"
 
 {% content 'main-banner.htm' %}
 
-
+<div id="slider">
 {% for cat in cat if cat.show_on_main == 1 %}
+
+
                 {% if cat.product_count > 0 %}
 
-                <div class="category_main">
-                    <a href="#{{cat.id}}">{{ cat.name }}</a>
-                </div>
-
-                {% endif %}
-                {% endfor %}
                 
-<section class="products">
-            <div class="container">
+                  <div class="slide " title="{{ cat.name }}">
+                  
+                     <section class="products">
+                    <div class="container">
                     <div class="products__group">
                     
                     {% set obCategory = CategoryPage.get() %}
-
                     
-                    {% set obProductList = ProductList.make().sort(ProductList.getSorting()).active() %}
+                    {% set obProductList = ProductList.make().sort(ProductList.getSorting()).active().category(cat.id) %}
                     
                     {% if obProductList.isNotEmpty() %}
 
@@ -297,9 +308,26 @@ sorting = "new"
 
                     {% endfor %}
                     {% endif %}
-            </div>      
+            </div>
+            </div>    
         </section>
         
+                  </div>
+               
+
+                {% endif %}
+                {% endfor %}
+                 </div>
+
+
+
+
+
+
+
+
+
+
 <div class="line"></div>
 
 <section class="newproduct">
