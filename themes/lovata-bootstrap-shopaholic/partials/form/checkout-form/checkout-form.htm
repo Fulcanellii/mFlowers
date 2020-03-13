@@ -89,10 +89,11 @@
                     {% for obCartPosition in obCartPositionList %}
                 
                 {% set obOffer = obCartPosition.offer %}
+
                 {% set obProduct = obOffer.product %}
 
                     <div class="order__product">
-                      <div class="order__product-name">{{ obProduct.name }}</div>
+                      <div class="order__product-name" offer-id="{{ obOffer.id }}" product-id="{{ obProduct.id }}">{{ obProduct.name }}</div>
                       <div>
                         <input type="text" value="{{ obOffer.price }}" class="order__info-input" readonly>c
                       </div>
@@ -121,7 +122,7 @@
                         <input class="form-check-input order__radio" type="radio" name="shipping_type_id" id="sipping-type-{{ obShippingType.id }}" value="{{ obShippingType.id }}" required >
 
                         <!-- {% if loop.first %}checked{% endif %} -->
-                            {{ obShippingType.name }}: {{ obShippingType.price }}{{ obShippingType.currency }}
+                            <div class="shipping_name">{{ obShippingType.name }}: {{ obShippingType.price }}{{ obShippingType.currency }}</div>
                         {% endfor %}
                     </div>
                 
@@ -176,6 +177,7 @@
                   <div class="order__pay-summ">
                     <span class="order__pay-order">К оплате</span>
                     <div class="cart__total-price-price-value"><span class="cart__total-price-price-value basket__total-order">{{ Cart.getTotalPrice() }}c</span></div>
+                    <input class="cart__total-price-price-value basket__total-order" id="total-price" type="hidden" value="{{ Cart.getTotalPrice() }}">
                   </div>
 
                 </div>

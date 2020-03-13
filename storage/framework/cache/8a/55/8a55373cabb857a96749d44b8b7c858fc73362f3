@@ -1,4 +1,4 @@
-1583494784a:1:{s:17:"header/header.htm";a:8:{s:8:"fileName";s:17:"header/header.htm";s:7:"content";s:5105:"[viewBag]
+1584078150a:1:{s:17:"header/header.htm";a:8:{s:8:"fileName";s:17:"header/header.htm";s:7:"content";s:5105:"[viewBag]
 
 [staticMenu]
 code = "top-menyu"
@@ -117,7 +117,7 @@ code = "header-menu"
                     X
                 </li>
             </ul>
-        </header>";s:5:"mtime";i:1583383606;s:6:"markup";s:5004:"<header class="header">
+        </header>";s:5:"mtime";i:1583905981;s:6:"markup";s:5004:"<header class="header">
             <div class="container">
                 <div class="header__head">
 <ul class="header__languages">

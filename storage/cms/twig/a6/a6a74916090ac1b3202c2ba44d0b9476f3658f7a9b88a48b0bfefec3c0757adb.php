@@ -138,19 +138,25 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
             // line 91
             $context["obOffer"] = twig_get_attribute($this->env, $this->source, $context["obCartPosition"], "offer", [], "any", false, false, false, 91);
             // line 92
-            echo "                ";
-            $context["obProduct"] = twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "product", [], "any", false, false, false, 92);
+            echo "
+                ";
             // line 93
+            $context["obProduct"] = twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "product", [], "any", false, false, false, 93);
+            // line 94
             echo "
                     <div class=\"order__product\">
-                      <div class=\"order__product-name\">";
-            // line 95
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "name", [], "any", false, false, false, 95), "html", null, true);
+                      <div class=\"order__product-name\" offer-id=\"";
+            // line 96
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "id", [], "any", false, false, false, 96), "html", null, true);
+            echo "\" product-id=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "id", [], "any", false, false, false, 96), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "name", [], "any", false, false, false, 96), "html", null, true);
             echo "</div>
                       <div>
                         <input type=\"text\" value=\"";
-            // line 97
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "price", [], "any", false, false, false, 97), "html", null, true);
+            // line 98
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "price", [], "any", false, false, false, 98), "html", null, true);
             echo "\" class=\"order__info-input\" readonly>c
                       </div>
                     </div>
@@ -160,15 +166,15 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['obCartPosition'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 102
+        // line 103
         echo "
                   </div>
                   <div class=\"order__resident\">
                     <div class=\"order__info-title\">Промежуточный итог:</div>
                     <div class=\"cart__total-position-price-value\">
                       <input type=\"text\" value=\"";
-        // line 107
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obCartPositionList"] ?? null), "getTotalPrice", [], "method", false, false, false, 107), "html", null, true);
+        // line 108
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obCartPositionList"] ?? null), "getTotalPrice", [], "method", false, false, false, 108), "html", null, true);
         echo "\" class=\"order__info-input order__resident-input\" readonly>c
                     </div>
                   </div>
@@ -178,23 +184,23 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                     <div class=\"order__radios\">
 
                         ";
-        // line 115
-        $context["obShippingTypeList"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["ShippingTypeList"] ?? null), "make", [], "method", false, false, false, 115), "sort", [], "method", false, false, false, 115), "active", [], "method", false, false, false, 115);
         // line 116
+        $context["obShippingTypeList"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["ShippingTypeList"] ?? null), "make", [], "method", false, false, false, 116), "sort", [], "method", false, false, false, 116), "active", [], "method", false, false, false, 116);
+        // line 117
         echo "        
         ";
-        // line 117
-        if (twig_get_attribute($this->env, $this->source, ($context["obShippingTypeList"] ?? null), "isNotEmpty", [], "method", false, false, false, 117)) {
-            // line 118
+        // line 118
+        if (twig_get_attribute($this->env, $this->source, ($context["obShippingTypeList"] ?? null), "isNotEmpty", [], "method", false, false, false, 118)) {
+            // line 119
             echo "                
                     <div class=\"form-check order__radio-text ";
-            // line 119
-            if ( !twig_get_attribute($this->env, $this->source, ($context["loop"] ?? null), "first", [], "any", false, false, false, 119)) {
+            // line 120
+            if ( !twig_get_attribute($this->env, $this->source, ($context["loop"] ?? null), "first", [], "any", false, false, false, 120)) {
                 echo " mt-2";
             }
             echo "\">
                         ";
-            // line 120
+            // line 121
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["obShippingTypeList"] ?? null));
             $context['loop'] = [
@@ -211,26 +217,26 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["obShippingType"]) {
-                // line 121
+                // line 122
                 echo "                        <input class=\"form-check-input order__radio\" type=\"radio\" name=\"shipping_type_id\" id=\"sipping-type-";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "id", [], "any", false, false, false, 121), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "id", [], "any", false, false, false, 122), "html", null, true);
                 echo "\" value=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "id", [], "any", false, false, false, 121), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "id", [], "any", false, false, false, 122), "html", null, true);
                 echo "\" required >
 
                         <!-- ";
-                // line 123
-                if (twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 123)) {
+                // line 124
+                if (twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 124)) {
                     echo "checked";
                 }
                 echo " -->
-                            ";
-                // line 124
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "name", [], "any", false, false, false, 124), "html", null, true);
+                            <div class=\"shipping_name\">";
+                // line 125
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "name", [], "any", false, false, false, 125), "html", null, true);
                 echo ": ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "price", [], "any", false, false, false, 124), "html", null, true);
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "currency", [], "any", false, false, false, 124), "html", null, true);
-                echo "
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "price", [], "any", false, false, false, 125), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "currency", [], "any", false, false, false, 125), "html", null, true);
+                echo "</div>
                         ";
                 ++$context['loop']['index0'];
                 ++$context['loop']['index'];
@@ -244,13 +250,13 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['obShippingType'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 126
+            // line 127
             echo "                    </div>
                 
 
         ";
         }
-        // line 130
+        // line 131
         echo "                    </div>
                   </div>
                   <div class=\"order__resident\">
@@ -258,12 +264,12 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                     <div>
                       <span class=\"cart__total-price-current-price col-3 col-lg-2 text-right\">
                 <span class=\"cart__total-price-price-value basket__total-order\">";
-        // line 136
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getTotalPrice", [], "method", false, false, false, 136), "html", null, true);
+        // line 137
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getTotalPrice", [], "method", false, false, false, 137), "html", null, true);
         echo "c</span>
                 <!-- <span class=\"cart__total-price-price-currency\">";
-        // line 137
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getCurrency", [], "method", false, false, false, 137), "html", null, true);
+        // line 138
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getCurrency", [], "method", false, false, false, 138), "html", null, true);
         echo "</span> -->
             </span>
                     </div>
@@ -281,15 +287,15 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
               <h3 class=\"order__pay-title\">ВЫБЕРИТЕ СПОСОБ ОПЛАТЫ</h3>
 
               ";
-        // line 153
-        $context["obPaymentMethodList"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["PaymentMethodList"] ?? null), "make", [], "method", false, false, false, 153), "sort", [], "method", false, false, false, 153), "active", [], "method", false, false, false, 153);
         // line 154
+        $context["obPaymentMethodList"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["PaymentMethodList"] ?? null), "make", [], "method", false, false, false, 154), "sort", [], "method", false, false, false, 154), "active", [], "method", false, false, false, 154);
+        // line 155
         echo "              ";
-        if (twig_get_attribute($this->env, $this->source, ($context["obPaymentMethodList"] ?? null), "isNotEmpty", [], "method", false, false, false, 154)) {
-            // line 155
+        if (twig_get_attribute($this->env, $this->source, ($context["obPaymentMethodList"] ?? null), "isNotEmpty", [], "method", false, false, false, 155)) {
+            // line 156
             echo "              <div class=\"order__pay-radios\">
                 ";
-            // line 156
+            // line 157
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["obPaymentMethodList"] ?? null));
             $context['loop'] = [
@@ -306,29 +312,29 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["obPaymentMethod"]) {
-                // line 157
+                // line 158
                 echo "                <div class=\"form-check";
-                if ( !twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 157)) {
+                if ( !twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 158)) {
                     echo " mt-2";
                 }
                 echo "\">
                         <input class=\"form-check-input\" type=\"radio\" name=\"payment_method_id\" id=\"payment-method-";
-                // line 158
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "id", [], "any", false, false, false, 158), "html", null, true);
+                // line 159
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "id", [], "any", false, false, false, 159), "html", null, true);
                 echo "\" value=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "id", [], "any", false, false, false, 158), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "id", [], "any", false, false, false, 159), "html", null, true);
                 echo "\" required ";
-                if (twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 158)) {
+                if (twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 159)) {
                     echo "checked";
                 }
                 echo ">
                         <label class=\"form-check-label\" for=\"payment-method-";
-                // line 159
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "id", [], "any", false, false, false, 159), "html", null, true);
+                // line 160
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "id", [], "any", false, false, false, 160), "html", null, true);
                 echo "\">
                             ";
-                // line 160
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "name", [], "any", false, false, false, 160), "html", null, true);
+                // line 161
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "name", [], "any", false, false, false, 161), "html", null, true);
                 echo "
                         </label>
                     </div>
@@ -345,13 +351,13 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['obPaymentMethod'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 164
+            // line 165
             echo "                
                 
               </div>
               ";
         }
-        // line 168
+        // line 169
         echo "
               <div class=\"order__pay-flex\">
     
@@ -359,16 +365,20 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                   <div class=\"order__pay-summ\">
                     <span class=\"order__pay-order\">Сумма заказа</span>
                     <div class=\"cart__total-price-price-value\"><span class=\"cart__total-price-price-value basket__total-order\">";
-        // line 174
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getTotalPrice", [], "method", false, false, false, 174), "html", null, true);
+        // line 175
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getTotalPrice", [], "method", false, false, false, 175), "html", null, true);
         echo "c</span></div>
                   </div>
                   <div class=\"order__pay-summ\">
                     <span class=\"order__pay-order\">К оплате</span>
                     <div class=\"cart__total-price-price-value\"><span class=\"cart__total-price-price-value basket__total-order\">";
-        // line 178
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getTotalPrice", [], "method", false, false, false, 178), "html", null, true);
+        // line 179
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getTotalPrice", [], "method", false, false, false, 179), "html", null, true);
         echo "c</span></div>
+                    <input class=\"cart__total-price-price-value basket__total-order\" id=\"total-price\" type=\"hidden\" value=\"";
+        // line 180
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getTotalPrice", [], "method", false, false, false, 180), "html", null, true);
+        echo "\">
                   </div>
 
                 </div>
@@ -393,7 +403,7 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
 
     public function getDebugInfo()
     {
-        return array (  370 => 178,  363 => 174,  355 => 168,  349 => 164,  331 => 160,  327 => 159,  317 => 158,  310 => 157,  293 => 156,  290 => 155,  287 => 154,  285 => 153,  266 => 137,  262 => 136,  254 => 130,  248 => 126,  229 => 124,  223 => 123,  215 => 121,  198 => 120,  192 => 119,  189 => 118,  187 => 117,  184 => 116,  182 => 115,  171 => 107,  164 => 102,  153 => 97,  148 => 95,  144 => 93,  141 => 92,  139 => 91,  136 => 90,  132 => 89,  109 => 68,  105 => 66,  101 => 65,  98 => 64,  96 => 63,  37 => 6,);
+        return array (  380 => 180,  376 => 179,  369 => 175,  361 => 169,  355 => 165,  337 => 161,  333 => 160,  323 => 159,  316 => 158,  299 => 157,  296 => 156,  293 => 155,  291 => 154,  272 => 138,  268 => 137,  260 => 131,  254 => 127,  235 => 125,  229 => 124,  221 => 122,  204 => 121,  198 => 120,  195 => 119,  193 => 118,  190 => 117,  188 => 116,  177 => 108,  170 => 103,  159 => 98,  150 => 96,  146 => 94,  144 => 93,  141 => 92,  139 => 91,  136 => 90,  132 => 89,  109 => 68,  105 => 66,  101 => 65,  98 => 64,  96 => 63,  37 => 6,);
     }
 
     public function getSourceContext()
@@ -489,10 +499,11 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                     {% for obCartPosition in obCartPositionList %}
                 
                 {% set obOffer = obCartPosition.offer %}
+
                 {% set obProduct = obOffer.product %}
 
                     <div class=\"order__product\">
-                      <div class=\"order__product-name\">{{ obProduct.name }}</div>
+                      <div class=\"order__product-name\" offer-id=\"{{ obOffer.id }}\" product-id=\"{{ obProduct.id }}\">{{ obProduct.name }}</div>
                       <div>
                         <input type=\"text\" value=\"{{ obOffer.price }}\" class=\"order__info-input\" readonly>c
                       </div>
@@ -521,7 +532,7 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                         <input class=\"form-check-input order__radio\" type=\"radio\" name=\"shipping_type_id\" id=\"sipping-type-{{ obShippingType.id }}\" value=\"{{ obShippingType.id }}\" required >
 
                         <!-- {% if loop.first %}checked{% endif %} -->
-                            {{ obShippingType.name }}: {{ obShippingType.price }}{{ obShippingType.currency }}
+                            <div class=\"shipping_name\">{{ obShippingType.name }}: {{ obShippingType.price }}{{ obShippingType.currency }}</div>
                         {% endfor %}
                     </div>
                 
@@ -576,6 +587,7 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                   <div class=\"order__pay-summ\">
                     <span class=\"order__pay-order\">К оплате</span>
                     <div class=\"cart__total-price-price-value\"><span class=\"cart__total-price-price-value basket__total-order\">{{ Cart.getTotalPrice() }}c</span></div>
+                    <input class=\"cart__total-price-price-value basket__total-order\" id=\"total-price\" type=\"hidden\" value=\"{{ Cart.getTotalPrice() }}\">
                   </div>
 
                 </div>

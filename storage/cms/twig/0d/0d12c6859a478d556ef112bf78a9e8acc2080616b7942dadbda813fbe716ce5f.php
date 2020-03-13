@@ -107,8 +107,10 @@ class __TwigTemplate_a583a85a5f2de90c068369218d76dea8bf7bdd450bf1764399fce538eb9
                 echo "                        </a>
                     </td>
                     <td class=\"align-middle\">
-                        <a class=\"cart__product-name basket__input basket__input-name\" href=\"";
+                        <a class=\"cart__product-name basket__input basket__input-name\" data-id=\"";
                 // line 39
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obOffer"] ?? null), "id", [], "any", false, false, false, 39), "html", null, true);
+                echo "\" href=\"";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "getPageUrl", [0 => "catalog"], "method", false, false, false, 39), "html", null, true);
                 echo "\">
                             ";
@@ -206,33 +208,38 @@ class __TwigTemplate_a583a85a5f2de90c068369218d76dea8bf7bdd450bf1764399fce538eb9
             echo "
             </tbody>
         </table>
+        <div class=\"basket__btns-main cart__table\">
+                    <a href=\"/store\" class=\"basket__continue\">продолжить покупки</a>
+                    <button type=\"button\" class=\"basket__clear cart__on__clear\">очистить корзину</button>
+                  </div>
     </div>
+
     <div class=\"cart__total basket__total-wrap\">
         <h3 class=\"basket__total-title\">Итоги заказа</h3>
         <div class=\"cart__total-position basket__info\">
             <span class=\"cart__total-position-title col-6 col-lg-4 font-weight-bold\">Промежуточный итог:</span>
             <span class=\"cart__total-position-old-price col-3 col-lg-2 text-right text-muted\">
                 <span class=\"cart__total-position-old-price-value ";
-            // line 83
-            if ((twig_get_attribute($this->env, $this->source, ($context["obCartPositionList"] ?? null), "getDiscountTotalPriceValue", [], "method", false, false, false, 83) == 0)) {
+            // line 88
+            if ((twig_get_attribute($this->env, $this->source, ($context["obCartPositionList"] ?? null), "getDiscountTotalPriceValue", [], "method", false, false, false, 88) == 0)) {
                 echo "d-none";
             }
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obCartPositionList"] ?? null), "getOldTotalPrice", [], "method", false, false, false, 83), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obCartPositionList"] ?? null), "getOldTotalPrice", [], "method", false, false, false, 88), "html", null, true);
             echo "</span>
                 <span class=\"cart__total-position-old-price-currency ";
-            // line 84
-            if ((twig_get_attribute($this->env, $this->source, ($context["obCartPositionList"] ?? null), "getDiscountTotalPriceValue", [], "method", false, false, false, 84) == 0)) {
+            // line 89
+            if ((twig_get_attribute($this->env, $this->source, ($context["obCartPositionList"] ?? null), "getDiscountTotalPriceValue", [], "method", false, false, false, 89) == 0)) {
                 echo "d-none";
             }
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getCurrency", [], "method", false, false, false, 84), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["Cart"] ?? null), "getCurrency", [], "method", false, false, false, 89), "html", null, true);
             echo "</span>
             </span>
             <span class=\"cart__total-position-current-price col-3 col-lg-2 text-right\">
                 <span class=\"cart__total-position-price-value basket__total-resident\">";
-            // line 87
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obCartPositionList"] ?? null), "getTotalPrice", [], "method", false, false, false, 87), "html", null, true);
+            // line 92
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obCartPositionList"] ?? null), "getTotalPrice", [], "method", false, false, false, 92), "html", null, true);
             echo "</span>
             </span>
         </div>
@@ -241,16 +248,13 @@ class __TwigTemplate_a583a85a5f2de90c068369218d76dea8bf7bdd450bf1764399fce538eb9
     </div>
     ";
         }
-        // line 94
+        // line 99
         echo "
-    <!-- <div class=\"basket__btns-main cart__table\">
-                    <a href=\"/store\" class=\"basket__continue\">продолжить покупки</a>
-                    <button type=\"button\" class=\"basket__clear cart__delete-btn\">очистить корзину</button>
-                  </div> -->
+    
 
     <div class=\"basket__none cart__empty ";
-        // line 100
-        if (twig_get_attribute($this->env, $this->source, ($context["obCartPositionList"] ?? null), "isNotEmpty", [], "method", false, false, false, 100)) {
+        // line 102
+        if (twig_get_attribute($this->env, $this->source, ($context["obCartPositionList"] ?? null), "isNotEmpty", [], "method", false, false, false, 102)) {
             echo "d-none";
         }
         echo "\">
@@ -274,7 +278,7 @@ class __TwigTemplate_a583a85a5f2de90c068369218d76dea8bf7bdd450bf1764399fce538eb9
 
     public function getDebugInfo()
     {
-        return array (  253 => 100,  245 => 94,  235 => 87,  225 => 84,  217 => 83,  206 => 74,  195 => 69,  191 => 68,  182 => 64,  176 => 63,  172 => 62,  168 => 60,  161 => 59,  155 => 55,  147 => 53,  144 => 52,  142 => 51,  137 => 49,  133 => 48,  125 => 43,  121 => 42,  116 => 40,  112 => 39,  107 => 36,  101 => 34,  91 => 32,  89 => 31,  83 => 30,  71 => 28,  68 => 27,  65 => 26,  61 => 25,  45 => 11,  43 => 10,  37 => 6,);
+        return array (  257 => 102,  252 => 99,  242 => 92,  232 => 89,  224 => 88,  208 => 74,  197 => 69,  193 => 68,  184 => 64,  178 => 63,  174 => 62,  170 => 60,  163 => 59,  157 => 55,  149 => 53,  146 => 52,  144 => 51,  139 => 49,  135 => 48,  127 => 43,  123 => 42,  118 => 40,  112 => 39,  107 => 36,  101 => 34,  91 => 32,  89 => 31,  83 => 30,  71 => 28,  68 => 27,  65 => 26,  61 => 25,  45 => 11,  43 => 10,  37 => 6,);
     }
 
     public function getSourceContext()
@@ -317,7 +321,7 @@ class __TwigTemplate_a583a85a5f2de90c068369218d76dea8bf7bdd450bf1764399fce538eb9
                         </a>
                     </td>
                     <td class=\"align-middle\">
-                        <a class=\"cart__product-name basket__input basket__input-name\" href=\"{{ obProduct.getPageUrl('catalog') }}\">
+                        <a class=\"cart__product-name basket__input basket__input-name\" data-id=\"{{ obOffer.id }}\" href=\"{{ obProduct.getPageUrl('catalog') }}\">
                             {{ obProduct.name }}
                         </a>
                         <!-- <a href=\"{{ obProduct.category.getPageUrl('catalog') }}\" class=\"cart__category-product-column text-dark\">
@@ -355,7 +359,12 @@ class __TwigTemplate_a583a85a5f2de90c068369218d76dea8bf7bdd450bf1764399fce538eb9
 
             </tbody>
         </table>
+        <div class=\"basket__btns-main cart__table\">
+                    <a href=\"/store\" class=\"basket__continue\">продолжить покупки</a>
+                    <button type=\"button\" class=\"basket__clear cart__on__clear\">очистить корзину</button>
+                  </div>
     </div>
+
     <div class=\"cart__total basket__total-wrap\">
         <h3 class=\"basket__total-title\">Итоги заказа</h3>
         <div class=\"cart__total-position basket__info\">
@@ -373,10 +382,7 @@ class __TwigTemplate_a583a85a5f2de90c068369218d76dea8bf7bdd450bf1764399fce538eb9
     </div>
     {% endif %}
 
-    <!-- <div class=\"basket__btns-main cart__table\">
-                    <a href=\"/store\" class=\"basket__continue\">продолжить покупки</a>
-                    <button type=\"button\" class=\"basket__clear cart__delete-btn\">очистить корзину</button>
-                  </div> -->
+    
 
     <div class=\"basket__none cart__empty {% if obCartPositionList.isNotEmpty() %}d-none{% endif %}\">
               <div>Корзина пуста</div>

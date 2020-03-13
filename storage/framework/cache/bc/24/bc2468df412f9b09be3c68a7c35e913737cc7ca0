@@ -1,4 +1,4 @@
-1583495060a:1:{s:36:"form/checkout-form/checkout-form.htm";a:5:{s:8:"fileName";s:36:"form/checkout-form/checkout-form.htm";s:7:"content";s:9162:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
+1584078154a:1:{s:36:"form/checkout-form/checkout-form.htm";a:5:{s:8:"fileName";s:36:"form/checkout-form/checkout-form.htm";s:7:"content";s:9408:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
 {# @var obCartPosition \Lovata\OrdersShopaholic\Classes\Item\CartPositionItem #}
 {# @var obActiveShippingType \Lovata\OrdersShopaholic\Classes\Item\ShippingTypeItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
@@ -89,10 +89,11 @@
                     {% for obCartPosition in obCartPositionList %}
                 
                 {% set obOffer = obCartPosition.offer %}
+
                 {% set obProduct = obOffer.product %}
 
                     <div class="order__product">
-                      <div class="order__product-name">{{ obProduct.name }}</div>
+                      <div class="order__product-name" offer-id="{{ obOffer.id }}" product-id="{{ obProduct.id }}">{{ obProduct.name }}</div>
                       <div>
                         <input type="text" value="{{ obOffer.price }}" class="order__info-input" readonly>c
                       </div>
@@ -121,7 +122,7 @@
                         <input class="form-check-input order__radio" type="radio" name="shipping_type_id" id="sipping-type-{{ obShippingType.id }}" value="{{ obShippingType.id }}" required >
 
                         <!-- {% if loop.first %}checked{% endif %} -->
-                            {{ obShippingType.name }}: {{ obShippingType.price }}{{ obShippingType.currency }}
+                            <div class="shipping_name">{{ obShippingType.name }}: {{ obShippingType.price }}{{ obShippingType.currency }}</div>
                         {% endfor %}
                     </div>
                 
@@ -176,6 +177,7 @@
                   <div class="order__pay-summ">
                     <span class="order__pay-order">К оплате</span>
                     <div class="cart__total-price-price-value"><span class="cart__total-price-price-value basket__total-order">{{ Cart.getTotalPrice() }}c</span></div>
+                    <input class="cart__total-price-price-value basket__total-order" id="total-price" type="hidden" value="{{ Cart.getTotalPrice() }}">
                   </div>
 
                 </div>
@@ -186,7 +188,7 @@
 </div>
 </div>
 </section>
-";s:5:"mtime";i:1583388182;s:6:"markup";s:9161:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
+";s:5:"mtime";i:1583927536;s:6:"markup";s:9407:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
 {# @var obCartPosition \Lovata\OrdersShopaholic\Classes\Item\CartPositionItem #}
 {# @var obActiveShippingType \Lovata\OrdersShopaholic\Classes\Item\ShippingTypeItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
@@ -277,10 +279,11 @@
                     {% for obCartPosition in obCartPositionList %}
                 
                 {% set obOffer = obCartPosition.offer %}
+
                 {% set obProduct = obOffer.product %}
 
                     <div class="order__product">
-                      <div class="order__product-name">{{ obProduct.name }}</div>
+                      <div class="order__product-name" offer-id="{{ obOffer.id }}" product-id="{{ obProduct.id }}">{{ obProduct.name }}</div>
                       <div>
                         <input type="text" value="{{ obOffer.price }}" class="order__info-input" readonly>c
                       </div>
@@ -309,7 +312,7 @@
                         <input class="form-check-input order__radio" type="radio" name="shipping_type_id" id="sipping-type-{{ obShippingType.id }}" value="{{ obShippingType.id }}" required >
 
                         <!-- {% if loop.first %}checked{% endif %} -->
-                            {{ obShippingType.name }}: {{ obShippingType.price }}{{ obShippingType.currency }}
+                            <div class="shipping_name">{{ obShippingType.name }}: {{ obShippingType.price }}{{ obShippingType.currency }}</div>
                         {% endfor %}
                     </div>
                 
@@ -364,6 +367,7 @@
                   <div class="order__pay-summ">
                     <span class="order__pay-order">К оплате</span>
                     <div class="cart__total-price-price-value"><span class="cart__total-price-price-value basket__total-order">{{ Cart.getTotalPrice() }}c</span></div>
+                    <input class="cart__total-price-price-value basket__total-order" id="total-price" type="hidden" value="{{ Cart.getTotalPrice() }}">
                   </div>
 
                 </div>

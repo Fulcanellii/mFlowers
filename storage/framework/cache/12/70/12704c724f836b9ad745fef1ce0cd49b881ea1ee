@@ -1,4 +1,4 @@
-1583495060a:1:{s:49:"product/cart-position-list/cart-position-list.htm";a:5:{s:8:"fileName";s:49:"product/cart-position-list/cart-position-list.htm";s:7:"content";s:6578:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
+1584078154a:1:{s:49:"product/cart-position-list/cart-position-list.htm";a:5:{s:8:"fileName";s:49:"product/cart-position-list/cart-position-list.htm";s:7:"content";s:6605:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
 {# @var obCartPosition \Lovata\OrdersShopaholic\Classes\Item\CartPositionItem #}
 {# @var obActiveShippingType \Lovata\OrdersShopaholic\Classes\Item\ShippingTypeItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
@@ -36,7 +36,7 @@
                         </a>
                     </td>
                     <td class="align-middle">
-                        <a class="cart__product-name basket__input basket__input-name" href="{{ obProduct.getPageUrl('catalog') }}">
+                        <a class="cart__product-name basket__input basket__input-name" data-id="{{ obOffer.id }}" href="{{ obProduct.getPageUrl('catalog') }}">
                             {{ obProduct.name }}
                         </a>
                         <!-- <a href="{{ obProduct.category.getPageUrl('catalog') }}" class="cart__category-product-column text-dark">
@@ -74,7 +74,12 @@
 
             </tbody>
         </table>
+        <div class="basket__btns-main cart__table">
+                    <a href="/store" class="basket__continue">продолжить покупки</a>
+                    <button type="button" class="basket__clear cart__on__clear">очистить корзину</button>
+                  </div>
     </div>
+
     <div class="cart__total basket__total-wrap">
         <h3 class="basket__total-title">Итоги заказа</h3>
         <div class="cart__total-position basket__info">
@@ -92,10 +97,7 @@
     </div>
     {% endif %}
 
-    <!-- <div class="basket__btns-main cart__table">
-                    <a href="/store" class="basket__continue">продолжить покупки</a>
-                    <button type="button" class="basket__clear cart__delete-btn">очистить корзину</button>
-                  </div> -->
+    
 
     <div class="basket__none cart__empty {% if obCartPositionList.isNotEmpty() %}d-none{% endif %}">
               <div>Корзина пуста</div>
@@ -105,7 +107,7 @@
 </div>
 </section>
 
-";s:5:"mtime";i:1583386753;s:6:"markup";s:6576:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
+";s:5:"mtime";i:1583923580;s:6:"markup";s:6603:"{# @var obCartPositionList \Lovata\OrdersShopaholic\Classes\Collection\CartPositionCollection #}
 {# @var obCartPosition \Lovata\OrdersShopaholic\Classes\Item\CartPositionItem #}
 {# @var obActiveShippingType \Lovata\OrdersShopaholic\Classes\Item\ShippingTypeItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
@@ -143,7 +145,7 @@
                         </a>
                     </td>
                     <td class="align-middle">
-                        <a class="cart__product-name basket__input basket__input-name" href="{{ obProduct.getPageUrl('catalog') }}">
+                        <a class="cart__product-name basket__input basket__input-name" data-id="{{ obOffer.id }}" href="{{ obProduct.getPageUrl('catalog') }}">
                             {{ obProduct.name }}
                         </a>
                         <!-- <a href="{{ obProduct.category.getPageUrl('catalog') }}" class="cart__category-product-column text-dark">
@@ -181,7 +183,12 @@
 
             </tbody>
         </table>
+        <div class="basket__btns-main cart__table">
+                    <a href="/store" class="basket__continue">продолжить покупки</a>
+                    <button type="button" class="basket__clear cart__on__clear">очистить корзину</button>
+                  </div>
     </div>
+
     <div class="cart__total basket__total-wrap">
         <h3 class="basket__total-title">Итоги заказа</h3>
         <div class="cart__total-position basket__info">
@@ -199,10 +206,7 @@
     </div>
     {% endif %}
 
-    <!-- <div class="basket__btns-main cart__table">
-                    <a href="/store" class="basket__continue">продолжить покупки</a>
-                    <button type="button" class="basket__clear cart__delete-btn">очистить корзину</button>
-                  </div> -->
+    
 
     <div class="basket__none cart__empty {% if obCartPositionList.isNotEmpty() %}d-none{% endif %}">
               <div>Корзина пуста</div>

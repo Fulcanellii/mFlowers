@@ -1,4 +1,4 @@
-1583494784a:1:{s:12:"checkout.htm";a:12:{s:8:"fileName";s:12:"checkout.htm";s:7:"content";s:1119:"title = "Checkout"
+1584078149a:1:{s:12:"checkout.htm";a:12:{s:8:"fileName";s:12:"checkout.htm";s:7:"content";s:1119:"title = "Checkout"
 url = "/checkout"
 layout = "main"
 is_hidden = 0
@@ -9,7 +9,7 @@ is_hidden = 0
 
 [MakeOrder]
 mode = "ajax"
-redirect_on = 1
+redirect_on = 0
 redirect_page = "order-complete"
 ==
 <?php
@@ -34,7 +34,7 @@ function onInit()
     {% if obCartPositionList.count > 0 %}
         {% partial 'form/checkout-form/checkout-form' obCartPositionList=obCartPositionList %}
     {% endif %}
-</div>";s:5:"mtime";i:1583386125;s:6:"markup";s:724:"{% set obActiveShippingType = ShippingTypeList.make().active().sort().getByCode('zabr0') %}
+</div>";s:5:"mtime";i:1584014311;s:6:"markup";s:724:"{% set obActiveShippingType = ShippingTypeList.make().active().sort().getByCode('zabr0') %}
 {% set obCartPositionList = Cart.get(obActiveShippingType) %}
 
 {% set arBreadcrumbs = [
@@ -52,4 +52,4 @@ function onInit()
 {
     $obPluginManager = \System\Classes\PluginManager::instance();
     $this['location_is_available'] = $obPluginManager->hasPlugin('RainLab.Location');
-}";s:5:"title";s:8:"Checkout";s:3:"url";s:9:"/checkout";s:6:"layout";s:4:"main";s:9:"is_hidden";s:1:"0";s:17:"PaymentMethodList";a:0:{}s:16:"ShippingTypeList";a:0:{}s:9:"MakeOrder";a:3:{s:4:"mode";s:4:"ajax";s:11:"redirect_on";s:1:"1";s:13:"redirect_page";s:14:"order-complete";}}}
+}";s:5:"title";s:8:"Checkout";s:3:"url";s:9:"/checkout";s:6:"layout";s:4:"main";s:9:"is_hidden";s:1:"0";s:17:"PaymentMethodList";a:0:{}s:16:"ShippingTypeList";a:0:{}s:9:"MakeOrder";a:3:{s:4:"mode";s:4:"ajax";s:11:"redirect_on";s:1:"0";s:13:"redirect_page";s:14:"order-complete";}}}

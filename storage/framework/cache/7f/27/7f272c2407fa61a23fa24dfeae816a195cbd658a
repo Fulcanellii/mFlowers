@@ -1,4 +1,4 @@
-1583494804a:1:{s:9:"index.htm";a:14:{s:8:"fileName";s:9:"index.htm";s:7:"content";s:11238:"title = "Index"
+1584078149a:1:{s:9:"index.htm";a:14:{s:8:"fileName";s:9:"index.htm";s:7:"content";s:10541:"title = "Index"
 url = "/"
 layout = "main"
 is_hidden = 0
@@ -22,17 +22,7 @@ postPage = "blog-post"
 [ProductList ProductList2]
 sorting = "new"
 ==
-{% partial 'content/carousel/carousel' arImageList=this.theme.main_slider %}
-
 {% set cat = CategoryList.make().tree() %}
-
-{% set obPromoBlockList = PromoBlockList.make().merge([this.theme.promo_block_left, this.theme.promo_block_middle, this.theme.promo_block_right]) %}
-{% partial 'promo-block/promo-block-product-tab/promo-block-product-tab' obPromoBlockList=obPromoBlockList %}
-
-{% partial 'content/banner/banner' sImagePath=this.theme.index_banner sLink=this.theme.index_banner_link %}
-
-{% set obCategoryList = CategoryList.make().merge([this.theme.category_left, this.theme.category_middle, this.theme.category_right]) %}
-{% partial 'category/category-product-column/category-product-column' obCategoryList=obCategoryList %}
 
 {% content 'main-banner.htm' %}
 
@@ -251,17 +241,7 @@ sorting = "new"
                     
                 </div>
             </div>
-        </section>";s:5:"mtime";i:1583494203;s:6:"markup";s:10850:"{% partial 'content/carousel/carousel' arImageList=this.theme.main_slider %}
-
-{% set cat = CategoryList.make().tree() %}
-
-{% set obPromoBlockList = PromoBlockList.make().merge([this.theme.promo_block_left, this.theme.promo_block_middle, this.theme.promo_block_right]) %}
-{% partial 'promo-block/promo-block-product-tab/promo-block-product-tab' obPromoBlockList=obPromoBlockList %}
-
-{% partial 'content/banner/banner' sImagePath=this.theme.index_banner sLink=this.theme.index_banner_link %}
-
-{% set obCategoryList = CategoryList.make().merge([this.theme.category_left, this.theme.category_middle, this.theme.category_right]) %}
-{% partial 'category/category-product-column/category-product-column' obCategoryList=obCategoryList %}
+        </section>";s:5:"mtime";i:1583907125;s:6:"markup";s:10153:"{% set cat = CategoryList.make().tree() %}
 
 {% content 'main-banner.htm' %}
 
