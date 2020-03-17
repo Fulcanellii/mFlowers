@@ -356,4 +356,7 @@
   'lovata\\ordersshopaholic\\Controllers\\promomechanisms' => 'plugins\\lovata\\ordersshopaholic\\controllers\\promomechanisms.php',
   'Lovata\\OrdersShopaholic\\Models\\PromoMechanism' => 'plugins\\lovata\\ordersshopaholic\\models\\PromoMechanism.php',
   'Lovata\\OrdersShopaholic\\Classes\\Item\\PaymentMethodItem' => 'plugins\\lovata\\ordersshopaholic\\classes\\item\\PaymentMethodItem.php',
+  'backend\\Controllers\\users' => 'modules\\backend\\controllers\\users.php',
+  'Lovata\\Shopaholic\\Classes\\Event\\Product\\CRest' => 'plugins\\lovata\\shopaholic\\classes\\event\\product\\CRest.php',
+  'Lovata\\Shopaholic\\Classes\\Store\\CRest' => 'plugins\\lovata\\shopaholic\\classes\\store\\CRest.php',
 );

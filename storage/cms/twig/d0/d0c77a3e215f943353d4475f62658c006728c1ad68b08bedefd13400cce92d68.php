@@ -76,8 +76,10 @@ class __TwigTemplate_df7d6b7e2ce9f999f213a63cc94ef17d95d008349637f42ca6a6dd8304f
         echo "        </div>
     </a>
 
-        <span class=\"products__name\">";
+        <span class=\"products__name\" data-id=\"";
         // line 18
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "external_id", [], "any", false, false, false, 18), "html", null, true);
+        echo "\">";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obProduct"] ?? null), "name", [], "any", false, false, false, 18), "html", null, true);
         echo "</span>
 
@@ -145,7 +147,7 @@ class __TwigTemplate_df7d6b7e2ce9f999f213a63cc94ef17d95d008349637f42ca6a6dd8304f
 
     public function getDebugInfo()
     {
-        return array (  132 => 35,  128 => 33,  123 => 32,  118 => 30,  115 => 29,  113 => 28,  110 => 27,  102 => 25,  99 => 24,  97 => 23,  90 => 21,  86 => 20,  81 => 18,  76 => 15,  70 => 13,  61 => 11,  57 => 9,  55 => 8,  49 => 7,  45 => 6,  42 => 5,  40 => 4,  37 => 3,);
+        return array (  134 => 35,  130 => 33,  125 => 32,  120 => 30,  117 => 29,  115 => 28,  112 => 27,  104 => 25,  101 => 24,  99 => 23,  92 => 21,  88 => 20,  81 => 18,  76 => 15,  70 => 13,  61 => 11,  57 => 9,  55 => 8,  49 => 7,  45 => 6,  42 => 5,  40 => 4,  37 => 3,);
     }
 
     public function getSourceContext()
@@ -167,7 +169,7 @@ class __TwigTemplate_df7d6b7e2ce9f999f213a63cc94ef17d95d008349637f42ca6a6dd8304f
         </div>
     </a>
 
-        <span class=\"products__name\">{{ obProduct.name }}</span>
+        <span class=\"products__name\" data-id=\"{{obProduct.external_id}}\">{{ obProduct.name }}</span>
 
             <span class=\"products__price {{ obOffer.old_price_value > 0 ? 'text-danger' : '' }}\">
                 {{ obOffer.price }}  {{ obOffer.currency }}

@@ -1,4 +1,4 @@
-1584078149a:1:{s:37:"product/product-card/product-card.htm";a:5:{s:8:"fileName";s:37:"product/product-card/product-card.htm";s:7:"content";s:1707:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
+1584427811a:1:{s:37:"product/product-card/product-card.htm";a:5:{s:8:"fileName";s:37:"product/product-card/product-card.htm";s:7:"content";s:1743:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
 
 {% set obOffer = obProduct.offer.first() %}
@@ -15,7 +15,7 @@
         </div>
     </a>
 
-        <span class="products__name">{{ obProduct.name }}</span>
+        <span class="products__name" data-id="{{obProduct.external_id}}">{{ obProduct.name }}</span>
 
             <span class="products__price {{ obOffer.old_price_value > 0 ? 'text-danger' : '' }}">
                 {{ obOffer.price }}  {{ obOffer.currency }}
@@ -36,7 +36,7 @@
   </div>
 
 
-";s:5:"mtime";i:1583299487;s:6:"markup";s:1701:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
+";s:5:"mtime";i:1584420853;s:6:"markup";s:1737:"{# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
 {# @var obOffer \Lovata\Shopaholic\Classes\Item\OfferItem #}
 
 {% set obOffer = obProduct.offer.first() %}
@@ -53,7 +53,7 @@
         </div>
     </a>
 
-        <span class="products__name">{{ obProduct.name }}</span>
+        <span class="products__name" data-id="{{obProduct.external_id}}">{{ obProduct.name }}</span>
 
             <span class="products__price {{ obOffer.old_price_value > 0 ? 'text-danger' : '' }}">
                 {{ obOffer.price }}  {{ obOffer.currency }}

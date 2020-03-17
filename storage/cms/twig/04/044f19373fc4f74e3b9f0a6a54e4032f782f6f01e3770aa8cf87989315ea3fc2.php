@@ -82,72 +82,73 @@ class __TwigTemplate_c3107a3cf7e9e9b64719ea5ba4749d3750c415aee46d1bb3fa9e104d623
         $context["arProductList"] = twig_get_attribute($this->env, $this->source, ($context["obProductList"] ?? null), "page", [0 => ($context["iPage"] ?? null), 1 => twig_get_attribute($this->env, $this->source, ($context["Pagination"] ?? null), "getCountPerPage", [], "method", false, false, false, 24)], "method", false, false, false, 24);
         // line 25
         echo "
+
 <div class=\"store__wrap\">
         <div class=\"store__head\">
             ";
-        // line 28
-        if (twig_get_attribute($this->env, $this->source, ($context["obActiveCategory"] ?? null), "name", [], "any", false, false, false, 28)) {
-            // line 29
+        // line 29
+        if (twig_get_attribute($this->env, $this->source, ($context["obActiveCategory"] ?? null), "name", [], "any", false, false, false, 29)) {
+            // line 30
             echo "                <h2>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obActiveCategory"] ?? null), "name", [], "any", false, false, false, 29), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["obActiveCategory"] ?? null), "name", [], "any", false, false, false, 30), "html", null, true);
             echo "</h2>
             ";
         } else {
-            // line 31
+            // line 32
             echo "                <h2>Все товары</h2>
             ";
         }
-        // line 33
+        // line 34
         echo "                ";
         $context['__cms_partial_params'] = [];
         $context['__cms_partial_params']['obActiveCategory'] = ($context["obActiveCategory"] ?? null)        ;
         $context['__cms_partial_params']['label'] = "catalog-product-list"        ;
         echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("product/catalog-panel/catalog-panel"        , $context['__cms_partial_params']        , true        );
         unset($context['__cms_partial_params']);
-        // line 34
+        // line 35
         echo "              </div>
 ";
-        // line 35
+        // line 36
         if ( !twig_test_empty(($context["arProductList"] ?? null))) {
-            // line 36
+            // line 37
             echo "    <div class=\"store__products\">
         ";
-            // line 37
+            // line 38
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["arProductList"] ?? null));
             foreach ($context['_seq'] as $context["_key"] => $context["obProduct"]) {
-                // line 38
+                // line 39
                 echo "            
                 ";
-                // line 39
+                // line 40
                 $context['__cms_partial_params'] = [];
                 $context['__cms_partial_params']['obProduct'] = $context["obProduct"]                ;
                 $context['__cms_partial_params']['obActiveCategory'] = ($context["obActiveCategory"] ?? null)                ;
                 echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("product/product-card/product-card"                , $context['__cms_partial_params']                , true                );
                 unset($context['__cms_partial_params']);
-                // line 40
+                // line 41
                 echo "
         ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['obProduct'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 42
+            // line 43
             echo "    </div>
     ";
-            // line 43
+            // line 44
             $context['__cms_partial_params'] = [];
-            $context['__cms_partial_params']['iCount'] = twig_get_attribute($this->env, $this->source, ($context["obProductList"] ?? null), "count", [], "method", false, false, false, 43)            ;
+            $context['__cms_partial_params']['iCount'] = twig_get_attribute($this->env, $this->source, ($context["obProductList"] ?? null), "count", [], "method", false, false, false, 44)            ;
             $context['__cms_partial_params']['pagingLabel'] = "catalog-product-list"            ;
             echo $this->env->getExtension('Cms\Twig\Extension')->partialFunction("navigation/pagination/pagination"            , $context['__cms_partial_params']            , true            );
             unset($context['__cms_partial_params']);
         } else {
-            // line 45
+            // line 46
             echo "    <div>Продуктов нет</div>
 ";
         }
         echo trim(preg_replace('/>\s+</', '><', ob_get_clean()));
-        // line 48
+        // line 49
         echo "</div>";
     }
 
@@ -163,7 +164,7 @@ class __TwigTemplate_c3107a3cf7e9e9b64719ea5ba4749d3750c415aee46d1bb3fa9e104d623
 
     public function getDebugInfo()
     {
-        return array (  151 => 48,  146 => 45,  139 => 43,  136 => 42,  129 => 40,  123 => 39,  120 => 38,  116 => 37,  113 => 36,  111 => 35,  108 => 34,  101 => 33,  97 => 31,  91 => 29,  89 => 28,  84 => 25,  82 => 24,  79 => 22,  77 => 21,  74 => 19,  70 => 17,  68 => 16,  64 => 14,  62 => 13,  59 => 12,  55 => 10,  53 => 9,  50 => 8,  48 => 7,  45 => 6,  42 => 4,  39 => 2,  37 => 1,);
+        return array (  152 => 49,  147 => 46,  140 => 44,  137 => 43,  130 => 41,  124 => 40,  121 => 39,  117 => 38,  114 => 37,  112 => 36,  109 => 35,  102 => 34,  98 => 32,  92 => 30,  90 => 29,  84 => 25,  82 => 24,  79 => 22,  77 => 21,  74 => 19,  70 => 17,  68 => 16,  64 => 14,  62 => 13,  59 => 12,  55 => 10,  53 => 9,  50 => 8,  48 => 7,  45 => 6,  42 => 4,  39 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -192,6 +193,7 @@ class __TwigTemplate_c3107a3cf7e9e9b64719ea5ba4749d3750c415aee46d1bb3fa9e104d623
 
 {# Apply pagination to product collection and get array with product items #}
 {% set arProductList = obProductList.page(iPage, Pagination.getCountPerPage()) %}
+
 
 <div class=\"store__wrap\">
         <div class=\"store__head\">

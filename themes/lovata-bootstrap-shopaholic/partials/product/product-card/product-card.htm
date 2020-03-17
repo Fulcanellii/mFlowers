@@ -15,7 +15,7 @@
         </div>
     </a>
 
-        <span class="products__name">{{ obProduct.name }}</span>
+        <span class="products__name" data-id="{{obProduct.external_id}}">{{ obProduct.name }}</span>
 
             <span class="products__price {{ obOffer.old_price_value > 0 ? 'text-danger' : '' }}">
                 {{ obOffer.price }}  {{ obOffer.currency }}

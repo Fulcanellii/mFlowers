@@ -15,6 +15,7 @@ use Lovata\Shopaholic\Classes\Collection\OfferCollection;
  * @author  Andrey Kharanenka, a.khoronenko@lovata.com, LOVATA Group
  *
  * @property int                                                                                                                         $id
+ * @property int                                                                                                                         $external_id
  * @property bool                                                                                                                        $active
  * @property bool                                                                                                                        $trashed
  * @property string                                                                                                                      $name

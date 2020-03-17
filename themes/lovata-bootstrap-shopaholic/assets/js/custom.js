@@ -28,11 +28,11 @@ $("._create_order_button").click(function(event) {
 
     var product_total_price = $('#total-price').text();
 
-    var product_shipping_type = $('.order__radio').val();
+    var product_shipping_type = $('input[name="shipping_type_id"]:checked').attr('data-name');
 
     var product_shipping_name = $('.shipping_name').val();
 
-    var product_payment_method = $('.form-check-label').val();
+    var product_payment_method = $('input[name="payment_method_id"]:checked').attr('payment-name');
 
     var user_name = $("#order_name").val();
 
@@ -56,7 +56,7 @@ $("._create_order_button").click(function(event) {
         url: 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.lead.add',
         type: 'POST',
         dataType: 'json',
-        data: {fields: {NAME: user_name, LAST_NAME: user_lastname, TITLE: 'Заказ', PHONE: [ { "VALUE": user_phone, "VALUE_TYPE": "WORK" } ], ADDRESS_PROVINCE: user_region,
+        data: {fields: {UF_CRM_SHIPPING_TYPE: product_shipping_type, UF_CRM_PAYMENT_METHOD: product_payment_method, NAME: user_name, LAST_NAME: user_lastname, TITLE: 'Заказ', PHONE: [ { "VALUE": user_phone, "VALUE_TYPE": "WORK" } ], ADDRESS_PROVINCE: user_region,
                ADDRESS_POSTAL_CODE: user_index, ADDRESS_CITY: user_city, ADDRESS: user_street + " - " + user_home,
                EMAIL: [ { "VALUE": user_email, "VALUE_TYPE": "HOME" } ], CURRENCY_ID: 'RUB', OPENED: 'Y', ASSIGNED_BY_ID: 1, OPPORTUNITY: product_total_price}},
     })
@@ -64,28 +64,38 @@ $("._create_order_button").click(function(event) {
 
         var lead_id = lead['result'];
 
-        console.log(lead);
-
         $.ajax({
-            url: 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.product.add',
-            type: 'POST',
-            dataType: 'json',
-            data: {fields: {NAME: product_name, PRICE: product_price, CURRENCY_ID: 'RUB'}},
-        })
-        .done(function(product) {
-
-            console.log(product);
-
-            $.ajax({
             url: 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.lead.productrows.set',
             type: 'POST',
             dataType: 'json',
-            data: {id: lead_id, rows: [{PRODUCT_ID: product['result'], PRICE_EXCLUSIVE: product_price, TAX_RATE: 15, TAX_INCLUDED: 'Y', QUANTITY: product_quantity}]},
+            data: {id: lead_id, rows: [{PRODUCT_ID: 75, PRICE_EXCLUSIVE: product_price, QUANTITY: product_quantity}]},
             })
             .done(function(data) {
                 console.log(data);
             });
-        });
+
+        // console.log(lead);
+
+        // $.ajax({
+        //     url: 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.product.add',
+        //     type: 'POST',
+        //     dataType: 'json',
+        //     data: {fields: {NAME: product_name, PRICE: product_price, CURRENCY_ID: 'RUB'}},
+        // })
+        // .done(function(product) {
+
+        //     console.log(product);
+
+        //     $.ajax({
+        //     url: 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.lead.productrows.set',
+        //     type: 'POST',
+        //     dataType: 'json',
+        //     data: {id: lead_id, rows: [{PRODUCT_ID: product['result'], PRICE_EXCLUSIVE: product_price, QUANTITY: product_quantity}]},
+        //     })
+        //     .done(function(data) {
+        //         console.log(data);
+        //     });
+        // });
 
         
     }); 
@@ -94,6 +104,62 @@ $("._create_order_button").click(function(event) {
 
 });
 
+
+jQuery(document).ready(function($) {
+
+    
+
+
+     $.ajax({
+            url: 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.product.get',
+            type: 'POST',
+            dataType: 'json',
+            data: {XML_ID: "50"}
+            })
+            .done(function(data) {
+                console.log(data);
+            });
+    
+    // $.ajax({
+    //         url: 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.product.add',
+    //         type: 'POST',
+    //         dataType: 'json',
+    //         data: {fields:
+    //             { 
+    //                 "NAME": "1С-Битрикс: Управление сайтом - Старт", 
+    //                 "CURRENCY_ID": "RUB", 
+    //                 "PRICE": 4900, 
+    //                 "SORT": 500,
+    //                 "XML_ID": "50",
+
+    //             }}
+    //         })
+    //         .done(function(data) {
+    //             console.log(data);
+    //         });
+
+
+
+    // $.ajax({
+    //         url: 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.productrow.fields',
+    //         type: 'POST',
+    //         dataType: 'json'
+    //         })
+    //         .done(function(data) {
+    //             console.log(data);
+    //         });
+
+    // $.ajax({
+    //         url: 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.product.update',
+    //         type: 'POST',
+    //         dataType: 'json',
+    //         data: {id: 71, fields: {XML_ID: 9, ID: 9}}
+    //         })
+    //         .done(function(data) {
+    //             console.log(data);
+    //         });
+    
+});
 
 $("#slider").slick({
     dots: true,

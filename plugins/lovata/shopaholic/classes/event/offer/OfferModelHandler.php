@@ -42,6 +42,8 @@ class OfferModelHandler extends ModelHandler
         $this->checkProductIDField();
 
         $this->checkActiveField();
+
+
     }
 
     /**

@@ -1,4 +1,4 @@
-1584078149a:1:{s:58:"product/catalog-product-list/ajax-catalog-product-list.htm";a:5:{s:8:"fileName";s:58:"product/catalog-product-list/ajax-catalog-product-list.htm";s:7:"content";s:1678:"{% spaceless %}
+1584427811a:1:{s:58:"product/catalog-product-list/ajax-catalog-product-list.htm";a:5:{s:8:"fileName";s:58:"product/catalog-product-list/ajax-catalog-product-list.htm";s:7:"content";s:1680:"{% spaceless %}
 
 {# @var obActiveCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 
@@ -22,6 +22,7 @@
 
 {# Apply pagination to product collection and get array with product items #}
 {% set arProductList = obProductList.page(iPage, Pagination.getCountPerPage()) %}
+
 
 <div class="store__wrap">
         <div class="store__head">
@@ -47,7 +48,7 @@
 {% endspaceless %}
 </div>
 
-";s:5:"mtime";i:1583127196;s:6:"markup";s:1674:"{% spaceless %}
+";s:5:"mtime";i:1584334369;s:6:"markup";s:1676:"{% spaceless %}
 
 {# @var obActiveCategory \Lovata\Shopaholic\Classes\Item\CategoryItem #}
 
@@ -71,6 +72,7 @@
 
 {# Apply pagination to product collection and get array with product items #}
 {% set arProductList = obProductList.page(iPage, Pagination.getCountPerPage()) %}
+
 
 <div class="store__wrap">
         <div class="store__head">

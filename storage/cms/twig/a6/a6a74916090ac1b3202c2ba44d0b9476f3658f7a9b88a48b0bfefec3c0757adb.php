@@ -222,6 +222,11 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "id", [], "any", false, false, false, 122), "html", null, true);
                 echo "\" value=\"";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "id", [], "any", false, false, false, 122), "html", null, true);
+                echo "\" data-name=\"";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "name", [], "any", false, false, false, 122), "html", null, true);
+                echo ": ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "price", [], "any", false, false, false, 122), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obShippingType"], "currency", [], "any", false, false, false, 122), "html", null, true);
                 echo "\" required >
 
                         <!-- ";
@@ -327,7 +332,9 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                 if (twig_get_attribute($this->env, $this->source, $context["loop"], "first", [], "any", false, false, false, 159)) {
                     echo "checked";
                 }
-                echo ">
+                echo " payment-name=\"";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "name", [], "any", false, false, false, 159), "html", null, true);
+                echo "\">
                         <label class=\"form-check-label\" for=\"payment-method-";
                 // line 160
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["obPaymentMethod"], "id", [], "any", false, false, false, 160), "html", null, true);
@@ -403,7 +410,7 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
 
     public function getDebugInfo()
     {
-        return array (  380 => 180,  376 => 179,  369 => 175,  361 => 169,  355 => 165,  337 => 161,  333 => 160,  323 => 159,  316 => 158,  299 => 157,  296 => 156,  293 => 155,  291 => 154,  272 => 138,  268 => 137,  260 => 131,  254 => 127,  235 => 125,  229 => 124,  221 => 122,  204 => 121,  198 => 120,  195 => 119,  193 => 118,  190 => 117,  188 => 116,  177 => 108,  170 => 103,  159 => 98,  150 => 96,  146 => 94,  144 => 93,  141 => 92,  139 => 91,  136 => 90,  132 => 89,  109 => 68,  105 => 66,  101 => 65,  98 => 64,  96 => 63,  37 => 6,);
+        return array (  387 => 180,  383 => 179,  376 => 175,  368 => 169,  362 => 165,  344 => 161,  340 => 160,  328 => 159,  321 => 158,  304 => 157,  301 => 156,  298 => 155,  296 => 154,  277 => 138,  273 => 137,  265 => 131,  259 => 127,  240 => 125,  234 => 124,  221 => 122,  204 => 121,  198 => 120,  195 => 119,  193 => 118,  190 => 117,  188 => 116,  177 => 108,  170 => 103,  159 => 98,  150 => 96,  146 => 94,  144 => 93,  141 => 92,  139 => 91,  136 => 90,  132 => 89,  109 => 68,  105 => 66,  101 => 65,  98 => 64,  96 => 63,  37 => 6,);
     }
 
     public function getSourceContext()
@@ -529,7 +536,7 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
                 
                     <div class=\"form-check order__radio-text {% if not loop.first %} mt-2{% endif %}\">
                         {% for obShippingType in obShippingTypeList %}
-                        <input class=\"form-check-input order__radio\" type=\"radio\" name=\"shipping_type_id\" id=\"sipping-type-{{ obShippingType.id }}\" value=\"{{ obShippingType.id }}\" required >
+                        <input class=\"form-check-input order__radio\" type=\"radio\" name=\"shipping_type_id\" id=\"sipping-type-{{ obShippingType.id }}\" value=\"{{ obShippingType.id }}\" data-name=\"{{ obShippingType.name }}: {{ obShippingType.price }}{{ obShippingType.currency }}\" required >
 
                         <!-- {% if loop.first %}checked{% endif %} -->
                             <div class=\"shipping_name\">{{ obShippingType.name }}: {{ obShippingType.price }}{{ obShippingType.currency }}</div>
@@ -566,7 +573,7 @@ class __TwigTemplate_c893906d82982b4bdafd0cf15f8b050ec394ba929973ba007706513f4d1
               <div class=\"order__pay-radios\">
                 {% for obPaymentMethod in obPaymentMethodList %}
                 <div class=\"form-check{% if not loop.first %} mt-2{% endif %}\">
-                        <input class=\"form-check-input\" type=\"radio\" name=\"payment_method_id\" id=\"payment-method-{{ obPaymentMethod.id }}\" value=\"{{ obPaymentMethod.id }}\" required {% if loop.first %}checked{% endif %}>
+                        <input class=\"form-check-input\" type=\"radio\" name=\"payment_method_id\" id=\"payment-method-{{ obPaymentMethod.id }}\" value=\"{{ obPaymentMethod.id }}\" required {% if loop.first %}checked{% endif %} payment-name=\"{{ obPaymentMethod.name }}\">
                         <label class=\"form-check-label\" for=\"payment-method-{{ obPaymentMethod.id }}\">
                             {{ obPaymentMethod.name }}
                         </label>

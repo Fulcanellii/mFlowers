@@ -47,6 +47,7 @@ class ProductModelHandler extends ModelHandler
 
         ProductListStore::instance()->sorting->clear(ProductListStore::SORT_NEW);
         ProductListStore::instance()->sorting->clear(ProductListStore::SORT_NO);
+
     }
 
     /**
