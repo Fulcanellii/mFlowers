@@ -1,0 +1,1 @@
+{"active":"1","name":"asdastesat123","slug":"asdastesat123","category_id":"8","brand_id":null,"code":"","external_id":"","preview_text":"","description":"","updated_at":"2020-03-17 06:43:42","created_at":"2020-03-17 06:43:42","id":30,"preview_image":null,"images":[],"offer":[],"brand":null}
