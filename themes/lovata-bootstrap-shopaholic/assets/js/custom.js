@@ -56,15 +56,20 @@ $("._create_order_button").click(function(event) {
     .done(function(lead) {
 
         var lead_id = lead['result'];
-        $.ajax({
-            url: 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.lead.productrows.set',
-            type: 'POST',
-            dataType: 'json',
-            data: {id: lead_id, rows: [{ PRODUCT_ID: crm_id, PRICE_EXCLUSIVE: product_price, QUANTITY: product_quantity }] },
+        var arr = [];
+        var crm_id = $('.cart__item').each(function (i, index) {
+            arr.push({'PRODUCT_ID': $(this).attr('data-crm-id'), 'PRICE_EXCLUSIVE': $(this).find('.basket__input-price').text(), 'QUANTITY': $(this).find('.info__counter-input').val()});
+        });
+            $.ajax({
+                url: 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.lead.productrows.set',
+                type: 'POST',
+                dataType: 'json',
+                data: {id: lead_id, rows: arr},
             })
-            .done(function(data) {
-                console.log(data);
-            });
+                .done(function (data) {
+                    console.log(data);
+                });
+
 
     }); 
 
@@ -79,24 +84,22 @@ jQuery(document).ready(function($) {
         var arr = [];
         var crm_id = $('.cart__item').each(function (i, index) {
 
-            var product_id = $(this).attr('data-crm-id');
-            var price = $(this).find('.basket__input-total').text();
-            var quantity = $(this).find('.info__counter-input').val();
-            console.log(product_id);
-            // arr['product_id'] = $(this).attr('data-crm-id');
-            // arr['PRICE_EXCLUSIVE'] = $(this).find('.basket__input-total').text();
-            // arr['QUANTITY'] = $(this).find('.info__counter-input').val();
-
+            // product_id = $(this).attr('data-crm-id');
+            // var price = $(this).find('.basket__input-total').text();
+            // var quantity = $(this).find('.info__counter-input').val();
+            arr.push({'PRODUCT_ID': $(this).attr('data-crm-id')});
+            arr.push({'PRICE_EXCLUSIVE': $(this).find('.basket__input-total').text()});
+            arr.push({'QUANTITY': $(this).find('.info__counter-input').val()});
             // rows.set('crm_id', $(this).attr('data-crm-id'));
             // var arr = new Map([
             //     ['PRODUCT_ID', ],
             //     ['PRICE_EXCLUSIVE', $(this).find('.basket__input-total').text()],
             //     ['QUANTITY', $(this).find('.info__counter-input').val()]
             // ]);
-
+            // console.log(arr);
         });
 
-// console.log(arr);
+
 
     // var arr = [];
     // var crm_id = $('.cart__item').each(function (i, index) {
