@@ -15,24 +15,17 @@ $(".basket__btn-pay").click(function(event) {
 
 $("._create_order_button").click(function(event) {
 
-
-    var product_name = $('.basket__input-name').text();
-
-    var product_id = $('.order__product-name').attr('product-id');
-
-    var product_offer_id = $('.order__product-name').attr('offer-id');
-
-    var product_price = $('.order__info-input').val();
+    var product_price = $('.basket__input-price').text();
 
     var product_quantity = $('.info__counter-input').val();
 
-    var product_total_price = $('#total-price').text();
+    var crm_id = $('.cart__item').attr('data-crm-id');
 
     var product_shipping_type = $('input[name="shipping_type_id"]:checked').attr('data-name');
 
-    var product_shipping_name = $('.shipping_name').val();
-
     var product_payment_method = $('input[name="payment_method_id"]:checked').attr('payment-name');
+
+    var product_total_price = $('.basket__total-order').text();
 
     var user_name = $("#order_name").val();
 
@@ -63,41 +56,16 @@ $("._create_order_button").click(function(event) {
     .done(function(lead) {
 
         var lead_id = lead['result'];
-
         $.ajax({
             url: 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.lead.productrows.set',
             type: 'POST',
             dataType: 'json',
-            data: {id: lead_id, rows: [{PRODUCT_ID: 75, PRICE_EXCLUSIVE: product_price, QUANTITY: product_quantity}]},
+            data: {id: lead_id, rows: [{ PRODUCT_ID: crm_id, PRICE_EXCLUSIVE: product_price, QUANTITY: product_quantity }] },
             })
             .done(function(data) {
                 console.log(data);
             });
 
-        // console.log(lead);
-
-        // $.ajax({
-        //     url: 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.product.add',
-        //     type: 'POST',
-        //     dataType: 'json',
-        //     data: {fields: {NAME: product_name, PRICE: product_price, CURRENCY_ID: 'RUB'}},
-        // })
-        // .done(function(product) {
-
-        //     console.log(product);
-
-        //     $.ajax({
-        //     url: 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.lead.productrows.set',
-        //     type: 'POST',
-        //     dataType: 'json',
-        //     data: {id: lead_id, rows: [{PRODUCT_ID: product['result'], PRICE_EXCLUSIVE: product_price, QUANTITY: product_quantity}]},
-        //     })
-        //     .done(function(data) {
-        //         console.log(data);
-        //     });
-        // });
-
-        
     }); 
 
     
@@ -107,18 +75,50 @@ $("._create_order_button").click(function(event) {
 
 jQuery(document).ready(function($) {
 
-    
+
+        var arr = [];
+        var crm_id = $('.cart__item').each(function (i, index) {
+
+            var product_id = $(this).attr('data-crm-id');
+            var price = $(this).find('.basket__input-total').text();
+            var quantity = $(this).find('.info__counter-input').val();
+            console.log(product_id);
+            // arr['product_id'] = $(this).attr('data-crm-id');
+            // arr['PRICE_EXCLUSIVE'] = $(this).find('.basket__input-total').text();
+            // arr['QUANTITY'] = $(this).find('.info__counter-input').val();
+
+            // rows.set('crm_id', $(this).attr('data-crm-id'));
+            // var arr = new Map([
+            //     ['PRODUCT_ID', ],
+            //     ['PRICE_EXCLUSIVE', $(this).find('.basket__input-total').text()],
+            //     ['QUANTITY', $(this).find('.info__counter-input').val()]
+            // ]);
+
+        });
+
+// console.log(arr);
+
+    // var arr = [];
+    // var crm_id = $('.cart__item').each(function (i, index) {
+    //
+    //     arr['product_id'] = $(this).attr('data-crm-id');
+    //     arr['price'] = $(this).find('.basket__input-total').text();
+    //     arr['quantity'] = $(this).find('.info__counter-input').val();
+    //
+    //     console.log(arr);
+    //
+    // });
 
 
-     $.ajax({
-            url: 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.product.get',
-            type: 'POST',
-            dataType: 'json',
-            data: {XML_ID: "50"}
-            })
-            .done(function(data) {
-                console.log(data);
-            });
+        // $.ajax({
+     //        url: 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.product.get',
+     //        type: 'POST',
+     //        dataType: 'json',
+     //        data: {XML_ID: "50"}
+     //        })
+     //        .done(function(data) {
+     //            console.log(data);
+     //        });
     
     // $.ajax({
     //         url: 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.product.add',

@@ -64,15 +64,15 @@ tabs:
             type: richeditor
             tab: 'lovata.toolbox::lang.tab.description'
         preview_image:
-                label: 'lovata.toolbox::lang.field.preview_image'
-                mode: image
-                useCaption: true
-                thumbOptions:
-                    mode: crop
-                    extension: auto
-                span: left
-                type: fileupload
-                tab: 'lovata.toolbox::lang.tab.images'
+            label: 'lovata.toolbox::lang.field.preview_image'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: left
+            type: fileupload
+            tab: 'lovata.toolbox::lang.tab.images'
         images:
             label: 'lovata.toolbox::lang.field.images'
             mode: image

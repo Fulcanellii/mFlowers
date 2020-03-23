@@ -32,7 +32,7 @@ use Lovata\Shopaholic\Classes\Import\ImportProductModelFromCSV;
  * @property string                                                                                    $code
  * @property int                                                                                       $category_id
  * @property int                                                                                       $brand_id
- * @property string                                                                                    $external_id
+ * @property int                                                                                       $external_id
  * @property string                                                                                    $preview_text
  * @property string                                                                                    $description
  * @property \October\Rain\Argon\Argon                                                                 $created_at
@@ -186,6 +186,7 @@ class Product extends ImportModel
         'name',
         'slug',
         'external_id',
+        'crm_id',
         'code',
         'preview_text',
         'description',
@@ -199,6 +200,7 @@ class Product extends ImportModel
         'name',
         'slug',
         'external_id',
+        'crm_id',
         'code',
         'category_id',
         'brand_id',
@@ -215,36 +217,6 @@ class Product extends ImportModel
     public $visible = [];
     public $hidden = [];
 
-
-    public function leadAdd()
-    {
-       $url = 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.lead.add';
-
-        $queryData = [fields => [
-
-            "TITLE" => "Заголовок",
-            "NAME" => "Имя",
-            "SECOND_NAME" => "Егорович"
-
-        ]];
-
-
-
-
-        $curl = curl_init();
-        curl_setopt_array($curl, array(
-            CURLOPT_SSL_VERIFYPEER => 0,
-            CURLOPT_POST => 1,
-            CURLOPT_HEADER => 0,
-            CURLOPT_RETURNTRANSFER => 1,
-            CURLOPT_URL => $url,
-            CURLOPT_POSTFIELDS => http_build_query($queryData),
-        ));
-
-        $result = curl_exec($curl);
-
-        curl_close($curl);
-    }
 
     /**
      * Get element by brand ID

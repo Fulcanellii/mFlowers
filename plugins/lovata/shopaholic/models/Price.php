@@ -1,5 +1,6 @@
 <?php namespace Lovata\Shopaholic\Models;
 
+use Illuminate\Support\Facades\DB;
 use Model;
 
 use October\Rain\Database\Traits\Validation;
@@ -94,6 +95,21 @@ class Price extends Model
         }
 
         return $obQuery;
+    }
+
+    public function getProductName($id)
+    {
+        return DB::table('lovata_shopaholic_products')->where('id', '=', $id)->first();
+    }
+
+    public function getOfferId($id)
+    {
+        return DB::table('lovata_shopaholic_offers')->where('product_id', '=', $id)->first();
+    }
+
+    public function updateOffers($id, $external_id)
+    {
+        DB::table('lovata_shopaholic_offers')->where('product_id', '=', $id)->update(['crm_id' => $external_id]);
     }
 
     /**
