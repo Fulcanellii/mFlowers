@@ -1,4 +1,4 @@
-title = "Blog"
+title = "Блог"
 url = "/blog"
 layout = "main"
 is_hidden = 0
@@ -16,9 +16,10 @@ slug = "{{ :slug }}"
 displayEmpty = 0
 categoryPage = "blog-category"
 ==
-<div class="wrapper">
-        
+<title> {{ this.page.title }} </title>
 
+<div class="wrapper">
+    
         <div class="blogpage">
       <div class="container">
         <ul class="crumbs">
@@ -36,7 +37,7 @@ categoryPage = "blog-category"
               <input type="search" class="blogpage__search-input" placeholder="Поиск...">
               <input type="submit" value="Искать" class="blogpage__search-btn">
             </form>
-            <aside class="blogpage__aside">
+            <!-- <aside class="blogpage__aside">
               <h3>Архив</h3>
               <ul>
                 <li>
@@ -52,7 +53,7 @@ categoryPage = "blog-category"
                   <a href="#" class="blogpage__link-acide">Февраль <span>2020</span></a>
                 </li>
               </ul>
-            </aside>
+            </aside> -->
             <aside class="blogpage__aside">
               <h3>Категории</h3>
               

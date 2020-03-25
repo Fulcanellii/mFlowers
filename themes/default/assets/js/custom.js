@@ -99,6 +99,6 @@ $('.cart__on__clear').click(function(event) {
         'update': {'product/cart-link-header/cart-link-header': '._ajax_cart_link_header_wrapper',
                    'product/cart-position-list/cart-position-list': '.cart'
         }
-});
+    });
    
 });

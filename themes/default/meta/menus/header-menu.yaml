@@ -4,6 +4,7 @@ items:
         title: 'Для любимой'
         nesting: '0'
         type: shop-category
+        url: ''
         code: ''
         reference: '8'
         cmsPage: catalog
@@ -16,6 +17,7 @@ items:
         title: 'Для мамы'
         nesting: '0'
         type: shop-category
+        url: ''
         code: ''
         reference: '9'
         cmsPage: catalog

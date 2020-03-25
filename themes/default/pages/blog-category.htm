@@ -18,6 +18,8 @@ categoryPage = "blog-category"
 postPage = "blog-post"
 ==
 {% set category = blogPosts.category %}
+{% set cat = blogCategories.categories %}
+<title> {{ category.name }} </title>
 <div class="wrapper">
         <div class="blogpage">
       <div class="container">
@@ -40,7 +42,7 @@ postPage = "blog-post"
               <input type="search" class="blogpage__search-input" placeholder="Поиск...">
               <input type="submit" value="Искать" class="blogpage__search-btn">
             </form>
-            <aside class="blogpage__aside">
+            <!-- <aside class="blogpage__aside">
               <h3>Архив</h3>
               <ul>
                 <li>
@@ -56,11 +58,10 @@ postPage = "blog-post"
                   <a href="#" class="blogpage__link-acide">Февраль <span>2020</span></a>
                 </li>
               </ul>
-            </aside>
+            </aside> -->
             <aside class="blogpage__aside">
               <h3>Категории</h3>
               
-              {% set cat = blogCategories.categories %}
               <ul>
               {% for cat in cat %}
                 <li>

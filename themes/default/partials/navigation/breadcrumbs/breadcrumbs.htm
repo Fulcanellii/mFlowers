@@ -17,6 +17,7 @@
 <section class="info">
       <div class="container">
 <ul class="crumbs">
+
     {% for item in arBreadcrumbs %}
                 {% if item.name is not empty and item.url is not empty %}
                     {% if loop.last %}
@@ -24,7 +25,7 @@
                         <span>/</span>
                     {% else %}
                         <li class="crumb"><a class="crumb-link" href="{{ item.url }}">{{ item.name }}</a></li>
-                        <span>/</span>
+                        <span> / </span>
                     {% endif %}
 
                 {% endif %}

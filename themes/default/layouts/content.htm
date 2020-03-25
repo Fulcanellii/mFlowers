@@ -7,6 +7,8 @@ default = 0
 
 [staticMenu FooterStaticMenu]
 code = "footer-menu"
+
+[staticBreadcrumbs]
 ==
 <?php
 function onInit()
@@ -36,9 +38,8 @@ function onInit()
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="{{ path_css }}">
+    {% partial 'header/head' %}
+    
     {% styles %}
     {% if seo_toolbox_is_available %}
         {% placeholder seo_tags default %}
@@ -46,17 +47,18 @@ function onInit()
         {% endplaceholder %}
     {% endif %}
 </head>
-<body class="body">
-    {% partial 'header/header' %}
+{% partial 'header/header' %}
+<body class="body" data-cart-is-available="{{ cart_is_available }}">
+    <div class="faq">
+	<div class="container">
+	{% component 'staticBreadcrumbs' %}
     <div class="site-content">
-        <div class="container wysiwyg">
-            {% page %}
-        </div>
+        {% page %}
+    </div>
+    </div>
     </div>
     {% partial 'footer/footer' %}
-<script src="{{ path_js }}"></script>
-    {% framework extras %}
-    {% scripts %}
+    {% partial 'footer/foot' %}
 </body>
 </html>
 {% endspaceless %}

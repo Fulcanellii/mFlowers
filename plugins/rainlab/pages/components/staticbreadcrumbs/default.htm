@@ -1,7 +1,8 @@
 {% if breadcrumbs %}
-    <ul>
+    <ul class="crumbs">
         {% for breadcrumb in breadcrumbs %}
-            <li class="{{ breadcrumb.isActive ? 'active' : '' }}">
+            <li class="{{ breadcrumb.isActive ? 'active' : '' }} crumb">
+                <a href="/">Главная</a><span>/</span>
                 <a href="{{ breadcrumb.url }}">{{ breadcrumb.title }}</a>
             </li>
         {% endfor %}

@@ -5,97 +5,103 @@
 
 <section class="info">
 
-        <div class="info__wrap">
-            <div class="info__photos">
-            {% if obProduct.preview_image is not empty %}
+    <div class="info__wrap">
+        <div class="info__photos">
             <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails ">
-              <a href="{{ obProduct.path }}" class="info__img-wrap">
-                <img src="{{ obProduct.preview_image.getThumb(450, 450, {quality: 100}) }}" alt="{{ obProduct.preview_image.description }}" class="info__img" />
-              </a>
+                <a href="{{ obProduct.preview_image.path }}" class="info__img-wrap">
+                    {% if obProduct.preview_image is not empty %}
+                    <img src="{{ obProduct.preview_image.getThumb(450, 450, {quality: 100}) }}"
+                         alt="{{ obProduct.preview_image.description }}" class="info__img"/>
+                    {% else %}
+                    <img src="{{ 'assets/images/no-image.png'|theme }}" class="info__img">
+                    {% endif %}
+                </a>
             </div>
-          {% endif %}
 
-          {% if obProduct.images is not empty %}
-          
-          <div class="info__sliders">
-              <ul class="thumbnails info__thumbnails owl-carousel">
-              
-              <li class="info__li">
-                  <a href="{{ obProduct.path }}" data-standard="{{ obProduct.preview_image.path }}">
-                    <img src="{{ obProduct.preview_image.getThumb(450, 450, {quality: 100}) }}" alt="{{ obProduct.preview_image.description }}" />
-                  </a>
-                </li>
-              
-              {% for img in obProduct.images %}
 
-                <li class="info__li">
-                  <a href="{{ img.path }}" data-standard="{{ img.path }}">
-                    <img src="{{ img.getThumb(150, 150, {quality: 100}) }}" alt="{{ img.description }}" />
-                  </a>
-                </li>
-              {% endfor %}
-              </ul>
+            {% if obProduct.images is not empty %}
+
+            <div class="info__sliders">
+                <ul class="thumbnails info__thumbnails owl-carousel">
+
+                    <li class="info__li">
+                        <a href="{{ obProduct.preview_image.path }}" data-standard="{{ obProduct.preview_image.path }}">
+                            <img src="{{ obProduct.preview_image.getThumb(450, 450, {quality: 100}) }}"
+                                 alt="{{ obProduct.preview_image.description }}"/>
+                        </a>
+                    </li>
+
+                    {% for img in obProduct.images %}
+
+                    <li class="info__li">
+                        <a href="{{ img.path }}" data-standard="{{ img.path }}">
+                            <img src="{{ img.getThumb(150, 150, {quality: 100}) }}" alt="{{ img.description }}"/>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
-          
-          {% endif %}
+
+            {% endif %}
         </div>
         <div class="info__spec">
             <h1 class="info__name">{{ obProduct.name }}</h1>
             <div class="info__price-wrap">
 
-              <h3 class="info__price">{{ obOffer.price }} {{ obOffer.currency }}</h3>
-              
-              {% if obOffer.quantity == '0' %}
-                  <div class="info__no_stock">нет в наличии</div>
-              {% else %}
-                  <div class="info__stock">в наличии</div>
-              {% endif %}
-              
-   
+                <h3 class="info__price">{{ obOffer.price }} {{ obOffer.currency }}</h3>
+
+                {% if obOffer.quantity == '0' %}
+                <div class="info__no_stock">нет в наличии</div>
+                {% else %}
+                <div class="info__stock">в наличии</div>
+                {% endif %}
+
+
             </div>
             <div class="info__description">
-              <h3>Описание товара</h3>
-              <p>
-                {{ obProduct.preview_text }}
-              </p>
+                <h3>Описание товара</h3>
+                <p>
+                    {{ obProduct.preview_text }}
+                </p>
             </div>
-           <!--  {% if obProduct.brand.isNotEmpty() %}
-            <p class="product-detailed__brand">
-                <span class="font-weight-bold">
-                    Brand:
-                </span>
-                <a href="{{ obProduct.brand.getPageUrl('catalog') }}" class="product-detailed__category-link">{{ obProduct.brand.name }}</a>
-            </p>
-            {% endif %}
-             -->
+            <!--  {% if obProduct.brand.isNotEmpty() %}
+             <p class="product-detailed__brand">
+                 <span class="font-weight-bold">
+                     Brand:
+                 </span>
+                 <a href="{{ obProduct.brand.getPageUrl('catalog') }}" class="product-detailed__category-link">{{ obProduct.brand.name }}</a>
+             </p>
+             {% endif %}
+              -->
             {% if cart_is_available %}
             {% if obOffer.quantity == '0' %}
-                  
-              {% else %}
-                  <form class="mb-0">
-                    <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
-                    {% partial 'form/button-change-quantity/button-change-quantity' btnChangeQtyValue=1 btnProductPage=true btnMaxQtyValue=obOffer.quantity %}
-                    {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-lg' %} 
 
-                </div>
-                </form>
-              {% endif %}
-                
-            {% endif %}
+            {% else %}
+            <form class="mb-0">
+                <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
+                {% partial 'form/button-change-quantity/button-change-quantity' btnChangeQtyValue=1 btnProductPage=true
+                btnMaxQtyValue=obOffer.quantity %}
+                {% partial 'form/button-add-to-cart/button-add-to-cart' btnAddClasses='btn-lg' %}
 
-            <div class="info__category">
-
-              <strong>Категория: </strong>
-              <span><a class="category__link" href="{{ obProduct.category.getPageUrl('category-page') }}">{{ obProduct.category.name }}</a></span>
-
-            </div>
         </div>
+        </form>
+        {% endif %}
 
-</div>
+        {% endif %}
+
+        <div class="info__category">
+
+            <strong>Категория: </strong>
+            <span><a class="category__link" href="{{ obProduct.category.getPageUrl('category-page') }}">{{ obProduct.category.name }}</a></span>
+
+        </div>
+    </div>
+
+    </div>
 </section>
 <div class="container wysiwyg">{{ obProduct.description|raw }}</div>
-      </div>
-    </section>
+</div>
+</section>
 
 
       
