@@ -77,7 +77,7 @@ categoryPage = "blog-category"
             {% if post.featured_images.count %}
                 {% for image in post.featured_images %}
                   <a href="{{ post.url }}" class="blogpage__img-wrap">
-                    <img src="{{ image.path }}" alt="{{ image.description }}" class="blogpage__img">
+                    <img src="{{ image.getThumb(500, 500, {quality: 80}) }}" alt="{{ image.description }}" class="blogpage__img">
                     <span class="icon-search blogpage__icon"></span>
                   </a>
               {% endfor %}
