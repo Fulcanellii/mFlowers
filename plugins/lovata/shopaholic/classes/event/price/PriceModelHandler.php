@@ -57,18 +57,35 @@ class PriceModelHandler
 
         $data = $this->obElement;
 
-//        $file = 'array.txt';
-//        file_put_contents($file, $data);
+        $file = 'array.txt';
+        file_put_contents($file, $data);
 
         $data = json_decode($data);
 
-        if (!empty($data)) {
+        if (!empty($data->item)) {
 
-            $product = $obj->getProductName($data->item->product_id);
-            $offerId = $obj->getOfferId($data->item->product_id);
+        $product = $obj->getProductName($data->item->product_id);
+        $offerId = $obj->getOfferId($data->item->product_id);
 
-            $url = 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.product.get';
-            $queryData = ['id' => $offerId->crm_id];
+        $url = 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.product.get';
+        $queryData = ['id' => $offerId->crm_id];
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_SSL_VERIFYPEER => 0,
+            CURLOPT_POST => 1,
+            CURLOPT_HEADER => 0,
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_URL => $url,
+            CURLOPT_POSTFIELDS => http_build_query($queryData),
+        ));
+        $result = curl_exec($curl);
+        curl_close($curl);
+        $result = json_decode($result);
+
+        if (!empty($result->error_description)) {
+
+            $queryData = ['fields' => ['NAME' => $product->name, 'PRICE' => $data->price]];
+            $url = 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.product.add';
             $curl = curl_init();
             curl_setopt_array($curl, array(
                 CURLOPT_SSL_VERIFYPEER => 0,
@@ -80,23 +97,6 @@ class PriceModelHandler
             ));
             $result = curl_exec($curl);
             curl_close($curl);
-            $result = json_decode($result);
-
-            if (!empty($result->error_description)){
-
-                $queryData = ['fields' => [ 'NAME' => $product->name, 'PRICE' => $data->price ]];
-                $url = 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.product.add';
-                $curl = curl_init();
-                curl_setopt_array($curl, array(
-                    CURLOPT_SSL_VERIFYPEER => 0,
-                    CURLOPT_POST => 1,
-                    CURLOPT_HEADER => 0,
-                    CURLOPT_RETURNTRANSFER => 1,
-                    CURLOPT_URL => $url,
-                    CURLOPT_POSTFIELDS => http_build_query($queryData),
-                ));
-                $result = curl_exec($curl);
-                curl_close($curl);
 
                 $res = json_decode($result);
                 $obj->updateOffers($data->item->product_id, $res->result);

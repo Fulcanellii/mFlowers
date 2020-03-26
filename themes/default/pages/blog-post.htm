@@ -14,7 +14,7 @@ categoryPage = "blog-category"
 ==
 {% set blog = blogPost.post %}
 {% set cat = blog.categories %}
-
+<title>{{ blog.title }}</title>
 <div class="wrapper">
         
 
@@ -45,7 +45,7 @@ categoryPage = "blog-category"
               <input type="search" class="blogpage__search-input" placeholder="Поиск...">
               <input type="submit" value="Искать" class="blogpage__search-btn">
             </form>
-            <aside class="blogpage__aside">
+            <!-- <aside class="blogpage__aside">
               <h3>Архив</h3>
               <ul>
                 <li>
@@ -61,7 +61,7 @@ categoryPage = "blog-category"
                   <a href="#" class="blogpage__link-acide">Февраль <span>2020</span></a>
                 </li>
               </ul>
-            </aside>
+            </aside> -->
             <aside class="blogpage__aside">
               <h3>Категории</h3>
               

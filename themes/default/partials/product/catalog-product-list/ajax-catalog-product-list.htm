@@ -22,8 +22,11 @@
 
 {# Apply pagination to product collection and get array with product items #}
 {% set arProductList = obProductList.page(iPage, Pagination.getCountPerPage()) %}
-
-
+{% if obActiveCategory.name %}
+<title>{{ obActiveCategory.name }}</title>
+{% else %}
+<title>Все товары</title>
+{% endif %}
 <div class="store__wrap">
         <div class="store__head">
             {% if obActiveCategory.name %}
