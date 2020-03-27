@@ -79,45 +79,6 @@
                     }
                 }
             }, {
-                key: "createOrder",
-                value: function() {
-                    var e = $(".".concat(this.form)),
-                        t = $(".".concat(this.buttonClass)),
-                        n = this,
-                        i = {
-                            order: {
-                                payment_method_id: e.find('input[name="payment_method_id"]:checked').val(),
-                                shipping_type_id: e.find('input[name="shipping_type_id"]:checked').val()
-                            },
-                            user: {
-                                email: e.find('input[name="email"]').val(),
-                                name: e.find('input[name="name"]').val(),
-                                last_name: e.find('input[name="last_name"]').val(),
-                                company: e.find('input[name="company"]').val(),
-                                phone: e.find('input[name="phone"]').val(),
-                                comment: e.find('textarea[name="comment"]').val()
-                            },
-                            shipping_address: {
-                                address1: e.find('input[name="address1"]').val(),
-                                address2: e.find('input[name="address2"]').val(),
-                                city: e.find('input[name="city"]').val(),
-                                state: e.find('input[name="state"]').val(),
-                                postcode: e.find('input[name="postcode"]').val(),
-                                street: e.find('input[name="street"]').val(),
-                                house: e.find('input[name="house"]').val()
-                            },
-                            billing_address: {}
-                        };
-                    this.clearNotAvailableCartPosition(), $.request("MakeOrder::onCreate", {
-                        data: i,
-                        success: function(e) {
-                            e && (e.status || e.X_OCTOBER_REDIRECT) ? this.success(e) : (t.attr("data-content", e.message), n.markNotAvailableOfferPosition(e), t.popover("show"), setTimeout((function() {
-                                t.popover("hide")
-                            }), 1500))
-                        }
-                    })
-                }
-            }, {
                 key: "markNotAvailableOfferPosition",
                 value: function(e) {
                     e && e.data && e.data.cart_position_id && $(".".concat(this.cartItemItem, '[data-position-id="').concat(e.data.cart_position_id, '"]')).addClass(this.errorClass)

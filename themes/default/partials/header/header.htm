@@ -5,6 +5,11 @@ code = "top-menyu"
 
 [staticMenu staticMenu2]
 code = "header-menu"
+
+[searchInput]
+useAutoComplete = 1
+autoCompleteResultCount = 5
+showProviderBadge = 1
 ==
 <header class="header">
             <div class="container">
@@ -21,12 +26,11 @@ code = "header-menu"
 </div>
                 
 </div>
+{% component 'searchInput' %}
                 <nav class="header__nav">
                     <div class="hamburger_trigger">
                         <span></span>
                     </div>
-                    <form class="header__search-desctop">
-                    
                         <input type="search" placeholder="Искать товар" class="header__search-input-desctop">
                         <button class="header__search-button-desctop"><span class="icon-search"></span></button>
                     </form>

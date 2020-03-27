@@ -52,6 +52,7 @@ class OrderModelHandler extends ModelHandler
         $this->checkFieldChangesTwoParam('status_id', 'user_id', OrderListStore::instance()->status);
         $this->checkFieldChangesTwoParam('shipping_type_id', 'user_id', OrderListStore::instance()->shipping_type);
         $this->checkFieldChangesTwoParam('payment_method_id', 'user_id', OrderListStore::instance()->payment_method);
+
     }
 
     /**

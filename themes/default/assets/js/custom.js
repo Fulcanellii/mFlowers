@@ -45,6 +45,35 @@ $("._create_order_button").click(function(event) {
 
     var user_email = $("#order_email").val();
 
+    var total = $('#total_order').text();
+
+    var e = $('._ajax_create_order');
+
+    var order = {
+        order: {
+            payment_method_id: e.find('input[name="payment_method_id"]:checked').val(),
+            shipping_type_id: e.find('input[name="shipping_type_id"]:checked').val()
+        },
+        user: {
+            email: e.find('input[name="email"]').val(),
+            name: e.find('input[name="name"]').val(),
+            last_name: e.find('input[name="last_name"]').val(),
+            company: e.find('input[name="company"]').val(),
+            phone: e.find('input[name="phone"]').val(),
+            comment: e.find('textarea[name="comment"]').val()
+        },
+        shipping_address: {
+            address1: e.find('input[name="address1"]').val(),
+            address2: e.find('input[name="address2"]').val(),
+            city: e.find('input[name="city"]').val(),
+            state: e.find('input[name="state"]').val(),
+            postcode: e.find('input[name="postcode"]').val(),
+            street: e.find('input[name="street"]').val(),
+            house: e.find('input[name="house"]').val()
+        },
+        billing_address: {}
+    };
+
     $.ajax({
         url: 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.lead.add',
         type: 'POST',
@@ -57,7 +86,7 @@ $("._create_order_button").click(function(event) {
 
         var lead_id = lead['result'];
         var arr = [];
-        var crm_id = $('.cart__item').each(function (i, index) {
+        $('.cart__item').each(function (i, index) {
             arr.push({'PRODUCT_ID': $(this).attr('data-crm-id'), 'PRICE_EXCLUSIVE': $(this).find('.basket__input-price').text(), 'QUANTITY': $(this).find('.info__counter-input').val()});
         });
             $.ajax({
@@ -67,7 +96,19 @@ $("._create_order_button").click(function(event) {
                 data: {id: lead_id, rows: arr},
             })
                 .done(function (data) {
-                    console.log(data);
+                    $.request('MakeOrder::onCreate', {
+                        'data': order
+                    });
+
+                    $.ajax({
+                        url: 'http://october/paybox',
+                        type: 'GET',
+                        data: {price: total},
+                    })
+                        .done(function (data) {
+                            window.location.href = data;
+                        });
+
                 });
 
 
@@ -102,3 +143,4 @@ $('.cart__on__clear').click(function(event) {
     });
    
 });
+
