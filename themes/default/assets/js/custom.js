@@ -144,3 +144,4 @@ $('.cart__on__clear').click(function(event) {
    
 });
 
+

@@ -2,6 +2,7 @@
 
 use Backend\Models\ImportModel;
 
+use Illuminate\Support\Facades\DB;
 use Kharanenka\Scope\ActiveField;
 use Kharanenka\Scope\CategoryBelongsTo;
 use Kharanenka\Scope\CodeField;
@@ -260,6 +261,12 @@ class Product extends ImportModel
         if (empty($this->slug)) {
             $this->slugAttributes();
         }
+    }
+
+    public function getPriceProduct($id)
+    {
+        $data = DB::table('lovata_shopaholic_offers')->where('product_id', $id)->first();
+        return DB::table('lovata_shopaholic_prices')->where('item_id', $data->id)->first();
     }
 
     /**
