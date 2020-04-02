@@ -2,13 +2,32 @@ title = "Контакты"
 url = "/contact"
 layout = "main"
 is_hidden = 0
+
+[genericForm]
+rules[name] = "required"
+rules[phone] = "required"
+rules_messages[required] = "Заполните все поля"
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+mail_enabled = 0
+reset_form = 1
+inline_errors = "display"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
 ==
+<title>Контакты</title>
+
 <div class="contact">
       <div class="container">
         <div class="contact__wrap">
           <div class="contact__form-wrap">
             <h2 class="contact__title">Заказать обратный звонок</h2>
-            <form action="#" class="contact__form">
+            <!-- <form data-request="{{ __SELF__ }}::onFormSubmit" class="contact__form">
+            {{ form_token() }}
+            <div id="{{ __SELF__ }}_forms_flash" >
               <div class="contact__input-wrap">
                 <label for="contact__name" class="contact__label">Имя</label>
                 <input type="text" id="contact__name" class="contact__input">
@@ -18,7 +37,10 @@ is_hidden = 0
                 <input type="number" id="contact__email" class="contact__input">
               </div>
               <input type="submit" id="feedback" class="contact__submit">
-            </form>
+              </div>
+            </form> -->
+            
+            {% component 'genericForm' %}
           </div>
           <div class="map">
             <a class="dg-widget-link"

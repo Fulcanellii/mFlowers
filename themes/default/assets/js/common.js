@@ -6318,7 +6318,6 @@
                         var t = this;
                         $(document).on("click", this.buttonRemoveItemSelector, (function(e) {
                             var n = $(e.currentTarget);
-                            console.log(n);
                             t.removeItemFromTable(n), t.sendRequestRemoveItem(n)
                         })), $(document).on("change", ".".concat(this.orderForm, ' input[name="shipping_type_id"]'), (function(t) {
                             var n = $(t.currentTarget).val();

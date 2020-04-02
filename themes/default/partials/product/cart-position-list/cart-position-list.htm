@@ -36,6 +36,7 @@
                         </a>
                     </td>
                     <td class="align-middle">
+                        <span class="cart_span">Продукт:</span>
                         <a class="cart__product-name basket__input basket__input-name" data-id="{{ obOffer.id }}" href="{{ obProduct.getPageUrl('catalog') }}">
                             {{ obProduct.name }}
                         </a>
@@ -45,6 +46,7 @@
                     </td>
                     <td class="cart__price align-middle">
                         <div class="cart__price-bar d-flex flex-column">
+                            <span class="cart_span">Цена:</span>
                             <span class="cart__current-price basket__input basket__input-price {{ obOffer.old_price_value > 0 ? 'text-danger' : '' }} d-block mb-1">
                                 {{ obOffer.price }}
                             </span>
@@ -56,9 +58,11 @@
                         </div>
                     </td>
                     <td class="cart__qty align-middle">
+                        <span class="cart_span">Количество:</span>
                         {% partial 'form/button-change-quantity/button-change-cart' btnChangeQtyValue=obCartPosition.quantity btnChangeQtyAjax=true btnMaxQtyValue=obOffer.quantity %}
                     </td>
                     <td class="cart__total-price align-middle">
+                        <span class="cart_span">Итого:</span>
                         <span class="cart__total-price-figures cart__position-price-value basket__input basket__input-total">{{ obCartPosition.price }}</span>
                         <span class="text-muted cart__position-old-price-figures {% if obCartPosition.discount_price_value == 0 %}d-none{% endif %}">
                             <span class="cart__position-old-price-value">{{ obCartPosition.old_price }}</span> {{ obCartPosition.currency }}
@@ -93,7 +97,7 @@
             </span>
         </div>
 
-        <button class="basket__btn-pay">перейти к оплате</button>
+        <button class="basket__btn-pay"><a href="{{ 'test'|page }}">перейти к оплате</a></button>
     </div>
     {% endif %}
 
@@ -103,6 +107,8 @@
               <div>Корзина пуста</div>
               <a href="/store" class="basket__makeshop">сделать покупки</a>
             </div>
+
+
 </div>
 </div>
 </section>

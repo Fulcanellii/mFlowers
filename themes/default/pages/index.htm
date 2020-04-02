@@ -23,9 +23,10 @@ postPage = "blog-post"
 sorting = "new"
 ==
 {% set cat = CategoryList.make().tree() %}
-
+<title>{{ this.theme.company_name }}</title>
 {% content 'main-banner.htm' %}
 
+<div class="container">
 <div id="slider">
 {% for cat in cat if cat.show_on_main == 1 %}
 
@@ -34,9 +35,9 @@ sorting = "new"
 
                 
                   <div class="slide " title="{{ cat.name }}">
-                  
+
                      <section class="products">
-                    <div class="container">
+
                     <div class="products__group">
                     
                     {% set obCategory = CategoryPage.get() %}
@@ -73,16 +74,16 @@ sorting = "new"
                     {% endfor %}
                     {% endif %}
             </div>
-            </div>    
+
         </section>
-        
-                  </div>
+
+</div>
                
 
                 {% endif %}
                 {% endfor %}
                  </div>
-
+</div>
 
 
 

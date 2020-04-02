@@ -12,7 +12,7 @@
             {% if btnChangeQtyAjax %} data-ajax="updateTotal" {% endif %}>
 
     <button
-            class="info__btn product-detailed__btn-qty-change"
+            class="info__btn info__btns product-detailed__btn-qty-change"
             data-qty="minus"
             {% if btnChangeQtyAjax %} data-ajax="updateTotal" {% endif %}
             {% if btnChangeQtyValue == 1 %}disabled{% endif %}
@@ -21,7 +21,7 @@
         -
     </button>
     <button
-            class="info__btn product-detailed__btn-qty-change"
+            class="info__btn info__btns product-detailed__btn-qty-change"
             data-qty="plus"
             {% if btnChangeQtyAjax %} data-ajax="updateTotal" {% endif %}
             {% if btnChangeQtyValue >= btnMaxQtyValue %}disabled{% endif %}

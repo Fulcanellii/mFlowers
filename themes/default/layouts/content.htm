@@ -37,9 +37,9 @@ function onInit()
 {% spaceless %}
 <!doctype html>
 <html lang="en">
+<title>{{ page.title }}</title>
 <head>
     {% partial 'header/head' %}
-    
     {% styles %}
     {% if seo_toolbox_is_available %}
         {% placeholder seo_tags default %}

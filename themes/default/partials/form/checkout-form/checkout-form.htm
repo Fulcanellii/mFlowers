@@ -5,8 +5,7 @@
 {# @var obProduct \Lovata\Shopaholic\Classes\Item\ProductItem #}
 
 
-
-<section class="row form order" id="order-page" style="display: none;">
+<section class="row form order" id="order-page">
 <div class="container">
 <div class="order__wrap">
     <h2 class="order__title">Оформление заказа</h2>
@@ -87,14 +86,18 @@
                   <div class="order__products">
 
                     {% for obCartPosition in obCartPositionList %}
-                
+
                 {% set obOffer = obCartPosition.offer %}
 
                 {% set obProduct = obOffer.product %}
 
-                    <div class="order__product">
-                      <div class="order__product-name" offer-id="{{ obOffer.id }}" product-id="{{ obProduct.id }}">{{ obProduct.name }}</div>
-                      <div>
+
+
+                    <div class="order__product" data-crm-id="{{ obOffer.crm_id }} offer-id="{{ obOffer.id }}" product-id="{{ obProduct.id }}" quantity="{{ obCartPosition.quantity }}">
+                      <div class="order__product-name" offer-id="{{ obOffer.id }}" product-id="{{ obProduct.id }}">{{ obProduct.name }}
+                          <span class="order__quantity" value="{{ obCartPosition.quantity }}">X{{ obCartPosition.quantity }}</span>
+                      </div>
+                        <div>
                         <input type="text" value="{{ obOffer.price }}" class="order__info-input" readonly>c
                       </div>
                     </div>

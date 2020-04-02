@@ -19,88 +19,99 @@ categoryPage = "blog-category"
 <title> {{ this.page.title }} </title>
 
 <div class="wrapper">
-    
-        <div class="blogpage">
-      <div class="container">
-        <ul class="crumbs">
-          <li class="crumb">
-            <a href="/" class="crumb-link">Главная</a>
-            <span>/</span>
-          </li>
-          <li class="crumb">
-            <a href="/blog" class="crumb-link">Блог</a>
-          </li>
-        </ul>
-        <div class="blogpage__flex">
-          <div class="blogpage__asides">
-            <form action="#" class="blogpage__search">
-              <input type="search" class="blogpage__search-input" placeholder="Поиск...">
-              <input type="submit" value="Искать" class="blogpage__search-btn">
-            </form>
-            <!-- <aside class="blogpage__aside">
-              <h3>Архив</h3>
-              <ul>
-                <li>
-                  <a href="#" class="blogpage__link-acide">Июнь <span>2019</span> </a>
-                </li>
-                <li>
-                  <a href="#" class="blogpage__link-acide">Сентябрь <span>2019</span></a>
-                </li>
-                <li>
-                  <a href="#" class="blogpage__link-acide">Январь <span>2020</span></a>
-                </li>
-                <li>
-                  <a href="#" class="blogpage__link-acide">Февраль <span>2020</span></a>
-                </li>
-              </ul>
-            </aside> -->
-            <aside class="blogpage__aside">
-              <h3>Категории</h3>
-              
-              {% set cat = blogCategories.categories %}
-              <ul>
-              {% for cat in cat %}
-                <li>
-                  <a href="{{ cat.url }}" class="blogpage__link-acide">{{ cat.name }}</a>
-                </li>
-              {% endfor %}
-              </ul>
-            </aside>
-          </div>
 
-          <div class="blogpage__blogs">
-          
-          {% set posts = blogPosts.posts %}
-            {% for post in posts %}
-            
-            <div class="blogpage__blog">
-        
-            {% if post.featured_images.count %}
-                {% for image in post.featured_images %}
-                  <a href="{{ post.url }}" class="blogpage__img-wrap">
-                    <img src="{{ image.getThumb(500, 500, {quality: 80}) }}" alt="{{ image.description }}" class="blogpage__img">
-                    <span class="icon-search blogpage__icon"></span>
-                  </a>
-              {% endfor %}
-            {% endif %}
-              <div class="mainblog__date">
-                <span class="icon-calendar"></span>
-                <span>{{ post.published_at }}</span>
-              </div>
-              <h3 class="blogpage__title-blog">{{ post.title }}</h3>
-              <p class="blogpage__subtitle-blog">{{ post.content }}</p>
-              <a href="{{ post.url }}" class="blogpage__link">читать далее</a>
-              
-             
+    <div class="blogpage">
+        <div class="container">
+            <ul class="crumbs">
+                <li class="crumb">
+                    <a href="/" class="crumb-link">Главная</a>
+                    <span>/</span>
+                </li>
+                <li class="crumb">
+                    <a href="/blog" class="crumb-link">Блог</a>
+                </li>
+            </ul>
+            <div class="blogpage__flex">
+                <div class="blogpage__asides">
+                    <form class="blogpage__search" action="{{ 'search' | page }}" method="get">
+                        <input class="blogpage__search-input" name="q" type="text" placeholder="Поиск..."
+                               autocomplete="off"
+                               autofocus
+                               {% if searchInput.useAutoComplete %}
+                               data-track-input
+                               data-request="searchInput::onType"
+                               data-request-before-update="document.getElementById('autocomplete-results3').classList.add('ss-search-form__results--visible')"
+                               data-request-update="'searchInput::autocomplete': '#autocomplete-results3'"
+                               {% endif %}
+                        >
+                        <button class="blogpage__search-btn"><span class="icon-search"></span></button>
+                        <div class="ss-search-form__results" id="autocomplete-results3"></div>
+                    </form>
+                    <!-- <aside class="blogpage__aside">
+                      <h3>Архив</h3>
+                      <ul>
+                        <li>
+                          <a href="#" class="blogpage__link-acide">Июнь <span>2019</span> </a>
+                        </li>
+                        <li>
+                          <a href="#" class="blogpage__link-acide">Сентябрь <span>2019</span></a>
+                        </li>
+                        <li>
+                          <a href="#" class="blogpage__link-acide">Январь <span>2020</span></a>
+                        </li>
+                        <li>
+                          <a href="#" class="blogpage__link-acide">Февраль <span>2020</span></a>
+                        </li>
+                      </ul>
+                    </aside> -->
+                    <aside class="blogpage__aside">
+                        <h3>Категории</h3>
+
+                        {% set cat = blogCategories.categories %}
+                        <ul>
+                            {% for cat in cat %}
+                            <li>
+                                <a href="{{ cat.url }}" class="blogpage__link-acide">{{ cat.name }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </aside>
+                </div>
+
+                <div class="blogpage__blogs">
+
+                    {% set posts = blogPosts.posts %}
+                    {% for post in posts %}
+
+                    <div class="blogpage__blog">
+
+                        {% if post.featured_images.count %}
+                        {% for image in post.featured_images %}
+                        <a href="{{ post.url }}" class="blogpage__img-wrap">
+                            <img src="{{ image.getThumb(500, 500, {quality: 80}) }}" alt="{{ image.description }}"
+                                 class="blogpage__img">
+                            <span class="icon-search blogpage__icon"></span>
+                        </a>
+                        {% endfor %}
+                        {% endif %}
+                        <div class="mainblog__date">
+                            <span class="icon-calendar"></span>
+                            <span>{{ post.published_at }}</span>
+                        </div>
+                        <h3 class="blogpage__title-blog">{{ post.title }}</h3>
+                        <p class="blogpage__subtitle-blog">{{ post.content }}</p>
+                        <a href="{{ post.url }}" class="blogpage__link">читать далее</a>
+
+
+                    </div>
+                    {% endfor %}
+                </div>
+
             </div>
-{% endfor %} 
-          </div>
-            
+
+
         </div>
-
-
-      </div>
     </div>
 
-        
-        </div>
+
+</div>

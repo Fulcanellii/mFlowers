@@ -263,11 +263,11 @@ class Product extends ImportModel
         }
     }
 
-    public function getPriceProduct($id)
-    {
-        $data = DB::table('lovata_shopaholic_offers')->where('product_id', $id)->first();
-        return DB::table('lovata_shopaholic_prices')->where('item_id', $data->id)->first();
-    }
+//    public function getPriceProduct($id)
+//    {
+//        $data = DB::table('lovata_shopaholic_offers')->where('product_id', $id)->first();
+//        return DB::table('lovata_shopaholic_prices')->where('item_id', $data->id)->first();
+//    }
 
     /**
      * Import item list from CSV file

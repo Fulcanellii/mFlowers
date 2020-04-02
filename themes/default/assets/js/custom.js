@@ -1,21 +1,44 @@
+// $(".basket__btn-pay").click(function(event) {
+//
+//
+//
+//     $.request('Cart::onUpdate', {
+//         'update': {
+//             'product/cart-link-header/cart-link-header': '._ajax_cart_link_header_wrapper'
+//
+//         },
+//         success: function (data) {
+//             $("#order-page").show('slow/400/fast', function() {
+//             });
+//             $(".basket").hide();
+//         }
+//     });
+//
+//
+//
+//
+// });
 
-$(".basket__btn-pay").click(function(event) {
+$('.order__radio').change(function () {
 
-    $.request('Cart::onUpdate', {
-        'update': {'product/cart-link-header/cart-link-header': '._ajax_cart_link_header_wrapper'
+    var e = $('._ajax_create_order');
+
+    var type = e.find('input[name="shipping_type_id"]:checked').val();
+
+    $.request('Cart::onSetShippingType', {
+        'data': {'shipping_type_id': type},
+        success: function (response) {
+            var price = response.data.total_price.price;
+            $('#total-price').val(price);
+            $('.basket__total-order').text(price);
+
         }
     });
-
-	$("#order-page").show('slow/400/fast', function() {
-	});
-	$(".basket").hide();
-
-
 });
 
 $("._create_order_button").click(function(event) {
 
-    var product_price = $('.basket__input-price').text();
+    var product_price = $('.order__price').val();
 
     var product_quantity = $('.info__counter-input').val();
 
@@ -86,8 +109,8 @@ $("._create_order_button").click(function(event) {
 
         var lead_id = lead['result'];
         var arr = [];
-        $('.cart__item').each(function (i, index) {
-            arr.push({'PRODUCT_ID': $(this).attr('data-crm-id'), 'PRICE_EXCLUSIVE': $(this).find('.basket__input-price').text(), 'QUANTITY': $(this).find('.info__counter-input').val()});
+        $('.order__product').each(function (i, index) {
+            arr.push({'PRODUCT_ID': $(this).attr('data-crm-id'), 'PRICE_EXCLUSIVE': $(this).find('input').val(), 'QUANTITY': $(this).find('.order__quantity').attr('value')});
         });
             $.ajax({
                 url: 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.lead.productrows.set',

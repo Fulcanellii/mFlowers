@@ -49,11 +49,11 @@ class Offers extends Controller
             'pg_salt' => 'some_random_string',
             'pg_order_id'=>'123',
             'pg_description' => 'Описание заказа',
-            'pg_result_url' => 'http://test123/payment.php',
+            'pg_result_url' => 'http://october/search',
             'pg_currency' => 'KGS'
         ];
 
-//$request['pg_testing_mode'] = 1; //add this parameter to request for testing payments
+$request['pg_testing_mode'] = 1; //add this parameter to request for testing payments
 
 //if you pass any of your parameters, which you want to get back after the payment, then add them. For example:
 // $request['client_name'] = 'My Name';
