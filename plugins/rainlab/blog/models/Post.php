@@ -16,6 +16,7 @@ use Cms\Classes\Theme;
 use Cms\Classes\Controller;
 use RainLab\Blog\Classes\TagProcessor;
 use ValidationException;
+use ToughDeveloper\ImageResizer\Classes\Image;
 
 /**
  * Class Post

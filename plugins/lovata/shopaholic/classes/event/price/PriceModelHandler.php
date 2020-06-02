@@ -57,8 +57,8 @@ class PriceModelHandler
 
         $data = $this->obElement;
 
-        $file = 'array.txt';
-        file_put_contents($file, $data);
+//        $file = 'array.txt';
+//        file_put_contents($file, $data);
 
         $data = json_decode($data);
 

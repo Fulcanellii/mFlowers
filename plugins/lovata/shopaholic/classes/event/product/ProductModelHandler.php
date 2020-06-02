@@ -144,6 +144,21 @@ class ProductModelHandler extends ModelHandler
         foreach ($obOfferList as $obOffer) {
             $obOffer->active = false;
             $obOffer->save();
+
+            $queryData = ['id' => $obOffer->crm_id];
+            $url = 'https://b24-3xwwl0.bitrix24.ru/rest/1/d6smpzxao255pv73/crm.product.delete';
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+                CURLOPT_SSL_VERIFYPEER => 0,
+                CURLOPT_POST => 1,
+                CURLOPT_HEADER => 0,
+                CURLOPT_RETURNTRANSFER => 1,
+                CURLOPT_URL => $url,
+                CURLOPT_POSTFIELDS => http_build_query($queryData),
+            ));
+            $result = curl_exec($curl);
+            curl_close($curl);
+
         }
     }
 
